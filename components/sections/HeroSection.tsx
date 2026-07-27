@@ -27,18 +27,18 @@ export const HeroSection: React.FC = () => {
 
   return (
     <section className="relative min-h-[100svh] lg:h-screen lg:max-h-screen flex flex-col justify-between overflow-hidden bg-primary">
-      {/* Background Image & Clean Dark Overlay (White Gradient Removed) */}
+      {/* Background Image & Soft Overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVN_s62XvE1DVTH7KzTCcrQo8gSV66mswAxVm8h-gRiJk_ec_RpesK3Y2y9yjRyNsg485PZYQxkvfoTSmGG6sWqKQxiG6xlIVcq13jysrO1sACo_A0zvhxma74Bx4e5gXNNuzW7hHHpoMKtG-vaIZ5qLKS9wLf3lqffA5G-JLgWSBu-ESfE9KgKk0_PRjV3cPCc8epos9KpqFJaEElw8ffk4o1P6XA4XKW3BRP7MR8O8eQTXC886KvfNpS1_AvcVIuBb8HsJB3AEXN"
           alt="Luxury Real Estate Background"
-          className="w-full h-full object-cover object-center scale-105 md:scale-100"
+          className="w-full h-full object-cover object-center scale-105 md:scale-100 brightness-110 contrast-105 saturate-110"
         />
         {/* Radial Gold Tint */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(197,160,89,0.25),transparent_35%),radial-gradient(circle_at_top_right,rgba(255,255,255,0.12),transparent_28%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(197,160,89,0.16),transparent_35%),radial-gradient(circle_at_top_right,rgba(255,255,255,0.08),transparent_28%)]" />
         
         {/* Consistent High-End Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/80 to-primary/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/82 via-primary/60 to-primary/78" />
       </div>
 
       {/* Main Content Area - Center Section */}
@@ -63,7 +63,7 @@ export const HeroSection: React.FC = () => {
 
           {/* Subtitle */}
           <p className="hero-fade-up-delay-2 font-body text-white/90 text-xs sm:text-sm md:text-base leading-relaxed max-w-lg">
-            Exclusive high-end residences curated for the world's most discerning Investors.
+            Exclusive high-end residences curated for the world&apos;s most discerning Investors.
           </p>
 
           {/* Mobile Search - moved into the hero flow so it appears before the fold on phones */}
@@ -98,7 +98,7 @@ export const HeroSection: React.FC = () => {
           <div className="hero-fade-up-delay-2 flex flex-col xs:flex-row items-center gap-2.5 sm:gap-3 w-full xs:w-auto pt-1">
             <Link
               href="/properties"
-              className="bg-secondary text-primary px-6 sm:px-7 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-gold transition-all shadow-xl shadow-secondary/20 flex items-center justify-center gap-2 group cursor-pointer w-full xs:w-auto"
+              className="bg-secondary/95 md:bg-secondary/88 md:backdrop-blur-2xl text-primary px-6 sm:px-7 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-gold transition-all shadow-xl shadow-secondary/20 flex items-center justify-center gap-2 group cursor-pointer w-full xs:w-auto"
             >
               Explore Properties
               <span className="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">
@@ -107,7 +107,7 @@ export const HeroSection: React.FC = () => {
             </Link>
             <Link
               href="/enquire"
-              className="border border-white/25 bg-white/10 backdrop-blur-xl text-white px-6 sm:px-7 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-white/15 transition-all text-center cursor-pointer w-full xs:w-auto flex justify-center"
+              className="border border-white/20 bg-white/12 md:bg-white/8 md:backdrop-blur-3xl text-white px-6 sm:px-7 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-white/18 transition-all text-center cursor-pointer w-full xs:w-auto flex justify-center"
             >
               Book Consultation
             </Link>
@@ -118,7 +118,7 @@ export const HeroSection: React.FC = () => {
             {heroStats.map((stat, idx) => (
               <div
                 key={idx}
-                className="flex items-center gap-2 bg-white/5 border border-white/10 p-2 sm:p-0 rounded-xl sm:bg-transparent sm:border-0"
+                className="flex items-center gap-2 bg-white/8 backdrop-blur-md border border-white/12 p-2 sm:p-2 rounded-xl sm:bg-white/6 sm:border-white/10"
               >
                 <span
                   className="material-symbols-outlined text-secondary text-base lg:text-lg flex-shrink-0"
@@ -143,7 +143,7 @@ export const HeroSection: React.FC = () => {
           className="glass-card bg-primary/60 backdrop-blur-xl p-4 lg:p-5 rounded-2xl shadow-2xl flex flex-col lg:flex-row items-stretch gap-3 lg:gap-4 border border-white/15"
         >
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 flex-1">
-            <div className="flex flex-col gap-1 rounded-xl bg-white/5 border border-white/10 px-3.5 py-2.5 transition-all hover:bg-white/8">
+            <div className="flex flex-col gap-1 rounded-xl bg-white/6 backdrop-blur-md border border-white/10 px-3.5 py-2.5 transition-all hover:bg-white/10">
               <label className="text-[9px] text-white/50 font-bold uppercase tracking-widest">
                 LOCATION
               </label>
@@ -165,7 +165,7 @@ export const HeroSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex flex-col gap-1 rounded-xl bg-white/5 border border-white/10 px-3.5 py-2.5 transition-all hover:bg-white/8">
+            <div className="flex flex-col gap-1 rounded-xl bg-white/6 backdrop-blur-md border border-white/10 px-3.5 py-2.5 transition-all hover:bg-white/10">
               <label className="text-[9px] text-white/50 font-bold uppercase tracking-widest">
                 PROPERTY TYPE
               </label>
@@ -187,7 +187,7 @@ export const HeroSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex flex-col gap-1 rounded-xl bg-white/5 border border-white/10 px-3.5 py-2.5 transition-all hover:bg-white/8">
+            <div className="flex flex-col gap-1 rounded-xl bg-white/6 backdrop-blur-md border border-white/10 px-3.5 py-2.5 transition-all hover:bg-white/10">
               <label className="text-[9px] text-white/50 font-bold uppercase tracking-widest">
                 BUDGET
               </label>
@@ -209,7 +209,7 @@ export const HeroSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex flex-col gap-1 rounded-xl bg-white/5 border border-white/10 px-3.5 py-2.5 transition-all hover:bg-white/8">
+            <div className="flex flex-col gap-1 rounded-xl bg-white/6 backdrop-blur-md border border-white/10 px-3.5 py-2.5 transition-all hover:bg-white/10">
               <span className="text-[9px] text-white/50 font-bold uppercase tracking-widest">
                 TRANSACTION
               </span>

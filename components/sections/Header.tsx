@@ -7,21 +7,17 @@ import { navItems } from '@/data/homeData';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpenPath, setMenuOpenPath] = useState<string | null>(null);
   const pathname = usePathname();
 
   const isHomePage = pathname === '/';
+  const menuOpen = menuOpenPath === pathname;
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // Close menu on route change
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
 
   const headerBgClass = isScrolled
     ? 'bg-white/95 backdrop-blur-md shadow-md py-3 border-b border-gray-200/60'
@@ -93,7 +89,7 @@ export const Header: React.FC = () => {
 
           {/* Hamburger — visible below xl */}
           <button
-            onClick={() => setMenuOpen(!menuOpen)}
+            onClick={() => setMenuOpenPath(menuOpen ? null : pathname)}
             className={`xl:hidden p-2 rounded-lg focus:outline-none cursor-pointer transition-colors hover:bg-white/10 ${hamburgerColor}`}
             aria-label="Toggle Navigation"
             aria-expanded={menuOpen}
@@ -124,7 +120,7 @@ export const Header: React.FC = () => {
                   <Link
                     key={item.label}
                     href={item.href}
-                    onClick={() => setMenuOpen(false)}
+                    onClick={() => setMenuOpenPath(null)}
                     className={`py-3 px-4 rounded-xl text-sm font-medium transition-all text-left sm:text-center ${
                       isActive
                         ? 'text-secondary font-bold bg-white/10 border border-secondary/30'
@@ -147,7 +143,7 @@ export const Header: React.FC = () => {
                 <Link
                   key={item.href}
                   href={item.href}
-                  onClick={() => setMenuOpen(false)}
+                  onClick={() => setMenuOpenPath(null)}
                   className="py-2.5 px-4 text-sm font-medium text-white/60 hover:text-secondary transition-all text-left sm:text-center rounded-xl hover:bg-white/5"
                 >
                   {item.label}
@@ -158,7 +154,7 @@ export const Header: React.FC = () => {
             {/* Full CTA */}
             <Link
               href="/enquire"
-              onClick={() => setMenuOpen(false)}
+              onClick={() => setMenuOpenPath(null)}
               className="block w-full bg-secondary text-primary py-3.5 rounded-2xl font-extrabold text-sm uppercase tracking-wider text-center hover:brightness-110 transition-all shadow-lg"
             >
               Begin Your Enquiry →
