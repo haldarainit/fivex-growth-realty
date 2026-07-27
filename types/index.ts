@@ -207,9 +207,11 @@ export interface TeamMember {
   id: string;
   name: string;
   role: string;
+  bio?: string;
   image: string;
   imageAlt?: string;
 }
+
 
 export interface StatMetric {
   value: number;

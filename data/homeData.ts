@@ -16,11 +16,10 @@ export const navItems: NavItem[] = [
   { label: 'Services', href: '/services' },
   { label: 'Projects', href: '/projects' },
   { label: 'Locations', href: '/locations' },
-  { label: 'Testimonials', href: '/testimonials' },
   { label: 'Blog', href: '/blog' },
-  { label: 'FAQ', href: '/faq' },
   { label: 'Contact', href: '/contact' },
 ];
+
 
 
 export const heroStats: HeroStatItem[] = [

@@ -11,29 +11,37 @@ export const teamMembers: TeamMember[] = [
   {
     id: 'team-1',
     name: 'Adrian Sterling',
-    role: 'Senior Vice President',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDmbLLdJkbb-Pa5hqz-z8thq7-dZ97H6LbXoOXpnMZVVTahz63rBQtmLEJAECV7htLJYpHCkAX10e4qUc9tcxK0TBiB15CDOhocJdSVsaE5H6QhbFTUqd2kohg3xvNr6NGpYLHXtjq4LgKH67voF0ljKXc6OY1zymj2B-W2FxACc3Neo00usfRqMa7_nkKgoAtazBHY30ssTbpC2-mtYmqvyJNVUSqexopbg8-vfvmyvJHjoADyJQFYYrPKFFqqOu0RLByDgU4uzQc1',
-    imageAlt: 'Adrian Sterling portrait',
+    role: 'CEO & Founder',
+    bio: '20+ years of expertise in global property acquisition and luxury portfolio management.',
+    image:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDmbLLdJkbb-Pa5hqz-z8thq7-dZ97H6LbXoOXpnMZVVTahz63rBQtmLEJAECV7htLJYpHCkAX10e4qUc9tcxK0TBiB15CDOhocJdSVsaE5H6QhbFTUqd2kohg3xvNr6NGpYLHXtjq4LgKH67voF0ljKXc6OY1zymj2B-W2FxACc3Neo00usfRqMa7_nkKgoAtazBHY30ssTbpC2-mtYmqvyJNVUSqexopbg8-vfvmyvJHjoADyJQFYYrPKFFqqOu0RLByDgU4uzQc1',
+    imageAlt: 'Adrian Sterling, CEO & Founder portrait',
   },
   {
     id: 'team-2',
-    name: 'Victoria Vance',
-    role: 'Head of Luxury Acquisitions',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBPvU9xmlHBOmUbiDrzA9eHiEzc8klET2jSZQlRB5Y5K4BSFpJe0HTOe8AuAAkrc_UJ2mL26EBfKSCWZscKzRF1eSjDF9KaZ2sc7tdtb9Xv3jxcTvyBfyjkxfZH1GsQ_nyVrsIvr0vpMsyKHSE2i9HM8bUSm_wBSzPCyuVyptZxqVBXza-b9R60QHevTg3PGLNaaHK4LSURrI_tKD34qc64WmRJXfV8FPs494udHtMjoqAZU2574NlmExORi3tgs9ajWrYnTqX8giry',
-    imageAlt: 'Victoria Vance portrait',
+    name: 'Elena Vance',
+    role: 'Investment Director',
+    bio: 'Specializing in high-yield commercial assets and emerging market analytics.',
+    image:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDjwafDbp6rcLsBhRaZur-vLermfa5WIMq6BIdPoPrq9X0fX3Pt598H8Fe-7H9GNLexIcGxQYIT9S2HqBkw1Ze9iZStEplPAOyFlMn4o-ZXWi-t-LGhxfUYl2X9oYQY78A8gJNN8x7KJLF0g8sSYvvE3el84bxrbhfeU-p8Qusvz7qyWtrFJIH0r5UYtzFUtI99DIF1OySasWXXfPkqZcnKPCJrdz5xBmsrQ4NGfFFEKMxZFTO7beZOlaZW9gYrNjHgVARaGzSxqyvW',
+    imageAlt: 'Elena Vance, Investment Director portrait',
   },
   {
     id: 'team-3',
-    name: 'Marcus Thorne',
-    role: 'Chief Investment Officer',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBfDeII08Qmu1tNf_r80M6nBTQLScFJBOuV_DZfIkqOuk-8vcmeZIFoDq4OB1rk6jKfs9mAuAF311dRdcQ_suBp5aaRQmQpQb8JZ9ylfI-mcEO3hYDp0dFWgY_CU86T7Xk9aBlMJ-5jF-SJfMkht_g68VWsncNPq-SADzjgTwnHyc7dDgGEIY1r6KaHpEHUeIDFI1-ydGXcLXgD_f4Dkt61pwzA2prdA-j7V99MfWgPyxF4NUSSSEiHp_SpL-A35pfd-lDDo5WxMy63',
-    imageAlt: 'Marcus Thorne portrait',
+    name: 'Marcus Chen',
+    role: 'Head of Acquisitions',
+    bio: 'Expert in off-market deal sourcing and negotiation for private equity clients.',
+    image:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuCQvV12CDjwIBhj-2Kw93qrKb_sFKB2p3FVoAxBXvNNf3b3LBpi0EPIANG22TkV4-pN19yVbu9NzHFW3NDrDRj8XD5BJZk_iCoDN40egz-YiPQ84LrA4kcaUWI9Zc-FLKInhchxQlz8eu20lY0Gh-S_p3GmZ9I4fwCK-OZXGHqPLJP1vHQNmCnodcU8k61xkxU5tM0f2njLfEEm0-8Y_x6ACVo1cozqG8pCn9LBLvruz9oU3sCpfiaY5MN6w75EVhOW_a9MY1pIR7dQ',
+    imageAlt: 'Marcus Chen, Head of Acquisitions portrait',
   },
   {
     id: 'team-4',
-    name: 'Sophia Chen',
-    role: 'International Relocation Director',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCJ51gkhlgjR8nYpWJC2Ooti7LvAJPz9cCbVcg932n68dBcgMVtSU1MCvejYinB2EBmD_Z8frkbl0yY8C_He55uT7uC3wFbMv5_k2Fs9S-Hp3cBiXO2cq946Ihq_RpbTF5Sbt_mZCMNZGeSv9nzM58jYYzyt48JToZk-4gjAYJ3PoZSXPgUWhT7pWdI92kXZAE_nS3GLWIZqvbtWiVIcsVV1HomRsSdgXtY0duPsn5NrFDMJUKG26UTkzb6-SSOXhn3qv1jlBPcDNmJ',
-    imageAlt: 'Sophia Chen portrait',
+    name: 'Sophia Moretti',
+    role: 'Client Relations',
+    bio: 'Dedicated to providing a seamless, white-glove experience for all luxury homebuyers.',
+    image:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDBa_YYNSNncle8PmOe7W_5xrBMyKtjkIre0GBAjdGdTuAFlZRh4h4hmNslYZt79iGgvLYmPlWx1JdfQz4eq77cUjyDC6BeIz2Zy7_WiNU-gws-3xtuDfS7jp4twCNoRfYy2jaALYSsv4yWKMCtW6h2P4AV3e3poIGX9c131qeq6nzRdKBMYeg1OjKN2-UDHd8cNjt49u1f9YVkR2OaaUPRUQCtqVeiMeaTmvCapT1QkKY0uWQ0h_pUHl7-_MgKsrNcfApchbm60UVE',
+    imageAlt: 'Sophia Moretti, Client Relations portrait',
   },
 ];
