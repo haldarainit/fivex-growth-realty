@@ -67,14 +67,6 @@ export const FeaturedPropertiesSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="hidden sm:flex items-center gap-3">
-          <Link
-            href="/properties"
-            className="border border-secondary/40 bg-white text-secondary px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-secondary hover:text-white transition-all whitespace-nowrap shadow-sm"
-          >
-            View All Properties
-          </Link>
-        </div>
       </div>
 
       {/* Mobile Search & Horizontal Scroll Filter Bar - Matching Attached Image 2 */}
@@ -147,6 +139,15 @@ export const FeaturedPropertiesSection: React.FC = () => {
             </button>
           </div>
         )}
+      </div>
+
+      <div className="mt-8 flex justify-start sm:justify-end">
+        <Link
+          href="/properties"
+          className="inline-flex w-full sm:w-auto justify-center border border-secondary/40 bg-white text-secondary px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-secondary hover:text-white transition-all whitespace-nowrap shadow-sm"
+        >
+          View More Properties
+        </Link>
       </div>
 
       {/* Mobile Filter Modal */}

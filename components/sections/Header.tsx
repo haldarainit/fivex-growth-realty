@@ -48,7 +48,7 @@ export const Header: React.FC = () => {
         >
           <span className={`text-base sm:text-lg xl:text-xl ${logoFivexClass}`}>FIVEX</span>
           <span className="text-secondary text-base sm:text-lg xl:text-xl">GROWTH</span>
-          <span className={`text-base sm:text-lg xl:text-xl hidden sm:inline ${logoRealtyClass}`}>REALTY</span>
+          <span className={`text-base sm:text-lg xl:text-xl ${logoRealtyClass}`}>REALTY</span>
         </Link>
 
         {/* ── Desktop Nav — only visible at xl+ ── */}
