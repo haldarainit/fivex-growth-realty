@@ -89,6 +89,13 @@ html {
       rgba(10, 25, 47, 0.50) 100%
     );
   }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 @keyframes hero-fade-up {
