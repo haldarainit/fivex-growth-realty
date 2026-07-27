@@ -26,7 +26,7 @@ export const HeroSection: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen lg:h-screen lg:max-h-screen flex flex-col justify-between overflow-hidden bg-primary">
+    <section className="relative min-h-[100svh] lg:h-screen lg:max-h-screen flex flex-col justify-between overflow-hidden bg-primary">
       {/* Background Image & Clean Dark Overlay (White Gradient Removed) */}
       <div className="absolute inset-0 z-0">
         <img
@@ -42,7 +42,7 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Main Content Area - Center Section */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center px-4 sm:px-8 lg:px-16 max-w-[1280px] mx-auto w-full pt-24 sm:pt-28 lg:pt-20 pb-4 lg:pb-2">
+      <div className="relative z-10 flex-1 flex flex-col justify-center px-4 sm:px-8 lg:px-16 max-w-[1280px] mx-auto w-full pt-20 sm:pt-24 lg:pt-20 pb-4 lg:pb-2">
         <div className="max-w-2xl flex flex-col gap-3 sm:gap-4 lg:gap-4 mx-auto md:mx-0 items-center md:items-start text-center md:text-left">
           
           {/* Gold Badge Pill */}
@@ -65,6 +65,34 @@ export const HeroSection: React.FC = () => {
           <p className="hero-fade-up-delay-2 font-body text-white/90 text-xs sm:text-sm md:text-base leading-relaxed max-w-lg">
             Exclusive high-end residences curated for the world's most discerning Investors.
           </p>
+
+          {/* Mobile Search - moved into the hero flow so it appears before the fold on phones */}
+          <div className="hero-fade-up-delay-2 md:hidden w-full max-w-lg pt-2">
+            <form onSubmit={handleSearch}>
+              <div className="bg-white p-2.5 pl-4 rounded-2xl shadow-2xl flex items-center justify-between gap-2 border border-gray-100">
+                <div className="flex items-center gap-2.5 flex-1 min-w-0">
+                  <span className="material-symbols-outlined text-gray-400 text-xl flex-shrink-0">
+                    search
+                  </span>
+                  <input
+                    type="text"
+                    placeholder="Search locations or projects..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full bg-transparent text-gray-900 text-xs font-semibold outline-none placeholder:text-gray-400"
+                  />
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setIsMobileFilterOpen(true)}
+                  className="bg-black text-white p-3 rounded-xl hover:bg-gray-900 transition-all flex items-center justify-center flex-shrink-0 cursor-pointer shadow-md"
+                  aria-label="Filter Properties"
+                >
+                  <span className="material-symbols-outlined text-lg">tune</span>
+                </button>
+              </div>
+            </form>
+          </div>
 
           {/* CTA Buttons - Visible on BOTH Mobile Responsive & Desktop */}
           <div className="hero-fade-up-delay-2 flex flex-col xs:flex-row items-center gap-2.5 sm:gap-3 w-full xs:w-auto pt-1">
@@ -108,40 +136,11 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Hero Bottom Search Container */}
-      <div className="relative z-20 w-full px-4 sm:px-8 lg:px-16 max-w-[1280px] mx-auto pb-6 sm:pb-6 lg:pb-8 pt-2">
-        
-        {/* Mobile View Bottom Floating Search Bar (Matching Attached Image 1 layout) */}
-        <div className="md:hidden w-full max-w-lg mx-auto">
-          <form onSubmit={handleSearch}>
-            <div className="bg-white p-2.5 pl-4 rounded-2xl shadow-2xl flex items-center justify-between gap-2 border border-gray-100">
-              <div className="flex items-center gap-2.5 flex-1 min-w-0">
-                <span className="material-symbols-outlined text-gray-400 text-xl flex-shrink-0">
-                  search
-                </span>
-                <input
-                  type="text"
-                  placeholder="Search locations or projects..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-transparent text-gray-900 text-xs font-semibold outline-none placeholder:text-gray-400"
-                />
-              </div>
-              <button
-                type="button"
-                onClick={() => setIsMobileFilterOpen(true)}
-                className="bg-black text-white p-3 rounded-xl hover:bg-gray-900 transition-all flex items-center justify-center flex-shrink-0 cursor-pointer shadow-md"
-                aria-label="Filter Properties"
-              >
-                <span className="material-symbols-outlined text-lg">tune</span>
-              </button>
-            </div>
-          </form>
-        </div>
-
+      <div className="hidden md:block relative z-20 w-full px-4 sm:px-8 lg:px-16 max-w-[1280px] mx-auto pb-6 sm:pb-6 lg:pb-8 pt-2">
         {/* Desktop View Form Box */}
         <form
           onSubmit={handleSearch}
-          className="hidden md:flex glass-card bg-primary/60 backdrop-blur-xl p-4 lg:p-5 rounded-2xl shadow-2xl flex-col lg:flex-row items-stretch gap-3 lg:gap-4 border border-white/15"
+          className="glass-card bg-primary/60 backdrop-blur-xl p-4 lg:p-5 rounded-2xl shadow-2xl flex flex-col lg:flex-row items-stretch gap-3 lg:gap-4 border border-white/15"
         >
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 flex-1">
             <div className="flex flex-col gap-1 rounded-xl bg-white/5 border border-white/10 px-3.5 py-2.5 transition-all hover:bg-white/8">

@@ -29,6 +29,8 @@
   --spacing-margin-mobile: 16px;
   --spacing-unit: 8px;
   --spacing-container-max: 1280px;
+  /* Extra-small breakpoint for compact phones */
+  --breakpoint-xs: 24rem;
 
   --radius-default: 0.5rem;
   --radius-lg: 0.5rem;

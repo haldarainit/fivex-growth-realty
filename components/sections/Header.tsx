@@ -108,14 +108,14 @@ export const Header: React.FC = () => {
       {/* ── Slide-down Drawer (Mobile + Tablet) ── */}
       <div
         className={`xl:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          menuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+          menuOpen ? 'max-h-[calc(100svh-4rem)] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
         <div className="bg-primary backdrop-blur-xl border-t border-white/10 shadow-2xl">
-          <div className="px-4 sm:px-6 py-5 max-w-[1440px] mx-auto">
+          <div className="px-4 sm:px-6 py-5 max-w-[1440px] mx-auto max-h-[calc(100svh-4rem)] overflow-y-auto overscroll-contain">
 
             {/* Grid nav on tablet, list on mobile */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1 mb-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-1 mb-4">
               {navItems.map((item) => {
                 const isActive =
                   pathname === item.href ||
@@ -125,7 +125,7 @@ export const Header: React.FC = () => {
                     key={item.label}
                     href={item.href}
                     onClick={() => setMenuOpen(false)}
-                    className={`py-3 px-4 rounded-xl text-sm font-medium transition-all text-center ${
+                    className={`py-3 px-4 rounded-xl text-sm font-medium transition-all text-left sm:text-center ${
                       isActive
                         ? 'text-secondary font-bold bg-white/10 border border-secondary/30'
                         : 'text-white/80 hover:text-secondary hover:bg-white/5'
@@ -138,18 +138,17 @@ export const Header: React.FC = () => {
             </div>
 
             {/* Extra links */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-1 mb-4 pt-3 border-t border-white/10">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-1 mb-4 pt-3 border-t border-white/10">
               {[
                 { href: '/testimonials', label: 'Testimonials' },
                 { href: '/faq', label: 'FAQ' },
-                { href: '/about', label: 'About Us' },
                 { href: '/contact', label: 'Contact' },
               ].map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
-                  className="py-2.5 px-4 text-sm font-medium text-white/60 hover:text-secondary transition-all text-center rounded-xl hover:bg-white/5"
+                  className="py-2.5 px-4 text-sm font-medium text-white/60 hover:text-secondary transition-all text-left sm:text-center rounded-xl hover:bg-white/5"
                 >
                   {item.label}
                 </Link>
