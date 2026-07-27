@@ -4,7 +4,7 @@ import { locationDestinations } from '@/data/locationsData';
 
 export const LocationDestinationsSection: React.FC = () => {
   return (
-    <section className="py-24 px-margin-desktop max-w-container-max mx-auto">
+    <section className="py-24 px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
         <div className="max-w-xl">
           <h2 className="font-display text-4xl text-primary font-bold mb-4">

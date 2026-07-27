@@ -36,14 +36,14 @@ export default function LocationsPage() {
 
         {/* Lead Gen Newsletter */}
         <section className="py-24 bg-surface-container-low">
-          <div className="px-margin-desktop max-w-container-max mx-auto glass-card bg-white/80 backdrop-blur-md p-12 rounded-3xl border border-white flex flex-col items-center text-center shadow-xl">
-            <span className="material-symbols-outlined text-secondary text-5xl mb-6">
+          <div className="px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto bg-white/80 backdrop-blur-md p-6 sm:p-10 lg:p-12 rounded-3xl border border-white/50 flex flex-col items-center text-center shadow-xl">
+            <span className="material-symbols-outlined text-secondary text-4xl sm:text-5xl mb-4 sm:mb-6">
               mark_email_read
             </span>
-            <h2 className="font-display text-4xl mb-4 text-primary font-bold">
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl mb-3 sm:mb-4 text-primary font-bold">
               Get Market Insights First
             </h2>
-            <p className="font-body text-on-surface-variant text-lg mb-10 max-w-2xl leading-relaxed">
+            <p className="font-body text-on-surface-variant text-base sm:text-lg mb-7 sm:mb-10 max-w-2xl leading-relaxed">
               Join 5,000+ investors receiving weekly data on price drops, new launches, and infrastructure updates across Delhi NCR.
             </p>
 

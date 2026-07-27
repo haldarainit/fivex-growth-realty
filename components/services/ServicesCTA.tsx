@@ -25,7 +25,7 @@ export const ServicesCTA: React.FC = () => {
 
   return (
     <section className="py-24 bg-surface-container-low">
-      <div className="px-margin-desktop max-w-container-max mx-auto">
+      <div className="px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto">
         <div className="bg-primary rounded-3xl overflow-hidden relative shadow-2xl">
           <div className="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
             <span className="material-symbols-outlined text-[300px] absolute -right-20 -top-20 text-white">

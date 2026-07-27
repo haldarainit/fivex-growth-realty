@@ -12,7 +12,7 @@ export default function ContactPage() {
       <Header />
       <main className="pt-20 flex-grow">
         <ContactMapHero />
-        <section className="max-w-container-max mx-auto px-margin-desktop py-20">
+        <section className="max-w-container-max mx-auto px-4 sm:px-8 lg:px-margin-desktop py-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <ContactForm />
             <ContactSidebar />

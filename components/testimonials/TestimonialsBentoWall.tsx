@@ -167,7 +167,7 @@ export const TestimonialsBentoWall: React.FC = () => {
   const details = successStories.filter((s) => s.variant === 'detail');
 
   return (
-    <section className="px-margin-desktop max-w-container-max mx-auto">
+    <section className="px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
         <FeaturedCard story={featured} />
         <DarkCard story={dark} />

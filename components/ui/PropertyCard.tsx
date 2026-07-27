@@ -9,7 +9,7 @@ interface PropertyCardProps {
 
 export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onAction }) => {
   return (
-    <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:border-gold/30 border border-transparent transition-all duration-500 group flex flex-col justify-between">
+    <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-1 hover:border-gold/30 border border-transparent transition-all duration-500 group flex flex-col justify-between">
       <div>
         <div className="relative h-56 sm:h-64 md:h-72 overflow-hidden">
           <img
@@ -17,6 +17,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onAction }
             alt={property.title}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent opacity-80" />
           <div className={`absolute top-4 left-4 ${property.badgeStyle} px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest`}>
             {property.reraId}
           </div>
@@ -61,7 +62,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onAction }
       <div className="px-5 sm:px-7 pb-6">
         <Link
           href={`/properties/${property.id}`}
-          className="block w-full py-3.5 text-center border border-secondary/30 text-secondary font-bold rounded-xl hover:bg-secondary hover:text-white hover:border-transparent transition-all duration-300 text-sm cursor-pointer"
+          className="block w-full py-3.5 text-center border border-secondary/30 text-secondary font-bold rounded-xl hover:bg-secondary hover:text-white hover:border-transparent transition-all duration-300 text-sm cursor-pointer bg-white/95"
         >
           {property.actionText}
         </Link>

@@ -13,7 +13,7 @@ export const LocationHero: React.FC = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent" />
       </div>
-      <div className="relative z-10 px-margin-desktop max-w-container-max mx-auto w-full pt-16">
+      <div className="relative z-10 px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto w-full pt-16">
         <div className="max-w-2xl text-white">
           <span className="inline-block py-1 px-4 bg-secondary-fixed-dim text-on-secondary-fixed rounded-full text-xs font-bold mb-6 uppercase tracking-widest">
             Investment Portfolios

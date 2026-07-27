@@ -11,7 +11,7 @@ export const PropertyGallery: React.FC<PropertyGalleryProps> = ({ images, badges
   const image3 = images[2] || mainImage;
 
   return (
-    <section className="px-margin-desktop max-w-container-max mx-auto mb-16">
+    <section className="px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto mb-16">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 h-auto lg:h-[600px]">
         {/* Main Feature Image */}
         <div className="lg:col-span-8 relative overflow-hidden rounded-xl image-zoom shadow-md group min-h-[350px] lg:min-h-full">

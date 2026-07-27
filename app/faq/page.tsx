@@ -38,7 +38,7 @@ export default function FaqPage() {
           onCategory={setActiveCategory}
         />
 
-        <section className="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+        <section className="px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-gutter">
           <FaqSidebar />
 
           <div className="lg:col-span-9">

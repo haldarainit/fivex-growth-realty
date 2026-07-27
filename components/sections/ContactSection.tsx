@@ -29,16 +29,16 @@ export const ContactSection: React.FC = () => {
 
   return (
     <SectionContainer id="contact" bgStyle="bg-white">
-      <div className="grid lg:grid-cols-2 gap-24">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
         {/* Left Column: Direct Info */}
         <div className="space-y-12">
           <div className="space-y-6">
             <span className="text-secondary font-bold tracking-[0.4em] uppercase text-xs">
               Get In Touch
             </span>
-            <h2 className="font-display text-4xl lg:text-6xl text-primary font-bold leading-tight">
-              Ready to Find Your <br />
-              Dream Property?
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-primary font-bold leading-tight">
+              Ready to Find Your{' '}
+              <span className="block">Dream Property?</span>
             </h2>
             <p className="text-primary/60 text-lg leading-relaxed">
               Get in touch with our expert advisors today for a personalized real estate consultation.

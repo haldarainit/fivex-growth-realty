@@ -11,7 +11,7 @@ export const LocationEmergingBento: React.FC = () => {
   };
 
   return (
-    <section className="py-24 px-margin-desktop max-w-container-max mx-auto">
+    <section className="py-24 px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto">
       <div className="text-center mb-16 space-y-2">
         <h2 className="font-display text-4xl text-primary font-bold">
           Emerging Corridors

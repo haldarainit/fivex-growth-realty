@@ -22,7 +22,7 @@ export const BlogFilters: React.FC<BlogFiltersProps> = ({
   };
 
   return (
-    <section className="max-w-container-max mx-auto px-margin-desktop mb-12">
+    <section className="max-w-container-max mx-auto px-4 sm:px-8 lg:px-margin-desktop mb-12">
       <div className="flex flex-wrap items-center gap-3 border-b border-outline-variant/20 pb-6">
         {blogCategories.map((cat) => (
           <button

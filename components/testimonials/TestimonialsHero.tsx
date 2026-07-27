@@ -3,7 +3,7 @@ import { trustMetrics } from '@/data/testimonialsData';
 
 export const TestimonialsHero: React.FC = () => {
   return (
-    <section className="px-margin-desktop max-w-container-max mx-auto mb-20 text-center">
+    <section className="px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto mb-20 text-center">
       <div className="inline-flex items-center gap-2 bg-secondary-fixed text-on-secondary-fixed-variant px-4 py-1.5 rounded-full mb-6 text-xs font-bold uppercase tracking-widest">
         <span
           className="material-symbols-outlined text-sm"

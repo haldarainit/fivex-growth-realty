@@ -50,7 +50,7 @@ export default function BlogPage() {
           onSearch={setSearchTerm}
         />
 
-        <section className="max-w-container-max mx-auto px-margin-desktop">
+        <section className="max-w-container-max mx-auto px-4 sm:px-8 lg:px-margin-desktop">
           {filteredPosts.length === 0 ? (
             <div className="text-center py-20">
               <span className="material-symbols-outlined text-5xl text-outline-variant mb-4 block">

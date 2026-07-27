@@ -3,7 +3,7 @@ import React from 'react';
 export const LocationMapSection: React.FC = () => {
   return (
     <section className="bg-primary py-24 text-white">
-      <div className="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left Column */}
         <div className="lg:col-span-5 space-y-8">
           <h2 className="font-display text-4xl lg:text-5xl font-bold leading-tight">

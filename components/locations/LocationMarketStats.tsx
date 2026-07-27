@@ -4,7 +4,7 @@ import { locationOverviewStats } from '@/data/locationsData';
 export const LocationMarketStats: React.FC = () => {
   return (
     <section className="bg-surface-container-lowest -mt-16 relative z-20 shadow-xl rounded-t-3xl border-x border-t border-outline-variant/10">
-      <div className="px-margin-desktop max-w-container-max mx-auto py-12">
+      <div className="px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto py-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {locationOverviewStats.map((stat, idx) => (
             <div

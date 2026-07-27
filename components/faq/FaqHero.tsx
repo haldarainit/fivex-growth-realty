@@ -19,7 +19,7 @@ export const FaqHero: React.FC<FaqHeroProps> = ({ onSearch, activeCategory, onCa
 
   return (
     <>
-      <section className="px-margin-desktop max-w-container-max mx-auto mb-12 text-center">
+      <section className="px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto mb-12 text-center">
         <span className="inline-block px-4 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold mb-4 uppercase tracking-wider">
           Help Center
         </span>
@@ -47,7 +47,7 @@ export const FaqHero: React.FC<FaqHeroProps> = ({ onSearch, activeCategory, onCa
       </section>
 
       {/* Category Tabs */}
-      <section className="px-margin-desktop max-w-container-max mx-auto mb-12">
+      <section className="px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto mb-12">
         <div className="flex flex-wrap justify-center gap-3 border-b border-outline-variant/30 pb-4">
           {faqCategories.map((cat) => (
             <button

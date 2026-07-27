@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const FaqStillNeedHelp: React.FC = () => {
   return (
-    <section className="mt-20 px-margin-desktop max-w-container-max mx-auto">
+    <section className="mt-20 px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto">
       <div className="relative rounded-3xl overflow-hidden bg-white/80 backdrop-blur-md border border-secondary/10 p-8 sm:p-12 text-center shadow-xl">
         <div className="absolute -top-20 -right-20 w-64 h-64 bg-secondary-fixed-dim/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none" />

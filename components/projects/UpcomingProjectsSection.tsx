@@ -5,7 +5,7 @@ import { upcomingProjects } from '@/data/projectsData';
 export const UpcomingProjectsSection: React.FC = () => {
   return (
     <section className="bg-surface-container py-24 mb-32" id="upcoming">
-      <div className="px-margin-desktop max-w-container-max mx-auto">
+      <div className="px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto">
         <div className="flex items-end justify-between mb-12 border-b border-outline pb-6">
           <div>
             <span className="text-secondary font-bold text-xs tracking-widest uppercase mb-2 block">

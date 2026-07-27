@@ -30,10 +30,9 @@ export const PropertyFilterBar: React.FC<PropertyFilterBarProps> = ({ onSearch }
   };
 
   return (
-    <section className="bg-surface-container-low p-6 rounded-xl shadow-sm mb-12 border border-outline-variant/30">
+    <section className="bg-primary/5 backdrop-blur-xl p-5 sm:p-6 rounded-3xl shadow-sm mb-12 border border-outline-variant/30">
       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-        {/* Location */}
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 rounded-2xl bg-white px-4 py-4 shadow-sm border border-outline-variant/20">
           <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">
             Location
           </label>
@@ -51,8 +50,7 @@ export const PropertyFilterBar: React.FC<PropertyFilterBarProps> = ({ onSearch }
           </div>
         </div>
 
-        {/* Property Type */}
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 rounded-2xl bg-white px-4 py-4 shadow-sm border border-outline-variant/20">
           <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">
             Property Type
           </label>
@@ -74,8 +72,7 @@ export const PropertyFilterBar: React.FC<PropertyFilterBarProps> = ({ onSearch }
           </div>
         </div>
 
-        {/* Budget */}
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 rounded-2xl bg-white px-4 py-4 shadow-sm border border-outline-variant/20">
           <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">
             Budget
           </label>
@@ -97,8 +94,7 @@ export const PropertyFilterBar: React.FC<PropertyFilterBarProps> = ({ onSearch }
           </div>
         </div>
 
-        {/* Status */}
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 rounded-2xl bg-white px-4 py-4 shadow-sm border border-outline-variant/20">
           <label className="text-xs font-bold text-on-surface-variant uppercase tracking-wider">
             Status
           </label>
@@ -120,11 +116,10 @@ export const PropertyFilterBar: React.FC<PropertyFilterBarProps> = ({ onSearch }
           </div>
         </div>
 
-        {/* Search Button */}
         <div className="flex items-end">
           <button
             type="submit"
-            className="w-full bg-primary text-white py-3.5 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-secondary flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md"
+            className="w-full bg-primary text-white py-3.5 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-secondary flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md"
           >
             <span className="material-symbols-outlined text-[20px]">search</span>
             Find Properties

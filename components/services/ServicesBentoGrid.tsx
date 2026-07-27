@@ -10,7 +10,7 @@ export const ServicesBentoGrid: React.FC = () => {
   const consult = servicesDataList.find((s) => s.id === 'serv-consult')!;
 
   return (
-    <section className="py-20 px-margin-desktop max-w-container-max mx-auto">
+    <section className="py-20 px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
         <div className="max-w-2xl">
           <h2 className="font-display text-4xl text-primary font-bold mb-4">

@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const TestimonialsCTA: React.FC = () => {
   return (
-    <div className="mt-20 px-margin-desktop max-w-container-max mx-auto">
+    <div className="mt-20 px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto">
       <div className="glass-card bg-white/60 backdrop-blur-xl p-8 sm:p-12 rounded-2xl text-center border border-secondary/20 relative overflow-hidden shadow-xl">
         <div className="absolute -top-12 -right-12 w-48 h-48 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-primary/5 rounded-full blur-3xl pointer-events-none" />

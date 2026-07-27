@@ -6,7 +6,7 @@ export const BlogFeaturedPost: React.FC = () => {
   if (!featured) return null;
 
   return (
-    <section className="max-w-container-max mx-auto px-margin-desktop mb-20">
+    <section className="max-w-container-max mx-auto px-4 sm:px-8 lg:px-margin-desktop mb-20">
       <div className="mb-10">
         <h1 className="font-display text-4xl lg:text-6xl font-bold text-primary mb-4">
           Market Insights

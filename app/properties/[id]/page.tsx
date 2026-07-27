@@ -26,7 +26,7 @@ export default async function PropertyDetailPage({
         <PropertyGallery images={property.galleryImages} badges={property.badges} />
 
         {/* Content Layout */}
-        <div className="px-margin-desktop max-w-container-max mx-auto grid grid-cols-12 gap-gutter">
+        <div className="px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-gutter">
           {/* Left Column */}
           <div className="col-span-12 lg:col-span-8">
             <PropertyHeaderSpecs

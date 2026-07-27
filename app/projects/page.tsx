@@ -10,7 +10,7 @@ export default function ProjectsPage() {
       <Header />
       <main className="pt-32 pb-24 flex-grow">
         {/* Projects Showcase Hero Header */}
-        <section className="px-margin-desktop max-w-container-max mx-auto mb-20 text-center">
+        <section className="px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto mb-20 text-center">
           <h1 className="font-display text-4xl md:text-5xl font-bold text-primary mb-4">
             Investment Portfolios
           </h1>

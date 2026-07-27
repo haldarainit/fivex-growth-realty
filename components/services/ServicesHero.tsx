@@ -13,7 +13,7 @@ export const ServicesHero: React.FC = () => {
         />
         <div className="absolute inset-0 bg-primary/40 backdrop-blur-[2px]" />
       </div>
-      <div className="relative z-10 px-margin-desktop max-w-container-max mx-auto w-full text-white pt-16">
+      <div className="relative z-10 px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto w-full text-white pt-16">
         <span className="inline-block px-4 py-1 bg-secondary-fixed text-on-secondary-fixed text-xs font-bold rounded-full mb-6 uppercase tracking-wider">
           OUR EXPERTISE
         </span>
