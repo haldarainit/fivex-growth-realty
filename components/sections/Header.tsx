@@ -62,8 +62,8 @@ export const Header: React.FC = () => {
 
         <div className="hidden md:block">
           <Link
-            href="/#contact"
-            className="bg-primary text-white px-7 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-all active:scale-95 shadow-lg shadow-primary/10 inline-block text-sm"
+            href="/enquire"
+            className="bg-primary text-white px-7 py-3 rounded-lg font-semibold hover:bg-secondary transition-all active:scale-95 shadow-lg shadow-primary/10 inline-block text-sm"
           >
             Enquire Now
           </Link>
@@ -103,9 +103,9 @@ export const Header: React.FC = () => {
             );
           })}
           <Link
-            href="/#contact"
+            href="/enquire"
             onClick={() => setMobileMenuOpen(false)}
-            className="w-full bg-primary text-white py-3 rounded-lg font-semibold mt-2 text-center text-sm"
+            className="w-full bg-primary text-white py-3 rounded-lg font-semibold mt-2 text-center text-sm hover:bg-secondary transition-all"
           >
             Enquire Now
           </Link>

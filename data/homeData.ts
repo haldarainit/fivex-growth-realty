@@ -16,9 +16,12 @@ export const navItems: NavItem[] = [
   { label: 'Services', href: '/services' },
   { label: 'Projects', href: '/projects' },
   { label: 'Locations', href: '/locations' },
-  { label: 'FAQ', href: '/#faq' },
-  { label: 'Contact', href: '/#contact' },
+  { label: 'Testimonials', href: '/testimonials' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Contact', href: '/contact' },
 ];
+
 
 export const heroStats: HeroStatItem[] = [
   { icon: 'verified_user', label: 'Trusted Advisors' },

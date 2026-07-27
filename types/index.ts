@@ -149,6 +149,34 @@ export interface FaqItem {
   id: string;
   question: string;
   answer: string;
+  category?: string;
+}
+
+export interface FaqCategory {
+  id: string;
+  label: string;
+  icon: string;
+}
+
+export interface TrustMetric {
+  value: string;
+  label: string;
+  icon?: string;
+}
+
+export interface SuccessStory {
+  id: string;
+  variant: 'featured' | 'dark' | 'light' | 'image-overlay' | 'detail';
+  badge?: string;
+  category?: string;
+  stars: number;
+  quoteHeadline: string;
+  body?: string;
+  author: string;
+  role: string;
+  initials?: string;
+  image?: string;
+  imageAlt?: string;
 }
 
 export interface FeatureItem {
