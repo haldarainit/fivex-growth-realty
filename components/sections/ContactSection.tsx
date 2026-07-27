@@ -47,17 +47,21 @@ export const ContactSection: React.FC = () => {
 
           <div className="space-y-10">
             {contactInfos.map((info, idx) => (
-              <div key={idx} className="flex items-center gap-6 group">
-                <div className="w-16 h-16 bg-surface-container rounded-2xl flex items-center justify-center transition-all group-hover:bg-gold/10 group-hover:scale-110">
+              <div key={idx} className="flex items-start sm:items-center gap-4 sm:gap-6 group">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-surface-container rounded-2xl flex-shrink-0 flex items-center justify-center transition-all group-hover:bg-gold/10 group-hover:scale-110">
                   <span className="material-symbols-outlined text-secondary text-2xl">
                     {info.icon}
                   </span>
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="text-[10px] text-primary/40 font-bold uppercase tracking-widest mb-1">
                     {info.label}
                   </p>
-                  <p className="font-display font-bold text-xl text-primary">
+                  <p
+                    className={`font-display font-bold text-lg sm:text-xl text-primary leading-tight ${
+                      info.icon === 'mail' ? 'break-all sm:break-normal' : 'break-words'
+                    }`}
+                  >
                     {info.value}
                   </p>
                 </div>
