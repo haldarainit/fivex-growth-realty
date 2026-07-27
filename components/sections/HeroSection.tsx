@@ -26,23 +26,26 @@ export const HeroSection: React.FC = () => {
   };
 
   return (
-    <section className="relative h-screen min-h-[640px] lg:h-screen lg:max-h-screen flex flex-col justify-between overflow-hidden bg-primary">
-      {/* Background Image & Overlay */}
+    <section className="relative min-h-screen lg:h-screen lg:max-h-screen flex flex-col justify-between overflow-hidden bg-primary">
+      {/* Background Image & Clean Dark Overlay (White Gradient Removed) */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVN_s62XvE1DVTH7KzTCcrQo8gSV66mswAxVm8h-gRiJk_ec_RpesK3Y2y9yjRyNsg485PZYQxkvfoTSmGG6sWqKQxiG6xlIVcq13jysrO1sACo_A0zvhxma74Bx4e5gXNNuzW7hHHpoMKtG-vaIZ5qLKS9wLf3lqffA5G-JLgWSBu-ESfE9KgKk0_PRjV3cPCc8epos9KpqFJaEElw8ffk4o1P6XA4XKW3BRP7MR8O8eQTXC886KvfNpS1_AvcVIuBb8HsJB3AEXN"
           alt="Luxury Real Estate Background"
           className="w-full h-full object-cover object-center scale-105 md:scale-100"
         />
+        {/* Radial Gold Tint */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(197,160,89,0.25),transparent_35%),radial-gradient(circle_at_top_right,rgba(255,255,255,0.12),transparent_28%)]" />
-        <div className="absolute inset-0 hero-gradient" />
+        
+        {/* Consistent High-End Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/80 to-primary/95" />
       </div>
 
-      {/* Main Content Area - Center Section (Desktop & Mobile) */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center px-4 sm:px-8 lg:px-16 max-w-[1280px] mx-auto w-full pt-20 sm:pt-24 lg:pt-20 pb-4 lg:pb-2">
+      {/* Main Content Area - Center Section */}
+      <div className="relative z-10 flex-1 flex flex-col justify-center px-4 sm:px-8 lg:px-16 max-w-[1280px] mx-auto w-full pt-24 sm:pt-28 lg:pt-20 pb-4 lg:pb-2">
         <div className="max-w-2xl flex flex-col gap-3 sm:gap-4 lg:gap-4 mx-auto md:mx-0 items-center md:items-start text-center md:text-left">
           
-          {/* Badge Pill - Matching Attached Image 1 */}
+          {/* Gold Badge Pill */}
           <div className="hero-fade-up inline-flex items-center justify-center gap-2 bg-[#f4e8c1]/95 text-[#4a3b10] border border-[#c5a059]/70 px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-extrabold uppercase tracking-widest shadow-md">
             <span
               className="material-symbols-outlined text-sm text-[#8c6b1d]"
@@ -53,21 +56,21 @@ export const HeroSection: React.FC = () => {
             <span>ELITE MASTERPIECE COLLECTION</span>
           </div>
 
-          {/* Main Headline - Fits cleanly on Desktop 1 screen & matches Image 1 */}
-          <h1 className="hero-fade-up-delay-1 font-display text-[2rem] sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-white font-extrabold tracking-tight leading-[1.08] max-w-xl">
+          {/* Main Headline */}
+          <h1 className="hero-fade-up-delay-1 font-display text-[1.9rem] sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-white font-extrabold tracking-tight leading-[1.1] max-w-xl">
             Redefining The Zenith of Luxury Living
           </h1>
 
           {/* Subtitle */}
-          <p className="hero-fade-up-delay-2 font-body text-white/85 text-xs sm:text-sm md:text-base lg:text-base leading-relaxed max-w-lg">
+          <p className="hero-fade-up-delay-2 font-body text-white/90 text-xs sm:text-sm md:text-base leading-relaxed max-w-lg">
             Exclusive high-end residences curated for the world's most discerning Investors.
           </p>
 
-          {/* Desktop CTA Buttons */}
-          <div className="hero-fade-up-delay-2 hidden md:flex items-center gap-3 pt-1">
+          {/* CTA Buttons - Visible on BOTH Mobile Responsive & Desktop */}
+          <div className="hero-fade-up-delay-2 flex flex-col xs:flex-row items-center gap-2.5 sm:gap-3 w-full xs:w-auto pt-1">
             <Link
               href="/properties"
-              className="bg-secondary text-primary px-7 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-gold transition-all shadow-xl shadow-secondary/20 flex items-center gap-2 group cursor-pointer"
+              className="bg-secondary text-primary px-6 sm:px-7 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-gold transition-all shadow-xl shadow-secondary/20 flex items-center justify-center gap-2 group cursor-pointer w-full xs:w-auto"
             >
               Explore Properties
               <span className="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">
@@ -76,23 +79,26 @@ export const HeroSection: React.FC = () => {
             </Link>
             <Link
               href="/enquire"
-              className="border border-white/20 bg-white/10 backdrop-blur-xl text-white px-7 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-white/15 transition-all text-center cursor-pointer flex"
+              className="border border-white/25 bg-white/10 backdrop-blur-xl text-white px-6 sm:px-7 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-white/15 transition-all text-center cursor-pointer w-full xs:w-auto flex justify-center"
             >
               Book Consultation
             </Link>
           </div>
 
-          {/* Desktop Stats Bar */}
-          <div className="hero-fade-up-delay-3 hidden md:grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6 pt-3 mt-1 border-t border-white/15 w-full">
+          {/* Stats Bar - Visible on BOTH Mobile Responsive & Desktop */}
+          <div className="hero-fade-up-delay-3 grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 lg:gap-6 pt-3 mt-1 border-t border-white/15 w-full">
             {heroStats.map((stat, idx) => (
-              <div key={idx} className="flex items-center gap-2">
+              <div
+                key={idx}
+                className="flex items-center gap-2 bg-white/5 border border-white/10 p-2 sm:p-0 rounded-xl sm:bg-transparent sm:border-0"
+              >
                 <span
                   className="material-symbols-outlined text-secondary text-base lg:text-lg flex-shrink-0"
                   style={{ fontVariationSettings: '"FILL" 1' }}
                 >
                   {stat.icon}
                 </span>
-                <span className="text-white/80 text-[10px] lg:text-[11px] font-bold uppercase tracking-wide leading-tight">
+                <span className="text-white/85 text-[10px] lg:text-[11px] font-bold uppercase tracking-wide leading-tight">
                   {stat.label}
                 </span>
               </div>
@@ -102,12 +108,12 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Hero Bottom Search Container */}
-      <div className="relative z-20 w-full px-4 sm:px-8 lg:px-16 max-w-[1280px] mx-auto pb-5 sm:pb-6 lg:pb-8">
+      <div className="relative z-20 w-full px-4 sm:px-8 lg:px-16 max-w-[1280px] mx-auto pb-6 sm:pb-6 lg:pb-8 pt-2">
         
-        {/* Mobile View Bottom Floating Search Input (Matching Attached Image 1) */}
+        {/* Mobile View Bottom Floating Search Bar (Matching Attached Image 1 layout) */}
         <div className="md:hidden w-full max-w-lg mx-auto">
           <form onSubmit={handleSearch}>
-            <div className="bg-white/95 backdrop-blur-xl p-2 pl-4 rounded-2xl shadow-2xl flex items-center justify-between gap-2 border border-white/40">
+            <div className="bg-white p-2.5 pl-4 rounded-2xl shadow-2xl flex items-center justify-between gap-2 border border-gray-100">
               <div className="flex items-center gap-2.5 flex-1 min-w-0">
                 <span className="material-symbols-outlined text-gray-400 text-xl flex-shrink-0">
                   search
@@ -117,7 +123,7 @@ export const HeroSection: React.FC = () => {
                   placeholder="Search locations or projects..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-transparent text-gray-900 text-xs sm:text-sm font-semibold outline-none placeholder:text-gray-400"
+                  className="w-full bg-transparent text-gray-900 text-xs font-semibold outline-none placeholder:text-gray-400"
                 />
               </div>
               <button
@@ -132,10 +138,10 @@ export const HeroSection: React.FC = () => {
           </form>
         </div>
 
-        {/* Desktop View Full Form Box (Fits cleanly on 1 screen desktop height) */}
+        {/* Desktop View Form Box */}
         <form
           onSubmit={handleSearch}
-          className="hidden md:flex glass-card bg-primary/45 p-4 lg:p-5 rounded-2xl shadow-2xl flex-col lg:flex-row items-stretch gap-3 lg:gap-4"
+          className="hidden md:flex glass-card bg-primary/60 backdrop-blur-xl p-4 lg:p-5 rounded-2xl shadow-2xl flex-col lg:flex-row items-stretch gap-3 lg:gap-4 border border-white/15"
         >
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 flex-1">
             <div className="flex flex-col gap-1 rounded-xl bg-white/5 border border-white/10 px-3.5 py-2.5 transition-all hover:bg-white/8">
@@ -235,10 +241,10 @@ export const HeroSection: React.FC = () => {
 
           <button
             type="submit"
-            className="bg-secondary text-primary px-7 py-3 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-gold transition-all cursor-pointer shadow-lg active:scale-95 text-xs tracking-wide uppercase whitespace-nowrap lg:self-end"
+            className="bg-secondary text-primary px-8 py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-gold transition-all cursor-pointer shadow-lg active:scale-95 text-xs tracking-wide uppercase whitespace-nowrap self-stretch lg:self-end"
           >
             <span className="material-symbols-outlined text-base">search</span>
-            Search Properties
+            <span>Search Properties</span>
           </button>
         </form>
       </div>
@@ -346,7 +352,7 @@ export const HeroSection: React.FC = () => {
                 setIsMobileFilterOpen(false);
                 handleSearch(e);
               }}
-              className="mt-2 w-full bg-secondary text-primary py-3.5 rounded-xl font-bold text-sm uppercase tracking-wider hover:bg-gold transition-all shadow-lg text-center"
+              className="mt-2 w-full bg-secondary text-primary py-3.5 rounded-xl font-bold text-sm uppercase tracking-wider hover:bg-gold transition-all shadow-lg text-center cursor-pointer"
             >
               Apply Filters
             </button>
