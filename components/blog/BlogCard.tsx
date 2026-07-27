@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import Link from 'next/link';
 import { BlogPost } from '@/types/blog';
 
 interface BlogCardProps {
@@ -7,7 +10,10 @@ interface BlogCardProps {
 
 export const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
   return (
-    <div className="flex flex-col bg-white rounded-3xl overflow-hidden border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group w-full min-w-0">
+    <Link
+      href={`/blog/${post.id}`}
+      className="flex flex-col bg-white rounded-3xl overflow-hidden border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group w-full min-w-0 cursor-pointer"
+    >
       <div className="aspect-[16/10] overflow-hidden relative">
         <img
           src={post.image}
@@ -27,7 +33,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
             {post.readTime}
           </span>
         </div>
-        <h3 className="font-display text-base sm:text-lg mb-3 hover:text-secondary cursor-pointer transition-colors leading-snug font-bold text-gray-900 line-clamp-2">
+        <h3 className="font-display text-base sm:text-lg mb-3 group-hover:text-secondary cursor-pointer transition-colors leading-snug font-bold text-gray-900 line-clamp-2">
           {post.title}
         </h3>
         <p className="text-gray-500 font-body text-xs sm:text-sm mb-6 line-clamp-3 leading-relaxed">
@@ -35,12 +41,12 @@ export const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
         </p>
         <div className="mt-auto border-t border-gray-100 pt-4 flex justify-between items-center">
           <span className="text-gray-400 text-xs font-bold">{post.date}</span>
-          <span className="material-symbols-outlined text-secondary hover:translate-x-1 transition-transform cursor-pointer text-lg">
+          <span className="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform text-lg">
             north_east
           </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

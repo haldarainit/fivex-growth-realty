@@ -3,22 +3,22 @@ import { locationOverviewStats } from '@/data/locationsData';
 
 export const LocationMarketStats: React.FC = () => {
   return (
-    <section className="bg-surface-container-lowest -mt-16 relative z-20 shadow-xl rounded-t-3xl border-x border-t border-outline-variant/10">
-      <div className="px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <section className="bg-white relative z-20 shadow-xl border-b border-gray-100">
+      <div className="px-4 sm:px-8 max-w-container-max mx-auto py-8 sm:py-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
           {locationOverviewStats.map((stat, idx) => (
             <div
               key={idx}
-              className={`text-center px-4 ${
+              className={`text-center px-4 py-4 sm:py-0 ${
                 idx < locationOverviewStats.length - 1
-                  ? 'md:border-r border-outline-variant/30'
+                  ? 'md:border-r border-gray-200'
                   : ''
               }`}
             >
-              <p className="text-secondary font-bold font-display text-3xl lg:text-4xl mb-1">
+              <p className="text-secondary font-bold font-display text-2xl sm:text-3xl lg:text-4xl mb-1 break-words">
                 {stat.value}
               </p>
-              <p className="text-on-surface-variant text-xs font-bold uppercase tracking-wider">
+              <p className="text-gray-500 text-[10px] sm:text-xs font-bold uppercase tracking-wider leading-tight">
                 {stat.label}
               </p>
             </div>

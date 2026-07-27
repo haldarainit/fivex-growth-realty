@@ -5,18 +5,27 @@ const mapImageUrl =
 
 export const ContactMapHero: React.FC = () => {
   return (
-    <section className="w-full h-[500px] relative overflow-hidden">
-      <div className="absolute inset-0 grayscale opacity-90 hover:grayscale-0 transition-all duration-700">
+    <section className="w-full relative overflow-hidden" style={{ height: 'clamp(260px, 50vw, 500px)' }}>
+      <div className="absolute inset-0">
         <img
           src={mapImageUrl}
           alt="Global Headquarters location map"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
         />
+        {/* Top fade for header overlap on mobile */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent pointer-events-none" />
       </div>
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white/80 backdrop-blur-md px-8 py-4 rounded-full flex items-center gap-3 shadow-xl border border-white/20">
+      {/* Badge overlay */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md px-6 py-3 rounded-full flex items-center gap-3 shadow-xl border border-white/40 whitespace-nowrap">
         <span className="material-symbols-outlined text-secondary text-xl">location_on</span>
         <span className="font-body text-sm font-bold uppercase tracking-widest text-primary">
           Global Headquarters
+        </span>
+      </div>
+      {/* Top label */}
+      <div className="absolute top-4 left-0 right-0 flex justify-center">
+        <span className="bg-black/60 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
+          Contact Our Experts | FIVEX GROWTH REALTY
         </span>
       </div>
     </section>

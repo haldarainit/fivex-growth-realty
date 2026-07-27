@@ -51,7 +51,7 @@ export const BlogFeaturedPost: React.FC = () => {
           <div>
             <a
               href={`/blog/${featured.id}`}
-              className="inline-flex items-center gap-2 text-secondary font-bold hover:gap-3 transition-all text-xs uppercase tracking-wider cursor-pointer"
+              className="inline-flex items-center gap-2 text-secondary font-bold hover:gap-3 transition-all text-xs uppercase tracking-wider cursor-pointer hover:underline"
             >
               Read Article
               <span className="material-symbols-outlined text-sm">arrow_forward</span>

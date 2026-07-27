@@ -2,7 +2,7 @@ import React from 'react';
 
 export const LocationHero: React.FC = () => {
   return (
-    <section className="relative h-[550px] lg:h-[614px] flex items-center overflow-hidden">
+    <section className="relative h-[400px] sm:h-[500px] lg:h-[580px] flex items-end sm:items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div
           className="w-full h-full bg-cover bg-center"
@@ -11,18 +11,19 @@ export const LocationHero: React.FC = () => {
           }}
           aria-label="High altitude aerial view of metropolitan growth corridor"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent" />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/60 to-primary/20" />
       </div>
-      <div className="relative z-10 px-4 sm:px-8 lg:px-margin-desktop max-w-container-max mx-auto w-full pt-16">
+      <div className="relative z-10 px-4 sm:px-8 max-w-container-max mx-auto w-full pb-10 sm:pb-0 pt-24 sm:pt-16">
         <div className="max-w-2xl text-white">
-          <span className="inline-block py-1 px-4 bg-secondary-fixed-dim text-on-secondary-fixed rounded-full text-xs font-bold mb-6 uppercase tracking-widest">
+          <span className="inline-block py-1 px-4 bg-secondary text-primary rounded-full text-xs font-bold mb-4 uppercase tracking-widest">
             Investment Portfolios
           </span>
-          <h1 className="font-display text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 leading-tight">
             Strategic Growth <br />
             Corridors of NCR
           </h1>
-          <p className="font-body text-white/80 text-lg mb-8 max-w-xl leading-relaxed">
+          <p className="font-body text-white/80 text-sm sm:text-base lg:text-lg mb-6 max-w-xl leading-relaxed">
             Identify and capitalize on the high-yield real estate markets across Delhi NCR. Data-driven insights for the sophisticated investor.
           </p>
         </div>
