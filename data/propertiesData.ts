@@ -1,4 +1,4 @@
-import { DetailedProperty } from '@/types';
+import { DetailedProperty, PropertyDetail } from '@/types';
 
 export const propertyTypesOptions = [
   'All Types',
@@ -30,6 +30,21 @@ export const amenityOptions = [
 ];
 
 export const detailedProperties: DetailedProperty[] = [
+  {
+    id: 'zenith-penthouse',
+    title: 'The Zenith Penthouse',
+    location: '5th Avenue, Sky-District, Manhattan, NY',
+    price: '$12,500,000',
+    badges: [
+      { label: 'For Sale', style: 'bg-secondary-fixed text-on-secondary-fixed' },
+      { label: 'New Listing', style: 'bg-white/80 backdrop-blur-md text-primary' },
+    ],
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCGmDhpvpQPBmjBdjUExep6e8-eG7iYFUKgJyvyALe3493d-d8cdUGf0Rvgd5_YXXRfo_8kJ4T_1_HydEi_ue3nZsJfuuJuwjFo9DQucT2pqq8E8SpQJuPK-3mA0X5F3-j599Hx79xMHbDts8Q6Gxydycne5orAvcSeFV2-VYiCcVGH0loE2Fcgs0wN0rBthBC3ORhr66syMJI26AXUxMOLfSB8YliKS_iptUa4piEQHlRhm1OAcp94WISLo4MggPLT9YNlUmJCPhve',
+    imageAlt: 'Luxury penthouse living room with double height glass walls overlooking skyline',
+    bedrooms: 4,
+    bathrooms: 5.5,
+    sqft: '6,400 SQFT',
+  },
   {
     id: 'prop-azure',
     title: 'The Azure Penthouse',
@@ -88,3 +103,83 @@ export const detailedProperties: DetailedProperty[] = [
     sqft: '3,800 SQFT',
   },
 ];
+
+export const samplePropertyDetail: PropertyDetail = {
+  id: 'zenith-penthouse',
+  title: 'The Zenith Penthouse',
+  location: '5th Avenue, Sky-District, Manhattan, NY',
+  price: '$12,500,000',
+  priceLabel: 'Starting From',
+  badges: [
+    { label: 'FOR SALE', style: 'bg-secondary-fixed text-on-secondary-fixed' },
+    { label: 'NEW LISTING', style: 'bg-surface/80 backdrop-blur-md text-primary border border-white/20' },
+  ],
+  bedrooms: 4,
+  bathrooms: 5.5,
+  sqft: '6,400 sqft',
+  galleryImages: [
+    {
+      url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCGmDhpvpQPBmjBdjUExep6e8-eG7iYFUKgJyvyALe3493d-d8cdUGf0Rvgd5_YXXRfo_8kJ4T_1_HydEi_ue3nZsJfuuJuwjFo9DQucT2pqq8E8SpQJuPK-3mA0X5F3-j599Hx79xMHbDts8Q6Gxydycne5orAvcSeFV2-VYiCcVGH0loE2Fcgs0wN0rBthBC3ORhr66syMJI26AXUxMOLfSB8YliKS_iptUa4piEQHlRhm1OAcp94WISLo4MggPLT9YNlUmJCPhve',
+      alt: 'Luxury penthouse living room with double height glass walls overlooking skyline',
+    },
+    {
+      url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDYAd_2ALd_vjywzXFESpXUCWAwR60SCISyvFmA5oHXYBXhjSZtq5E8dFVIpPoBV5_6jK71o9wMcFex3cZM8gSxT5kzDbyzc6AY89Ot_wqYVfyJ-U8Rop8IkpoXIfrlxKMstYKC_9xPW8g0sYwJP5s0cPfRNMvqvL0HXV7HbMhON6wzE9Hz8T6ocWoAK5oOCCDn1rUm9-EO_3ZSWJ1-73LAXVn8JFmXGbluP-5OfHUYzLwie22nHudvCzWamLBHgQlKmdX-5bx_2BaQ',
+      alt: 'Modern primary bedroom suite with panoramic city view',
+    },
+    {
+      url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBi95wK4gN2v1zHRlM4AkU5Vu2oGlRXaTT2tLAg72dq1pv_XyHBc0RtP4X8hTCmfixgqOzRZiqHw_bNyIqi80I6zJmcaHwQOuecFQJ96TQz2Tyc_IKFAQhNZZqpSOXAJhSRDtF25PaAx0tG6O-9uBSVP405qUE4mrVX4-mspkaHdkJ6O68Tk8Zn_gVDY3yAX5RCwbi9LOJmRuq1A1e1Mm7o_WJhd38XcoBreeVkaiT15QaQyIJPp4vurWQWsMnFp1Pswle6FFL-8-tp',
+      alt: 'Calacatta marble kitchen with matte black appliances',
+    },
+  ],
+  overview: [
+    'Experience the pinnacle of urban luxury in this bespoke penthouse, where architectural mastery meets unparalleled skyline views. Spanning two full levels, The Zenith Penthouse features a private 2,000 sqft rooftop terrace with an infinity-edge pool and outdoor kitchen.',
+    'Designed by award-winning architects, the interior showcases rare marbles, custom millwork, and state-of-the-art smart home integration. Every room is a masterpiece of light and space, offering a lifestyle reserved only for the world\'s most discerning individuals.',
+  ],
+  amenities: [
+    { icon: 'pool', title: 'Infinity Pool' },
+    { icon: 'fitness_center', title: 'Private Gym' },
+    { icon: 'local_parking', title: 'Valet Parking' },
+    { icon: 'wine_bar', title: 'Wine Cellar' },
+    { icon: 'theaters', title: 'Home Cinema' },
+    { icon: 'concierge', title: '24/7 Concierge' },
+    { icon: 'stream_apps', title: 'Smart Automation' },
+    { icon: 'fireplace', title: 'Custom Fireplace' },
+  ],
+  floorPlanImage:
+    'https://lh3.googleusercontent.com/aida-public/AB6AXuARiJictviYwZALFHTAzmgmQKeflCdxrp1Aqpq4bj_ig7Jq5TTHcX6pvXs1faS27pWGWXDB2EjSPqvdlTotVLZj_VAgI-zrFEvQku4urBojSMUmZBuXnesX7eHrPWi5DyDQCaZiYWSs-uBe5SCmehftiy6E8KCfmdYjO8HxE1e8Y0Q0zZWcb4lHU4ZZqW-rmiN2Ffe4XV8vr16_KDgMh7TOTE5aTpiGjCKNvLEw6iVPzq5bOK3EeR0aO8W5wOLsXMeBDk7BRJUjTmSv',
+  landmarks: [
+    { icon: 'park', name: 'Central Park South', distance: '0.4 Miles' },
+    { icon: 'shopping_bag', name: 'The Shops at Hudson Yards', distance: '1.2 Miles' },
+    { icon: 'restaurant', name: 'Michelin Star District', distance: '0.8 Miles' },
+  ],
+  agent: {
+    name: 'Alexander Sterling',
+    role: 'Senior Portfolio Manager',
+    image:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuAcLI_xP1nGapek3H-T9FOFUAtX4IeU0aBy6zvQQlVx9snEm69szsZTsi3-TDqy7EG7zVBfoe1Lu41iC2bciP5jQksKL3sJhC2JoaIVphJf-b-20fT0nke_tbLKNmNFLGhp471f52g54iZpqZzRfJZkunVGEUjNFAKhO_4rnn5qZRXKRuXbtx9SqtBxu4mAYtRf2n7OLuylcl7ZFj-rFwJPnsUtmeBmi8ErHpPdc5v-c6ULNQ1S3jHs8j9SptOO6y18meJz8GZdc6YP',
+  },
+  investmentInsight: {
+    title: 'Investment Insight',
+    description:
+      'Properties in the Sky-District have appreciated by an average of 12.4% annually over the last five years.',
+    trendLabel: 'High Growth Potential',
+  },
+};
+
+export const getPropertyDetailById = (id: string): PropertyDetail => {
+  const found = detailedProperties.find((p) => p.id === id);
+  if (found) {
+    return {
+      ...samplePropertyDetail,
+      id: found.id,
+      title: found.title,
+      location: found.location,
+      price: found.price,
+      bedrooms: found.bedrooms,
+      bathrooms: found.bathrooms,
+      sqft: found.sqft,
+      badges: found.badges,
+    };
+  }
+  return samplePropertyDetail;
+};

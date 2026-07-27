@@ -36,6 +36,75 @@ export interface DetailedProperty {
   isFavorite?: boolean;
 }
 
+export interface LandmarkItem {
+  icon: string;
+  name: string;
+  distance: string;
+}
+
+export interface DetailAmenity {
+  icon: string;
+  title: string;
+}
+
+export interface AgentInfo {
+  name: string;
+  role: string;
+  image: string;
+}
+
+export interface PropertyDetail {
+  id: string;
+  title: string;
+  location: string;
+  price: string;
+  priceLabel?: string;
+  badges: { label: string; style: string }[];
+  bedrooms: number;
+  bathrooms: number;
+  sqft: string;
+  galleryImages: { url: string; alt: string }[];
+  overview: string[];
+  amenities: DetailAmenity[];
+  floorPlanImage: string;
+  landmarks: LandmarkItem[];
+  agent: AgentInfo;
+  investmentInsight: {
+    title: string;
+    description: string;
+    trendLabel: string;
+  };
+}
+
+export interface ProjectItem {
+  id: string;
+  title: string;
+  location: string;
+  startingPrice: string;
+  yieldText: string;
+  description: string;
+  image: string;
+  imageAlt?: string;
+  badges: { label: string; style: string }[];
+}
+
+export interface UpcomingProjectItem {
+  id: string;
+  title: string;
+  subtitle: string;
+  image: string;
+  imageAlt?: string;
+  badge: { label: string; style: string };
+}
+
+export interface CompletedProjectItem {
+  id: string;
+  title: string;
+  completedYear: string;
+  image: string;
+  imageAlt?: string;
+}
+
 export interface TestimonialItem {
   id: string;
   quote: string;

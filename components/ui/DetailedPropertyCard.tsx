@@ -1,16 +1,15 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { DetailedProperty } from '@/types';
 
 interface DetailedPropertyCardProps {
   property: DetailedProperty;
-  onViewDetails?: () => void;
 }
 
 export const DetailedPropertyCard: React.FC<DetailedPropertyCardProps> = ({
   property,
-  onViewDetails,
 }) => {
   const [isFavorite, setIsFavorite] = useState(property.isFavorite || false);
 
@@ -56,7 +55,7 @@ export const DetailedPropertyCard: React.FC<DetailedPropertyCardProps> = ({
         <div className="p-6">
           <div className="flex justify-between items-start mb-2 gap-2">
             <h3 className="font-display font-semibold text-xl text-primary group-hover:text-secondary transition-colors">
-              {property.title}
+              <Link href={`/properties/${property.id}`}>{property.title}</Link>
             </h3>
             <p className="font-display text-[22px] text-secondary font-bold whitespace-nowrap">
               {property.price}
@@ -88,12 +87,12 @@ export const DetailedPropertyCard: React.FC<DetailedPropertyCardProps> = ({
       </div>
 
       <div className="px-6 pb-6">
-        <button
-          onClick={onViewDetails}
-          className="w-full py-4 border-2 border-primary text-primary font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all rounded-lg active:scale-95 cursor-pointer text-xs"
+        <Link
+          href={`/properties/${property.id}`}
+          className="w-full py-4 border-2 border-primary text-primary font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all rounded-lg active:scale-95 text-xs text-center block"
         >
           View Details
-        </button>
+        </Link>
       </div>
     </article>
   );
