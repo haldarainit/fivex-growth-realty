@@ -22,6 +22,20 @@ export interface PropertyItem {
   actionText: string;
 }
 
+export interface DetailedProperty {
+  id: string;
+  title: string;
+  location: string;
+  price: string;
+  badges: { label: string; style: string }[];
+  image: string;
+  imageAlt?: string;
+  bedrooms: number;
+  bathrooms: number;
+  sqft: string;
+  isFavorite?: boolean;
+}
+
 export interface TestimonialItem {
   id: string;
   quote: string;
@@ -59,4 +73,18 @@ export interface ContactInfoItem {
   icon: string;
   label: string;
   value: string;
+}
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  image: string;
+  imageAlt?: string;
+}
+
+export interface StatMetric {
+  value: number;
+  suffix?: string;
+  label: string;
 }

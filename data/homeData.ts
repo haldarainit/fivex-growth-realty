@@ -10,12 +10,12 @@ import {
 } from '@/types';
 
 export const navItems: NavItem[] = [
-  { label: 'Home', href: '#', active: true },
-  { label: 'About', href: '#about' },
-  { label: 'Properties', href: '#properties' },
-  { label: 'Services', href: '#services' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Properties', href: '/properties' },
+  { label: 'Services', href: '/#services' },
+  { label: 'FAQ', href: '/#faq' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 export const heroStats: HeroStatItem[] = [
