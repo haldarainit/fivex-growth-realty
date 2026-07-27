@@ -105,6 +105,37 @@ export interface CompletedProjectItem {
   imageAlt?: string;
 }
 
+export interface LocationHighlight {
+  icon: string;
+  title: string;
+  subtitle: string;
+}
+
+export interface LocationDestination {
+  id: string;
+  title: string;
+  sectorsText: string;
+  inventoryCount: string;
+  growthPotential: string;
+  image: string;
+  imageAlt?: string;
+  badges: { label: string; style: string }[];
+  highlights: LocationHighlight[];
+}
+
+export interface ServiceCardItem {
+  id: string;
+  title: string;
+  category?: string;
+  description: string;
+  features?: string[];
+  icon?: string;
+  image?: string;
+  imageAlt?: string;
+  badgeText?: string;
+  variant: 'large' | 'dark' | 'glass' | 'image' | 'light';
+}
+
 export interface TestimonialItem {
   id: string;
   quote: string;
