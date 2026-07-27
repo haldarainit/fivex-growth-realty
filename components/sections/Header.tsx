@@ -7,68 +7,65 @@ import { navItems } from '@/data/homeData';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
   const isHomePage = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Header background styling based on scroll state & current page
-  const headerBgClass = isScrolled
-    ? 'bg-white/95 backdrop-blur-md shadow-md py-3 border-b border-outline-variant/15'
-    : isHomePage
-    ? 'bg-transparent py-5 border-b border-white/10'
-    : 'bg-white/90 backdrop-blur-md shadow-sm py-4 border-b border-outline-variant/15';
+  // Close menu on route change
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
 
-  // Logo text colors
+  const headerBgClass = isScrolled
+    ? 'bg-white/95 backdrop-blur-md shadow-md py-3 border-b border-gray-200/60'
+    : isHomePage
+    ? 'bg-transparent py-4 sm:py-5 border-b border-white/10'
+    : 'bg-white/95 backdrop-blur-md shadow-sm py-3 sm:py-4 border-b border-gray-200/40';
+
   const logoFivexClass = isScrolled || !isHomePage ? 'text-primary' : 'text-white';
   const logoRealtyClass = isScrolled || !isHomePage ? 'text-primary' : 'text-white/90';
+  const hamburgerColor = isScrolled || !isHomePage ? 'text-primary' : 'text-white';
 
-  // Navigation link base colors
   const getNavLinkClass = (isActive: boolean) => {
+    const base = 'py-1 text-sm tracking-wide transition-colors whitespace-nowrap';
     if (isScrolled || !isHomePage) {
-      return isActive
-        ? 'text-secondary font-bold border-b-2 border-secondary'
-        : 'text-primary/80 font-medium hover:text-secondary';
-    } else {
-      return isActive
-        ? 'text-secondary font-bold border-b-2 border-secondary'
-        : 'text-white/90 font-medium hover:text-secondary';
+      return `${base} ${isActive ? 'text-secondary font-bold border-b-2 border-secondary' : 'text-primary/80 font-medium hover:text-secondary'}`;
     }
+    return `${base} ${isActive ? 'text-secondary font-bold border-b-2 border-secondary' : 'text-white/90 font-medium hover:text-secondary'}`;
   };
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${headerBgClass}`}>
-      <div className="flex items-center justify-between px-6 lg:px-14 max-w-[1440px] mx-auto">
+      <div className="flex items-center justify-between px-4 sm:px-6 xl:px-14 max-w-[1440px] mx-auto">
+        
         {/* ── Logo ── */}
         <Link
           href="/"
-          className="flex-shrink-0 flex items-center gap-1.5 font-display font-bold tracking-tight leading-none whitespace-nowrap"
+          className="flex-shrink-0 flex items-center gap-1 sm:gap-1.5 font-display font-bold tracking-tight leading-none whitespace-nowrap"
         >
-          <span className={`text-lg lg:text-xl ${logoFivexClass}`}>FIVEX</span>
-          <span className="text-secondary text-lg lg:text-xl">GROWTH</span>
-          <span className={`text-lg lg:text-xl hidden sm:inline ${logoRealtyClass}`}>REALTY</span>
+          <span className={`text-base sm:text-lg xl:text-xl ${logoFivexClass}`}>FIVEX</span>
+          <span className="text-secondary text-base sm:text-lg xl:text-xl">GROWTH</span>
+          <span className={`text-base sm:text-lg xl:text-xl hidden sm:inline ${logoRealtyClass}`}>REALTY</span>
         </Link>
 
-        {/* ── Desktop Nav Links (Clean text links, no block/button background) ── */}
-        <nav className="hidden lg:flex items-center gap-8 xl:gap-10 flex-1 justify-center">
+        {/* ── Desktop Nav — only visible at xl+ ── */}
+        <nav className="hidden xl:flex items-center gap-6 2xl:gap-10 flex-1 justify-center">
           {navItems.map((item) => {
             const isActive =
               pathname === item.href ||
               (item.href !== '/' && !item.href.includes('#') && pathname.startsWith(item.href));
-
             return (
               <Link
                 key={item.label}
                 href={item.href}
-                className={`py-1 text-sm tracking-wide transition-colors whitespace-nowrap ${getNavLinkClass(
-                  isActive
-                )}`}
+                className={getNavLinkClass(isActive)}
               >
                 {item.label}
               </Link>
@@ -76,83 +73,100 @@ export const Header: React.FC = () => {
           })}
         </nav>
 
-        {/* ── CTA Button ── */}
-        <div className="hidden lg:flex flex-shrink-0 items-center gap-3">
+        {/* ── Right side: CTA + Hamburger ── */}
+        <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+          {/* Enquire CTA — visible on desktop */}
           <Link
             href="/enquire"
-            className="bg-secondary text-primary px-6 py-2.5 rounded-lg font-bold text-xs uppercase tracking-wider hover:bg-gold hover:brightness-110 transition-all active:scale-95 shadow-md whitespace-nowrap"
+            className="hidden xl:inline-flex bg-secondary text-primary px-5 py-2.5 rounded-lg font-bold text-xs uppercase tracking-wider hover:brightness-110 transition-all active:scale-95 shadow-md whitespace-nowrap"
           >
             Enquire Now
           </Link>
-        </div>
 
-        {/* ── Mobile Hamburger Button ── */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className={`lg:hidden p-2 focus:outline-none cursor-pointer ${
-            isScrolled || !isHomePage ? 'text-primary' : 'text-white'
-          }`}
-          aria-label="Toggle Navigation"
-        >
-          <span className="material-symbols-outlined text-2xl">
-            {mobileMenuOpen ? 'close' : 'menu'}
-          </span>
-        </button>
+          {/* Compact Enquire CTA for tablet (md–xl) */}
+          <Link
+            href="/enquire"
+            className="hidden md:inline-flex xl:hidden bg-secondary text-primary px-4 py-2 rounded-lg font-bold text-[10px] uppercase tracking-wider hover:brightness-110 transition-all active:scale-95 whitespace-nowrap shadow-sm"
+          >
+            Enquire
+          </Link>
+
+          {/* Hamburger — visible below xl */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className={`xl:hidden p-2 rounded-lg focus:outline-none cursor-pointer transition-colors hover:bg-white/10 ${hamburgerColor}`}
+            aria-label="Toggle Navigation"
+            aria-expanded={menuOpen}
+          >
+            <span className="material-symbols-outlined text-2xl">
+              {menuOpen ? 'close' : 'menu'}
+            </span>
+          </button>
+        </div>
       </div>
 
-      {/* ── Mobile Navigation Drawer ── */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden bg-primary/98 backdrop-blur-xl border-t border-white/10 shadow-2xl text-white">
-          <div className="px-6 py-6 flex flex-col gap-2 max-w-[1440px] mx-auto">
-            {navItems.map((item) => {
-              const isActive =
-                pathname === item.href ||
-                (item.href !== '/' && !item.href.includes('#') && pathname.startsWith(item.href));
+      {/* ── Slide-down Drawer (Mobile + Tablet) ── */}
+      <div
+        className={`xl:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          menuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="bg-primary backdrop-blur-xl border-t border-white/10 shadow-2xl">
+          <div className="px-4 sm:px-6 py-5 max-w-[1440px] mx-auto">
 
-              return (
+            {/* Grid nav on tablet, list on mobile */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1 mb-4">
+              {navItems.map((item) => {
+                const isActive =
+                  pathname === item.href ||
+                  (item.href !== '/' && !item.href.includes('#') && pathname.startsWith(item.href));
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={`py-3 px-4 rounded-xl text-sm font-medium transition-all text-center ${
+                      isActive
+                        ? 'text-secondary font-bold bg-white/10 border border-secondary/30'
+                        : 'text-white/80 hover:text-secondary hover:bg-white/5'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </div>
+
+            {/* Extra links */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-1 mb-4 pt-3 border-t border-white/10">
+              {[
+                { href: '/testimonials', label: 'Testimonials' },
+                { href: '/faq', label: 'FAQ' },
+                { href: '/about', label: 'About Us' },
+                { href: '/contact', label: 'Contact' },
+              ].map((item) => (
                 <Link
-                  key={item.label}
+                  key={item.href}
                   href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`py-3 px-4 rounded-lg text-base font-medium transition-all ${
-                    isActive
-                      ? 'text-secondary font-bold bg-white/5 border-l-4 border-secondary'
-                      : 'text-white/80 hover:text-secondary hover:bg-white/5'
-                  }`}
+                  onClick={() => setMenuOpen(false)}
+                  className="py-2.5 px-4 text-sm font-medium text-white/60 hover:text-secondary transition-all text-center rounded-xl hover:bg-white/5"
                 >
                   {item.label}
                 </Link>
-              );
-            })}
-
-            {/* Mobile Extra Links */}
-            <div className="border-t border-white/10 pt-3 mt-2 flex flex-col gap-1">
-              <Link
-                href="/testimonials"
-                onClick={() => setMobileMenuOpen(false)}
-                className="py-2.5 px-4 text-sm font-medium text-white/70 hover:text-secondary transition-all"
-              >
-                Testimonials
-              </Link>
-              <Link
-                href="/faq"
-                onClick={() => setMobileMenuOpen(false)}
-                className="py-2.5 px-4 text-sm font-medium text-white/70 hover:text-secondary transition-all"
-              >
-                FAQ
-              </Link>
+              ))}
             </div>
 
+            {/* Full CTA */}
             <Link
               href="/enquire"
-              onClick={() => setMobileMenuOpen(false)}
-              className="mt-4 w-full bg-secondary text-primary py-3.5 rounded-xl font-bold text-sm uppercase tracking-wider text-center hover:bg-gold transition-all shadow-lg"
+              onClick={() => setMenuOpen(false)}
+              className="block w-full bg-secondary text-primary py-3.5 rounded-2xl font-extrabold text-sm uppercase tracking-wider text-center hover:brightness-110 transition-all shadow-lg"
             >
-              Enquire Now
+              Begin Your Enquiry →
             </Link>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 };

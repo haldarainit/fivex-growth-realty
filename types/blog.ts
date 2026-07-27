@@ -15,3 +15,10 @@ export interface BlogCategory {
   id: string;
   label: string;
 }
+
+export interface BlogContentItem {
+  author: string;
+  authorRole: string;
+  tags: string[];
+  body: string;
+}
