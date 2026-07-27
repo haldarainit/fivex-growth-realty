@@ -14,11 +14,11 @@ export const DetailedPropertyCard: React.FC<DetailedPropertyCardProps> = ({
   const [isFavorite, setIsFavorite] = useState(property.isFavorite || false);
 
   return (
-    <article className="property-card bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col justify-between">
+    <article className="property-card bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col justify-between w-full min-w-0">
       <div>
         {/* Card Image Area */}
-        <div className="relative h-64 sm:h-72 overflow-hidden">
-          <div className="absolute top-3.5 left-3.5 z-10 flex gap-1.5 flex-wrap">
+        <div className="relative h-56 sm:h-64 md:h-72 overflow-hidden">
+          <div className="absolute top-3.5 left-3.5 z-10 flex gap-1.5 flex-wrap max-w-[80%]">
             <span className="bg-[#fceba2] text-[#694f03] px-2.5 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-wider shadow-sm">
               FOR SALE
             </span>
@@ -38,7 +38,7 @@ export const DetailedPropertyCard: React.FC<DetailedPropertyCardProps> = ({
           <button
             onClick={() => setIsFavorite(!isFavorite)}
             aria-label="Save Property"
-            className="absolute top-3.5 right-3.5 z-10 p-2 rounded-full bg-white/70 hover:bg-white backdrop-blur-md text-gray-700 hover:text-red-500 transition-all shadow-sm cursor-pointer"
+            className="absolute top-3.5 right-3.5 z-10 p-2 rounded-full bg-white/80 hover:bg-white backdrop-blur-md text-gray-700 hover:text-red-500 transition-all shadow-sm cursor-pointer"
           >
             <span
               className="material-symbols-outlined text-lg block"
@@ -53,46 +53,55 @@ export const DetailedPropertyCard: React.FC<DetailedPropertyCardProps> = ({
         </div>
 
         {/* Card Details Area */}
-        <div className="p-5 sm:p-6 space-y-3">
-          <div className="flex justify-between items-start gap-2">
-            <div>
-              <h3 className="font-display font-bold text-lg sm:text-xl text-gray-900 group-hover:text-secondary transition-colors">
+        <div className="p-4 sm:p-5 lg:p-6 space-y-3">
+          <div className="flex flex-col xs:flex-row xs:items-start justify-between gap-1 sm:gap-2">
+            <div className="min-w-0 flex-1">
+              <h3 className="font-display font-bold text-base sm:text-lg lg:text-xl text-gray-900 group-hover:text-secondary transition-colors line-clamp-1">
                 <Link href={`/properties/${property.id}`}>{property.title}</Link>
               </h3>
-              <p className="text-gray-500 text-xs sm:text-sm flex items-center gap-1 mt-0.5">
+              <p className="text-gray-500 text-xs sm:text-sm flex items-center gap-1 mt-0.5 min-w-0">
                 <span className="material-symbols-outlined text-base text-secondary flex-shrink-0">
                   location_on
                 </span>
-                <span className="line-clamp-1">{property.location}</span>
+                <span className="truncate">{property.location}</span>
               </p>
             </div>
-            <p className="font-display text-lg sm:text-xl text-[#c5a059] font-extrabold whitespace-nowrap">
-              {property.price.includes('*') ? property.price : `${property.price}*`}
-            </p>
+            <div className="text-left xs:text-right flex-shrink-0 pt-0.5 xs:pt-0">
+              <span className="font-display text-base sm:text-lg lg:text-xl text-[#c5a059] font-extrabold whitespace-nowrap">
+                {property.price.includes('*') ? property.price : `${property.price}*`}
+              </span>
+            </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-2 py-3 border-y border-gray-100 text-center text-xs font-bold text-gray-600">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-1">
-              <span className="material-symbols-outlined text-base text-secondary">bed</span>
-              <span>{property.bedrooms} BHK</span>
+          {/* 3 Specs Items Row */}
+          <div className="grid grid-cols-3 gap-1 sm:gap-2 py-3 border-y border-gray-100 text-center text-[11px] sm:text-xs font-bold text-gray-600">
+            <div className="flex items-center justify-center gap-1 min-w-0">
+              <span className="material-symbols-outlined text-sm sm:text-base text-secondary flex-shrink-0">
+                bed
+              </span>
+              <span className="truncate">{property.bedrooms} BHK</span>
             </div>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-1">
-              <span className="material-symbols-outlined text-base text-secondary">square_foot</span>
-              <span>{property.sqft}</span>
+            <div className="flex items-center justify-center gap-1 min-w-0">
+              <span className="material-symbols-outlined text-sm sm:text-base text-secondary flex-shrink-0">
+                square_foot
+              </span>
+              <span className="truncate">{property.sqft}</span>
             </div>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-1">
-              <span className="material-symbols-outlined text-base text-secondary">directions_car</span>
-              <span>3 Park</span>
+            <div className="flex items-center justify-center gap-1 min-w-0">
+              <span className="material-symbols-outlined text-sm sm:text-base text-secondary flex-shrink-0">
+                directions_car
+              </span>
+              <span className="truncate">3 Park</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Action Buttons Row - Matching Image 2 */}
-      <div className="px-5 sm:px-6 pb-6 pt-1 flex items-center gap-2.5">
+      {/* Action Buttons Row */}
+      <div className="px-4 sm:px-5 lg:px-6 pb-5 pt-1 flex items-center gap-2">
         <Link
           href={`/properties/${property.id}`}
-          className="flex-1 py-3 bg-black text-white font-extrabold text-xs uppercase tracking-wider rounded-xl hover:bg-gray-800 transition-all text-center cursor-pointer shadow-sm"
+          className="flex-1 py-3 px-3 bg-black text-white font-extrabold text-[11px] sm:text-xs uppercase tracking-wider rounded-xl hover:bg-gray-800 transition-all text-center cursor-pointer shadow-sm whitespace-nowrap overflow-hidden text-ellipsis block min-w-0"
         >
           View Details
         </Link>

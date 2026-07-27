@@ -6,12 +6,19 @@
   --color-gold: #C5A059;
   --color-on-background: #191c1d;
   --color-surface: #f8f9fa;
-  --color-surface-container: #edeeef;
-  --color-surface-container-low: #f3f4f5;
-  --color-outline: #75777e;
-  --color-outline-variant: #c5c6cd;
+  --color-surface-container: #f1f3f5;
+  --color-surface-container-low: #f8f9fa;
+  --color-surface-container-high: #e9ecef;
+  --color-surface-container-highest: #dee2e6;
+  --color-on-surface-variant: #495057;
+  --color-outline: #6c757d;
+  --color-outline-variant: #ced4da;
   --color-secondary-fixed-dim: #e9c176;
   --color-on-secondary-fixed: #251a00;
+  --color-primary-container: #1b2a4a;
+  --color-on-primary-container: #ffffff;
+  --color-secondary-container: #fef9ed;
+  --color-on-secondary-container: #594411;
 
   --font-display: var(--font-montserrat), Montserrat, sans-serif;
   --font-body: var(--font-inter), Inter, sans-serif;

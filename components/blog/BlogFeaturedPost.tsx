@@ -6,27 +6,27 @@ export const BlogFeaturedPost: React.FC = () => {
   if (!featured) return null;
 
   return (
-    <section className="max-w-container-max mx-auto px-4 sm:px-8 lg:px-margin-desktop mb-20">
-      <div className="mb-10">
-        <h1 className="font-display text-4xl lg:text-6xl font-bold text-primary mb-4">
+    <section className="max-w-container-max mx-auto px-4 sm:px-8 mb-12 sm:mb-16 lg:mb-20 overflow-x-hidden">
+      <div className="mb-8 sm:mb-10">
+        <h1 className="font-display text-3xl sm:text-4xl lg:text-6xl font-extrabold text-primary mb-3">
           Market Insights
         </h1>
-        <p className="text-on-surface-variant max-w-2xl font-body text-lg leading-relaxed">
+        <p className="text-gray-600 max-w-2xl font-body text-sm sm:text-base lg:text-lg leading-relaxed">
           Expert analysis, investment strategies, and the latest trends in high-end real estate and luxury living.
         </p>
       </div>
 
-      <div className="relative group overflow-hidden rounded-xl bg-white shadow-md border border-outline-variant/10 flex flex-col md:flex-row h-auto md:h-[500px]">
+      <div className="relative group overflow-hidden rounded-3xl bg-white shadow-sm border border-gray-100 flex flex-col md:flex-row h-auto">
         {/* Image Side */}
-        <div className="md:w-2/3 relative overflow-hidden h-64 md:h-full">
+        <div className="md:w-7/12 relative overflow-hidden h-60 sm:h-72 md:h-auto min-h-[260px]">
           <img
             src={featured.image}
             alt={featured.imageAlt || featured.title}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           {featured.featuredBadge && (
-            <div className="absolute top-6 left-6">
-              <span className="bg-secondary-fixed text-on-secondary-fixed px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase">
+            <div className="absolute top-4 left-4">
+              <span className="bg-secondary text-primary px-3.5 py-1.5 rounded-full text-[10px] sm:text-xs font-extrabold tracking-widest uppercase shadow-md">
                 {featured.featuredBadge}
               </span>
             </div>
@@ -34,22 +34,24 @@ export const BlogFeaturedPost: React.FC = () => {
         </div>
 
         {/* Text Side */}
-        <div className="md:w-1/3 p-8 sm:p-12 flex flex-col justify-center bg-white">
-          <div className="flex items-center gap-4 text-on-surface-variant mb-6 text-xs font-bold uppercase tracking-wider">
-            <span>{featured.category}</span>
-            <span className="w-1 h-1 bg-outline-variant rounded-full" />
-            <span>{featured.date}</span>
+        <div className="md:w-5/12 p-6 sm:p-8 lg:p-12 flex flex-col justify-between bg-white">
+          <div>
+            <div className="flex items-center gap-3 text-gray-400 mb-4 text-xs font-bold uppercase tracking-wider">
+              <span>{featured.category}</span>
+              <span className="w-1 h-1 bg-gray-300 rounded-full" />
+              <span>{featured.date}</span>
+            </div>
+            <h2 className="font-display text-xl sm:text-2xl font-bold mb-4 leading-snug hover:text-secondary transition-colors cursor-pointer text-gray-900">
+              {featured.title}
+            </h2>
+            <p className="text-gray-600 mb-6 font-body text-xs sm:text-sm line-clamp-3 leading-relaxed">
+              {featured.excerpt}
+            </p>
           </div>
-          <h2 className="font-display text-2xl font-bold mb-6 leading-tight hover:text-secondary transition-colors cursor-pointer">
-            {featured.title}
-          </h2>
-          <p className="text-on-surface-variant mb-8 font-body text-base line-clamp-3 leading-relaxed">
-            {featured.excerpt}
-          </p>
-          <div className="mt-auto">
+          <div>
             <a
               href={`/blog/${featured.id}`}
-              className="inline-flex items-center gap-2 text-secondary font-bold hover:gap-4 transition-all group/btn text-xs uppercase tracking-wider"
+              className="inline-flex items-center gap-2 text-secondary font-bold hover:gap-3 transition-all text-xs uppercase tracking-wider cursor-pointer"
             >
               Read Article
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
