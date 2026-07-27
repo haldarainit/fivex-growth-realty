@@ -22,13 +22,13 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   const subtitleColor = lightTheme ? 'text-white/50' : 'text-primary/70';
 
   return (
-    <div className={`${alignmentClass} mb-20 space-y-4 ${className}`}>
+    <div className={`${alignmentClass} mb-12 md:mb-20 space-y-4 ${className}`}>
       {badge && (
         <span className="text-secondary font-bold tracking-[0.4em] uppercase text-xs">
           {badge}
         </span>
       )}
-      <h2 className={`font-display text-4xl lg:text-5xl ${textColor} font-bold`}>
+      <h2 className={`font-display text-3xl sm:text-4xl lg:text-5xl ${textColor} font-bold`}>
         {title}
       </h2>
       {subtitle && (

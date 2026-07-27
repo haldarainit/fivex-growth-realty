@@ -5,11 +5,11 @@ import { aboutPillars } from '@/data/homeData';
 export const AboutSection: React.FC = () => {
   return (
     <SectionContainer id="about" bgStyle="bg-white">
-      <div className="grid lg:grid-cols-2 gap-24 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
         {/* Left Column: Image Showcase */}
         <div className="relative group">
           <div className="absolute -top-10 -left-10 w-40 h-40 border-t-2 border-l-2 border-secondary/30 hidden md:block" />
-          <div className="relative rounded-2xl overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] h-[500px] lg:h-[600px]">
+          <div className="relative rounded-2xl overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] h-[320px] sm:h-[420px] lg:h-[600px]">
             <img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwie3Yis0_DedQ8neA4Y31-wI_eAAuON9zB0s3Uoh-jUM3FCIyn8bOMxHa2W84WVfR3fyPQ_NwpPYVI8-lB1nLzEiEm8dngVTollSyy7m0NA5Tghri-Ckx6eYpaTJFuqD96pJ5AxjPUCInOsalGv1QbFtPKAk-3cWs6guRpCAbQZL5BjGrjaJ5_umocX2xZpmbcghc0ZHlC1hn-7Go19DxlAzkWAiScc15QgOg-jo9Gk1KGAVP50cLcprx6NQMQRDnKjdZ_aXcOp8R"
               alt="Elite Office Interior"
@@ -30,9 +30,9 @@ export const AboutSection: React.FC = () => {
             <span className="text-secondary font-bold text-xs uppercase tracking-[0.3em]">
               Our Legacy
             </span>
-            <h2 className="font-display text-4xl lg:text-5xl text-primary font-bold">
-              Redefining Real Estate <br />
-              Consultancy in India
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-primary font-bold">
+              Redefining Real Estate{' '}
+              <span className="block">Consultancy in India</span>
             </h2>
             <div className="w-20 h-1 bg-secondary mt-6" />
           </div>
@@ -59,12 +59,12 @@ export const AboutSection: React.FC = () => {
             ))}
           </div>
 
-          <button className="text-primary font-bold flex items-center gap-3 group pt-4 cursor-pointer hover:text-secondary transition-colors">
+          <a href="/about" className="text-primary font-bold flex items-center gap-3 group pt-4 cursor-pointer hover:text-secondary transition-colors">
             <span>Learn More About Our Story</span>
             <span className="material-symbols-outlined group-hover:translate-x-2 transition-transform text-secondary">
               arrow_forward
             </span>
-          </button>
+          </a>
         </div>
       </div>
     </SectionContainer>

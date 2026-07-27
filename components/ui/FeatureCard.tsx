@@ -7,7 +7,7 @@ interface FeatureCardProps {
 
 export const FeatureCard: React.FC<FeatureCardProps> = ({ feature }) => {
   return (
-    <div className="glass-card p-10 rounded-2xl hover:bg-white/10 transition-all group border-white/5 flex flex-col justify-start">
+    <div className="glass-card p-7 md:p-10 rounded-3xl hover:bg-white/10 transition-all group border border-white/5 flex flex-col justify-start">
       <span
         className="material-symbols-outlined text-5xl text-secondary mb-8 block"
         style={{ fontVariationSettings: '"FILL" 1' }}
