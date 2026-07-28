@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Inter } from "next/font/google";
 import "./globals.css";
+import ChatWidget from "@/components/ui/ChatWidget";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -39,8 +40,9 @@ export default function RootLayout({
       </head>
       <body className="bg-surface text-on-background font-body min-h-screen flex flex-col antialiased overflow-x-hidden">
         {children}
+        {/* Global Chat Widget — renders on every page, bottom-right corner */}
+        <ChatWidget />
       </body>
-
     </html>
   );
 }

@@ -24,12 +24,10 @@
   --font-body: var(--font-inter), Inter, sans-serif;
 
   --spacing-gutter: 24px;
-  /* Responsive desktop margin: 16px on mobile, 40px on tablet, 64px on desktop */
   --spacing-margin-desktop: clamp(16px, 4vw, 64px);
   --spacing-margin-mobile: 16px;
   --spacing-unit: 8px;
   --spacing-container-max: 1280px;
-  /* Extra-small breakpoint for compact phones */
   --breakpoint-xs: 24rem;
 
   --radius-default: 0.5rem;
@@ -105,6 +103,70 @@ html {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  /* Infinite marquee for partner logos */
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 35s linear infinite;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+  .marquee-wrapper {
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  /* Chat widget pulse */
+  .chat-pulse {
+    animation: chat-pulse 2s ease-in-out infinite;
+  }
+
+  /* Section reveal base */
+  .section-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .section-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Gold shimmer effect */
+  .gold-shimmer {
+    background: linear-gradient(
+      90deg,
+      #C5A059 0%,
+      #e9c176 50%,
+      #C5A059 100%
+    );
+    background-size: 200% auto;
+    animation: gold-shimmer 3s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Gradient border */
+  .gradient-border {
+    position: relative;
+    background: white;
+  }
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, #C5A059, transparent 60%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
 }
 
 @keyframes hero-fade-up {
@@ -126,6 +188,45 @@ html {
   50% {
     transform: translateY(-8px);
   }
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes chat-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(197, 160, 89, 0);
+  }
+}
+
+@keyframes gold-shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 details > summary {
