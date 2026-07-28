@@ -60,59 +60,72 @@ export default async function JobDetailPage({ params }: { params: Promise<{ slug
         </div>
 
         <div className="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-16 py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[420px_minmax(0,1fr)] gap-8 xl:gap-12 items-start">
             {/* Left: Application Form */}
-            <div>
-              <h2 className="font-display font-bold text-2xl text-primary mb-6">Apply for This Position</h2>
+            <div className="lg:sticky lg:top-28">
               <ApplicationForm jobTitle={job.title} jobSlug={job.slug} />
             </div>
 
             {/* Right: Job Description */}
-            <div className="space-y-6">
+            <div className="space-y-6 lg:max-h-[calc(100svh-8rem)] lg:overflow-y-auto lg:pr-2">
               {/* Description */}
-              <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+              <div className="bg-white rounded-2xl p-6 sm:p-7 border border-gray-100 shadow-sm">
                 <h3 className="font-display font-bold text-primary text-lg mb-4">About the Role</h3>
                 {job.fullDescription.map((para, i) => (
-                  <p key={i} className="text-gray-600 text-sm leading-relaxed mb-3">{para}</p>
+                  <p key={i} className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4">{para}</p>
                 ))}
               </div>
 
               {/* Responsibilities */}
-              <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+              <div className="bg-white rounded-2xl p-6 sm:p-7 border border-gray-100 shadow-sm">
                 <h3 className="font-display font-bold text-primary text-lg mb-4">Responsibilities</h3>
-                <ul className="space-y-2">
+                <ul className="space-y-2.5">
                   {job.responsibilities.map((r) => (
                     <li key={r} className="flex items-start gap-2">
                       <span className="w-4 h-4 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <span className="material-symbols-outlined text-secondary text-[10px]" style={{ fontVariationSettings: '"FILL" 1' }}>arrow_right</span>
                       </span>
-                      <span className="text-gray-600 text-sm">{r}</span>
+                      <span className="text-gray-600 text-sm sm:text-base">{r}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* Requirements */}
-              <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+              <div className="bg-white rounded-2xl p-6 sm:p-7 border border-gray-100 shadow-sm">
                 <h3 className="font-display font-bold text-primary text-lg mb-4">Requirements</h3>
-                <ul className="space-y-2">
+                <ul className="space-y-2.5">
                   {job.requirements.map((r) => (
                     <li key={r} className="flex items-start gap-2">
                       <span className="material-symbols-outlined text-secondary text-sm flex-shrink-0 mt-0.5" style={{ fontVariationSettings: '"FILL" 1' }}>check_circle</span>
-                      <span className="text-gray-600 text-sm">{r}</span>
+                      <span className="text-gray-600 text-sm sm:text-base">{r}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* Skills */}
-              <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+              <div className="bg-white rounded-2xl p-6 sm:p-7 border border-gray-100 shadow-sm">
                 <h3 className="font-display font-bold text-primary text-lg mb-4">Skills Required</h3>
                 <div className="flex flex-wrap gap-2">
                   {job.skills.map((skill) => (
                     <span key={skill} className="text-xs px-3 py-1.5 bg-secondary/10 text-secondary rounded-full font-semibold">{skill}</span>
                   ))}
                 </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {[
+                  { icon: 'forum', title: 'HR Screening', desc: 'A short introductory call to understand your experience and role expectations.' },
+                  { icon: 'business_center', title: 'Role Evaluation', desc: 'A practical conversation with the hiring manager around domain fit and delivery style.' },
+                  { icon: 'workspace_premium', title: 'Final Discussion', desc: 'Leadership review, culture fit, and final compensation alignment before the offer.' },
+                ].map((step) => (
+                  <div key={step.title} className="rounded-2xl border border-gray-100 bg-white p-4 sm:p-5 shadow-sm">
+                    <span className="material-symbols-outlined text-secondary text-2xl" style={{ fontVariationSettings: '"FILL" 1' }}>{step.icon}</span>
+                    <h4 className="mt-3 font-display text-sm sm:text-base font-bold text-primary">{step.title}</h4>
+                    <p className="mt-2 text-xs sm:text-sm leading-relaxed text-gray-600">{step.desc}</p>
+                  </div>
+                ))}
               </div>
 
               {/* Benefits */}

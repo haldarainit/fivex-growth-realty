@@ -42,9 +42,9 @@ export const HeroSection: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/65 to-primary/82" />
       </div>
 
-      {/* Left Social Icons Floating Strip (Desktop View - Using Real PNG Icons) */}
-      <div className="hidden lg:flex flex-col items-center gap-3.5 fixed left-5 top-1/2 -translate-y-1/2 z-30">
-        <div className="w-px h-10 bg-secondary/40" />
+      {/* Left Social Icons Floating Strip - only inside hero */}
+      <div className="hidden xl:flex flex-col items-center gap-5 absolute left-4 2xl:left-6 top-1/2 -translate-y-1/2 z-20 pointer-events-none">
+        <div className="w-px h-12 bg-secondary/40" />
         {socialLinks.map((s) => (
           <a
             key={s.platform}
@@ -52,20 +52,20 @@ export const HeroSection: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             title={s.platform}
-            className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center p-2 hover:bg-secondary/30 hover:border-secondary transition-all shadow-md group"
+            className="pointer-events-auto inline-flex items-center justify-center w-8 h-8 transition-all hover:scale-110 group"
           >
             <img
               src={s.iconImg}
               alt={s.platform}
-              className="w-5 h-5 object-contain brightness-0 invert group-hover:brightness-100 transition-all"
+              className="w-5 h-5 2xl:w-6 2xl:h-6 object-contain opacity-95 group-hover:opacity-100 transition-all"
             />
           </a>
         ))}
-        <div className="w-px h-10 bg-secondary/40" />
+        <div className="w-px h-12 bg-secondary/40" />
       </div>
 
       {/* Main Content Area - Center Section */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center px-4 sm:px-8 lg:px-16 lg:pl-20 max-w-[1280px] mx-auto w-full pt-20 sm:pt-24 lg:pt-16 pb-2">
+      <div className="relative z-10 flex-1 flex flex-col justify-center px-4 sm:px-8 lg:px-16 xl:pl-24 max-w-[1280px] mx-auto w-full pt-20 sm:pt-24 lg:pt-16 pb-2">
         <div className="max-w-3xl flex flex-col gap-3 sm:gap-4 mx-auto md:mx-0 items-center md:items-start text-center md:text-left">
 
           {/* Gold Badge Pill */}
@@ -159,7 +159,7 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Hero Bottom Search Container (Desktop) */}
-      <div className="hidden md:block relative z-20 w-full px-4 sm:px-8 lg:px-16 lg:pl-20 max-w-[1280px] mx-auto pb-4 lg:pb-6 pt-1">
+      <div className="hidden md:block relative z-20 w-full px-4 sm:px-8 lg:px-16 xl:pl-24 max-w-[1280px] mx-auto pb-4 lg:pb-6 pt-1">
         <form
           onSubmit={handleSearch}
           className="glass-card bg-primary/75 backdrop-blur-2xl p-4 lg:p-5 rounded-2xl shadow-2xl flex flex-col lg:flex-row items-stretch gap-3 border border-white/20"

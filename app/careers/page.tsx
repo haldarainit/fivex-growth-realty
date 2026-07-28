@@ -24,10 +24,10 @@ export default function CareersPage() {
           <div className="relative max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-16">
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}>
               <span className="text-secondary text-xs font-extrabold uppercase tracking-widest">Join the Team</span>
-              <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white mt-4 tracking-tight leading-tight max-w-3xl">
+              <h1 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mt-4 tracking-tight leading-tight max-w-3xl">
                 Build Your Career at<br /><span className="text-secondary">FIVEX Growth Realty</span>
               </h1>
-              <p className="text-white/60 text-lg mt-5 max-w-xl leading-relaxed">
+              <p className="text-white/70 text-sm sm:text-base mt-5 max-w-xl leading-relaxed">
                 Join India&apos;s most respected premium real estate team. We&apos;re looking for driven, ethical, and talented professionals to grow with us.
               </p>
               <div className="flex gap-4 mt-8">
@@ -48,7 +48,7 @@ export default function CareersPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
                 <span className="text-secondary text-xs font-extrabold uppercase tracking-widest">Why Join Us</span>
-                <h2 className="font-display font-bold text-3xl text-primary mt-3 mb-5">More Than a Job — A Career</h2>
+                <h2 className="font-display font-bold text-2xl sm:text-3xl text-primary mt-3 mb-5">More Than a Job — A Career</h2>
                 <ul className="space-y-3">
                   {whyJoinUs.map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
@@ -72,7 +72,7 @@ export default function CareersPage() {
           <div className="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-16">
             <div className="text-center mb-12">
               <span className="text-secondary text-xs font-extrabold uppercase tracking-widest">Perks & Benefits</span>
-              <h2 className="font-display font-bold text-3xl text-primary mt-3">What We Offer</h2>
+              <h2 className="font-display font-bold text-2xl sm:text-3xl text-primary mt-3">What We Offer</h2>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
               {careerBenefits.map((b, i) => (
@@ -101,7 +101,7 @@ export default function CareersPage() {
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
               <div>
                 <span className="text-secondary text-xs font-extrabold uppercase tracking-widest">Openings</span>
-                <h2 className="font-display font-bold text-3xl text-primary mt-2">Current Positions</h2>
+                <h2 className="font-display font-bold text-2xl sm:text-3xl text-primary mt-2">Current Positions</h2>
               </div>
               <div className="flex gap-2 flex-wrap">
                 {jobDepartments.map((dept) => (

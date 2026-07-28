@@ -29,7 +29,7 @@ const Section: React.FC<{
     <section
       ref={ref}
       id={id}
-      className={`scroll-mt-32 sm:scroll-mt-36 w-full py-16 sm:py-20 lg:py-24 border-b border-gray-100 ${
+      className={`scroll-mt-32 sm:scroll-mt-36 w-full py-12 sm:py-14 lg:py-16 border-b border-gray-100 ${
         dark ? 'bg-primary text-white border-none' : 'bg-white text-primary'
       }`}
     >
@@ -38,7 +38,7 @@ const Section: React.FC<{
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-10 sm:mb-12"
+          className="mb-7 sm:mb-9"
         >
           {badge && (
             <span
@@ -51,7 +51,7 @@ const Section: React.FC<{
             </span>
           )}
           <h2
-            className={`font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight ${
+            className={`font-display font-extrabold text-xl sm:text-2xl lg:text-3xl tracking-tight ${
               dark ? 'text-white' : 'text-primary'
             }`}
           >
@@ -59,7 +59,7 @@ const Section: React.FC<{
           </h2>
           {subtitle && (
             <p
-              className={`mt-4 text-base sm:text-lg lg:text-xl leading-relaxed max-w-3xl font-medium ${
+              className={`mt-2.5 text-xs sm:text-sm lg:text-base leading-relaxed max-w-3xl font-medium ${
                 dark ? 'text-white/80' : 'text-gray-600'
               }`}
             >
@@ -163,7 +163,7 @@ const FaqItem: React.FC<{ faq: typeof faqs[0]; index: number }> = ({ faq, index 
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between px-6 py-5 text-left bg-white hover:bg-gray-50 transition-colors cursor-pointer"
       >
-        <span className="font-bold text-primary text-base sm:text-lg pr-4">{faq.question}</span>
+        <span className="font-bold text-primary text-sm sm:text-base pr-4">{faq.question}</span>
         <span
           className={`material-symbols-outlined text-secondary font-bold text-xl flex-shrink-0 transition-transform duration-300 ${
             open ? 'rotate-180' : ''
@@ -178,7 +178,7 @@ const FaqItem: React.FC<{ faq: typeof faqs[0]; index: number }> = ({ faq, index 
         transition={{ duration: 0.3 }}
         className="overflow-hidden"
       >
-        <div className="px-6 pb-5 text-base text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+        <div className="px-6 pb-5 text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
           {faq.answer}
         </div>
       </motion.div>
@@ -327,7 +327,7 @@ export default function AboutPage() {
       <Header />
       <main className="flex-grow pt-20 sm:pt-24">
         {/* Full-Width Hero Banner */}
-        <div className="bg-primary py-20 sm:py-28 relative overflow-hidden w-full">
+        <div className="bg-primary py-18 sm:py-22 lg:py-24 relative overflow-hidden w-full">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(197,160,89,0.18),transparent_60%)]" />
           <div className="relative max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16">
             <motion.div
@@ -339,26 +339,40 @@ export default function AboutPage() {
                 <span className="w-8 h-px bg-secondary" />
                 About FIVEX Growth Realty
               </span>
-              <h1 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl text-white tracking-tight leading-tight max-w-4xl">
+              <h1 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.08] max-w-4xl">
                 India&apos;s Most Trusted <br />
                 <span className="text-secondary">Real Estate Partner</span>
               </h1>
-              <p className="mt-6 text-white/90 text-base sm:text-xl max-w-3xl leading-relaxed font-medium">
+              <p className="mt-4 text-white/88 text-sm sm:text-base lg:text-lg max-w-3xl leading-relaxed font-medium">
                 Since 2010, FIVEX Growth Realty has been at the forefront of premium property advisory — combining deep market intelligence, 42-point property verification, and dedicated client advisory to deliver unmatched real estate outcomes.
               </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href="#who-we-are"
+                  className="inline-flex items-center justify-center rounded-xl bg-secondary px-5 py-3 text-xs font-extrabold uppercase tracking-wider text-primary shadow-lg transition-all hover:brightness-110"
+                >
+                  Explore About Us
+                </a>
+                <a
+                  href="#our-team"
+                  className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/10 px-5 py-3 text-xs font-extrabold uppercase tracking-wider text-white backdrop-blur-md transition-all hover:bg-white/15"
+                >
+                  Meet Our Team
+                </a>
+              </div>
             </motion.div>
 
             {/* Stats strip */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mt-14">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 mt-10">
               {aboutStatsMetrics.map((stat, i) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 + i * 0.1 }}
-                  className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/15 shadow-xl"
+                  className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15 shadow-xl"
                 >
-                  <p className="font-display font-extrabold text-3xl sm:text-4xl text-secondary">
+                  <p className="font-display font-extrabold text-xl sm:text-2xl text-secondary">
                     {stat.value}
                     {stat.suffix}
                   </p>
@@ -373,12 +387,12 @@ export default function AboutPage() {
 
         {/* Desktop Layout Container with Sticky Sidebar alongside Full-Width Sections */}
         <div className="relative max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 pt-12 sm:pt-14">
-          <div className="lg:flex lg:gap-12 items-start">
+          <div className="lg:flex lg:gap-10 items-start">
             {/* Sticky Navigation Sidebar */}
             <AboutSidebar activeSection={activeSection} />
 
             {/* Main Full-Width Content Container */}
-            <div className="flex-1 min-w-0 space-y-0">
+            <div className="flex-1 min-w-0 space-y-0 lg:max-h-[calc(100svh-8rem)] lg:overflow-y-auto lg:pr-2">
 
               {/* 1. Who We Are */}
               <Section
@@ -387,8 +401,8 @@ export default function AboutPage() {
                 title="Who We Are"
                 subtitle="We are more than a brokerage — we are your long-term real estate growth partner."
               >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                  <div className="space-y-5 text-gray-700 text-base sm:text-lg leading-relaxed font-medium">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
+                  <div className="space-y-4 text-gray-700 text-sm sm:text-base leading-relaxed font-medium">
                     <p>
                       FIVEX Growth Realty was founded with a singular vision: to bring the highest standards of international real estate advisory to Indian buyers and investors. What started as a boutique consultancy in Noida has grown into one of India&apos;s most respected premium real estate brokerages.
                     </p>
@@ -398,16 +412,16 @@ export default function AboutPage() {
                     <p>
                       Our proprietary 42-point verification process, deep developer relationships, and dedicated advisory team ensure that every FIVEX client receives an unparalleled concierge experience — from first consultation to final registration and beyond.
                     </p>
-                    <div className="grid grid-cols-2 gap-4 pt-4">
+                    <div className="grid grid-cols-2 gap-3 pt-3">
                       {[
                         { icon: 'verified', text: '42-Point Verification' },
                         { icon: 'handshake', text: 'Developer Partnerships' },
                         { icon: 'support_agent', text: 'Dedicated Advisors' },
                         { icon: 'gavel', text: 'Legal Advisory' },
                       ].map((item) => (
-                        <div key={item.text} className="flex items-center gap-3 bg-surface-container-low p-3.5 rounded-xl border border-gray-100">
+                        <div key={item.text} className="flex items-center gap-2.5 bg-surface-container-low p-3 rounded-xl border border-gray-100">
                           <span
-                            className="material-symbols-outlined text-secondary text-xl flex-shrink-0"
+                            className="material-symbols-outlined text-secondary text-lg flex-shrink-0"
                             style={{ fontVariationSettings: '"FILL" 1' }}
                           >
                             {item.icon}
@@ -428,7 +442,7 @@ export default function AboutPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/50 to-transparent" />
                     <div className="absolute bottom-6 left-6 bg-white/20 backdrop-blur-md rounded-2xl p-4 border border-white/30 text-white">
-                      <p className="font-extrabold text-lg">HQ Sector 62, Noida</p>
+                      <p className="font-extrabold text-base sm:text-lg">HQ Sector 62, Noida</p>
                       <p className="text-white/80 text-xs font-semibold">Established 2010</p>
                     </div>
                   </div>
@@ -442,7 +456,7 @@ export default function AboutPage() {
                 title="Leadership Team"
                 subtitle="Seasoned professionals with decades of combined expertise in Indian and global real estate markets."
               >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {leadershipMembers.map((member, i) => (
                     <LeaderCard key={member.id} member={member} index={i} />
                   ))}
@@ -452,22 +466,22 @@ export default function AboutPage() {
               {/* 3. Vision */}
               <Section id="vision" badge="Our Vision" title="Where We're Headed" dark>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                  <div className="space-y-6">
-                    <div className="w-16 h-16 rounded-2xl bg-secondary/20 flex items-center justify-center border border-secondary/30">
+                  <div className="space-y-5">
+                    <div className="w-14 h-14 rounded-2xl bg-secondary/20 flex items-center justify-center border border-secondary/30">
                       <span
-                        className="material-symbols-outlined text-secondary text-3xl"
+                        className="material-symbols-outlined text-secondary text-[28px]"
                         style={{ fontVariationSettings: '"FILL" 1' }}
                       >
                         visibility
                       </span>
                     </div>
-                    <blockquote className="text-xl sm:text-2xl lg:text-3xl font-display font-extrabold text-white leading-relaxed italic border-l-4 border-secondary pl-5">
+                    <blockquote className="text-lg sm:text-xl lg:text-2xl font-display font-extrabold text-white leading-relaxed italic border-l-4 border-secondary pl-5">
                       &quot;To be India&apos;s most trusted and admired real estate partner — empowering every client to make informed, confident, and profitable property decisions.&quot;
                     </blockquote>
-                    <p className="text-white/80 text-base sm:text-lg leading-relaxed">
+                    <p className="text-white/80 text-sm sm:text-base leading-relaxed">
                       By 2030, we aim to be present in 15 major Indian cities, manage portfolios worth ₹10,000 Cr+, and serve 10,000 satisfied clients — while maintaining the personal touch that defines the FIVEX experience.
                     </p>
-                    <div className="grid grid-cols-3 gap-4 pt-2">
+                    <div className="grid grid-cols-3 gap-3 pt-2">
                       {[
                         { value: '15', label: 'Cities by 2030' },
                         { value: '₹10K Cr', label: 'Portfolio Target' },
@@ -475,9 +489,9 @@ export default function AboutPage() {
                       ].map((item) => (
                         <div
                           key={item.label}
-                          className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15 text-center"
+                          className="bg-white/10 backdrop-blur-md rounded-2xl p-3.5 border border-white/15 text-center"
                         >
-                          <p className="font-display font-extrabold text-secondary text-xl sm:text-2xl">
+                          <p className="font-display font-extrabold text-secondary text-lg sm:text-xl">
                             {item.value}
                           </p>
                           <p className="text-white/70 text-xs font-semibold mt-1">{item.label}</p>
@@ -542,20 +556,20 @@ export default function AboutPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.08 }}
-                      className="group bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all"
+                      className="group bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all"
                     >
-                      <div className="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center mb-5 group-hover:bg-secondary/20 transition-colors">
+                      <div className="w-11 h-11 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
                         <span
-                          className="material-symbols-outlined text-secondary text-2xl"
+                        className="material-symbols-outlined text-secondary text-xl"
                           style={{ fontVariationSettings: '"FILL" 1' }}
                         >
                           {item.icon}
                         </span>
                       </div>
-                      <h3 className="font-display font-extrabold text-primary text-lg mb-2">
+                      <h3 className="font-display font-extrabold text-primary text-sm sm:text-base mb-2">
                         {item.title}
                       </h3>
-                      <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                      <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{item.desc}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -570,7 +584,7 @@ export default function AboutPage() {
               >
                 <div className="relative">
                   <div className="absolute left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-secondary via-secondary/40 to-transparent hidden sm:block rounded-full" />
-                  <div className="space-y-8">
+                  <div className="space-y-6">
                     {journeyMilestones.map((m, i) => (
                       <motion.div
                         key={m.year}
@@ -578,21 +592,21 @@ export default function AboutPage() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.1 }}
-                        className="relative flex gap-6 sm:gap-8"
+                        className="relative flex gap-5 sm:gap-6"
                       >
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-secondary text-primary font-extrabold text-sm flex items-center justify-center shadow-lg z-10 border-2 border-white">
+                        <div className="flex-shrink-0 w-11 h-11 rounded-full bg-secondary text-primary font-extrabold text-xs flex items-center justify-center shadow-lg z-10 border-2 border-white">
                           {m.year.slice(2)}
                         </div>
-                        <div className="flex-1 bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                        <div className="flex-1 bg-white rounded-2xl p-5 sm:p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all">
                           <div className="flex items-center gap-3 mb-2">
                             <span className="text-secondary font-extrabold text-base">
                               {m.year}
                             </span>
-                            <h3 className="font-display font-extrabold text-primary text-lg">
+                            <h3 className="font-display font-extrabold text-primary text-base sm:text-lg">
                               {m.title}
                             </h3>
                           </div>
-                          <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                          <p className="text-gray-600 text-sm leading-relaxed">
                             {m.desc}
                           </p>
                         </div>
@@ -618,7 +632,7 @@ export default function AboutPage() {
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.08 }}
                       onClick={() => setSelectedAward(award)}
-                      className="group bg-gradient-to-br from-primary via-primary-container to-primary/95 rounded-2xl p-6 text-white relative overflow-hidden shadow-md hover:shadow-2xl cursor-pointer hover:-translate-y-1 transition-all border border-secondary/20"
+                      className="group bg-gradient-to-br from-primary via-primary-container to-primary/95 rounded-2xl p-5 text-white relative overflow-hidden shadow-md hover:shadow-2xl cursor-pointer hover:-translate-y-1 transition-all border border-secondary/20"
                     >
                       {/* Certificate Mockup Thumbnail */}
                       <div className="relative h-40 rounded-xl overflow-hidden mb-4 border border-white/20 bg-white/10">
@@ -634,7 +648,7 @@ export default function AboutPage() {
                         </div>
                       </div>
 
-                      <h3 className="font-display font-bold text-base sm:text-lg leading-snug text-white">
+                      <h3 className="font-display font-bold text-sm sm:text-base leading-snug text-white">
                         {award.title}
                       </h3>
                       <p className="text-white/70 text-xs mt-1 font-medium">{award.issuer}</p>
@@ -670,10 +684,10 @@ export default function AboutPage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.07 }}
-                        className="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-secondary/30 transition-all text-center"
+                        className="group bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-md hover:border-secondary/30 transition-all text-center"
                       >
-                        <div className="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center mx-auto mb-3 group-hover:bg-secondary/10 transition-colors">
-                          <span className="font-display font-extrabold text-primary text-xl">
+                        <div className="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center mx-auto mb-3 group-hover:bg-secondary/10 transition-colors">
+                          <span className="font-display font-extrabold text-primary text-lg">
                             {partner.logo}
                           </span>
                         </div>
@@ -686,14 +700,14 @@ export default function AboutPage() {
                 </div>
               </Section>
 
-              {/* 8. Our Team (With Full Details Popup Modal) */}
+              {/* 8. Our Team */}
               <Section
                 id="our-team"
                 badge="The Team"
                 title="Our Team"
-                subtitle="Click any team member to view complete contact details and advisor profile."
+                subtitle="Meet the advisors behind FIVEX. Open each full profile for detailed experience, skills, and direct contact."
               >
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
                   {teamMembers.map((member, i) => (
                     <motion.div
                       key={member.id}
@@ -701,27 +715,31 @@ export default function AboutPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.07 }}
-                      onClick={() => setSelectedTeamMember(member)}
-                      className="group bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer text-center"
+                      className="group"
                     >
-                      <div className="relative w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-secondary/30 group-hover:border-secondary transition-colors mb-3 shadow-md">
+                      <Link
+                        href={`/team/${member.id}`}
+                        className="block bg-white rounded-2xl p-4 sm:p-5 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer text-center"
+                      >
+                      <div className="relative w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full overflow-hidden border-4 border-secondary/30 group-hover:border-secondary transition-colors mb-3 shadow-md">
                         <img
                           src={member.image}
                           alt={member.imageAlt}
                           className="w-full h-full object-cover"
                         />
                       </div>
-                      <p className="font-display font-extrabold text-primary text-base">
+                      <p className="font-display font-extrabold text-primary text-sm sm:text-base">
                         {member.name}
                       </p>
-                      <p className="text-secondary text-xs font-bold mt-0.5">{member.designation}</p>
+                      <p className="text-secondary text-[11px] sm:text-xs font-bold mt-0.5">{member.designation}</p>
                       <p className="text-gray-400 text-xs mt-0.5">{member.location} · {member.experience}y exp</p>
-                      <div className="mt-3 flex items-center justify-center gap-2">
-                        <span className="text-[11px] font-bold text-primary hover:text-secondary flex items-center gap-1">
-                          View Details
-                          <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                        </span>
-                      </div>
+                        <div className="mt-3 flex items-center justify-center gap-2">
+                          <span className="text-[11px] font-bold text-primary group-hover:text-secondary flex items-center gap-1">
+                            View Full Profile
+                            <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                          </span>
+                        </div>
+                      </Link>
                     </motion.div>
                   ))}
                 </div>
@@ -737,7 +755,7 @@ export default function AboutPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.1 }}
-                      className="bg-white/10 rounded-2xl p-7 border border-white/15 hover:border-secondary/40 transition-all"
+                      className="bg-white/10 rounded-2xl p-6 border border-white/15 hover:border-secondary/40 transition-all"
                     >
                       <div className="flex gap-1 mb-4">
                         {Array.from({ length: story.stars }).map((_, j) => (
@@ -750,7 +768,7 @@ export default function AboutPage() {
                           </span>
                         ))}
                       </div>
-                      <p className="text-white/90 text-base leading-relaxed italic font-medium">
+                      <p className="text-white/90 text-sm sm:text-base leading-relaxed italic font-medium">
                         {story.quoteHeadline}
                       </p>
                       <div className="flex items-center gap-3 mt-6 pt-5 border-t border-white/15">
@@ -821,18 +839,18 @@ export default function AboutPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.08 }}
-                      className="flex items-start gap-4 p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all group"
+                      className="flex items-start gap-3 p-5 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all group"
                     >
-                      <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-secondary/20 transition-colors">
+                      <div className="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-secondary/20 transition-colors">
                         <span
-                          className="material-symbols-outlined text-secondary text-2xl sm:text-3xl"
+                          className="material-symbols-outlined text-secondary text-xl sm:text-2xl"
                           style={{ fontVariationSettings: '"FILL" 1' }}
                         >
                           {item.icon}
                         </span>
                       </div>
                       <div>
-                        <h3 className="font-display font-extrabold text-primary text-base sm:text-lg mb-1">
+                        <h3 className="font-display font-extrabold text-primary text-sm sm:text-base mb-1">
                           {item.title}
                         </h3>
                         <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{item.desc}</p>

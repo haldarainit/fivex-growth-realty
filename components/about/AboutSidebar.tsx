@@ -33,9 +33,9 @@ export default function AboutSidebar({ activeSection }: AboutSidebarProps) {
   return (
     <>
       {/* Desktop Sticky Sidebar Nav */}
-      <aside className="hidden lg:block sticky top-28 h-fit w-72 flex-shrink-0">
-        <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-          <nav className="p-3 space-y-1">
+      <aside className="hidden lg:block sticky top-28 h-fit w-64 flex-shrink-0">
+        <div className="bg-white/88 backdrop-blur-xl rounded-[28px] shadow-[0_24px_70px_-28px_rgba(10,25,47,0.45)] border border-secondary/12 overflow-hidden">
+          <nav className="p-2.5 space-y-1 max-h-[calc(100svh-9rem)] overflow-y-auto no-scrollbar">
             {navItems.map((item, i) => {
               const isActive = activeSection === item.id;
               return (
@@ -45,10 +45,10 @@ export default function AboutSidebar({ activeSection }: AboutSidebarProps) {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.03 }}
-                  className={`w-full flex items-center gap-3.5 px-4 py-3 rounded-xl text-left transition-all cursor-pointer group ${
+                  className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left transition-all cursor-pointer group ${
                     isActive
                       ? 'bg-primary text-white font-bold shadow-md'
-                      : 'text-gray-700 hover:bg-gray-50 hover:text-primary font-semibold'
+                      : 'text-gray-700 hover:bg-secondary/6 hover:text-primary font-semibold'
                   }`}
                 >
                   <span
@@ -59,7 +59,7 @@ export default function AboutSidebar({ activeSection }: AboutSidebarProps) {
                   >
                     {item.icon}
                   </span>
-                  <span className="text-sm tracking-wide flex-1">{item.label}</span>
+                  <span className="text-[12px] tracking-wide flex-1">{item.label}</span>
                   {isActive && (
                     <span className="material-symbols-outlined text-secondary text-base">
                       chevron_right
@@ -73,7 +73,7 @@ export default function AboutSidebar({ activeSection }: AboutSidebarProps) {
       </aside>
 
       {/* Mobile Horizontal Scroll Nav */}
-      <div className="lg:hidden sticky top-20 z-40 bg-white border-b border-gray-200 shadow-sm -mx-4 sm:-mx-8 px-4">
+      <div className="lg:hidden sticky top-20 z-40 bg-white/95 backdrop-blur-xl border-b border-gray-200 shadow-sm -mx-4 sm:-mx-8 px-4">
         <div className="flex gap-2 overflow-x-auto no-scrollbar py-3">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;

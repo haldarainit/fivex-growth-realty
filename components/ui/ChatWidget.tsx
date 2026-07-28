@@ -110,7 +110,7 @@ export default function ChatWidget() {
   const quickReplies = ['Residential', 'Commercial', 'Pricing', 'Locations', 'Contact'];
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-3">
       {/* Chat Window */}
       <AnimatePresence>
         {isOpen && (
@@ -119,7 +119,7 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="w-[340px] sm:w-[380px] bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden flex flex-col"
+            className="w-[min(360px,calc(100vw-1rem))] sm:w-[380px] bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden flex flex-col"
             style={{ height: '520px' }}
           >
             {/* Header */}
@@ -209,7 +209,7 @@ export default function ChatWidget() {
       {/* Floating Button */}
       <motion.button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="relative w-14 h-14 rounded-full bg-primary shadow-2xl flex items-center justify-center cursor-pointer hover:scale-105 active:scale-95 transition-transform chat-pulse"
+        className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-[1.75rem] bg-primary border border-white/10 shadow-[0_24px_50px_-20px_rgba(10,25,47,0.85)] flex items-center justify-center cursor-pointer hover:scale-105 active:scale-95 transition-transform chat-pulse"
         aria-label={isOpen ? 'Close chat' : 'Open chat'}
         whileTap={{ scale: 0.9 }}
       >
@@ -220,10 +220,10 @@ export default function ChatWidget() {
             animate={{ scale: 1, rotate: 0 }}
             exit={{ scale: 0, rotate: 90 }}
             transition={{ duration: 0.2 }}
-            className="material-symbols-outlined text-secondary text-2xl"
+            className="material-symbols-outlined text-secondary text-[26px] sm:text-[30px]"
             style={{ fontVariationSettings: '"FILL" 1' }}
           >
-            {isOpen ? 'close' : 'chat'}
+            {isOpen ? 'close' : 'smart_toy'}
           </motion.span>
         </AnimatePresence>
 

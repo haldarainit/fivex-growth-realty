@@ -64,12 +64,6 @@ export const Footer: React.FC = () => {
               </div>
             </div>
 
-            {/* PNG Social Icons */}
-            <div className="flex flex-wrap gap-2.5 pt-2">
-              {socialLinks.map((s) => (
-                <SocialIconLink key={s.platform} platform={s.platform} url={s.url} iconImg={s.iconImg} />
-              ))}
-            </div>
           </div>
 
           {/* Col 2: Navigation & Company Links */}
@@ -84,7 +78,7 @@ export const Footer: React.FC = () => {
             <FooterSection title="Properties" links={footerData.propertyTypes} />
           </div>
 
-          {/* Col 4: Newsletter + Social */}
+          {/* Col 4: Newsletter + Socials */}
           <div className="space-y-6">
             <div className="space-y-3">
               <h4 className="text-white font-extrabold text-xs uppercase tracking-widest">Market Insights</h4>
@@ -116,14 +110,24 @@ export const Footer: React.FC = () => {
               )}
             </div>
 
-            <div className="space-y-3">
-              <h4 className="text-white font-extrabold text-xs uppercase tracking-widest">Follow Us</h4>
-              <div className="flex flex-wrap gap-2.5">
+            <div className="space-y-3 border-t border-white/10 pt-4">
+              <h5 className="text-white/85 text-[11px] font-extrabold uppercase tracking-[0.22em]">
+                Follow Us
+              </h5>
+              <div className="flex flex-wrap gap-3">
                 {socialLinks.map((s) => (
-                  <SocialIconLink key={s.platform} platform={s.platform} url={s.url} iconImg={s.iconImg} />
+                  <SocialIconLink
+                    key={s.platform}
+                    platform={s.platform}
+                    url={s.url}
+                    iconImg={s.iconImg}
+                    className="opacity-90 hover:opacity-100"
+                    iconClassName="h-5 w-5 lg:h-6 lg:w-6"
+                  />
                 ))}
               </div>
             </div>
+
           </div>
 
         </div>

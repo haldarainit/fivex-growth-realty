@@ -94,8 +94,8 @@ export default function ApplicationForm({ jobTitle, jobSlug }: Props) {
   const labelCls = "block text-xs font-bold text-primary/70 mb-1.5 uppercase tracking-wide";
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5 bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <form onSubmit={handleSubmit} className="space-y-4 bg-white/92 backdrop-blur-sm rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-7">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className={labelCls}>Full Name *</label>
           <input required name="fullName" value={form.fullName} onChange={handleChange} placeholder="Rajesh Kumar" className={inputCls} />
@@ -106,7 +106,7 @@ export default function ApplicationForm({ jobTitle, jobSlug }: Props) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className={labelCls}>Phone Number *</label>
           <input required name="phone" value={form.phone} onChange={handleChange} placeholder="+91 98765 43210" className={inputCls} />
@@ -127,7 +127,7 @@ export default function ApplicationForm({ jobTitle, jobSlug }: Props) {
         <input name="currentCompany" value={form.currentCompany} onChange={handleChange} placeholder="Company name (or Fresher)" className={inputCls} />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className={labelCls}>Current CTC (LPA)</label>
           <input name="currentCtc" value={form.currentCtc} onChange={handleChange} placeholder="e.g. 8 LPA" className={inputCls} />
@@ -154,7 +154,7 @@ export default function ApplicationForm({ jobTitle, jobSlug }: Props) {
           name="coverLetter"
           value={form.coverLetter}
           onChange={handleChange}
-          rows={4}
+          rows={5}
           placeholder="Tell us why you're the perfect fit for this role..."
           className={`${inputCls} resize-none`}
         />
@@ -165,7 +165,7 @@ export default function ApplicationForm({ jobTitle, jobSlug }: Props) {
         <label className={labelCls}>Resume / CV * <span className="text-gray-400 font-normal normal-case tracking-normal">(PDF or DOCX, max 5MB)</span></label>
         <div
           onClick={() => fileRef.current?.click()}
-          className="border-2 border-dashed border-gray-200 rounded-xl p-6 text-center cursor-pointer hover:border-secondary/50 hover:bg-secondary/5 transition-all"
+          className="border-2 border-dashed border-gray-200 rounded-xl p-7 text-center cursor-pointer hover:border-secondary/50 hover:bg-secondary/5 transition-all"
         >
           <span className="material-symbols-outlined text-gray-400 text-4xl mb-2 block">upload_file</span>
           {resume ? (

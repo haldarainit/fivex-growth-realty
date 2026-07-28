@@ -53,7 +53,7 @@ const MegaMenu: React.FC<{ visible: boolean; onClose: () => void }> = ({ visible
                       onClick={() => setSelectedCity(city)}
                       className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                         isSelected
-                          ? 'bg-[#045b48] text-white shadow-md'
+                          ? 'bg-secondary text-primary shadow-md'
                           : 'text-gray-700 hover:bg-gray-100'
                       }`}
                     >
@@ -87,8 +87,8 @@ const MegaMenu: React.FC<{ visible: boolean; onClose: () => void }> = ({ visible
                       onClick={() => setSelectedType(type)}
                       className={`w-full text-left px-3 py-2.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                         isSelected
-                          ? 'bg-[#e6f4f1] text-[#045b48] font-bold'
-                          : 'text-gray-600 hover:bg-gray-50'
+                          ? 'bg-secondary/15 text-secondary font-bold'
+                          : 'text-gray-600 hover:bg-secondary/5 hover:text-primary'
                       }`}
                     >
                       {type.name}
@@ -108,7 +108,7 @@ const MegaMenu: React.FC<{ visible: boolean; onClose: () => void }> = ({ visible
                   <Link
                     href={`/projects?city=${selectedCity.id}`}
                     onClick={onClose}
-                    className="text-xs font-bold text-[#045b48] hover:underline flex items-center gap-1"
+                    className="text-xs font-bold text-secondary hover:underline flex items-center gap-1"
                   >
                     View All in {selectedCity.name}
                     <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -132,13 +132,13 @@ const MegaMenu: React.FC<{ visible: boolean; onClose: () => void }> = ({ visible
                           />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h5 className="font-display font-bold text-xs text-primary truncate group-hover:text-[#045b48] transition-colors">
+                          <h5 className="font-display font-bold text-xs text-primary truncate group-hover:text-secondary transition-colors">
                             {project.title}
                           </h5>
                           <p className="text-[11px] text-gray-500 truncate mt-0.5">
                             {project.location}
                           </p>
-                          <p className="text-xs font-bold text-[#045b48] mt-1">
+                          <p className="text-xs font-bold text-secondary mt-1">
                             {project.price}
                           </p>
                         </div>
@@ -200,8 +200,8 @@ export const Header: React.FC = () => {
   const onSurface = isScrolled || !isHomePage;
 
   const headerBg = onSurface
-    ? 'bg-white/97 backdrop-blur-md shadow-md py-3 border-b border-gray-200/60'
-    : 'bg-white/8 backdrop-blur-2xl py-4 sm:py-5 border-b border-white/15 shadow-[0_8px_30px_rgba(0,0,0,0.08)]';
+      ? 'bg-white/94 backdrop-blur-xl shadow-md py-3 border-b border-gray-200/60'
+    : 'bg-primary/18 backdrop-blur-2xl py-4 sm:py-5 border-b border-white/15 shadow-[0_8px_30px_rgba(0,0,0,0.08)]';
 
   const logoColor = onSurface ? 'text-primary' : 'text-white';
   const hamburgerColor = onSurface ? 'text-primary' : 'text-white';
@@ -395,9 +395,9 @@ export const Header: React.FC = () => {
             transition={{ duration: 0.25, ease: 'easeInOut' }}
             className="xl:hidden overflow-hidden"
           >
-            <div className="bg-primary backdrop-blur-xl border-t border-white/10 shadow-2xl">
+            <div className="bg-primary/96 backdrop-blur-2xl border-t border-white/10 shadow-2xl">
               <div className="px-4 sm:px-6 py-5 max-w-[1440px] mx-auto max-h-[calc(100svh-4rem)] overflow-y-auto">
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
                   {[
                     { label: 'Home', href: '/' },
                     { label: 'About Us', href: '/about' },
