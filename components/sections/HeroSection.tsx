@@ -31,15 +31,15 @@ export const HeroSection: React.FC = () => {
       {/* Background Image & Soft Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVN_s62XvE1DVTH7KzTCcrQo8gSV66mswAxVm8h-gRiJk_ec_RpesK3Y2y9yjRyNsg485PZYQxkvfoTSmGG6sWqKQxiG6xlIVcq13jysrO1sACo_A0zvhxma74Bx4e5gXNNuzW7hHHpoMKtG-vaIZ5qLKS9wLf3lqffA5G-JLgWSBu-ESfE9KgKk0_PRjV3cPCc8epos9KpqFJaEElw8ffk4o1P6XA4XKW3BRP7MR8O8eQTXC886KvfNpS1_AvcVIuBb8HsJB3AEXN"
+          src="hero.jpg"
           alt="Luxury Real Estate Background"
-          className="w-full h-full object-cover object-center brightness-110 contrast-105 saturate-110"
+          className="w-full h-full object-cover object-center "
         />
         {/* Radial Gold Tint */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(197,160,89,0.18),transparent_40%),radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_30%)]" />
 
         {/* High-End Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/65 to-primary/82" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/15 via-primary/65 to-primary/62" />
       </div>
 
       {/* Left Social Icons Floating Strip - only inside hero */}
