@@ -35,8 +35,8 @@ export const AboutSection: React.FC = () => {
           {/* Left Visual Banner (5 cols) */}
           <div className="lg:col-span-5 relative group rounded-3xl overflow-hidden shadow-2xl border border-gray-100 min-h-[420px] flex flex-col justify-end">
             <img
-              src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80"
-              alt="FIVEX Growth Realty Advisory"
+              src="/aboutus.jpg"
+              alt="FiveX Growth Realty Advisory"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent" />

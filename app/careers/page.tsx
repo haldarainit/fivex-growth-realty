@@ -17,11 +17,16 @@ export default function CareersPage() {
   return (
     <>
       <Header />
-      <main className="flex-grow pt-16 sm:pt-20">
+      <main className="flex-grow min-h-screen">
         {/* Hero */}
-        <div className="relative bg-primary py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(197,160,89,0.12),transparent_60%)]" />
-          <div className="relative max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-16">
+        <div className="relative bg-primary pt-24 sm:pt-28 pb-16 sm:pb-20 overflow-hidden">
+          <img
+            src="/careers.jpg"
+            alt="FiveX Careers"
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-primary/60" />
+          <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-16">
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}>
               <span className="text-secondary text-xs font-extrabold uppercase tracking-widest">Join the Team</span>
               <h1 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mt-4 tracking-tight leading-tight max-w-3xl">

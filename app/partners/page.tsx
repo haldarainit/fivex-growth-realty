@@ -26,13 +26,19 @@ export default function PartnersPage() {
   return (
     <>
       <Header />
-      <main className="flex-grow pt-16 sm:pt-20">
-        <div className="bg-primary py-14">
-          <div className="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-16">
+      <main className="flex-grow min-h-screen">
+        <div className="relative bg-primary pt-24 sm:pt-28 pb-16 sm:pb-20 overflow-hidden">
+          <img
+            src="/our-patners.jpg"
+            alt="FiveX Developer Partners"
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-primary/60" />
+          <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-16">
             <span className="text-secondary text-xs font-extrabold uppercase tracking-widest">Our Network</span>
             <h1 className="font-display font-bold text-4xl sm:text-5xl text-white mt-3 tracking-tight">Our Partners</h1>
             <p className="text-white/60 text-lg mt-4 max-w-xl leading-relaxed">
-              FIVEX partners with India&apos;s most trusted developers and financial institutions to deliver exceptional value to our clients.
+              FiveX Growth Realty partners with India&apos;s most trusted developers and financial institutions to deliver exceptional value to our clients.
             </p>
           </div>
         </div>

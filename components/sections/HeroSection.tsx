@@ -10,6 +10,13 @@ import {
 } from '@/data/homeData';
 import { socialLinks } from '@/data/companyData';
 
+const heroImages = [
+  { src: '/hero.jpg', alt: 'Luxury Real Estate Hero 1' },
+  { src: '/hero2.jpg', alt: 'Luxury Real Estate Hero 2' },
+  { src: '/hero3.jpg', alt: 'Luxury Real Estate Hero 3' },
+  { src: '/hero4.jpg', alt: 'Luxury Real Estate Hero 4' }
+];
+
 export const HeroSection: React.FC = () => {
   const [location, setLocation] = useState(searchLocations[0]);
   const [propertyType, setPropertyType] = useState(searchPropertyTypes[0]);
@@ -17,6 +24,16 @@ export const HeroSection: React.FC = () => {
   const [transactionType, setTransactionType] = useState<'buy' | 'rent'>('buy');
   const [searchQuery, setSearchQuery] = useState('');
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+
+  // Auto-rotating Hero Background Images
+  const [activeBgIndex, setActiveBgIndex] = useState(0);
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveBgIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,18 +45,38 @@ export const HeroSection: React.FC = () => {
 
   return (
     <section className="relative min-h-[100svh] lg:h-screen lg:max-h-screen flex flex-col justify-between overflow-hidden bg-primary">
-      {/* Background Image & Soft Overlay */}
+      {/* Background Image Carousel with Smooth Cross-Fade */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="hero.jpg"
-          alt="Luxury Real Estate Background"
-          className="w-full h-full object-cover object-center "
-        />
-        {/* Radial Gold Tint */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(197,160,89,0.18),transparent_40%),radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_30%)]" />
+        {heroImages.map((img, idx) => (
+          <img
+            key={img.src}
+            src={img.src}
+            alt={img.alt}
+            className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000 ease-in-out transform scale-105 ${
+              idx === activeBgIndex ? 'opacity-100 scale-100 z-10' : 'opacity-0 z-0'
+            }`}
+          />
+        ))}
+
+        {/* Radial Gold Tint Overlay */}
+        <div className="absolute inset-0 z-20 bg-[radial-gradient(circle_at_top_left,rgba(197,160,89,0.22),transparent_45%),radial-gradient(circle_at_top_right,rgba(255,255,255,0.12),transparent_35%)]" />
 
         {/* High-End Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/15 via-primary/65 to-primary/62" />
+        <div className="absolute inset-0 z-20 bg-gradient-to-b from-primary/20 via-primary/70 to-primary/80" />
+
+        {/* Slideshow Progress Dots */}
+        <div className="absolute right-6 top-1/2 -translate-y-1/2 z-30 hidden lg:flex flex-col gap-2.5">
+          {heroImages.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setActiveBgIndex(idx)}
+              title={`Switch to image ${idx + 1}`}
+              className={`w-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                idx === activeBgIndex ? 'h-8 bg-secondary shadow-lg shadow-secondary/50' : 'h-2.5 bg-white/40 hover:bg-white/70'
+              }`}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Left Social Icons Floating Strip - only inside hero */}

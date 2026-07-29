@@ -295,12 +295,22 @@ export default function AboutPage() {
   return (
     <>
       <Header />
-      <main className="flex-grow pt-20 sm:pt-24 min-h-screen bg-white">
+      <main className="flex-grow min-h-screen bg-white">
 
-        {/* Full-Width Hero Banner */}
-        <div className="bg-primary py-18 sm:py-22 lg:py-24 relative overflow-hidden w-full border-b border-white/10">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(197,160,89,0.18),transparent_60%)]" />
-          <div className="relative max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16">
+        {/* Full-Width Hero Banner with Background Image */}
+        <div className="relative bg-primary pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-22 overflow-hidden w-full border-b border-white/10">
+          {/* Background Image Layer */}
+          <img
+            src="/aboutus.jpg"
+            alt="FiveX Growth Realty Corporate Headquarters"
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-30"
+          />
+
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/75" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(197,160,89,0.22),transparent_60%)]" />
+
+          <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
