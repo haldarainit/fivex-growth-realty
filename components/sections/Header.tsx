@@ -279,11 +279,7 @@ export const Header: React.FC = () => {
             <MegaMenu visible={megaMenuOpen} onClose={() => setMegaMenuOpen(false)} />
           </div>
 
-          {/* CSR */}
-          <Link href="/csr" className={getNavLinkClass(pathname.startsWith('/csr'))}>
-            CSR
-            <span className={`absolute bottom-0 left-0 h-0.5 bg-secondary rounded-full transition-all duration-300 ${pathname.startsWith('/csr') ? 'w-full' : 'w-0 group-hover:w-full'}`} />
-          </Link>
+          
 
           {/* Careers */}
           <Link href="/careers" className={getNavLinkClass(pathname.startsWith('/careers'))}>
@@ -301,6 +297,11 @@ export const Header: React.FC = () => {
           <Link href="/blog" className={getNavLinkClass(pathname.startsWith('/blog'))}>
             Blog
             <span className={`absolute bottom-0 left-0 h-0.5 bg-secondary rounded-full transition-all duration-300 ${pathname.startsWith('/blog') ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+          </Link>
+          {/* CSR */}
+          <Link href="/csr" className={getNavLinkClass(pathname.startsWith('/csr'))}>
+            CSR
+            <span className={`absolute bottom-0 left-0 h-0.5 bg-secondary rounded-full transition-all duration-300 ${pathname.startsWith('/csr') ? 'w-full' : 'w-0 group-hover:w-full'}`} />
           </Link>
 
           {/* More Dropdown (Events, Awards & Recognition) */}
