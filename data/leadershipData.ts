@@ -7,12 +7,15 @@ export interface LeadershipMember {
   id: string;
   name: string;
   designation: string;
+  headline?: string;
   department: 'executive' | 'director' | 'founder' | 'management';
   shortBio: string;
   image: string;
   imageAlt: string;
   phone: string;
+  whatsapp?: string;
   email: string;
+  website?: string;
   linkedin: string;
   social: SocialLink[];
   fullBio: string[];
@@ -22,175 +25,132 @@ export interface LeadershipMember {
   awards: { title: string; year: string; issuer: string }[];
   responsibilities: string[];
   achievements: string[];
+  areasServed?: string[];
+  developerPartnersList?: string[];
 }
 
 export const leadershipMembers: LeadershipMember[] = [
   {
-    id: 'ceo-rajesh-sharma',
-    name: 'Rajesh Sharma',
-    designation: 'Chief Executive Officer',
-    department: 'executive',
-    shortBio: '25+ years of strategic leadership in Indian real estate with a proven track record of building premium property portfolios and forging high-value developer partnerships.',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80',
-    imageAlt: 'Rajesh Sharma, CEO',
-    phone: '+91 98765 43210',
-    email: 'rajesh.sharma@fivexgrowthrealty.com',
-    linkedin: 'https://linkedin.com/in/rajesh-sharma-realty',
-    social: [
-      { platform: 'LinkedIn', url: 'https://linkedin.com/in/rajesh-sharma-realty' },
-      { platform: 'Twitter', url: 'https://twitter.com/rajeshsharma_realty' },
-    ],
-    fullBio: [
-      'Rajesh Sharma is the visionary Chief Executive Officer of FIVEX Growth Realty, bringing over 25 years of comprehensive experience in the Indian real estate landscape. His career began in the mid-1990s when he joined a boutique property consultancy in Delhi NCR, quickly rising through the ranks due to his exceptional market insight and client-first philosophy.',
-      'Under his leadership, FIVEX has grown from a regional consultancy to one of India\'s most respected premium real estate brokerages, with a portfolio spanning residential luxury, commercial Grade-A assets, and strategic land acquisitions across seven major cities.',
-      'Rajesh has been instrumental in forging strategic alliances with India\'s top developers including DLF, Godrej Properties, Prestige Group, and Lodha, ensuring FIVEX clients receive exclusive access to pre-launch inventory and preferred pricing.',
-    ],
-    experience: 25,
-    education: [
-      { degree: 'MBA (Finance & Strategy)', institution: 'IIM Ahmedabad', year: '1998' },
-      { degree: 'B.Tech (Civil Engineering)', institution: 'IIT Delhi', year: '1995' },
-    ],
-    skills: ['Strategic Leadership', 'Investment Analysis', 'Developer Relations', 'Portfolio Management', 'Market Research', 'Client Advisory'],
-    awards: [
-      { title: 'Real Estate CEO of the Year', year: '2023', issuer: 'CREDAI National Awards' },
-      { title: 'Top 50 Real Estate Leaders', year: '2022', issuer: 'Economic Times' },
-      { title: 'Best Brokerage Leadership Award', year: '2021', issuer: 'NAR India' },
-    ],
-    responsibilities: [
-      'Overall strategic direction and vision of the organization',
-      'P&L ownership and financial performance management',
-      'Developer partnerships and key account management',
-      'Brand positioning and market expansion strategy',
-      'Regulatory compliance and RERA adherence oversight',
-    ],
-    achievements: [
-      'Scaled FIVEX from 5 to 50+ team members in 10 years',
-      'Closed deals worth ₹2500 Cr+ in total asset value',
-      'Established FIVEX presence in 5 major Indian cities',
-      'Built a client retention rate of 78% (industry average: 45%)',
-    ],
-  },
-  {
-    id: 'director-priya-malhotra',
-    name: 'Priya Malhotra',
-    designation: 'Director – Residential Sales',
-    department: 'director',
-    shortBio: '18 years of expertise in luxury residential real estate, having managed over 400 successful transactions for HNI and NRI clients across Delhi NCR and Mumbai.',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80',
-    imageAlt: 'Priya Malhotra, Director',
-    phone: '+91 91234 56789',
-    email: 'priya.malhotra@fivexgrowthrealty.com',
-    linkedin: 'https://linkedin.com/in/priya-malhotra-realty',
-    social: [
-      { platform: 'LinkedIn', url: 'https://linkedin.com/in/priya-malhotra-realty' },
-      { platform: 'Instagram', url: 'https://instagram.com/priya.malhotra.realty' },
-    ],
-    fullBio: [
-      'Priya Malhotra is a seasoned real estate professional with 18 years of focused expertise in luxury residential sales across India\'s premium markets. Her deep understanding of HNI and NRI client psychology has made her one of the most sought-after advisors in the Delhi NCR luxury segment.',
-      'Having started her career with Cushman & Wakefield, Priya brings a global perspective to Indian real estate advisory. She has closed landmark deals in Noida\'s most prestigious addresses including projects by Godrej, Emaar, and Gaur Group.',
-    ],
-    experience: 18,
-    education: [
-      { degree: 'MBA (Marketing)', institution: 'MDI Gurgaon', year: '2006' },
-      { degree: 'B.Com (Hons)', institution: 'Delhi University', year: '2003' },
-    ],
-    skills: ['Luxury Residential Sales', 'NRI Advisory', 'CRM Management', 'Negotiation', 'Client Relations', 'Market Analysis'],
-    awards: [
-      { title: 'Top Residential Sales Director', year: '2022', issuer: 'NAREDCO' },
-      { title: 'Women Leaders in Real Estate', year: '2021', issuer: 'Realty+ Magazine' },
-    ],
-    responsibilities: [
-      'Lead the residential sales team of 20+ advisors',
-      'Develop and implement luxury residential sales strategy',
-      'Maintain relationships with top HNI and NRI clients',
-      'Conduct exclusive property showcases and client events',
-    ],
-    achievements: [
-      'Managed 400+ successful luxury residential transactions',
-      'Built NRI client network spanning 15 countries',
-      'Achieved 95% client satisfaction score consistently',
-    ],
-  },
-  {
-    id: 'director-amit-verma',
-    name: 'Amit Verma',
-    designation: 'Director – Commercial & Investment',
-    department: 'director',
-    shortBio: '20 years in commercial real estate investment, specializing in Grade-A office spaces, retail assets, and institutional-grade investment advisory for corporate clients.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80',
-    imageAlt: 'Amit Verma, Director Commercial',
-    phone: '+91 90000 12345',
-    email: 'amit.verma@fivexgrowthrealty.com',
-    linkedin: 'https://linkedin.com/in/amit-verma-commercial-realty',
-    social: [
-      { platform: 'LinkedIn', url: 'https://linkedin.com/in/amit-verma-commercial-realty' },
-    ],
-    fullBio: [
-      'Amit Verma heads the commercial and investment vertical at FIVEX, bringing two decades of specialized expertise in Grade-A commercial assets. His analytical approach to yield computation, tenant profiling, and risk assessment has made FIVEX the preferred commercial advisory partner for corporates expanding in India.',
-      'Prior to FIVEX, Amit worked with JLL India and CBRE, where he managed corporate real estate portfolios for Fortune 500 companies setting up India operations.',
-    ],
-    experience: 20,
-    education: [
-      { degree: 'MBA (Finance)', institution: 'IIM Calcutta', year: '2004' },
-      { degree: 'B.Arch', institution: 'CEPT University, Ahmedabad', year: '2001' },
-    ],
-    skills: ['Commercial Leasing', 'Investment Analysis', 'ROI Modeling', 'Corporate Advisory', 'Due Diligence', 'Tenant Relations'],
-    awards: [
-      { title: 'Commercial Dealmaker of the Year', year: '2023', issuer: 'PropTiger Awards' },
-    ],
-    responsibilities: [
-      'Lead commercial real estate advisory and investment verticals',
-      'Manage institutional client relationships',
-      'Develop investment thesis and portfolio strategy for clients',
-      'Oversee due diligence processes for commercial acquisitions',
-    ],
-    achievements: [
-      'Closed commercial deals worth ₹800 Cr+ over 5 years',
-      'Advised 30+ corporations on their India real estate strategy',
-      'Delivered consistent 8-12% yield outcomes for investment clients',
-    ],
-  },
-  {
-    id: 'founder-sunita-kapoor',
-    name: 'Sunita Kapoor',
-    designation: 'Co-Founder & Chairperson',
+    id: 'syed-zeeshan-ahmad',
+    name: 'SYED ZEESHAN AHMAD',
+    designation: 'Founder & Managing Director',
+    headline: 'Founder | FiveX Growth Realty Pvt. Ltd | Real Estate Expert | Investment Consultant | Residential & Commercial Specialist | Investment Strategist | Yamuna Expressway & Noida Property Expert | RERA-Registered Consultant',
     department: 'founder',
-    shortBio: 'Visionary entrepreneur who co-founded FIVEX in 2010. Pioneer in bringing international brokerage standards to Indian residential real estate with a client-first ethos.',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80',
-    imageAlt: 'Sunita Kapoor, Co-Founder',
-    phone: '+91 98800 11111',
-    email: 'sunita.kapoor@fivexgrowthrealty.com',
-    linkedin: 'https://linkedin.com/in/sunita-kapoor-fivex',
+    shortBio: 'Founder & CEO of FiveX Growth Realty Pvt. Ltd, specializing in residential, commercial, plotted developments, and industrial leasing with 10+ years of expert advisory across Noida, Greater Noida, and Yamuna Expressway.',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80',
+    imageAlt: 'Syed Zeeshan Ahmad, Founder & Managing Director',
+    phone: '+91- 827 931 9964',
+    whatsapp: 'https://wa.me/message/US6IITAWHUQGD1',
+    email: 'infofivexgrowthrealty@gmail.com',
+    website: 'www.fivexgrowthrealty.com',
+    linkedin: 'https://linkedin.com/in/fivexgrowthrealty',
     social: [
-      { platform: 'LinkedIn', url: 'https://linkedin.com/in/sunita-kapoor-fivex' },
-      { platform: 'Twitter', url: 'https://twitter.com/sunitakapoor_realty' },
+      { platform: 'WhatsApp', url: 'https://wa.me/message/US6IITAWHUQGD1' },
+      { platform: 'LinkedIn', url: 'https://linkedin.com/company/fivex-growth-realty' },
+      { platform: 'Facebook', url: 'https://facebook.com/fivexgrowthrealty' },
+      { platform: 'Instagram', url: 'https://instagram.com/fivexgrowthrealty' },
     ],
     fullBio: [
-      'Sunita Kapoor is the co-founder and Chairperson of FIVEX Growth Realty, a visionary entrepreneur who identified the gap between international brokerage quality and what was available in India\'s rapidly growing real estate market.',
-      'In 2010, she co-founded FIVEX with a simple yet powerful mission: to bring global standards of transparency, integrity, and client service to Indian real estate. Under her leadership philosophy, FIVEX instituted its proprietary 42-point property verification process — now an industry benchmark.',
-      'Sunita is a prominent voice in CREDAI and NAREDCO, frequently speaking at national conferences on ethics in real estate brokerage and the role of proptech in transforming the industry.',
+      'I am the Founder & CEO of FiveX Growth Realty Pvt. Ltd, a leading name in North India’s real estate sector, specializing in residential, commercial, plotted developments, and industrial leasing. I bring market knowledge, investor mindset, and ethical practices to every deal. We specialize in Noida, Greater Noida, Yamuna Expressway, and Delhi NCR, especially projects linked to Jewar Airport, Film City, and industrial corridors.',
+      'We offer end-to-end property solutions—from investment consulting to resale, leasing, and documentation.',
+      'With over 10+ years of experience, my focus is on client satisfaction, transparent deals, and helping investors find the right opportunities with high ROI potential. We work with Gated Society Apartments, Authority Plots, Builder Floors, Farmhouses, and Commercial Assets across NCR, especially in Noida, Greater Noida, Yamuna Expressway, and Delhi NCR.',
+      'Our team ensures clients get verified properties, clear titles, RERA-registered options, and investment guidance that leads to high ROI.',
     ],
-    experience: 30,
+    experience: 10,
     education: [
-      { degree: 'Masters in Business Law', institution: 'Delhi University', year: '1994' },
-      { degree: 'B.Com (Hons)', institution: 'Lady Shri Ram College', year: '1992' },
+      { degree: 'Bachelor of Commerce & Real Estate Management', institution: 'Delhi University', year: '2014' },
+      { degree: 'RERA Certified Real Estate Consultant', institution: 'UP RERA Authority', year: '2018' },
     ],
-    skills: ['Business Strategy', 'Legal Compliance', 'Policy Advocacy', 'Brand Building', 'Corporate Governance', 'Stakeholder Management'],
+    skills: [
+      'Real Estate Investment Strategy',
+      'Yamuna Expressway & Jewar Belt Expert',
+      'Authority Plots (YEIDA, GNIDA, Noida)',
+      'Commercial & Industrial Leasing',
+      'Project Marketing & Channel Sales',
+      'RERA & Legal Title Clearance',
+      'High ROI Portfolio Planning',
+    ],
     awards: [
-      { title: 'Entrepreneur of the Year – Real Estate', year: '2022', issuer: 'ASSOCHAM' },
-      { title: 'Power Women in Real Estate', year: '2020', issuer: 'Times Property' },
-      { title: 'CREDAI Lifetime Achievement Recognition', year: '2019', issuer: 'CREDAI' },
+      { title: 'Top Real Estate Consultant - Yamuna Expressway Belt', year: '2024', issuer: 'NCR Realty Excellence' },
+      { title: 'High ROI Investment Specialist Award', year: '2023', issuer: 'North India Property Forum' },
+      { title: 'Recognized Developer Channel Partner', year: '2022', issuer: 'Leading Developer Association' },
     ],
     responsibilities: [
-      'Set the overall ethical and cultural tone for the organization',
-      'Chair the Board of Directors and governance committees',
-      'Represent FIVEX in industry associations and policy forums',
-      'Mentor the next generation of real estate professionals',
+      'Strategic leadership and overall vision of FiveX Growth Realty Pvt. Ltd',
+      'Heading key investor portfolios across Yamuna Expressway, Jewar Airport zone, and Noida',
+      'Fostering partnerships with 50+ tier-1 developer groups in NCR & Gurgaon',
+      'Overseeing end-to-end legal title verification and RERA compliance',
+      'Guiding corporate leasing, industrial land acquisition, and landowner collaboration deals',
     ],
     achievements: [
-      'Built FIVEX from a 3-person startup to a 50+ member organization',
-      'Established industry-first 42-point property verification standard',
-      'Featured in Forbes India\'s Top 100 Women Entrepreneurs 2021',
+      'Closed 300+ successful property transactions',
+      'Delivered 100+ investments with 30–60% capital appreciation',
+      'Recognized partner with top tier-1 developers across Delhi NCR & Gurgaon',
+      'Specialist in Yamuna Expressway Sector 18, 20, 22D & Jewar Aerocity belt',
+      'Consulted 1,000+ buyers & investors with customized property portfolios',
+      'Built a team of RERA-Certified Real Estate Consultants in Noida',
+    ],
+    areasServed: [
+      'Delhi NCR, Noida, Sector 150, 137, 93, 76',
+      'Noida Extension, Greater Noida / Pari Chowk / KP Series',
+      'Yamuna Expressway Sector 18, 20, 22D, Jewar',
+      'Ghaziabad / Indirapuram / Rajnagar Ext.',
+      'Jewar Airport Investment Zone',
+      'Gurugram (Selective Projects)',
+    ],
+  },
+  {
+    id: 'mohammad-bashiruddin',
+    name: 'Mr. Mohammad Bashiruddin',
+    designation: 'Director',
+    headline: 'Director | FiveX Growth Realty Pvt. Ltd | Strategic Real Estate Leader | Commercial & Residential Advisory',
+    department: 'director',
+    shortBio: 'Director at FIVEX Growth Realty Private Limited, combining deep market insight, strategic vision, and an unwavering commitment to client success across residential and commercial sectors.',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80',
+    imageAlt: 'Mohammad Bashiruddin, Director',
+    phone: '+91 8279319964',
+    whatsapp: 'https://wa.me/message/US6IITAWHUQGD1',
+    email: 'infofivexgrowthrealty@gmail.com',
+    website: 'www.fivexgrowthrealty.com',
+    linkedin: 'https://linkedin.com/company/fivex-growth-realty',
+    social: [
+      { platform: 'WhatsApp', url: 'https://wa.me/message/US6IITAWHUQGD1' },
+      { platform: 'LinkedIn', url: 'https://linkedin.com/company/fivex-growth-realty' },
+    ],
+    fullBio: [
+      'Mr. Mohammad Bashiruddin serves as Director of FIVEX Growth Realty Private Limited. With over 13 years of collective industry leadership and market knowledge, he drives strategic partnerships with leading developers and oversees high-value commercial and residential real estate advisory across North India.',
+      'His key focus remains on ensuring transparent business practices, robust legal documentation support, and building long-term client relationships for buyers, investors, and corporate clients.',
+    ],
+    experience: 13,
+    education: [
+      { degree: 'Master of Business Administration (MBA)', institution: 'Jamia Millia Islamia', year: '2011' },
+    ],
+    skills: [
+      'Strategic Property Advisory',
+      'Developer Relations',
+      'Commercial Property Acquisition',
+      'Client Relationship Management',
+      'Legal & Registry Support',
+    ],
+    awards: [
+      { title: 'Excellence in Real Estate Leadership', year: '2023', issuer: 'Real Estate Growth Summit' },
+    ],
+    responsibilities: [
+      'Strategic corporate direction and market expansion',
+      'Managing commercial sales and corporate leasing vertical',
+      'Maintaining relationships with premier developer partners',
+      'Ensuring operational compliance and customer satisfaction',
+    ],
+    achievements: [
+      'Over 13 years of collective industry leadership',
+      'Helped establish FIVEX as a trusted partner in Noida real estate',
+      'Advised hundreds of families and corporate clients on property selection',
+    ],
+    areasServed: [
+      'Noida & Noida Extension',
+      'Greater Noida & Yamuna Expressway',
+      'Delhi NCR',
     ],
   },
 ];
+

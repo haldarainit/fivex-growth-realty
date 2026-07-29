@@ -1,6 +1,7 @@
 export const aboutStatsMetrics = [
-  { value: '15', suffix: '+', label: 'Years of Excellence' },
-  { value: '500', suffix: '+', label: 'Projects Delivered' },
-  { value: '1200', suffix: '+', label: 'Happy Clients' },
-  { value: '₹2500', suffix: 'Cr+', label: 'Portfolio Managed' },
+  { value: '13', suffix: '+ Years', label: 'Industry Expertise' },
+  { value: '300', suffix: '+', label: 'Transactions Closed' },
+  { value: '100', suffix: '+', label: 'High ROI Investments (30-60% Appreciation)' },
+  { value: '1000', suffix: '+', label: 'Buyers & Investors Consulted' },
 ];
+

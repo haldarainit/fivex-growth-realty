@@ -215,16 +215,17 @@ export const contactInfos: ContactInfoItem[] = [
   {
     icon: 'call',
     label: 'Direct Line',
-    value: '+91 98XXX XXXXX',
+    value: '+91 8279319964',
   },
   {
     icon: 'mail',
     label: 'Email Inquiry',
-    value: 'info@fivexgrowthrealty.com',
+    value: 'infofivexgrowthrealty@gmail.com',
   },
   {
     icon: 'location_on',
     label: 'Visit Headquarters',
-    value: 'Sector 62, Noida, Uttar Pradesh',
+    value: 'ATS Bouquet, Sector 132, Noida, UP - 201305',
   },
 ];
+

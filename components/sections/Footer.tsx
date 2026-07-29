@@ -93,7 +93,11 @@ export const Footer: React.FC = () => {
             <div className="space-y-3 pt-2">
               <a href={`tel:${contactDetails.primaryPhone}`} className="flex items-center gap-3 text-white/80 hover:text-secondary transition-colors">
                 <span className="material-symbols-outlined text-secondary text-lg flex-shrink-0">call</span>
-                <span className="text-sm font-semibold">{contactDetails.primaryPhone}</span>
+                <span className="text-sm font-semibold">{contactDetails.formattedPhone || contactDetails.primaryPhone}</span>
+              </a>
+              <a href={contactDetails.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-white/80 hover:text-secondary transition-colors">
+                <span className="material-symbols-outlined text-green-400 text-lg flex-shrink-0">chat</span>
+                <span className="text-sm font-semibold text-green-400">WhatsApp Connect</span>
               </a>
               <a href={`mailto:${contactDetails.email}`} className="flex items-center gap-3 text-white/80 hover:text-secondary transition-colors">
                 <span className="material-symbols-outlined text-secondary text-lg flex-shrink-0">mail</span>
@@ -205,13 +209,13 @@ export const Footer: React.FC = () => {
         <div className="px-4 sm:px-6 lg:px-14 max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-4">
           <div className="space-y-1 text-center lg:text-left">
             <p className="text-white/60 text-xs font-semibold">
-              © 2026 {companyInfo.name}. All rights reserved.
+              © {new Date().getFullYear()} {companyInfo.name}. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center lg:justify-start gap-x-4 gap-y-1 pt-1">
-              <span className="text-white/50 text-[11px]">UP RERA: {companyInfo.rera.up}</span>
-              <span className="text-white/50 text-[11px]">Haryana RERA: {companyInfo.rera.haryana}</span>
-              <span className="text-white/50 text-[11px]">Maharashtra RERA: {companyInfo.rera.maharashtra}</span>
-              <span className="text-white/50 text-[11px]">GSTIN: {companyInfo.gstin}</span>
+              <span className="text-white/70 text-[11px] font-semibold">GSTIN: {companyInfo.gstin}</span>
+              <span className="text-white/70 text-[11px] font-semibold">CIN: {companyInfo.cin}</span>
+              <span className="text-white/70 text-[11px] font-semibold">PAN: {companyInfo.pan}</span>
+              <span className="text-white/70 text-[11px] font-semibold">RERA Registered Advisory</span>
             </div>
           </div>
 

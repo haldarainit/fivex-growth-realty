@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 
 const navItems = [
   { id: 'who-we-are', label: 'Who We Are', icon: 'info' },
+  { id: 'founder', label: 'Founder & MD', icon: 'person' },
   { id: 'leadership', label: 'Leadership', icon: 'groups' },
   { id: 'mission-vision', label: 'Mission & Vision', icon: 'visibility' },
   { id: 'certificates', label: 'Corporate Certificates', icon: 'workspace_premium' },

@@ -55,7 +55,7 @@ export default function PrivacyPolicyPage() {
             </section>
             <section>
               <h2 className="font-display font-bold text-primary text-xl mb-3">6. Contact</h2>
-              <p className="text-sm leading-relaxed">For privacy-related queries, contact us at privacy@fivexgrowthrealty.com or write to our registered office at {companyInfo.name}, Sector 62, Noida, UP 201309.</p>
+              <p className="text-sm leading-relaxed">For privacy-related queries, contact us at infofivexgrowthrealty@gmail.com or write to our registered office at {companyInfo.name}, ATS Bouquet, Sector 132, Noida, UP 201305, India.</p>
             </section>
           </div>
         </div>

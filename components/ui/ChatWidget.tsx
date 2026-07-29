@@ -20,7 +20,7 @@ const BOT_REPLIES: Record<string, string> = {
   location: "We cover Noida, Greater Noida, Gurgaon, Delhi NCR, and Mumbai. Which city are you interested in?",
   noida: "Noida is one of our strongest markets! Hot sectors right now: 150, 143, 137, and Noida Extension. 15-18% annual appreciation potential. Want details?",
   gurgaon: "Gurgaon/Gurugram offers excellent rental yields of 4.5-6%. Golf Course Extension and Dwarka Expressway are our top picks. Want to explore?",
-  contact: "Our team is available Mon-Sat, 9 AM - 7 PM. You can call us at +91 98765 43210 or email info@fivexgrowthrealty.com. Would you like us to call you back?",
+  contact: "Our team is available Mon-Sat, 9:30 AM - 7:00 PM. You can call us at +91 8279319964 or email infofivexgrowthrealty@gmail.com. You can also connect with us on WhatsApp at https://wa.me/message/US6IITAWHUQGD1. Would you like us to call you back?",
   rera: "All our listed projects are RERA-registered. We verify each project through our proprietary 42-point checklist. Your investment is safe with FIVEX.",
   loan: "We have partnerships with HDFC, ICICI, SBI, Axis, and Kotak for home loans. We can help you get the best rates. Want a loan consultation?",
 };

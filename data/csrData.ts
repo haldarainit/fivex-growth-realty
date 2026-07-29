@@ -104,7 +104,7 @@ export const csrEvents: CSREvent[] = [
     id: 'event-2',
     title: 'Annual Blood Donation Camp',
     date: 'May 15, 2024',
-    location: 'FIVEX HQ, Sector 62, Noida',
+    location: 'FIVEX HQ, Sector 132, Noida',
     image: 'https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=800&q=80',
     description: 'Our quarterly blood donation drive saw a record 120 units donated by employees, clients, and community members.',
     participants: 120,

@@ -24,7 +24,7 @@ export default function TermsPage() {
             { title: '4. RERA Compliance', text: 'FIVEX Growth Realty operates as a registered real estate agent under RERA in Uttar Pradesh, Haryana, and Maharashtra. Our registration numbers are available on the Contact page. We only recommend RERA-registered projects.' },
             { title: '5. Limitation of Liability', text: 'FIVEX serves as an advisory intermediary. We are not liable for developer delays, construction quality issues, or post-sale disputes between clients and developers. All representations made by developers are their own responsibility.' },
             { title: '6. Intellectual Property', text: 'All content on this website, including text, images, and branding, is the property of FIVEX Growth Realty. Reproduction without written consent is prohibited.' },
-            { title: '7. Contact', text: 'For legal inquiries, contact us at legal@fivexgrowthrealty.com.' },
+            { title: '7. Contact', text: 'For legal inquiries, contact us at infofivexgrowthrealty@gmail.com or info@fivexgrowthrealty.co.in.' },
           ].map(({ title, text }) => (
             <section key={title}>
               <h2 className="font-display font-bold text-primary text-xl mb-3">{title}</h2>

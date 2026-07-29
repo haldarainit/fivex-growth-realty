@@ -60,10 +60,14 @@ export default function ContactPage() {
         {/* Quick contact strip */}
         <div className="bg-secondary">
           <div className="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-16 py-4">
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap gap-6 items-center">
               <a href={`tel:${contactDetails.primaryPhone}`} className="flex items-center gap-2 text-primary hover:text-primary/70 transition-colors">
                 <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: '"FILL" 1' }}>call</span>
-                <span className="font-bold text-sm">{contactDetails.primaryPhone}</span>
+                <span className="font-bold text-sm">{contactDetails.formattedPhone || contactDetails.primaryPhone}</span>
+              </a>
+              <a href={contactDetails.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary hover:text-primary/70 transition-colors">
+                <span className="material-symbols-outlined text-base text-green-700" style={{ fontVariationSettings: '"FILL" 1' }}>chat</span>
+                <span className="font-bold text-sm">WhatsApp Connect</span>
               </a>
               <a href={`mailto:${contactDetails.email}`} className="flex items-center gap-2 text-primary hover:text-primary/70 transition-colors">
                 <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: '"FILL" 1' }}>mail</span>
@@ -116,7 +120,7 @@ export default function ContactPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label className={labelCls}>Phone Number</label>
-                      <input name="phone" value={form.phone} onChange={handleChange} placeholder="+91 98765 43210" className={inputCls} />
+                      <input name="phone" value={form.phone} onChange={handleChange} placeholder="+91 8279319964" className={inputCls} />
                     </div>
                     <div>
                       <label className={labelCls}>Subject</label>
@@ -169,11 +173,14 @@ export default function ContactPage() {
                     <h3 className={`font-display font-bold text-base ${office.isPrimary ? 'text-white' : 'text-primary'}`}>{office.label}</h3>
                   </div>
                   <div className="space-y-2">
-                    <p className={`text-sm leading-relaxed ${office.isPrimary ? 'text-white/60' : 'text-gray-500'}`}>{office.address}</p>
-                    <a href={`tel:${office.phone}`} className={`flex items-center gap-2 text-sm ${office.isPrimary ? 'text-white/70 hover:text-secondary' : 'text-gray-500 hover:text-secondary'} transition-colors`}>
-                      <span className="material-symbols-outlined text-secondary text-sm">call</span>{office.phone}
+                    <p className={`text-sm leading-relaxed ${office.isPrimary ? 'text-white/80' : 'text-gray-500'}`}>{office.address}</p>
+                    <a href={`tel:${office.phone}`} className={`flex items-center gap-2 text-sm ${office.isPrimary ? 'text-white/80 hover:text-secondary' : 'text-gray-500 hover:text-secondary'} transition-colors font-bold`}>
+                      <span className="material-symbols-outlined text-secondary text-sm">call</span>{contactDetails.formattedPhone || office.phone}
                     </a>
-                    <a href={`mailto:${office.email}`} className={`flex items-center gap-2 text-sm ${office.isPrimary ? 'text-white/70 hover:text-secondary' : 'text-gray-500 hover:text-secondary'} transition-colors`}>
+                    <a href={contactDetails.whatsapp} target="_blank" rel="noopener noreferrer" className={`flex items-center gap-2 text-sm text-green-400 hover:underline transition-colors font-bold`}>
+                      <span className="material-symbols-outlined text-sm">chat</span>WhatsApp Connect
+                    </a>
+                    <a href={`mailto:${office.email}`} className={`flex items-center gap-2 text-sm ${office.isPrimary ? 'text-white/80 hover:text-secondary' : 'text-gray-500 hover:text-secondary'} transition-colors`}>
                       <span className="material-symbols-outlined text-secondary text-sm">mail</span>{office.email}
                     </a>
                   </div>
@@ -193,14 +200,14 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* RERA & GSTIN */}
+              {/* Regulatory Information */}
               <div id="rera" className="bg-surface-container-low rounded-2xl p-6 border border-gray-100">
-                <h3 className="font-display font-bold text-primary text-base mb-4">Regulatory Information</h3>
-                <div className="space-y-2">
-                  <div><p className="text-[10px] font-bold uppercase tracking-wider text-gray-400">UP RERA</p><p className="text-primary text-sm font-mono">{companyInfo.rera.up}</p></div>
-                  <div><p className="text-[10px] font-bold uppercase tracking-wider text-gray-400">Haryana RERA</p><p className="text-primary text-sm font-mono">{companyInfo.rera.haryana}</p></div>
-                  <div><p className="text-[10px] font-bold uppercase tracking-wider text-gray-400">Maharashtra RERA</p><p className="text-primary text-sm font-mono">{companyInfo.rera.maharashtra}</p></div>
-                  <div><p className="text-[10px] font-bold uppercase tracking-wider text-gray-400">GSTIN</p><p className="text-primary text-sm font-mono">{companyInfo.gstin}</p></div>
+                <h3 className="font-display font-bold text-primary text-base mb-4">Regulatory &amp; Tax Information</h3>
+                <div className="space-y-3">
+                  <div><p className="text-[10px] font-bold uppercase tracking-wider text-gray-400">GSTIN</p><p className="text-primary text-sm font-mono font-bold">{companyInfo.gstin}</p></div>
+                  <div><p className="text-[10px] font-bold uppercase tracking-wider text-gray-400">Corporate Identity Number (CIN)</p><p className="text-primary text-sm font-mono font-bold">{companyInfo.cin}</p></div>
+                  <div><p className="text-[10px] font-bold uppercase tracking-wider text-gray-400">Permanent Account Number (PAN)</p><p className="text-primary text-sm font-mono font-bold">{companyInfo.pan}</p></div>
+                  <div><p className="text-[10px] font-bold uppercase tracking-wider text-gray-400">RERA Status</p><p className="text-primary text-sm font-semibold">{companyInfo.rera.description}</p></div>
                 </div>
               </div>
 

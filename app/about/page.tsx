@@ -2,17 +2,18 @@
 
 import { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
-import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import AboutSidebar from '@/components/about/AboutSidebar';
 import CertificatesSection from '@/components/about/CertificatesSection';
 import { leadershipMembers } from '@/data/leadershipData';
-import { teamMembers, TeamMemberProfile } from '@/data/teamData';
+import { teamMembers } from '@/data/teamData';
 import { successStories } from '@/data/testimonialsData';
-import { partners } from '@/data/partnerData';
+import { partners, ncrDevelopersList, gurgaonDevelopersList } from '@/data/partnerData';
 import { faqs } from '@/data/homeData';
 import { aboutStatsMetrics } from '@/data/aboutData';
+import { companyInfo, contactDetails, officeAddresses } from '@/data/companyData';
 
 // ─── Full-Width Section Wrapper ────────────────────────────────────────────────
 const Section: React.FC<{
@@ -119,19 +120,21 @@ const LeaderCard: React.FC<{ member: typeof leadershipMembers[0]; index: number 
       <div className="p-6 pt-0">
         <div className="flex items-center justify-between pt-4 border-t border-gray-100">
           <div className="flex gap-2">
-            <a
-              href={member.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-9 h-9 rounded-xl border border-gray-200 flex items-center justify-center text-gray-500 hover:text-secondary hover:border-secondary transition-all"
-            >
-              <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-              </svg>
-            </a>
+            {member.whatsapp && (
+              <a
+                href={member.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-xl border border-green-200 bg-green-50 flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white transition-all"
+                title="Connect on WhatsApp"
+              >
+                <span className="material-symbols-outlined text-base">chat</span>
+              </a>
+            )}
             <a
               href={`mailto:${member.email}`}
               className="w-9 h-9 rounded-xl border border-gray-200 flex items-center justify-center text-gray-500 hover:text-secondary hover:border-secondary transition-all"
+              title="Email"
             >
               <span className="material-symbols-outlined text-base">mail</span>
             </a>
@@ -140,7 +143,7 @@ const LeaderCard: React.FC<{ member: typeof leadershipMembers[0]; index: number 
             href={`/leadership/${member.id}`}
             className="text-xs font-extrabold text-primary border-2 border-primary/20 px-4 py-2 rounded-xl hover:bg-primary hover:text-white transition-all flex items-center gap-1"
           >
-            View Details
+            View Full Profile
             <span className="material-symbols-outlined text-sm">arrow_forward</span>
           </Link>
         </div>
@@ -190,34 +193,29 @@ const FaqItem: React.FC<{ faq: typeof faqs[0]; index: number }> = ({ faq, index 
 // ─── Journey Milestones ────────────────────────────────────────────────────────
 const journeyMilestones = [
   {
-    year: '2010',
-    title: 'Founded in Noida',
-    desc: 'FIVEX Growth Realty established with a vision to redefine premium real estate advisory in India.',
+    year: '2025',
+    title: 'Incorporation of FIVEX Growth Realty Pvt Ltd',
+    desc: 'Established on 26 June 2025 with CIN U68100UP2025PTC226865 to redefine real estate advisory through transparency and client-first ethics.',
   },
   {
-    year: '2014',
-    title: '100+ HNI Portfolios',
-    desc: 'Crossed 100 successful portfolio acquisitions across Delhi NCR luxury corridors.',
+    year: '13+ Yrs',
+    title: '13+ Years Collective Industry Expertise',
+    desc: 'Backed by a seasoned leadership team with over 13 years of real estate, plotted development, and commercial advisory experience.',
   },
   {
-    year: '2017',
-    title: 'Gurugram Headquarters',
-    desc: 'Expanded into Gurugram to manage Grade-A commercial acquisitions & Golf Course Extension projects.',
+    year: '300+',
+    title: '300+ Successful Property Transactions',
+    desc: 'Closed landmark residential, commercial, authority plot, and industrial deals across North India.',
   },
   {
-    year: '2020',
-    title: '42-Point RERA Check',
-    desc: 'Instituted India\'s most rigorous 42-point title and legal verification framework.',
+    year: '100+',
+    title: '100+ High Appreciation Investments',
+    desc: 'Delivered 30–60% capital appreciation for investors across Yamuna Expressway, Jewar Airport belt, and Noida.',
   },
   {
-    year: '2023',
-    title: 'Airport Corridor Expansion',
-    desc: 'Established dedicated desk for Jewar Airport & Yamuna Expressway megaprojects.',
-  },
-  {
-    year: '2026',
-    title: '1,200+ Clients & ₹2,500 Cr',
-    desc: 'Surpassed 1,200 satisfied clients with over ₹2,500 Cr+ in managed real estate assets.',
+    year: '50+',
+    title: '50+ Tier-1 Developer Partnerships',
+    desc: 'Partnered with premier developer groups in Noida, Greater Noida, and Gurgaon for exclusive investor access.',
   },
 ];
 
@@ -233,10 +231,10 @@ interface AwardDetail {
 // ─── Main About Page ────────────────────────────────────────────────────────
 export default function AboutPage() {
   const [activeSection, setActiveSection] = useState('who-we-are');
-  const [selectedAward, setSelectedAward] = useState<AwardDetail | null>(null);
 
   const sectionIds = [
     'who-we-are',
+    'founder',
     'leadership',
     'mission-vision',
     'certificates',
@@ -268,38 +266,32 @@ export default function AboutPage() {
 
   const awardsList: AwardDetail[] = [
     {
-      title: 'Real Estate CEO of the Year 2023',
-      issuer: 'CREDAI National Awards',
-      year: '2023',
-      certificateId: 'CREDAI-2023-EXC-094',
-      description: 'Recognized for exemplary leadership in building India\'s most transparent luxury real estate advisory firm.',
+      title: 'Top Real Estate Consultant - Yamuna Expressway Belt',
+      issuer: 'NCR Realty Excellence Forum',
+      year: '2024',
+      certificateId: 'FIVEX-YEIDA-2024',
+      description: 'Recognized for market authority and top-tier investor advisory in Yamuna Expressway Sectors 18, 20, 22D & Jewar Aerocity.',
       image: 'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=800&q=80',
     },
     {
-      title: 'Top 50 Real Estate Leaders in India',
-      issuer: 'Economic Times Real Estate Summit',
-      year: '2022',
-      certificateId: 'ET-RE-2022-881',
-      description: 'Awarded for pioneering multi-city portfolio management standards and HNI investor advisory excellence.',
+      title: 'High ROI Investment Advisory Recognition',
+      issuer: 'North India Property Summit',
+      year: '2023',
+      certificateId: 'NIPS-ROI-2023',
+      description: 'Awarded for delivering 30–60% capital appreciation across 100+ strategic investor acquisitions.',
       image: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&q=80',
     },
     {
-      title: 'Best Brokerage Leadership Award',
-      issuer: 'NAREDCO National Convention',
-      year: '2021',
-      certificateId: 'NAREDCO-2021-BLA',
-      description: 'Honored for zero-litigation track record and instituting the 42-Point Property Verification standard.',
+      title: 'Best Channel Partner Excellence',
+      issuer: 'Leading Developer Association',
+      year: '2023',
+      certificateId: 'DEV-CP-2023',
+      description: 'Honored for transparent channel partner services, project marketing, and customer satisfaction scores.',
       image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80',
     },
-    {
-      title: 'Commercial Dealmaker of the Year',
-      issuer: 'PropTiger Realty Excellence',
-      year: '2023',
-      certificateId: 'PROPTIGER-2023-COM',
-      description: 'Awarded for closing over ₹800 Cr in Grade-A commercial acquisitions across Delhi NCR.',
-      image: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&q=80',
-    },
   ];
+
+  const founder = leadershipMembers.find((m) => m.id === 'syed-zeeshan-ahmad')!;
 
   return (
     <>
@@ -317,27 +309,36 @@ export default function AboutPage() {
             >
               <span className="inline-flex items-center gap-2 text-secondary text-xs font-extrabold uppercase tracking-widest mb-4">
                 <span className="w-8 h-px bg-secondary" />
-                About FIVEX Growth Realty
+                FIVEX GROWTH REALTY PRIVATE LIMITED
               </span>
               <h1 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.08] max-w-4xl">
-                India&apos;s Most Trusted <br />
-                <span className="text-secondary">Real Estate Growth Partner</span>
+                Building Wealth Through <br />
+                <span className="text-secondary">Real Estate Excellence</span>
               </h1>
               <p className="mt-4 text-white/88 text-sm sm:text-base lg:text-lg max-w-3xl leading-relaxed font-medium">
-                Since 2010, FIVEX Growth Realty has combined deep market intelligence, 42-point property verification, and dedicated concierge advisory to deliver unmatched property outcomes.
+                Established on 26 June 2025, FIVEX GROWTH REALTY PRIVATE LIMITED is a leading real estate consultancy and property advisory firm headquartered in Sector 132 Noida, backed by over 13 years of collective industry expertise.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href="#certificates"
-                  className="inline-flex items-center justify-center rounded-xl bg-secondary px-5 py-3 text-xs font-extrabold uppercase tracking-wider text-primary shadow-lg transition-all hover:brightness-110"
+                  href={contactDetails.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-green-500 px-5 py-3 text-xs font-extrabold uppercase tracking-wider text-white shadow-lg transition-all hover:bg-green-600"
                 >
-                  View Corporate Certificates
+                  <span className="material-symbols-outlined text-base">chat</span>
+                  Connect on WhatsApp
                 </a>
                 <a
-                  href="#who-we-are"
+                  href="#founder"
+                  className="inline-flex items-center justify-center rounded-xl bg-secondary px-5 py-3 text-xs font-extrabold uppercase tracking-wider text-primary shadow-lg transition-all hover:brightness-110"
+                >
+                  Meet Our Founder
+                </a>
+                <a
+                  href="#certificates"
                   className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/10 px-5 py-3 text-xs font-extrabold uppercase tracking-wider text-white backdrop-blur-md transition-all hover:bg-white/15"
                 >
-                  Explore About Us
+                  Corporate Info &amp; GSTIN
                 </a>
               </div>
             </motion.div>
@@ -379,63 +380,176 @@ export default function AboutPage() {
               <Section
                 id="who-we-are"
                 badge="About Us"
-                title="Who We Are"
-                subtitle="We are more than a brokerage — we are your long-term real estate growth partner."
+                title="FIVEX GROWTH REALTY PRIVATE LIMITED"
+                subtitle="Building Wealth Through Real Estate with integrity, transparency, and market expertise."
               >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
                   <div className="space-y-4 text-gray-700 text-sm sm:text-base leading-relaxed font-medium">
                     <p>
-                      FIVEX Growth Realty was founded with a singular vision: to bring the highest standards of international real estate advisory to Indian buyers and investors. What started as a boutique consultancy in Noida has grown into one of India&apos;s most respected premium real estate brokerages.
+                      <strong>FIVEX GROWTH REALTY PRIVATE LIMITED</strong> is a leading real estate consultancy and property advisory firm, dedicated to delivering exceptional residential and commercial real estate solutions. With a strong commitment to integrity, transparency, and customer satisfaction, we have established ourselves as a trusted partner for homebuyers, investors, and corporate clients.
                     </p>
                     <p>
-                      We specialize in helping HNIs, NRIs, and institutional investors navigate the complex landscape of Indian real estate — from luxury residences and Grade-A commercial assets to strategic land acquisitions and investment portfolio management.
+                      Strategically headquartered in Noida, one of India&apos;s fastest-growing real estate destinations, we specialize in helping clients identify high-potential investment opportunities and premium properties that align perfectly with their financial goals and lifestyle aspirations.
                     </p>
                     <p>
-                      Our proprietary 42-point verification process, deep developer relationships, and dedicated advisory team ensure that every FIVEX client receives an unparalleled concierge experience.
+                      Established on <strong>26 June 2025</strong>, FIVEX GROWTH REALTY PRIVATE LIMITED was founded with a vision to redefine the real estate experience through professionalism, trust, and market expertise. Backed by an experienced leadership team with over 13 years of collective industry expertise, the company has quickly emerged as a reliable name in the real estate sector.
                     </p>
-                    <div className="grid grid-cols-2 gap-3 pt-3">
-                      {[
-                        { icon: 'verified', text: '42-Point Verification' },
-                        { icon: 'handshake', text: 'Developer Partnerships' },
-                        { icon: 'support_agent', text: 'Dedicated Advisors' },
-                        { icon: 'gavel', text: 'Legal Advisory' },
-                      ].map((item) => (
-                        <div key={item.text} className="flex items-center gap-2.5 bg-surface-container-low p-3 rounded-xl border border-gray-100">
-                          <span
-                            className="material-symbols-outlined text-secondary text-lg flex-shrink-0"
-                            style={{ fontVariationSettings: '"FILL" 1' }}
-                          >
-                            {item.icon}
-                          </span>
-                          <span className="text-xs sm:text-sm font-extrabold text-primary">
-                            {item.text}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
+                    <p>
+                      Whether you are purchasing your dream home, expanding your business, or building a long-term investment portfolio, FIVEX GROWTH REALTY ensures a seamless and rewarding journey.
+                    </p>
                   </div>
 
-                  <div className="relative rounded-3xl overflow-hidden h-80 lg:h-full min-h-[340px] shadow-xl border border-gray-100">
-                    <img
-                      src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=800&q=80"
-                      alt="FIVEX Headquarters"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/50 to-transparent" />
-                    <div className="absolute bottom-6 left-6 bg-white/20 backdrop-blur-md rounded-2xl p-4 border border-white/30 text-white">
-                      <p className="font-extrabold text-base sm:text-lg">HQ Sector 62, Noida</p>
-                      <p className="text-white/80 text-xs font-semibold">Established 2010</p>
+                  <div className="bg-surface-container-low p-6 sm:p-8 rounded-3xl border border-gray-100 shadow-md space-y-6">
+                    <h3 className="font-display font-extrabold text-xl text-primary flex items-center gap-2">
+                      <span className="material-symbols-outlined text-secondary">domain</span>
+                      Corporate Information
+                    </h3>
+                    <div className="space-y-3.5 text-xs sm:text-sm">
+                      <div className="flex justify-between py-2 border-b border-gray-200">
+                        <span className="text-gray-500 font-medium">Company Name:</span>
+                        <span className="font-extrabold text-primary text-right">{companyInfo.name}</span>
+                      </div>
+                      <div className="flex justify-between py-2 border-b border-gray-200">
+                        <span className="text-gray-500 font-medium">Date of Incorporation:</span>
+                        <span className="font-bold text-primary">{companyInfo.dateOfIncorporation}</span>
+                      </div>
+                      <div className="flex justify-between py-2 border-b border-gray-200">
+                        <span className="text-gray-500 font-medium">CIN:</span>
+                        <span className="font-mono font-bold text-secondary">{companyInfo.cin}</span>
+                      </div>
+                      <div className="flex justify-between py-2 border-b border-gray-200">
+                        <span className="text-gray-500 font-medium">GSTIN:</span>
+                        <span className="font-mono font-bold text-secondary">{companyInfo.gstin}</span>
+                      </div>
+                      <div className="flex justify-between py-2 border-b border-gray-200">
+                        <span className="text-gray-500 font-medium">PAN:</span>
+                        <span className="font-mono font-bold text-primary">{companyInfo.pan}</span>
+                      </div>
+                      <div className="py-2 space-y-1">
+                        <span className="text-gray-500 font-medium block">Registered Office:</span>
+                        <span className="font-semibold text-primary block leading-relaxed">{officeAddresses[0].address}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </Section>
 
-              {/* 2. Leadership */}
+              {/* 2. Founder Section */}
+              <Section
+                id="founder"
+                badge="Meet the Founder"
+                title="SYED ZEESHAN AHMAD"
+                subtitle="Founder & Managing Director | Real Estate Expert | Investment Consultant | Yamuna Expressway & Noida Specialist"
+              >
+                <div className="bg-gradient-to-br from-primary via-primary to-primary/95 text-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-secondary/30 relative overflow-hidden">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    {/* Left: Founder Card / Contact Details */}
+                    <div className="lg:col-span-4 space-y-6">
+                      <div className="relative rounded-2xl overflow-hidden border-2 border-secondary/40 shadow-2xl bg-gray-900 aspect-square">
+                        <img
+                          src={founder.image}
+                          alt={founder.name}
+                          className="w-full h-full object-cover object-top"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <p className="font-display font-extrabold text-lg text-white">{founder.name}</p>
+                          <p className="text-secondary text-xs font-bold">{founder.designation}</p>
+                        </div>
+                      </div>
+
+                      {/* Direct Connect Buttons */}
+                      <div className="space-y-2.5">
+                        <a
+                          href={founder.whatsapp}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full bg-green-500 hover:bg-green-600 text-white font-extrabold py-3 px-4 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
+                        >
+                          <span className="material-symbols-outlined text-base">chat</span>
+                          WhatsApp: Let&apos;s Connect
+                        </a>
+                        <a
+                          href={`tel:${founder.phone}`}
+                          className="w-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 transition-all"
+                        >
+                          <span className="material-symbols-outlined text-secondary text-base">call</span>
+                          {founder.phone}
+                        </a>
+                        <a
+                          href={`mailto:${founder.email}`}
+                          className="w-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 transition-all"
+                        >
+                          <span className="material-symbols-outlined text-secondary text-base">mail</span>
+                          {founder.email}
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Right: Detailed Bio & Headline */}
+                    <div className="lg:col-span-8 space-y-6">
+                      <div>
+                        <span className="text-xs font-extrabold uppercase tracking-widest text-secondary bg-secondary/15 px-3 py-1 rounded-full border border-secondary/30">
+                          FOUNDER &amp; MANAGING DIRECTOR
+                        </span>
+                        <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-white mt-3 leading-tight">
+                          {founder.name}
+                        </h3>
+                        <p className="text-secondary/90 text-xs sm:text-sm font-semibold mt-2 leading-relaxed">
+                          {founder.headline}
+                        </p>
+                      </div>
+
+                      <div className="space-y-4 text-white/85 text-xs sm:text-sm leading-relaxed font-medium border-t border-white/10 pt-5">
+                        {founder.fullBio.map((paragraph, idx) => (
+                          <p key={idx}>{paragraph}</p>
+                        ))}
+                      </div>
+
+                      {/* Achievements Grid */}
+                      <div className="pt-4 border-t border-white/10">
+                        <h4 className="font-display font-bold text-sm text-secondary uppercase tracking-wider mb-3">
+                          🏆 Achievements &amp; Highlights
+                        </h4>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                          {founder.achievements.map((item, idx) => (
+                            <div key={idx} className="flex items-start gap-2 bg-white/5 p-2.5 rounded-xl border border-white/10">
+                              <span className="material-symbols-outlined text-secondary text-sm flex-shrink-0 mt-0.5" style={{ fontVariationSettings: '"FILL" 1' }}>
+                                check_circle
+                              </span>
+                              <span className="text-white/90 text-xs font-semibold">{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Areas Served */}
+                      <div className="pt-2">
+                        <h4 className="font-display font-bold text-sm text-secondary uppercase tracking-wider mb-2.5">
+                          🌍 Key Areas Served
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {founder.areasServed?.map((area) => (
+                            <span key={area} className="text-[11px] font-bold bg-white/10 text-white px-3 py-1 rounded-lg border border-white/15">
+                              {area}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              </Section>
+
+              {/* 3. Leadership Team */}
               <Section
                 id="leadership"
-                badge="Our Leaders"
-                title="Leadership Team"
-                subtitle="Seasoned professionals with decades of combined expertise in Indian and global real estate markets."
+                badge="Leadership Team"
+                title="Our Directors"
+                subtitle="Combining deep market insight, strategic vision, and an unwavering commitment to client success."
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {leadershipMembers.map((member, i) => (
@@ -444,35 +558,35 @@ export default function AboutPage() {
                 </div>
               </Section>
 
-              {/* 3. Combined Mission & Vision Section */}
+              {/* 4. Our Mission & Vision */}
               <Section
                 id="mission-vision"
-                badge="Our Core Purpose"
-                title="Mission & Vision"
-                subtitle="What drives us today and where we are guiding the future of Indian real estate advisory."
+                badge="Our Purpose"
+                title="Our Mission & Vision"
+                subtitle="The foundational principles guiding every real estate transaction at FIVEX GROWTH REALTY."
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   {/* Mission */}
                   <div className="bg-gradient-to-br from-white to-surface-container-low p-8 rounded-3xl border border-gray-100 shadow-xl space-y-5">
                     <div className="w-14 h-14 rounded-2xl bg-secondary/15 flex items-center justify-center border border-secondary/30">
                       <span className="material-symbols-outlined text-secondary text-2xl" style={{ fontVariationSettings: '"FILL" 1' }}>
-                        verified_user
+                        target
                       </span>
                     </div>
                     <span className="text-xs font-extrabold uppercase tracking-widest text-secondary block">
                       OUR MISSION
                     </span>
                     <h3 className="font-display font-extrabold text-2xl text-primary">
-                      Uncompromising Value &amp; Security
+                      Seamless, Transparent &amp; Professional Services
                     </h3>
-                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed font-medium">
-                      At FIVEX Growth Realty, our mission is to safeguard every rupee of our clients&apos; investment through transparent advisory, 42-point property verification, and data-backed market intelligence. We aim to build lifelong client partnerships that span resale, leasing, and wealth creation.
+                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed font-medium">
+                      To provide seamless, transparent, and professional real estate services, helping clients discover residential and commercial properties that perfectly match their aspirations, lifestyle, and investment objectives.
                     </p>
-                    <div className="space-y-2.5 pt-2 border-t border-gray-200">
+                    <div className="space-y-2.5 pt-3 border-t border-gray-200">
                       {[
-                        '42-Point Title & Document Verification',
-                        'Zero Litigation Developer Selection',
-                        'Lifecycle Asset & Wealth Advisory',
+                        'Complete Honesty & Clarity in Every Transaction',
+                        'Client Aspirations & Satisfaction Always First',
+                        'Verified Properties & RERA Compliance',
                       ].map((pillar) => (
                         <div key={pillar} className="flex items-center gap-2.5 text-xs sm:text-sm font-bold text-primary">
                           <span className="material-symbols-outlined text-secondary text-base">check_circle</span>
@@ -493,19 +607,19 @@ export default function AboutPage() {
                       OUR VISION
                     </span>
                     <h3 className="font-display font-extrabold text-2xl text-white">
-                      Pan-India Advisory Leadership
+                      India&apos;s Most Respected Real Estate Organization
                     </h3>
                     <p className="text-white/85 text-sm sm:text-base leading-relaxed font-medium">
-                      To be India&apos;s most trusted and admired luxury real estate consultancy — managing over ₹10,000 Cr+ in client property assets across 15 premier economic corridors by 2030, while maintaining our boutique personalized touch.
+                      To become one of India&apos;s most respected real estate organizations, recognized for integrity, innovation, customer satisfaction, and excellence in every transaction.
                     </p>
                     <div className="grid grid-cols-3 gap-3 pt-4 border-t border-white/15">
                       {[
-                        { value: '15', label: 'Cities by 2030' },
-                        { value: '₹10K Cr', label: 'Asset Target' },
-                        { value: '10,000+', label: 'Happy Clients' },
+                        { value: 'Integrity', label: 'Ethical Practices' },
+                        { value: 'Innovation', label: 'Data & PropTech' },
+                        { value: 'Excellence', label: 'Every Deal' },
                       ].map((item) => (
                         <div key={item.label} className="bg-white/10 rounded-xl p-3 text-center border border-white/10">
-                          <p className="font-display font-extrabold text-secondary text-lg">{item.value}</p>
+                          <p className="font-display font-extrabold text-secondary text-sm sm:text-base">{item.value}</p>
                           <p className="text-white/70 text-[10px] uppercase font-bold mt-0.5">{item.label}</p>
                         </div>
                       ))}
@@ -514,22 +628,22 @@ export default function AboutPage() {
                 </div>
               </Section>
 
-              {/* 4. Corporate Certificates & Legal Accreditations Section */}
+              {/* 5. Corporate Certificates Section */}
               <Section
                 id="certificates"
-                badge="Corporate Accreditations"
-                title="Certificates & Compliance Documents"
-                subtitle="View and download official government registration certificates, DPIIT recognition, GSTIN, and corporate compliance documents for FIVEX Growth Realty Private Limited."
+                badge="Corporate Documents"
+                title="Certificates & Government Registrations"
+                subtitle="Official Government of India registration certificates, GSTIN, PAN, and corporate documents for FIVEX GROWTH REALTY PRIVATE LIMITED."
               >
                 <CertificatesSection />
               </Section>
 
-              {/* 5. Our Journey */}
+              {/* 6. Our Journey */}
               <Section
                 id="journey"
-                badge="Our Story"
-                title="Our Journey"
-                subtitle="From a boutique Noida office to a pan-India premium brokerage — the FIVEX story."
+                badge="Our Growth"
+                title="Key Milestones"
+                subtitle="Building trust and delivering high ROI investments."
               >
                 <div className="relative">
                   <div className="absolute left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-secondary via-secondary/40 to-transparent hidden sm:block rounded-full" />
@@ -544,7 +658,7 @@ export default function AboutPage() {
                         className="relative flex gap-5 sm:gap-6"
                       >
                         <div className="flex-shrink-0 w-11 h-11 rounded-full bg-secondary text-primary font-extrabold text-xs flex items-center justify-center shadow-lg z-10 border-2 border-white">
-                          {m.year.slice(2)}
+                          ★
                         </div>
                         <div className="flex-1 bg-white rounded-2xl p-5 sm:p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all">
                           <div className="flex items-center gap-3 mb-2">
@@ -565,139 +679,121 @@ export default function AboutPage() {
                 </div>
               </Section>
 
-              {/* 6. Awards & Recognition */}
+              {/* 7. Awards */}
               <Section
                 id="awards"
-                badge="Recognition & Certificates"
-                title="Awards & Recognition"
-                subtitle="Industry accolades celebrating our commitment to transparent real estate advisory."
+                badge="Recognition"
+                title="Awards & Industry Recognition"
+                subtitle="Recognized partner with top developers across North India."
               >
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                   {awardsList.map((award, i) => (
-                    <motion.div
-                      key={`${award.title}-${i}`}
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.08 }}
-                      onClick={() => setSelectedAward(award)}
-                      className="group bg-gradient-to-br from-primary via-primary-container to-primary/95 rounded-2xl p-5 text-white relative overflow-hidden shadow-md hover:shadow-2xl cursor-pointer hover:-translate-y-1 transition-all border border-secondary/20"
+                    <div
+                      key={award.title}
+                      className="bg-primary text-white rounded-2xl p-6 border border-secondary/20 shadow-md flex flex-col justify-between"
                     >
-                      <div className="relative h-40 rounded-xl overflow-hidden mb-4 border border-white/20 bg-white/10">
-                        <img
-                          src={award.image}
-                          alt={award.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent flex items-end p-3">
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-secondary bg-primary/90 px-2.5 py-1 rounded-md border border-secondary/30">
-                            {award.issuer}
-                          </span>
-                        </div>
-                      </div>
-
-                      <h3 className="font-display font-bold text-sm sm:text-base leading-snug text-white">
-                        {award.title}
-                      </h3>
-                      <p className="text-white/70 text-xs mt-1 font-medium">{award.description}</p>
-
-                      <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/10">
-                        <span className="text-[10px] font-extrabold uppercase tracking-widest text-secondary bg-secondary/15 px-3 py-1 rounded-full">
+                      <div>
+                        <span className="text-[10px] font-extrabold uppercase tracking-widest text-secondary bg-secondary/15 px-3 py-1 rounded-full border border-secondary/30">
                           {award.year}
                         </span>
-                        <span className="text-xs font-bold text-secondary flex items-center gap-1 group-hover:underline">
-                          View Details
-                          <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                        </span>
+                        <h3 className="font-display font-bold text-base mt-3 text-white">
+                          {award.title}
+                        </h3>
+                        <p className="text-white/70 text-xs mt-2 leading-relaxed font-medium">
+                          {award.description}
+                        </p>
                       </div>
-                    </motion.div>
+                      <p className="text-secondary text-xs font-bold mt-4 pt-3 border-t border-white/10">
+                        {award.issuer}
+                      </p>
+                    </div>
                   ))}
                 </div>
               </Section>
 
-              {/* 7. Developer Partners */}
+              {/* 8. Developer Partners */}
               <Section
                 id="developer-partners"
-                badge="Partnerships"
+                badge="Trusted Network"
                 title="Developer Partners"
-                subtitle="We work exclusively with India's most trusted and RERA-compliant developers."
+                subtitle="We partner with India's leading developers to bring clients genuine, high-yield real estate opportunities."
               >
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                  {partners
-                    .filter((p) => p.category === 'developer')
-                    .map((partner, i) => (
-                      <motion.div
-                        key={partner.id}
-                        initial={{ opacity: 0, y: 16 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: i * 0.07 }}
-                        className="group bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-md hover:border-secondary/30 transition-all text-center"
-                      >
-                        <div className="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center mx-auto mb-3 group-hover:bg-secondary/10 transition-colors">
-                          <span className="font-display font-extrabold text-primary text-lg">
-                            {partner.logo}
-                          </span>
-                        </div>
-                        <p className="font-extrabold text-primary text-sm sm:text-base">
-                          {partner.name}
-                        </p>
-                        <p className="text-gray-400 text-xs mt-1">{partner.dealsCount}+ deals</p>
-                      </motion.div>
-                    ))}
+                <div className="space-y-8">
+                  {/* Noida / NCR Developers */}
+                  <div>
+                    <h4 className="font-display font-extrabold text-base text-primary mb-3 flex items-center gap-2">
+                      <span className="material-symbols-outlined text-secondary">apartment</span>
+                      Noida, Greater Noida &amp; NCR Developers
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {ncrDevelopersList.map((dev) => (
+                        <span
+                          key={dev}
+                          className="bg-surface-container-low hover:bg-secondary/10 hover:border-secondary/40 text-primary border border-gray-200 text-xs font-bold px-3 py-2 rounded-xl transition-all shadow-2xs"
+                        >
+                          {dev}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Gurgaon Developers */}
+                  <div>
+                    <h4 className="font-display font-extrabold text-base text-primary mb-3 flex items-center gap-2">
+                      <span className="material-symbols-outlined text-secondary">location_city</span>
+                      Gurgaon (Gurugram) Developers
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {gurgaonDevelopersList.map((dev) => (
+                        <span
+                          key={dev}
+                          className="bg-primary/5 hover:bg-secondary/10 hover:border-secondary/40 text-primary border border-gray-200 text-xs font-bold px-3 py-2 rounded-xl transition-all shadow-2xs"
+                        >
+                          {dev}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </Section>
 
-              {/* 8. Our Team */}
+              {/* 9. Our Team */}
               <Section
                 id="our-team"
                 badge="The Team"
                 title="Our Advisory Team"
-                subtitle="Meet the experienced advisors behind FIVEX."
+                subtitle="RERA-certified real estate consultants with deep market expertise."
               >
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
                   {teamMembers.map((member, i) => (
-                    <motion.div
+                    <div
                       key={member.id}
-                      initial={{ opacity: 0, y: 16 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.07 }}
-                      className="group"
+                      className="bg-white rounded-2xl p-4 sm:p-5 border border-gray-100 shadow-sm text-center"
                     >
-                      <Link
-                        href={`/team/${member.id}`}
-                        className="block bg-white rounded-2xl p-4 sm:p-5 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer text-center"
-                      >
-                        <div className="relative w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full overflow-hidden border-4 border-secondary/30 group-hover:border-secondary transition-colors mb-3 shadow-md">
-                          <img
-                            src={member.image}
-                            alt={member.imageAlt}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <p className="font-display font-extrabold text-primary text-sm sm:text-base truncate">
-                          {member.name}
-                        </p>
-                        <p className="text-secondary text-[11px] sm:text-xs font-bold mt-0.5 truncate">{member.designation}</p>
-                        <p className="text-gray-400 text-xs mt-0.5">{member.location}</p>
-                      </Link>
-                    </motion.div>
+                      <div className="relative w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full overflow-hidden border-4 border-secondary/30 mb-3 shadow-md">
+                        <img
+                          src={member.image}
+                          alt={member.imageAlt}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <p className="font-display font-extrabold text-primary text-sm sm:text-base truncate">
+                        {member.name}
+                      </p>
+                      <p className="text-secondary text-[11px] sm:text-xs font-bold mt-0.5 truncate">{member.designation}</p>
+                      <p className="text-gray-400 text-xs mt-0.5">{member.location}</p>
+                    </div>
                   ))}
                 </div>
               </Section>
 
-              {/* 9. Testimonials */}
-              <Section id="testimonials" badge="Client Stories" title="What Clients Say" dark>
+              {/* 10. Testimonials */}
+              <Section id="testimonials" badge="Client Trust" title="What Clients Say" dark>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {successStories.slice(0, 4).map((story, i) => (
-                    <motion.div
+                    <div
                       key={story.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.1 }}
-                      className="bg-white/10 rounded-2xl p-6 border border-white/15 hover:border-secondary/40 transition-all"
+                      className="bg-white/10 rounded-2xl p-6 border border-white/15"
                     >
                       <div className="flex gap-1 mb-4">
                         {Array.from({ length: story.stars }).map((_, j) => (
@@ -714,28 +810,42 @@ export default function AboutPage() {
                         {story.quoteHeadline}
                       </p>
                       <div className="flex items-center gap-3 mt-6 pt-5 border-t border-white/15">
-                        {story.image ? (
-                          <img
-                            src={story.image}
-                            alt={story.author}
-                            className="w-11 h-11 rounded-full object-cover border border-secondary"
-                          />
-                        ) : (
-                          <div className="w-11 h-11 rounded-full bg-secondary/30 flex items-center justify-center text-secondary font-bold text-sm">
-                            {story.initials}
-                          </div>
-                        )}
+                        <div className="w-11 h-11 rounded-full bg-secondary/30 flex items-center justify-center text-secondary font-bold text-sm">
+                          {story.initials}
+                        </div>
                         <div>
                           <p className="text-white font-extrabold text-sm">{story.author}</p>
                           <p className="text-white/60 text-xs">{story.role}</p>
                         </div>
                       </div>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </Section>
 
-              {/* 10. FAQs */}
+              {/* 11. Why Choose Us */}
+              <Section id="why-choose-us" badge="Why Choose Us" title="Why Choose FIVEX GROWTH REALTY">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {[
+                    { icon: 'military_tech', title: 'Over 13 Years Industry Expertise', desc: 'Backed by deep market knowledge and experienced leadership.' },
+                    { icon: 'handshake', title: 'Trusted by Homebuyers & Investors', desc: 'Proven track record of high satisfaction and long-term relationships.' },
+                    { icon: 'gavel', title: 'Transparent & Ethical Business Practices', desc: 'Complete honesty, zero hidden fees, and verified documentation.' },
+                    { icon: 'domain', title: 'Strong Developer Relationships', desc: 'Direct access to 50+ tier-1 developer groups in NCR & Gurgaon.' },
+                    { icon: 'insights', title: 'Personalized Investment Solutions', desc: 'Custom property portfolios designed for maximum capital ROI.' },
+                    { icon: 'support_agent', title: 'End-to-End Transaction Support', desc: 'From site visits to home loans, legal title check, and registry.' },
+                  ].map((item) => (
+                    <div key={item.title} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm space-y-3">
+                      <div className="w-12 h-12 rounded-xl bg-secondary/15 text-secondary flex items-center justify-center">
+                        <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: '"FILL" 1' }}>{item.icon}</span>
+                      </div>
+                      <h4 className="font-display font-bold text-primary text-base">{item.title}</h4>
+                      <p className="text-gray-600 text-xs leading-relaxed font-medium">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </Section>
+
+              {/* 12. FAQs */}
               <Section id="faqs" badge="Common Questions" title="Frequently Asked Questions">
                 <div className="space-y-4 max-w-4xl">
                   {faqs.map((faq, i) => (
@@ -754,3 +864,4 @@ export default function AboutPage() {
     </>
   );
 }
+
