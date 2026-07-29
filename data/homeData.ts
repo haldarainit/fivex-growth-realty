@@ -11,11 +11,11 @@ import {
 
 export const navItems: NavItem[] = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Properties', href: '/properties' },
-  { label: 'Services', href: '/services' },
+  { label: 'About Us', href: '/about' },
   { label: 'Projects', href: '/projects' },
-  { label: 'Locations', href: '/locations' },
+  { label: 'Services', href: '/services' },
+  { label: 'Careers', href: '/careers' },
+  { label: 'Gallery', href: '/gallery' },
   { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -30,22 +30,29 @@ export const heroStats: HeroStatItem[] = [
 ];
 
 export const searchLocations = [
-  'All Noida',
-  'Greater Noida',
+  'All Locations',
   'Delhi NCR',
-  'Gurgaon',
+  'Noida Expressway',
+  'Gurugram',
+  'Jewar Airport Corridor',
+  'Greater Noida',
 ];
 
 export const searchPropertyTypes = [
-  'Residential',
-  'Commercial',
-  'Plots',
+  'All Types',
+  'Residential Real Estate',
+  'Commercial Real Estate',
+  'Luxury Villas',
+  'Premium Apartments',
+  'Pre-Launch Opportunities',
 ];
 
 export const searchBudgets = [
-  '50L - 1Cr',
-  '1Cr - 5Cr',
-  '5Cr+',
+  'Any Budget',
+  '₹50 Lakhs - ₹1 Cr',
+  '₹1 Cr - ₹3 Cr',
+  '₹3 Cr - ₹5 Cr',
+  'Above ₹5 Cr',
 ];
 
 export const aboutPillars: PillarItem[] = [

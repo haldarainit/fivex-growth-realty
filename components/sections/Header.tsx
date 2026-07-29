@@ -105,10 +105,10 @@ const MegaMenu: React.FC<{ visible: boolean; onClose: () => void }> = ({ visible
               <div>
                 <div className="flex items-center justify-between mb-4 border-b border-gray-100 pb-3">
                   <h4 className="font-display font-bold text-xs sm:text-sm text-primary truncate pr-2">
-                    Properties in {selectedCity.name}
+                    Projects in {selectedCity.name}
                   </h4>
                   <Link
-                    href={`/projects?city=${selectedCity.id}`}
+                    href={`/projects?city=${selectedCity.id}${selectedType.id !== 'all' ? `&type=${encodeURIComponent(selectedType.name)}` : ''}`}
                     onClick={onClose}
                     className="text-xs font-bold text-secondary hover:underline flex items-center gap-1 flex-shrink-0"
                   >
@@ -148,7 +148,7 @@ const MegaMenu: React.FC<{ visible: boolean; onClose: () => void }> = ({ visible
                     ))
                   ) : (
                     <div className="py-12 text-center text-gray-400 text-xs">
-                      No matching properties in {selectedCity.name} for {selectedType.name}.
+                      No matching projects in {selectedCity.name} for {selectedType.name}.
                     </div>
                   )}
                 </div>
@@ -239,11 +239,11 @@ export const Header: React.FC = () => {
         {/* Logo */}
         <Link
           href="/"
-          className="flex-shrink-0 flex items-center gap-1 sm:gap-1.5 font-display font-bold tracking-tight leading-none whitespace-nowrap"
+          className="flex-shrink items-center gap-1 sm:gap-1.5 font-display font-bold tracking-tight leading-none whitespace-nowrap min-w-0 flex"
         >
-          <span className={`text-base sm:text-lg xl:text-xl ${logoColor} transition-colors`}>FIVEX</span>
-          <span className="text-secondary text-base sm:text-lg xl:text-xl font-extrabold">GROWTH</span>
-          <span className={`text-base sm:text-lg xl:text-xl ${logoColor} transition-colors`}>REALTY</span>
+          <span className={`text-xs sm:text-lg xl:text-xl ${logoColor} transition-colors font-extrabold`}>FIVEX</span>
+          <span className="text-secondary text-xs sm:text-lg xl:text-xl font-black">GROWTH</span>
+          <span className={`text-xs sm:text-lg xl:text-xl ${logoColor} transition-colors font-extrabold`}>REALTY</span>
         </Link>
 
         {/* Desktop Nav Items */}
@@ -386,10 +386,10 @@ export const Header: React.FC = () => {
         </nav>
 
         {/* Right side: Contact Us CTA + Hamburger */}
-        <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+        <div className="flex items-center gap-1.5 sm:gap-3 flex-shrink-0">
           <Link
             href="/contact"
-            className="bg-secondary text-primary px-5 py-2.5 rounded-lg font-bold text-xs uppercase tracking-wider hover:brightness-110 transition-all active:scale-95 shadow-md whitespace-nowrap"
+            className="bg-secondary text-primary px-3 py-1.5 sm:px-5 sm:py-2.5 rounded-lg font-bold text-[11px] sm:text-xs uppercase tracking-wider hover:brightness-110 transition-all active:scale-95 shadow-md whitespace-nowrap"
           >
             Contact Us
           </Link>

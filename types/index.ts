@@ -76,6 +76,52 @@ export interface PropertyDetail {
   };
 }
 
+export interface UnifiedProject {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle?: string;
+  location: string;
+  cityId: string; // e.g., 'delhi-ncr', 'noida-expressway', 'gurugram', 'jewar', 'greater-noida'
+  cityName: string;
+  type: string; // e.g., 'Residential Real Estate', 'Commercial Real Estate', 'Luxury Villas', 'Premium Apartments', 'Plots'
+  status: 'Ongoing' | 'Upcoming' | 'Completed' | 'Ready-to-Move' | 'For Sale';
+  startingPrice: string;
+  priceNumeric: number; // For filtering & sorting by numeric price
+  yieldText?: string;
+  description: string;
+  fullOverview?: string[];
+  image: string;
+  imageAlt?: string;
+  galleryImages?: { url: string; alt: string }[];
+  badges: { label: string; style: string }[];
+  bedrooms?: number;
+  bathrooms?: number;
+  sqft?: string;
+  amenities?: DetailAmenity[];
+  floorPlanImage?: string;
+  landmarks?: LandmarkItem[];
+  agent?: AgentInfo;
+  investmentInsight?: {
+    title: string;
+    description: string;
+    trendLabel: string;
+  };
+  featured?: boolean;
+  completionDate?: string; // e.g., "Q4 2025" or "Completed 2023"
+}
+
+export interface ProjectFilterOptions {
+  city?: string;
+  type?: string;
+  status?: string;
+  priceRange?: string;
+  customMinPrice?: number;
+  customMaxPrice?: number;
+  sort?: string;
+  search?: string;
+}
+
 export interface ProjectItem {
   id: string;
   title: string;

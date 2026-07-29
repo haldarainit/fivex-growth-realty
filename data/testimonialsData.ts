@@ -3,7 +3,7 @@ import { TrustMetric, SuccessStory } from '@/types';
 export const trustMetrics: TrustMetric[] = [
   { value: '4.9/5', label: 'Google Reviews', icon: 'star' },
   { value: '2.5k+', label: 'Clients Served', icon: 'group' },
-  { value: '$1.2B', label: 'Assets Managed', icon: 'account_balance' },
+  { value: '₹10,000+ Cr', label: 'Assets Managed', icon: 'account_balance' },
 ];
 
 export const successStories: SuccessStory[] = [
