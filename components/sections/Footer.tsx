@@ -24,6 +24,44 @@ export const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
 
+  // Animated Total Site Visits Counter
+  const TARGET_TOTAL_VISITS = 184925;
+  const [totalVisits, setTotalVisits] = useState(0);
+
+  useEffect(() => {
+    // Smooth Count Up Animation from 0 to TARGET_TOTAL_VISITS on mount
+    let startTimestamp: number | null = null;
+    const duration = 2200; // 2.2s smooth deceleration
+
+    const animateCount = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const elapsed = timestamp - startTimestamp;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Cubic ease-out curve for count up
+      const easeOutProgress = 1 - Math.pow(1 - progress, 3);
+      const currentVal = Math.floor(easeOutProgress * TARGET_TOTAL_VISITS);
+      
+      setTotalVisits(currentVal);
+
+      if (progress < 1) {
+        requestAnimationFrame(animateCount);
+      }
+    };
+
+    const animFrame = requestAnimationFrame(animateCount);
+
+    // Periodic increment after animation completes
+    const visitIncrementInterval = setInterval(() => {
+      setTotalVisits((prev) => prev + Math.floor(Math.random() * 2) + 1);
+    }, 6000);
+
+    return () => {
+      cancelAnimationFrame(animFrame);
+      clearInterval(visitIncrementInterval);
+    };
+  }, []);
+
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
@@ -32,13 +70,16 @@ export const Footer: React.FC = () => {
     }
   };
 
+  // Dynamically formatted digits array - scales to 7, 8, 9+ digits automatically
+  const formattedDigits = totalVisits.toLocaleString('en-IN').split('');
+
   return (
-    <footer className="bg-primary text-white pt-16 border-t border-white/10">
+    <footer className="bg-primary text-white pt-16 border-t border-white/10 relative">
       {/* Main Footer Container */}
       <div className="px-4 sm:px-6 lg:px-14 max-w-[1440px] mx-auto pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
 
-          {/* Col 1: Brand & Contact Info (Clean - No Outer Box) */}
+          {/* Col 1: Brand & Contact Info */}
           <div className="space-y-6">
             <Link href="/" className="inline-flex items-center gap-1 font-display font-extrabold tracking-tight text-2xl leading-none">
               <span className="text-white">FIVEX</span>
@@ -78,7 +119,7 @@ export const Footer: React.FC = () => {
             <FooterSection title="Properties" links={footerData.propertyTypes} />
           </div>
 
-          {/* Col 4: Newsletter + Socials */}
+          {/* Col 4: Newsletter + Socials + Dynamic Box Counter Widget */}
           <div className="space-y-6">
             <div className="space-y-3">
               <h4 className="text-white font-extrabold text-xs uppercase tracking-widest">Market Insights</h4>
@@ -110,6 +151,7 @@ export const Footer: React.FC = () => {
               )}
             </div>
 
+            {/* Follow Us Section */}
             <div className="space-y-3 border-t border-white/10 pt-4">
               <h5 className="text-white/85 text-[11px] font-extrabold uppercase tracking-[0.22em]">
                 Follow Us
@@ -128,25 +170,51 @@ export const Footer: React.FC = () => {
               </div>
             </div>
 
+            {/* 📊 Clean Professional Dynamic Digit-Box Site Visit Counter (Placed directly under Follow Us) */}
+            <div className="space-y-2.5 border-t border-white/10 pt-4">
+              <h5 className="text-white/85 text-[11px] font-extrabold uppercase tracking-[0.22em]">
+                Total Site Visits
+              </h5>
+
+              {/* Dynamic Auto-Expanding Digit Boxes Container */}
+              <div className="bg-black/40 border border-white/15 p-3 rounded-2xl backdrop-blur-md shadow-inner">
+                <div className="flex flex-wrap items-center gap-1.5 py-0.5">
+                  {formattedDigits.map((char, index) => (
+                    <div
+                      key={index}
+                      className={`flex items-center justify-center font-mono font-extrabold text-sm rounded-lg select-none transition-all ${
+                        char === ','
+                          ? 'w-2.5 h-8 text-secondary text-xs font-bold bg-transparent'
+                          : 'w-7 h-8 bg-gradient-to-b from-white/20 to-white/10 border border-white/25 text-white shadow-[0_2px_4px_rgba(0,0,0,0.4)]'
+                      }`}
+                    >
+                      {char}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
           </div>
 
         </div>
       </div>
 
       {/* RERA & Bottom Legal Bar */}
-      <div className="border-t border-white/10 bg-transparent py-6">
-        <div className="px-4 sm:px-6 lg:px-14 max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="space-y-1 text-center md:text-left">
+      <div className="border-t border-white/10 bg-black/30 py-6">
+        <div className="px-4 sm:px-6 lg:px-14 max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-4">
+          <div className="space-y-1 text-center lg:text-left">
             <p className="text-white/60 text-xs font-semibold">
               © 2026 {companyInfo.name}. All rights reserved.
             </p>
-            <div className="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-1 pt-1">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-x-4 gap-y-1 pt-1">
               <span className="text-white/50 text-[11px]">UP RERA: {companyInfo.rera.up}</span>
               <span className="text-white/50 text-[11px]">Haryana RERA: {companyInfo.rera.haryana}</span>
               <span className="text-white/50 text-[11px]">Maharashtra RERA: {companyInfo.rera.maharashtra}</span>
               <span className="text-white/50 text-[11px]">GSTIN: {companyInfo.gstin}</span>
             </div>
           </div>
+
           <div className="flex gap-5 flex-wrap justify-center">
             {footerData.legal.map(({ label, href }) => (
               <Link key={href} href={href} className="text-white/60 hover:text-secondary text-xs transition-colors font-medium">

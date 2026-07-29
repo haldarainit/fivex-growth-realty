@@ -13,7 +13,7 @@ import { partners } from '@/data/partnerData';
 import { faqs } from '@/data/homeData';
 import { aboutStatsMetrics } from '@/data/aboutData';
 
-// ─── Full-Width Section Wrapper (Extends Edge-to-Edge) ─────────────────────────
+// ─── Full-Width Section Wrapper ────────────────────────────────────────────────
 const Section: React.FC<{
   id: string;
   title: string;
@@ -30,10 +30,10 @@ const Section: React.FC<{
       ref={ref}
       id={id}
       className={`scroll-mt-32 sm:scroll-mt-36 w-full py-12 sm:py-14 lg:py-16 border-b border-gray-100 ${
-        dark ? 'bg-primary text-white border-none' : 'bg-white text-primary'
+        dark ? 'bg-primary text-white border-none rounded-3xl shadow-2xl my-6 p-6 sm:p-10' : 'bg-white text-primary'
       }`}
     >
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16">
+      <div className="w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -190,38 +190,33 @@ const FaqItem: React.FC<{ faq: typeof faqs[0]; index: number }> = ({ faq, index 
 const journeyMilestones = [
   {
     year: '2010',
-    title: 'Founded',
+    title: 'Founded in Noida',
     desc: 'FIVEX Growth Realty established with a vision to redefine premium real estate advisory in India.',
   },
   {
-    year: '2012',
-    title: '50 Transactions',
-    desc: 'Crossed 50 successful transactions, establishing trust among HNI clients in Delhi NCR.',
+    year: '2014',
+    title: '100+ HNI Portfolios',
+    desc: 'Crossed 100 successful portfolio acquisitions across Delhi NCR luxury corridors.',
   },
   {
-    year: '2015',
-    title: 'Gurgaon Expansion',
-    desc: 'Opened the Gurgaon office to serve the growing luxury corridor demand.',
-  },
-  {
-    year: '2018',
-    title: 'RERA Certified',
-    desc: 'Became one of the first brokerages to fully comply with RERA in UP, Haryana and Maharashtra.',
+    year: '2017',
+    title: 'Gurugram Headquarters',
+    desc: 'Expanded into Gurugram to manage Grade-A commercial acquisitions & Golf Course Extension projects.',
   },
   {
     year: '2020',
-    title: 'Digital Transformation',
-    desc: 'Launched virtual property tours and digital advisory, serving NRI clients globally during the pandemic.',
+    title: '42-Point RERA Check',
+    desc: 'Instituted India\'s most rigorous 42-point title and legal verification framework.',
   },
   {
-    year: '2022',
-    title: 'Mumbai Office',
-    desc: 'Expanded to Mumbai, entering India\'s most competitive luxury real estate market.',
+    year: '2023',
+    title: 'Airport Corridor Expansion',
+    desc: 'Established dedicated desk for Jewar Airport & Yamuna Expressway megaprojects.',
   },
   {
-    year: '2024',
-    title: '1200+ Clients',
-    desc: 'Surpassed 1,200 happy clients with ₹2,500 Cr+ in managed portfolio value.',
+    year: '2026',
+    title: '1,200+ Clients & ₹2,500 Cr',
+    desc: 'Surpassed 1,200 satisfied clients with over ₹2,500 Cr+ in managed real estate assets.',
   },
 ];
 
@@ -238,13 +233,11 @@ interface AwardDetail {
 export default function AboutPage() {
   const [activeSection, setActiveSection] = useState('who-we-are');
   const [selectedAward, setSelectedAward] = useState<AwardDetail | null>(null);
-  const [selectedTeamMember, setSelectedTeamMember] = useState<TeamMemberProfile | null>(null);
 
   const sectionIds = [
     'who-we-are',
     'leadership',
-    'vision',
-    'mission',
+    'mission-vision',
     'journey',
     'awards',
     'developer-partners',
@@ -263,7 +256,7 @@ export default function AboutPage() {
         ([entry]) => {
           if (entry.isIntersecting) setActiveSection(id);
         },
-        { rootMargin: '-30% 0px -60% 0px', threshold: 0 }
+        { rootMargin: '-20% 0px -50% 0px', threshold: 0 }
       );
       observer.observe(el);
       observers.push(observer);
@@ -301,33 +294,18 @@ export default function AboutPage() {
       issuer: 'PropTiger Realty Excellence',
       year: '2023',
       certificateId: 'PROPTIGER-2023-COM',
-      description: 'Awarded for closing over ₹800 Cr in Grade-A commercial acquisitions across Delhi NCR & Mumbai.',
+      description: 'Awarded for closing over ₹800 Cr in Grade-A commercial acquisitions across Delhi NCR.',
       image: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&q=80',
-    },
-    {
-      title: 'Entrepreneur of the Year – Real Estate',
-      issuer: 'ASSOCHAM India',
-      year: '2022',
-      certificateId: 'ASSOCHAM-2022-ENT',
-      description: 'Recognized for outstanding business growth, corporate governance, and community impact.',
-      image: 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=800&q=80',
-    },
-    {
-      title: 'Power Women in Real Estate',
-      issuer: 'Times Property Awards',
-      year: '2020',
-      certificateId: 'TIMES-2020-PWR',
-      description: 'Celebrating female leadership and vision in transforming traditional real estate brokerage models.',
-      image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80',
     },
   ];
 
   return (
     <>
       <Header />
-      <main className="flex-grow pt-20 sm:pt-24">
+      <main className="flex-grow pt-20 sm:pt-24 min-h-screen bg-white">
+
         {/* Full-Width Hero Banner */}
-        <div className="bg-primary py-18 sm:py-22 lg:py-24 relative overflow-hidden w-full">
+        <div className="bg-primary py-18 sm:py-22 lg:py-24 relative overflow-hidden w-full border-b border-white/10">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(197,160,89,0.18),transparent_60%)]" />
           <div className="relative max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16">
             <motion.div
@@ -341,23 +319,23 @@ export default function AboutPage() {
               </span>
               <h1 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.08] max-w-4xl">
                 India&apos;s Most Trusted <br />
-                <span className="text-secondary">Real Estate Partner</span>
+                <span className="text-secondary">Real Estate Growth Partner</span>
               </h1>
               <p className="mt-4 text-white/88 text-sm sm:text-base lg:text-lg max-w-3xl leading-relaxed font-medium">
-                Since 2010, FIVEX Growth Realty has been at the forefront of premium property advisory — combining deep market intelligence, 42-point property verification, and dedicated client advisory to deliver unmatched real estate outcomes.
+                Since 2010, FIVEX Growth Realty has combined deep market intelligence, 42-point property verification, and dedicated concierge advisory to deliver unmatched property outcomes.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href="#who-we-are"
+                  href="#mission-vision"
                   className="inline-flex items-center justify-center rounded-xl bg-secondary px-5 py-3 text-xs font-extrabold uppercase tracking-wider text-primary shadow-lg transition-all hover:brightness-110"
                 >
-                  Explore About Us
+                  Our Mission &amp; Vision
                 </a>
                 <a
-                  href="#our-team"
+                  href="#who-we-are"
                   className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/10 px-5 py-3 text-xs font-extrabold uppercase tracking-wider text-white backdrop-blur-md transition-all hover:bg-white/15"
                 >
-                  Meet Our Team
+                  Explore About Us
                 </a>
               </div>
             </motion.div>
@@ -385,14 +363,15 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Desktop Layout Container with Sticky Sidebar alongside Full-Width Sections */}
-        <div className="relative max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 pt-12 sm:pt-14">
-          <div className="lg:flex lg:gap-10 items-start">
+        {/* Desktop Layout Container with Sticky Sidebar (NO INNER SCROLL WRAPPER - STANDARD WINDOW SCROLL) */}
+        <div className="relative max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 pt-12 sm:pt-14 pb-20">
+          <div className="lg:flex lg:gap-12 items-start">
+            
             {/* Sticky Navigation Sidebar */}
             <AboutSidebar activeSection={activeSection} />
 
-            {/* Main Full-Width Content Container */}
-            <div className="flex-1 min-w-0 space-y-0 lg:max-h-[calc(100svh-8rem)] lg:overflow-y-auto lg:pr-2">
+            {/* Main Content Container - standard flow */}
+            <div className="flex-1 min-w-0 space-y-4">
 
               {/* 1. Who We Are */}
               <Section
@@ -410,7 +389,7 @@ export default function AboutPage() {
                       We specialize in helping HNIs, NRIs, and institutional investors navigate the complex landscape of Indian real estate — from luxury residences and Grade-A commercial assets to strategic land acquisitions and investment portfolio management.
                     </p>
                     <p>
-                      Our proprietary 42-point verification process, deep developer relationships, and dedicated advisory team ensure that every FIVEX client receives an unparalleled concierge experience — from first consultation to final registration and beyond.
+                      Our proprietary 42-point verification process, deep developer relationships, and dedicated advisory team ensure that every FIVEX client receives an unparalleled concierge experience.
                     </p>
                     <div className="grid grid-cols-2 gap-3 pt-3">
                       {[
@@ -463,119 +442,77 @@ export default function AboutPage() {
                 </div>
               </Section>
 
-              {/* 3. Vision */}
-              <Section id="vision" badge="Our Vision" title="Where We're Headed" dark>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                  <div className="space-y-5">
-                    <div className="w-14 h-14 rounded-2xl bg-secondary/20 flex items-center justify-center border border-secondary/30">
-                      <span
-                        className="material-symbols-outlined text-secondary text-[28px]"
-                        style={{ fontVariationSettings: '"FILL" 1' }}
-                      >
-                        visibility
+              {/* 3. Combined Mission & Vision Section (Client requested focus) */}
+              <Section
+                id="mission-vision"
+                badge="Our Core Purpose"
+                title="Mission & Vision"
+                subtitle="What drives us today and where we are guiding the future of Indian real estate advisory."
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  {/* Mission */}
+                  <div className="bg-gradient-to-br from-white to-surface-container-low p-8 rounded-3xl border border-gray-100 shadow-xl space-y-5">
+                    <div className="w-14 h-14 rounded-2xl bg-secondary/15 flex items-center justify-center border border-secondary/30">
+                      <span className="material-symbols-outlined text-secondary text-2xl" style={{ fontVariationSettings: '"FILL" 1' }}>
+                        verified_user
                       </span>
                     </div>
-                    <blockquote className="text-lg sm:text-xl lg:text-2xl font-display font-extrabold text-white leading-relaxed italic border-l-4 border-secondary pl-5">
-                      &quot;To be India&apos;s most trusted and admired real estate partner — empowering every client to make informed, confident, and profitable property decisions.&quot;
-                    </blockquote>
-                    <p className="text-white/80 text-sm sm:text-base leading-relaxed">
-                      By 2030, we aim to be present in 15 major Indian cities, manage portfolios worth ₹10,000 Cr+, and serve 10,000 satisfied clients — while maintaining the personal touch that defines the FIVEX experience.
+                    <span className="text-xs font-extrabold uppercase tracking-widest text-secondary block">
+                      OUR MISSION
+                    </span>
+                    <h3 className="font-display font-extrabold text-2xl text-primary">
+                      Uncompromising Value &amp; Security
+                    </h3>
+                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed font-medium">
+                      At FIVEX Growth Realty, our mission is to safeguard every rupee of our clients&apos; investment through transparent advisory, 42-point property verification, and data-backed market intelligence. We aim to build lifelong client partnerships that span resale, leasing, and wealth creation.
                     </p>
-                    <div className="grid grid-cols-3 gap-3 pt-2">
+                    <div className="space-y-2.5 pt-2 border-t border-gray-200">
                       {[
-                        { value: '15', label: 'Cities by 2030' },
-                        { value: '₹10K Cr', label: 'Portfolio Target' },
-                        { value: '10,000+', label: 'Client Goal' },
-                      ].map((item) => (
-                        <div
-                          key={item.label}
-                          className="bg-white/10 backdrop-blur-md rounded-2xl p-3.5 border border-white/15 text-center"
-                        >
-                          <p className="font-display font-extrabold text-secondary text-lg sm:text-xl">
-                            {item.value}
-                          </p>
-                          <p className="text-white/70 text-xs font-semibold mt-1">{item.label}</p>
+                        '42-Point Title & Document Verification',
+                        'Zero Litigation Developer Selection',
+                        'Lifecycle Asset & Wealth Advisory',
+                      ].map((pillar) => (
+                        <div key={pillar} className="flex items-center gap-2.5 text-xs sm:text-sm font-bold text-primary">
+                          <span className="material-symbols-outlined text-secondary text-base">check_circle</span>
+                          {pillar}
                         </div>
                       ))}
                     </div>
                   </div>
-                  <div className="relative rounded-3xl overflow-hidden h-80 shadow-2xl border border-white/10">
-                    <img
-                      src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80"
-                      alt="Vision"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
+
+                  {/* Vision */}
+                  <div className="bg-primary p-8 rounded-3xl text-white shadow-2xl border border-secondary/20 space-y-5">
+                    <div className="w-14 h-14 rounded-2xl bg-secondary/20 flex items-center justify-center border border-secondary/30">
+                      <span className="material-symbols-outlined text-secondary text-2xl" style={{ fontVariationSettings: '"FILL" 1' }}>
+                        visibility
+                      </span>
+                    </div>
+                    <span className="text-xs font-extrabold uppercase tracking-widest text-secondary block">
+                      OUR VISION
+                    </span>
+                    <h3 className="font-display font-extrabold text-2xl text-white">
+                      Pan-India Advisory Leadership
+                    </h3>
+                    <p className="text-white/85 text-sm sm:text-base leading-relaxed font-medium">
+                      To be India&apos;s most trusted and admired luxury real estate consultancy — managing over ₹10,000 Cr+ in client property assets across 15 premier economic corridors by 2030, while maintaining our boutique personalized touch.
+                    </p>
+                    <div className="grid grid-cols-3 gap-3 pt-4 border-t border-white/15">
+                      {[
+                        { value: '15', label: 'Cities by 2030' },
+                        { value: '₹10K Cr', label: 'Asset Target' },
+                        { value: '10,000+', label: 'Happy Clients' },
+                      ].map((item) => (
+                        <div key={item.label} className="bg-white/10 rounded-xl p-3 text-center border border-white/10">
+                          <p className="font-display font-extrabold text-secondary text-lg">{item.value}</p>
+                          <p className="text-white/70 text-[10px] uppercase font-bold mt-0.5">{item.label}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </Section>
 
-              {/* 4. Mission */}
-              <Section
-                id="mission"
-                badge="Our Mission"
-                title="What Drives Us"
-                subtitle="Every decision at FIVEX is guided by our mission to deliver uncompromising value to clients."
-              >
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {[
-                    {
-                      icon: 'verified_user',
-                      title: 'Investment Security',
-                      desc: 'Protect every rupee of client investment through our rigorous 42-point verification process.',
-                    },
-                    {
-                      icon: 'insights',
-                      title: 'Market Intelligence',
-                      desc: 'Deliver data-driven insights that help clients buy at the right time, at the right price.',
-                    },
-                    {
-                      icon: 'handshake',
-                      title: 'Lifelong Partnership',
-                      desc: 'Build relationships that extend beyond transactions — through resale, rental, and portfolio reviews.',
-                    },
-                    {
-                      icon: 'gavel',
-                      title: 'Legal Integrity',
-                      desc: 'Ensure complete legal clarity in every transaction, so clients never face post-purchase surprises.',
-                    },
-                    {
-                      icon: 'diversity_3',
-                      title: 'Inclusive Excellence',
-                      desc: 'Serve buyers across all budgets with the same level of dedication and expertise.',
-                    },
-                    {
-                      icon: 'eco',
-                      title: 'Sustainable Realty',
-                      desc: 'Promote eco-conscious, LEED-certified, and green developments in our advisory.',
-                    },
-                  ].map((item, i) => (
-                    <motion.div
-                      key={item.title}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.08 }}
-                      className="group bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all"
-                    >
-                      <div className="w-11 h-11 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
-                        <span
-                        className="material-symbols-outlined text-secondary text-xl"
-                          style={{ fontVariationSettings: '"FILL" 1' }}
-                        >
-                          {item.icon}
-                        </span>
-                      </div>
-                      <h3 className="font-display font-extrabold text-primary text-sm sm:text-base mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{item.desc}</p>
-                    </motion.div>
-                  ))}
-                </div>
-              </Section>
-
-              {/* 5. Our Journey */}
+              {/* 4. Our Journey */}
               <Section
                 id="journey"
                 badge="Our Story"
@@ -616,14 +553,14 @@ export default function AboutPage() {
                 </div>
               </Section>
 
-              {/* 6. Awards & Recognition with Certificate PDF/Image Popup Preview */}
+              {/* 5. Awards & Recognition */}
               <Section
                 id="awards"
                 badge="Recognition & Certificates"
                 title="Awards & Recognition"
-                subtitle="Click any award card below to view full certificate details and official verification."
+                subtitle="Industry accolades celebrating our commitment to transparent real estate advisory."
               >
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
                   {awardsList.map((award, i) => (
                     <motion.div
                       key={`${award.title}-${i}`}
@@ -634,7 +571,6 @@ export default function AboutPage() {
                       onClick={() => setSelectedAward(award)}
                       className="group bg-gradient-to-br from-primary via-primary-container to-primary/95 rounded-2xl p-5 text-white relative overflow-hidden shadow-md hover:shadow-2xl cursor-pointer hover:-translate-y-1 transition-all border border-secondary/20"
                     >
-                      {/* Certificate Mockup Thumbnail */}
                       <div className="relative h-40 rounded-xl overflow-hidden mb-4 border border-white/20 bg-white/10">
                         <img
                           src={award.image}
@@ -651,15 +587,15 @@ export default function AboutPage() {
                       <h3 className="font-display font-bold text-sm sm:text-base leading-snug text-white">
                         {award.title}
                       </h3>
-                      <p className="text-white/70 text-xs mt-1 font-medium">{award.issuer}</p>
+                      <p className="text-white/70 text-xs mt-1 font-medium">{award.description}</p>
 
                       <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/10">
                         <span className="text-[10px] font-extrabold uppercase tracking-widest text-secondary bg-secondary/15 px-3 py-1 rounded-full">
                           {award.year}
                         </span>
                         <span className="text-xs font-bold text-secondary flex items-center gap-1 group-hover:underline">
-                          Preview Certificate
-                          <span className="material-symbols-outlined text-sm">visibility</span>
+                          View Details
+                          <span className="material-symbols-outlined text-sm">arrow_forward</span>
                         </span>
                       </div>
                     </motion.div>
@@ -667,7 +603,7 @@ export default function AboutPage() {
                 </div>
               </Section>
 
-              {/* 7. Developer Partners */}
+              {/* 6. Developer Partners */}
               <Section
                 id="developer-partners"
                 badge="Partnerships"
@@ -700,12 +636,12 @@ export default function AboutPage() {
                 </div>
               </Section>
 
-              {/* 8. Our Team */}
+              {/* 7. Our Team */}
               <Section
                 id="our-team"
                 badge="The Team"
-                title="Our Team"
-                subtitle="Meet the advisors behind FIVEX. Open each full profile for detailed experience, skills, and direct contact."
+                title="Our Advisory Team"
+                subtitle="Meet the experienced advisors behind FIVEX."
               >
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
                   {teamMembers.map((member, i) => (
@@ -721,31 +657,25 @@ export default function AboutPage() {
                         href={`/team/${member.id}`}
                         className="block bg-white rounded-2xl p-4 sm:p-5 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer text-center"
                       >
-                      <div className="relative w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full overflow-hidden border-4 border-secondary/30 group-hover:border-secondary transition-colors mb-3 shadow-md">
-                        <img
-                          src={member.image}
-                          alt={member.imageAlt}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <p className="font-display font-extrabold text-primary text-sm sm:text-base">
-                        {member.name}
-                      </p>
-                      <p className="text-secondary text-[11px] sm:text-xs font-bold mt-0.5">{member.designation}</p>
-                      <p className="text-gray-400 text-xs mt-0.5">{member.location} · {member.experience}y exp</p>
-                        <div className="mt-3 flex items-center justify-center gap-2">
-                          <span className="text-[11px] font-bold text-primary group-hover:text-secondary flex items-center gap-1">
-                            View Full Profile
-                            <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                          </span>
+                        <div className="relative w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full overflow-hidden border-4 border-secondary/30 group-hover:border-secondary transition-colors mb-3 shadow-md">
+                          <img
+                            src={member.image}
+                            alt={member.imageAlt}
+                            className="w-full h-full object-cover"
+                          />
                         </div>
+                        <p className="font-display font-extrabold text-primary text-sm sm:text-base truncate">
+                          {member.name}
+                        </p>
+                        <p className="text-secondary text-[11px] sm:text-xs font-bold mt-0.5 truncate">{member.designation}</p>
+                        <p className="text-gray-400 text-xs mt-0.5">{member.location}</p>
                       </Link>
                     </motion.div>
                   ))}
                 </div>
               </Section>
 
-              {/* 9. Testimonials */}
+              {/* 8. Testimonials */}
               <Section id="testimonials" badge="Client Stories" title="What Clients Say" dark>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {successStories.slice(0, 4).map((story, i) => (
@@ -793,232 +723,21 @@ export default function AboutPage() {
                 </div>
               </Section>
 
-              {/* 10. Why Choose Us (Large Desktop Typography & Icons) */}
-              <Section
-                id="why-choose-us"
-                badge="Why FIVEX"
-                title="Why Choose Us"
-                subtitle="The FIVEX difference — measurable, trusted, and experienced."
-              >
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {[
-                    {
-                      icon: 'verified',
-                      title: '42-Point Verification',
-                      desc: 'Every property undergoes our proprietary multi-step verification before we recommend it.',
-                    },
-                    {
-                      icon: 'support_agent',
-                      title: 'Dedicated Advisor',
-                      desc: 'You get a single point of contact throughout your entire property journey.',
-                    },
-                    {
-                      icon: 'history_edu',
-                      title: '15+ Years Experience',
-                      desc: 'Proven track record since 2010 with 500+ successful transactions.',
-                    },
-                    {
-                      icon: 'currency_exchange',
-                      title: 'Best Price Guarantee',
-                      desc: 'Leveraging developer relationships for exclusive pre-launch pricing.',
-                    },
-                    {
-                      icon: 'account_balance',
-                      title: 'Loan Assistance',
-                      desc: 'Seamless home loan facilitation through our banking partner network.',
-                    },
-                    {
-                      icon: 'gavel',
-                      title: 'Legal Support',
-                      desc: 'Expert legal advisory for registration, title clearance, and documentation.',
-                    },
-                  ].map((item, i) => (
-                    <motion.div
-                      key={item.title}
-                      initial={{ opacity: 0, y: 16 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.08 }}
-                      className="flex items-start gap-3 p-5 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all group"
-                    >
-                      <div className="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-secondary/20 transition-colors">
-                        <span
-                          className="material-symbols-outlined text-secondary text-xl sm:text-2xl"
-                          style={{ fontVariationSettings: '"FILL" 1' }}
-                        >
-                          {item.icon}
-                        </span>
-                      </div>
-                      <div>
-                        <h3 className="font-display font-extrabold text-primary text-sm sm:text-base mb-1">
-                          {item.title}
-                        </h3>
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{item.desc}</p>
-                      </div>
-                    </motion.div>
+              {/* 9. FAQs */}
+              <Section id="faqs" badge="Common Questions" title="Frequently Asked Questions">
+                <div className="space-y-4 max-w-4xl">
+                  {faqs.map((faq, i) => (
+                    <FaqItem key={faq.question} faq={faq} index={i} />
                   ))}
                 </div>
               </Section>
 
-              {/* 11. FAQs */}
-              <Section
-                id="faqs"
-                badge="FAQ"
-                title="Frequently Asked Questions"
-                subtitle="Answers to the most common questions about working with FIVEX."
-              >
-                <div className="space-y-4">
-                  {faqs.map((faq, i) => (
-                    <FaqItem key={faq.id} faq={faq} index={i} />
-                  ))}
-                </div>
-              </Section>
             </div>
+
           </div>
         </div>
+
       </main>
-
-      {/* Award Certificate Modal Preview */}
-      <AnimatePresence>
-        {selectedAward && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-white rounded-3xl overflow-hidden max-w-2xl w-full shadow-2xl border border-gray-100 text-left relative"
-            >
-              <div className="bg-primary p-6 text-white flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <span
-                    className="material-symbols-outlined text-secondary text-3xl"
-                    style={{ fontVariationSettings: '"FILL" 1' }}
-                  >
-                    verified
-                  </span>
-                  <div>
-                    <h3 className="font-display font-bold text-lg text-white">
-                      Verified Award Certificate
-                    </h3>
-                    <p className="text-xs text-white/60">ID: {selectedAward.certificateId}</p>
-                  </div>
-                </div>
-                <button
-                  onClick={() => setSelectedAward(null)}
-                  className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors cursor-pointer"
-                >
-                  <span className="material-symbols-outlined text-xl">close</span>
-                </button>
-              </div>
-
-              <div className="p-6 sm:p-8 space-y-6">
-                <div className="border-4 border-double border-secondary/40 p-6 rounded-2xl bg-surface-container-low/50 relative overflow-hidden text-center space-y-3">
-                  <span
-                    className="material-symbols-outlined text-secondary text-5xl"
-                    style={{ fontVariationSettings: '"FILL" 1' }}
-                  >
-                    workspace_premium
-                  </span>
-                  <p className="text-xs font-bold uppercase tracking-widest text-gray-400">
-                    Official Recognition
-                  </p>
-                  <h2 className="font-display font-extrabold text-2xl text-primary">
-                    {selectedAward.title}
-                  </h2>
-                  <p className="text-sm font-bold text-secondary">
-                    Presented by {selectedAward.issuer} ({selectedAward.year})
-                  </p>
-                  <p className="text-xs sm:text-sm text-gray-600 italic max-w-md mx-auto leading-relaxed pt-2">
-                    &quot;{selectedAward.description}&quot;
-                  </p>
-                </div>
-
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
-                  <a
-                    href={selectedAward.image}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full sm:w-auto bg-primary text-white px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-secondary hover:text-primary transition-all text-center flex items-center justify-center gap-2"
-                  >
-                    <span className="material-symbols-outlined text-base">download</span>
-                    Download Certificate (PDF)
-                  </a>
-                  <button
-                    onClick={() => setSelectedAward(null)}
-                    className="w-full sm:w-auto border border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-gray-100 transition-all text-center cursor-pointer"
-                  >
-                    Close Preview
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
-
-      {/* Team Member Full Contact Modal */}
-      <AnimatePresence>
-        {selectedTeamMember && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              className="bg-white rounded-3xl overflow-hidden max-w-md w-full shadow-2xl border border-gray-100 text-left relative p-6 space-y-5"
-            >
-              <div className="flex items-center justify-between border-b border-gray-100 pb-4">
-                <h3 className="font-display font-extrabold text-lg text-primary">Team Member Profile</h3>
-                <button
-                  onClick={() => setSelectedTeamMember(null)}
-                  className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-gray-200 transition-colors cursor-pointer"
-                >
-                  <span className="material-symbols-outlined text-lg">close</span>
-                </button>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <img
-                  src={selectedTeamMember.image}
-                  alt={selectedTeamMember.name}
-                  className="w-20 h-20 rounded-2xl object-cover border-2 border-secondary/40"
-                />
-                <div>
-                  <h4 className="font-display font-extrabold text-lg text-primary">{selectedTeamMember.name}</h4>
-                  <p className="text-secondary text-xs font-bold">{selectedTeamMember.designation}</p>
-                  <p className="text-gray-400 text-xs mt-0.5">{selectedTeamMember.location} · {selectedTeamMember.experience} Years Exp</p>
-                </div>
-              </div>
-
-              <p className="text-gray-600 text-sm leading-relaxed bg-gray-50 p-4 rounded-xl">
-                {selectedTeamMember.shortBio}
-              </p>
-
-              <div className="space-y-3 pt-2">
-                <a href={`tel:${selectedTeamMember.phone}`} className="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-secondary/10 transition-colors">
-                  <span className="material-symbols-outlined text-secondary text-lg">call</span>
-                  <span className="text-sm font-bold text-primary">{selectedTeamMember.phone}</span>
-                </a>
-                <a href={`mailto:${selectedTeamMember.email}`} className="flex items-center gap-3 p-3 rounded-xl bg-surface-container-low hover:bg-secondary/10 transition-colors">
-                  <span className="material-symbols-outlined text-secondary text-lg">mail</span>
-                  <span className="text-sm font-bold text-primary truncate">{selectedTeamMember.email}</span>
-                </a>
-              </div>
-
-              <div className="pt-2">
-                <Link
-                  href={`/team/${selectedTeamMember.id}`}
-                  onClick={() => setSelectedTeamMember(null)}
-                  className="w-full bg-primary text-white py-3 rounded-xl font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 hover:bg-secondary hover:text-primary transition-all"
-                >
-                  View Full Profile &amp; Bio
-                  <span className="material-symbols-outlined text-base">arrow_forward</span>
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
-
       <Footer />
     </>
   );

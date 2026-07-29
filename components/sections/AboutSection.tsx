@@ -1,73 +1,155 @@
+'use client';
+
 import React from 'react';
-import SectionContainer from '@/components/ui/SectionContainer';
-import { aboutPillars } from '@/data/homeData';
+import Link from 'next/link';
 
 export const AboutSection: React.FC = () => {
   return (
-    <SectionContainer id="about" bgStyle="bg-white">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-        {/* Left Column: Image Showcase */}
-        <div className="relative group">
-          <div className="absolute -top-10 -left-10 w-40 h-40 border-t-2 border-l-2 border-secondary/30 hidden md:block" />
-          <div className="relative rounded-2xl overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] h-[320px] sm:h-[420px] lg:h-[600px]">
+    <section id="about" className="scroll-mt-28 sm:scroll-mt-32 py-20 sm:py-24 bg-gradient-to-b from-white via-surface-container-low/30 to-white relative overflow-hidden">
+      {/* Background Subtle Accents */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 relative">
+
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
+          <span className="inline-flex items-center gap-2 text-secondary font-extrabold text-xs uppercase tracking-[0.25em] bg-secondary/10 px-4 py-1.5 rounded-full border border-secondary/20 mb-4">
+            <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+            Our Corporate Legacy
+          </span>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-primary font-extrabold tracking-tight leading-tight">
+            Redefining Luxury Real Estate Consultancy <br className="hidden sm:inline" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary">
+              Across India
+            </span>
+          </h2>
+          <p className="mt-4 text-gray-600 text-sm sm:text-base leading-relaxed">
+            Founded on the pillars of transparency, market foresight, and 42-point property verification, FIVEX Growth Realty curates world-class real estate portfolios for buyers and investors.
+          </p>
+        </div>
+
+        {/* Grid Bento Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+
+          {/* Left Visual Banner (5 cols) */}
+          <div className="lg:col-span-5 relative group rounded-3xl overflow-hidden shadow-2xl border border-gray-100 min-h-[420px] flex flex-col justify-end">
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwie3Yis0_DedQ8neA4Y31-wI_eAAuON9zB0s3Uoh-jUM3FCIyn8bOMxHa2W84WVfR3fyPQ_NwpPYVI8-lB1nLzEiEm8dngVTollSyy7m0NA5Tghri-Ckx6eYpaTJFuqD96pJ5AxjPUCInOsalGv1QbFtPKAk-3cWs6guRpCAbQZL5BjGrjaJ5_umocX2xZpmbcghc0ZHlC1hn-7Go19DxlAzkWAiScc15QgOg-jo9Gk1KGAVP50cLcprx6NQMQRDnKjdZ_aXcOp8R"
-              alt="Elite Office Interior"
-              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+              src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80"
+              alt="FIVEX Growth Realty Advisory"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute bottom-0 right-0 glass-dark p-8 rounded-tl-3xl border-gold/20">
-              <p className="font-display text-4xl text-secondary mb-1">10+</p>
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/70">
-                Years of Luxury Excellence
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent" />
+
+            <div className="relative p-7 text-white space-y-3">
+              <span className="text-xs font-extrabold uppercase tracking-widest text-secondary bg-primary/80 px-3 py-1 rounded-full border border-secondary/30 backdrop-blur-md inline-block">
+                Established 2010
+              </span>
+              <h3 className="font-display font-extrabold text-2xl text-white">
+                ₹2,500 Cr+ Assets Managed
+              </h3>
+              <p className="text-white/80 text-xs sm:text-sm leading-relaxed font-medium">
+                Pioneering institutional real estate advisory across Delhi NCR, Gurugram, Noida, Mumbai, and high-growth airport corridors.
               </p>
+              <div className="pt-2 flex items-center gap-4 text-xs font-bold text-secondary">
+                <span className="flex items-center gap-1">✓ 1,200+ HNIs Served</span>
+                <span className="flex items-center gap-1">✓ 42-Point RERA Check</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Right Column: Story & Pillars */}
-        <div className="space-y-10">
-          <div className="space-y-4">
-            <span className="text-secondary font-bold text-xs uppercase tracking-[0.3em]">
-              Our Legacy
-            </span>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-primary font-bold">
-              Redefining Real Estate{' '}
-              <span className="block">Consultancy in India</span>
-            </h2>
-            <div className="w-20 h-1 bg-secondary mt-6" />
-          </div>
+          {/* Right Content Column: Mission & Vision Cards (7 cols) */}
+          <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
 
-          <p className="font-body text-primary/70 text-lg leading-relaxed">
-            At FIVEX GROWTH REALTY PVT LTD, our mission is to simplify the property journey through a foundation of trust and meticulous attention to detail. We don't just sell property; we curate investment legacies.
-          </p>
+            {/* Mission & Vision Side-by-Side Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-          <div className="grid gap-8">
-            {aboutPillars.map((pillar, idx) => (
-              <div key={idx} className="flex items-start gap-6 group">
-                <div className="w-14 h-14 rounded-full border border-gold/30 flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-gold/10">
-                  <span className="material-symbols-outlined text-secondary">
-                    {pillar.icon}
+              {/* Mission Card */}
+              <div className="bg-white rounded-3xl p-6 sm:p-7 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 relative group overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-secondary/10 rounded-bl-full pointer-events-none transition-transform group-hover:scale-110" />
+                <div className="w-12 h-12 rounded-2xl bg-secondary/15 flex items-center justify-center mb-5 border border-secondary/30">
+                  <span className="material-symbols-outlined text-secondary text-2xl" style={{ fontVariationSettings: '"FILL" 1' }}>
+                    verified_user
                   </span>
                 </div>
-                <div className="space-y-1">
-                  <h4 className="font-bold text-primary text-lg">{pillar.title}</h4>
-                  <p className="text-primary/60 text-sm leading-relaxed">
-                    {pillar.description}
-                  </p>
-                </div>
+                <span className="text-[10px] font-extrabold uppercase tracking-widest text-secondary block mb-1">
+                  OUR MISSION
+                </span>
+                <h4 className="font-display font-bold text-xl text-primary mb-3">
+                  Uncompromising Value
+                </h4>
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                  To protect every rupee of client investment through rigorous due diligence, transparent advisory, and end-to-end portfolio optimization from consultation to handover.
+                </p>
               </div>
-            ))}
+
+              {/* Vision Card */}
+              <div className="bg-primary rounded-3xl p-6 sm:p-7 text-white shadow-xl hover:shadow-2xl transition-all duration-300 relative group overflow-hidden border border-secondary/20">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-secondary/10 rounded-bl-full pointer-events-none transition-transform group-hover:scale-110" />
+                <div className="w-12 h-12 rounded-2xl bg-secondary/20 flex items-center justify-center mb-5 border border-secondary/30">
+                  <span className="material-symbols-outlined text-secondary text-2xl" style={{ fontVariationSettings: '"FILL" 1' }}>
+                    visibility
+                  </span>
+                </div>
+                <span className="text-[10px] font-extrabold uppercase tracking-widest text-secondary block mb-1">
+                  OUR VISION
+                </span>
+                <h4 className="font-display font-bold text-xl text-white mb-3">
+                  National Leadership
+                </h4>
+                <p className="text-white/80 text-xs sm:text-sm leading-relaxed">
+                  To be India&apos;s most trusted luxury real estate consultancy — managing ₹10,000 Cr+ portfolios across 15 premier Indian economic corridors by 2030.
+                </p>
+              </div>
+
+            </div>
+
+            {/* Core Values Strip */}
+            <div className="bg-white rounded-3xl p-6 border border-gray-100 shadow-md">
+              <h4 className="font-display font-extrabold text-sm text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-secondary" />
+                Why Clients Trust FIVEX
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[
+                  { icon: 'gavel', title: 'Legal Integrity', desc: '100% RERA compliant with 0 litigation track record.' },
+                  { icon: 'insights', title: 'Market Intelligence', desc: 'Data-backed price trends and growth forecasts.' },
+                  { icon: 'handshake', title: 'Concierge Advisory', desc: 'Dedicated advisor for lifecycle assistance.' },
+                ].map((item) => (
+                  <div key={item.title} className="p-3 rounded-2xl bg-surface-container-low/50 border border-gray-100">
+                    <span className="material-symbols-outlined text-secondary text-xl mb-1 block">
+                      {item.icon}
+                    </span>
+                    <h5 className="font-bold text-xs text-primary">{item.title}</h5>
+                    <p className="text-[11px] text-gray-500 mt-1 leading-snug">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Actions */}
+            <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3.5 rounded-2xl text-xs font-extrabold uppercase tracking-wider hover:bg-secondary hover:text-primary transition-all shadow-lg cursor-pointer"
+              >
+                Learn More About Our Journey
+                <span className="material-symbols-outlined text-base">arrow_forward</span>
+              </Link>
+              <Link
+                href="/about#mission-vision"
+                className="text-xs font-extrabold text-primary hover:text-secondary flex items-center gap-1 transition-colors"
+              >
+                Explore Full Mission &amp; Vision →
+              </Link>
+            </div>
+
           </div>
 
-          <a href="/about" className="text-primary font-bold flex items-center gap-3 group pt-4 cursor-pointer hover:text-secondary transition-colors">
-            <span>Learn More About Our Story</span>
-            <span className="material-symbols-outlined group-hover:translate-x-2 transition-transform text-secondary">
-              arrow_forward
-            </span>
-          </a>
         </div>
+
       </div>
-    </SectionContainer>
+    </section>
   );
 };
 

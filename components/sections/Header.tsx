@@ -10,14 +10,13 @@ import {
   megaMenuProjects,
   CityOption,
   PropertyTypeOption,
-  CityProject
 } from '@/data/megaMenuData';
 
-// ─── Mega Menu Dropdown (Matches Reference Screenshot) ────────────────────────
+// ─── Mega Menu Dropdown (Updated with Client Specified Order & Titles) ──────
 
 const MegaMenu: React.FC<{ visible: boolean; onClose: () => void }> = ({ visible, onClose }) => {
-  const [selectedCity, setSelectedCity] = useState<CityOption>(megaMenuCities[0]); // Default Gurugram
-  const [selectedType, setSelectedType] = useState<PropertyTypeOption>(megaMenuPropertyTypes[0]); // Default All Types
+  const [selectedCity, setSelectedCity] = useState<CityOption>(megaMenuCities[0]); // Default Delhi NCR
+  const [selectedType, setSelectedType] = useState<PropertyTypeOption>(megaMenuPropertyTypes[0]); // Default All Services
 
   // Filter projects by city and property type
   const filteredProjects = megaMenuProjects.filter((project) => {
@@ -36,15 +35,18 @@ const MegaMenu: React.FC<{ visible: boolean; onClose: () => void }> = ({ visible
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 10 }}
           transition={{ duration: 0.2, ease: 'easeOut' }}
-          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[920px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50 text-left"
+          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[960px] max-w-[95vw] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50 text-left"
         >
-          <div className="grid grid-cols-12 min-h-[420px]">
-            {/* Column 1: SELECT CITY (width: 3 cols) */}
-            <div className="col-span-3 bg-surface-container-low/40 p-4 border-r border-gray-100 flex flex-col">
-              <p className="text-[11px] font-extrabold uppercase tracking-widest text-gray-400 mb-3 px-2">
-                SELECT CITY
-              </p>
-              <div className="space-y-1 overflow-y-auto max-h-[360px] pr-1 no-scrollbar">
+          <div className="grid grid-cols-12 min-h-[460px]">
+            {/* Column 1: Areas We Serve (width: 4 cols) */}
+            <div className="col-span-4 bg-surface-container-low/40 p-4 border-r border-gray-100 flex flex-col">
+              <div className="flex items-center gap-1.5 mb-3 px-2">
+                <span className="text-base">🌍</span>
+                <p className="text-[11px] font-extrabold uppercase tracking-wider text-primary">
+                  Areas We Serve
+                </p>
+              </div>
+              <div className="space-y-1 overflow-y-auto max-h-[390px] pr-1 scrollbar-thin">
                 {megaMenuCities.map((city) => {
                   const isSelected = selectedCity.id === city.id;
                   return (
@@ -53,15 +55,15 @@ const MegaMenu: React.FC<{ visible: boolean; onClose: () => void }> = ({ visible
                       onClick={() => setSelectedCity(city)}
                       className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                         isSelected
-                          ? 'bg-secondary text-primary shadow-md'
+                          ? 'bg-secondary text-primary shadow-md font-bold'
                           : 'text-gray-700 hover:bg-gray-100'
                       }`}
                     >
-                      <span className="truncate">{city.name}</span>
+                      <span className="truncate pr-2">{city.name}</span>
                       <span
-                        className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${
+                        className={`text-[10px] px-2 py-0.5 rounded-full font-bold flex-shrink-0 ${
                           isSelected
-                            ? 'bg-white/20 text-white'
+                            ? 'bg-primary/20 text-primary'
                             : 'bg-gray-200/70 text-gray-600'
                         }`}
                       >
@@ -73,12 +75,12 @@ const MegaMenu: React.FC<{ visible: boolean; onClose: () => void }> = ({ visible
               </div>
             </div>
 
-            {/* Column 2: PROPERTY TYPE (width: 3 cols) */}
-            <div className="col-span-3 p-4 border-r border-gray-100 flex flex-col">
-              <p className="text-[11px] font-extrabold uppercase tracking-widest text-gray-400 mb-3 px-2">
-                PROPERTY TYPE
+            {/* Column 2: Our Services (width: 3.5 cols) */}
+            <div className="col-span-3 lg:col-span-3 p-4 border-r border-gray-100 flex flex-col">
+              <p className="text-[11px] font-extrabold uppercase tracking-wider text-gray-500 mb-3 px-2 flex items-center gap-1">
+                <span className="text-secondary font-extrabold">✦</span> Our Services
               </p>
-              <div className="space-y-1">
+              <div className="space-y-1 overflow-y-auto max-h-[390px] pr-1">
                 {megaMenuPropertyTypes.map((type) => {
                   const isSelected = selectedType.id === type.id;
                   return (
@@ -87,7 +89,7 @@ const MegaMenu: React.FC<{ visible: boolean; onClose: () => void }> = ({ visible
                       onClick={() => setSelectedType(type)}
                       className={`w-full text-left px-3 py-2.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                         isSelected
-                          ? 'bg-secondary/15 text-secondary font-bold'
+                          ? 'bg-secondary/15 text-secondary font-bold border-l-2 border-secondary'
                           : 'text-gray-600 hover:bg-secondary/5 hover:text-primary'
                       }`}
                     >
@@ -98,24 +100,24 @@ const MegaMenu: React.FC<{ visible: boolean; onClose: () => void }> = ({ visible
               </div>
             </div>
 
-            {/* Column 3: Properties in [Selected City] (width: 6 cols) */}
-            <div className="col-span-6 p-5 bg-white flex flex-col justify-between">
+            {/* Column 3: Properties Showcase (width: 5 cols) */}
+            <div className="col-span-5 p-5 bg-white flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-4 border-b border-gray-100 pb-3">
-                  <h4 className="font-display font-bold text-sm text-primary">
+                  <h4 className="font-display font-bold text-xs sm:text-sm text-primary truncate pr-2">
                     Properties in {selectedCity.name}
                   </h4>
                   <Link
                     href={`/projects?city=${selectedCity.id}`}
                     onClick={onClose}
-                    className="text-xs font-bold text-secondary hover:underline flex items-center gap-1"
+                    className="text-xs font-bold text-secondary hover:underline flex items-center gap-1 flex-shrink-0"
                   >
-                    View All in {selectedCity.name}
+                    View All
                     <span className="material-symbols-outlined text-sm">arrow_forward</span>
                   </Link>
                 </div>
 
-                <div className="space-y-3 overflow-y-auto max-h-[320px] pr-1 no-scrollbar">
+                <div className="space-y-3 overflow-y-auto max-h-[330px] pr-1 no-scrollbar">
                   {filteredProjects.length > 0 ? (
                     filteredProjects.map((project) => (
                       <Link
@@ -146,7 +148,7 @@ const MegaMenu: React.FC<{ visible: boolean; onClose: () => void }> = ({ visible
                     ))
                   ) : (
                     <div className="py-12 text-center text-gray-400 text-xs">
-                      No matching properties found in {selectedCity.name} for {selectedType.name}.
+                      No matching properties in {selectedCity.name} for {selectedType.name}.
                     </div>
                   )}
                 </div>
@@ -154,13 +156,13 @@ const MegaMenu: React.FC<{ visible: boolean; onClose: () => void }> = ({ visible
 
               {/* Bottom bar */}
               <div className="pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-500">
-                <span>Showing top projects in {selectedCity.name}</span>
+                <span>Top projects in {selectedCity.name}</span>
                 <Link
                   href="/projects"
                   onClick={onClose}
                   className="font-bold text-primary hover:text-secondary flex items-center gap-1"
                 >
-                  Browse 500+ Projects →
+                  Browse All Projects →
                 </Link>
               </div>
             </div>
@@ -186,7 +188,7 @@ export const Header: React.FC = () => {
   const isHomePage = pathname === '/';
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => setIsScrolled(window.scrollY > 40);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -200,8 +202,8 @@ export const Header: React.FC = () => {
   const onSurface = isScrolled || !isHomePage;
 
   const headerBg = onSurface
-      ? 'bg-white/94 backdrop-blur-xl shadow-md py-3 border-b border-gray-200/60'
-    : 'bg-primary/18 backdrop-blur-2xl py-4 sm:py-5 border-b border-white/15 shadow-[0_8px_30px_rgba(0,0,0,0.08)]';
+    ? 'bg-white/95 backdrop-blur-xl shadow-md py-3 border-b border-gray-200/60'
+    : 'bg-primary/20 backdrop-blur-2xl py-4 sm:py-5 border-b border-white/15 shadow-[0_8px_30px_rgba(0,0,0,0.08)]';
 
   const logoColor = onSurface ? 'text-primary' : 'text-white';
   const hamburgerColor = onSurface ? 'text-primary' : 'text-white';
@@ -209,7 +211,7 @@ export const Header: React.FC = () => {
   const getNavLinkClass = (isActive: boolean) => {
     const base = 'relative py-1.5 text-sm tracking-wide transition-colors whitespace-nowrap group font-semibold';
     if (onSurface) {
-      return `${base} ${isActive ? 'text-secondary font-bold' : 'text-primary/80 hover:text-secondary'}`;
+      return `${base} ${isActive ? 'text-secondary font-bold' : 'text-primary/85 hover:text-secondary'}`;
     }
     return `${base} ${isActive ? 'text-secondary font-bold' : 'text-white/90 hover:text-secondary'}`;
   };
@@ -279,8 +281,6 @@ export const Header: React.FC = () => {
             <MegaMenu visible={megaMenuOpen} onClose={() => setMegaMenuOpen(false)} />
           </div>
 
-          
-
           {/* Careers */}
           <Link href="/careers" className={getNavLinkClass(pathname.startsWith('/careers'))}>
             Careers
@@ -298,13 +298,14 @@ export const Header: React.FC = () => {
             Blog
             <span className={`absolute bottom-0 left-0 h-0.5 bg-secondary rounded-full transition-all duration-300 ${pathname.startsWith('/blog') ? 'w-full' : 'w-0 group-hover:w-full'}`} />
           </Link>
+
           {/* CSR */}
           <Link href="/csr" className={getNavLinkClass(pathname.startsWith('/csr'))}>
             CSR
             <span className={`absolute bottom-0 left-0 h-0.5 bg-secondary rounded-full transition-all duration-300 ${pathname.startsWith('/csr') ? 'w-full' : 'w-0 group-hover:w-full'}`} />
           </Link>
 
-          {/* More Dropdown (Events, Awards & Recognition) */}
+          {/* More Dropdown (Mission & Vision, Events, Awards) */}
           <div
             className="relative"
             onMouseEnter={handleMoreEnter}
@@ -327,32 +328,39 @@ export const Header: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 8 }}
                   transition={{ duration: 0.15 }}
-                  className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50 p-2 text-left"
+                  className="absolute top-full left-0 mt-2 w-60 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50 p-2 text-left"
                 >
                   <Link
+                    href="/about#mission-vision"
+                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
+                  >
+                    <span className="material-symbols-outlined text-base text-secondary">visibility</span>
+                    Mission &amp; Vision
+                  </Link>
+                  <Link
                     href="/about#awards"
-                    className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
+                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
                   >
                     <span className="material-symbols-outlined text-base text-secondary">emoji_events</span>
                     Awards &amp; Recognition
                   </Link>
                   <Link
                     href="/csr#events"
-                    className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
+                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
                   >
                     <span className="material-symbols-outlined text-base text-secondary">event</span>
                     Events &amp; CSR Drives
                   </Link>
                   <Link
                     href="/team"
-                    className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
+                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
                   >
                     <span className="material-symbols-outlined text-base text-secondary">groups</span>
                     Our Team
                   </Link>
                   <Link
                     href="/partners"
-                    className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
+                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
                   >
                     <span className="material-symbols-outlined text-base text-secondary">handshake</span>
                     Developer Partners
@@ -402,6 +410,7 @@ export const Header: React.FC = () => {
                   {[
                     { label: 'Home', href: '/' },
                     { label: 'About Us', href: '/about' },
+                    { label: 'Mission & Vision', href: '/about#mission-vision' },
                     { label: 'Projects', href: '/projects' },
                     { label: 'CSR', href: '/csr' },
                     { label: 'Careers', href: '/careers' },

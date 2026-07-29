@@ -5,8 +5,7 @@ import { motion } from 'framer-motion';
 const navItems = [
   { id: 'who-we-are', label: 'Who We Are', icon: 'info' },
   { id: 'leadership', label: 'Leadership', icon: 'groups' },
-  { id: 'vision', label: 'Vision', icon: 'visibility' },
-  { id: 'mission', label: 'Mission', icon: 'flag' },
+  { id: 'mission-vision', label: 'Mission & Vision', icon: 'visibility' },
   { id: 'journey', label: 'Our Journey', icon: 'route' },
   { id: 'awards', label: 'Awards & Recognition', icon: 'emoji_events' },
   { id: 'developer-partners', label: 'Developer Partners', icon: 'handshake' },
@@ -34,8 +33,8 @@ export default function AboutSidebar({ activeSection }: AboutSidebarProps) {
     <>
       {/* Desktop Sticky Sidebar Nav */}
       <aside className="hidden lg:block sticky top-28 h-fit w-64 flex-shrink-0">
-        <div className="bg-white/88 backdrop-blur-xl rounded-[28px] shadow-[0_24px_70px_-28px_rgba(10,25,47,0.45)] border border-secondary/12 overflow-hidden">
-          <nav className="p-2.5 space-y-1 max-h-[calc(100svh-9rem)] overflow-y-auto no-scrollbar">
+        <div className="bg-white/90 backdrop-blur-xl rounded-[28px] shadow-[0_24px_70px_-28px_rgba(10,25,47,0.35)] border border-secondary/20 overflow-hidden">
+          <nav className="p-2.5 space-y-1">
             {navItems.map((item, i) => {
               const isActive = activeSection === item.id;
               return (
@@ -48,7 +47,7 @@ export default function AboutSidebar({ activeSection }: AboutSidebarProps) {
                   className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-left transition-all cursor-pointer group ${
                     isActive
                       ? 'bg-primary text-white font-bold shadow-md'
-                      : 'text-gray-700 hover:bg-secondary/6 hover:text-primary font-semibold'
+                      : 'text-gray-700 hover:bg-secondary/10 hover:text-primary font-semibold'
                   }`}
                 >
                   <span
