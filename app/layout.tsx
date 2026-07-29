@@ -38,7 +38,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         />
       </head>
-      <body className="bg-surface text-on-background font-body min-h-screen flex flex-col antialiased overflow-x-hidden">
+      <body className="bg-surface text-on-background font-body min-h-screen flex flex-col antialiased overflow-x-clip">
         {children}
         {/* Global Chat Widget — renders on every page, bottom-right corner */}
         <ChatWidget />

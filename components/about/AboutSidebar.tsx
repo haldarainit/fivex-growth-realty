@@ -32,7 +32,7 @@ export default function AboutSidebar({ activeSection }: AboutSidebarProps) {
   return (
     <>
       {/* Desktop Sticky Sidebar Nav */}
-      <aside className="hidden lg:block sticky top-28 h-fit w-64 flex-shrink-0">
+      <aside className="hidden lg:block sticky top-24 self-start z-30 h-fit w-64 flex-shrink-0">
         <div className="bg-white/90 backdrop-blur-xl rounded-[28px] shadow-[0_24px_70px_-28px_rgba(10,25,47,0.35)] border border-secondary/20 overflow-hidden">
           <nav className="p-2.5 space-y-1">
             {navItems.map((item, i) => {
