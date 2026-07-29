@@ -271,7 +271,7 @@ export const HeroSection: React.FC = () => {
             {heroStats.map((stat, idx) => (
               <div
                 key={idx}
-                className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/15 p-2 rounded-xl"
+                className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/15 p-2 rounded-xl min-w-0"
               >
                 <span
                   className="material-symbols-outlined text-secondary text-base flex-shrink-0"
@@ -279,7 +279,7 @@ export const HeroSection: React.FC = () => {
                 >
                   {stat.icon}
                 </span>
-                <span className="text-white text-[11px] font-bold uppercase tracking-wide leading-tight">
+                <span className="text-white text-[10px] sm:text-[11px] font-bold uppercase tracking-wide leading-tight truncate">
                   {stat.label}
                 </span>
               </div>

@@ -59,41 +59,43 @@ const StatCard: React.FC<{
     initial={{ opacity: 0, y: 30 }}
     animate={isInView ? { opacity: 1, y: 0 } : {}}
     transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
-    className="group relative bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+    className="group relative bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between min-w-0"
   >
     {/* Gold accent top border */}
     <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-secondary/30 via-secondary to-secondary/30 opacity-0 group-hover:opacity-100 transition-opacity" />
 
-    {/* Icon */}
-    <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
-      <span
-        className="material-symbols-outlined text-secondary text-2xl"
-        style={{ fontVariationSettings: '"FILL" 1' }}
-      >
-        {stat.icon}
-      </span>
-    </div>
+    <div>
+      {/* Icon */}
+      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-secondary/20 transition-colors">
+        <span
+          className="material-symbols-outlined text-secondary text-xl sm:text-2xl"
+          style={{ fontVariationSettings: '"FILL" 1' }}
+        >
+          {stat.icon}
+        </span>
+      </div>
 
-    {/* Value */}
-    <div className="font-display font-extrabold text-3xl sm:text-4xl text-primary tracking-tight">
-      <AnimatedValue value={stat.value} isInView={isInView} />
-    </div>
+      {/* Value */}
+      <div className="font-display font-extrabold text-lg xs:text-xl sm:text-3xl lg:text-4xl text-primary tracking-tight truncate leading-none">
+        <AnimatedValue value={stat.value} isInView={isInView} />
+      </div>
 
-    {/* Label */}
-    <p className="font-display font-bold text-sm text-primary/80 mt-1">{stat.label}</p>
-    {stat.sublabel && (
-      <p className="text-xs text-gray-400 mt-0.5">{stat.sublabel}</p>
-    )}
+      {/* Label */}
+      <p className="font-display font-bold text-xs sm:text-sm text-primary/80 mt-1.5 line-clamp-1">{stat.label}</p>
+      {stat.sublabel && (
+        <p className="text-[10px] sm:text-xs text-gray-400 mt-0.5 truncate">{stat.sublabel}</p>
+      )}
+    </div>
 
     {/* Description (on hover) */}
     {stat.description && (
-      <p className="text-xs text-gray-500 mt-3 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-h-0 group-hover:max-h-20 overflow-hidden">
+      <p className="text-[10px] sm:text-xs text-gray-500 mt-2 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-h-0 group-hover:max-h-20 overflow-hidden hidden sm:block">
         {stat.description}
       </p>
     )}
 
     {/* Background decoration */}
-    <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-secondary/5 group-hover:bg-secondary/10 transition-colors" />
+    <div className="absolute -bottom-4 -right-4 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-secondary/5 group-hover:bg-secondary/10 transition-colors pointer-events-none" />
   </motion.div>
 );
 
