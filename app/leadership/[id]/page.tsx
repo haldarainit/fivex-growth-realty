@@ -35,30 +35,55 @@ export default async function LeadershipProfilePage({ params }: { params: Promis
               Back to Leadership
             </Link>
             <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 items-start">
-              {/* Photo */}
-              <div className="space-y-4">
-                <div className="relative w-48 h-48 lg:w-64 lg:h-64 rounded-2xl overflow-hidden border-4 border-secondary/30">
+              {/* Photo & Actions */}
+              <div className="space-y-4 max-w-[280px]">
+                <div className="relative w-48 h-48 lg:w-64 lg:h-64 rounded-2xl overflow-hidden border-4 border-secondary/30 shadow-2xl">
                   <img src={member.image} alt={member.imageAlt} className="w-full h-full object-cover object-top" />
                 </div>
-                {/* Social links */}
-                <div className="flex gap-3 flex-wrap">
-                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 text-white/60 hover:text-secondary hover:border-secondary/40 text-xs font-semibold transition-all">
-                    <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                    </svg>
-                    LinkedIn
+
+                {/* Main WhatsApp CTA Button */}
+                {member.whatsapp && (
+                  <a
+                    href={member.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-green-500 hover:bg-green-600 text-white font-extrabold py-3 px-4 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all cursor-pointer"
+                  >
+                    <span className="material-symbols-outlined text-base">chat</span>
+                    WhatsApp Connect
                   </a>
-                  <a href={`mailto:${member.email}`}
-                    className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 text-white/60 hover:text-secondary hover:border-secondary/40 text-xs font-semibold transition-all">
-                    <span className="material-symbols-outlined text-sm">mail</span>
-                    Email
-                  </a>
-                  <a href={`tel:${member.phone}`}
-                    className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 text-white/60 hover:text-secondary hover:border-secondary/40 text-xs font-semibold transition-all">
-                    <span className="material-symbols-outlined text-sm">call</span>
-                    Call
-                  </a>
+                )}
+
+                {/* Compact Social & Direct Contact Links */}
+                <div className="space-y-2 pt-1">
+                  <div className="flex flex-wrap gap-1.5">
+                    {member.social?.filter(s => s.platform !== 'WhatsApp').map((s) => (
+                      <a
+                        key={s.platform}
+                        href={s.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={s.platform}
+                        className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-white/15 text-white/80 hover:text-secondary hover:border-secondary/40 text-[11px] font-bold transition-all bg-white/5"
+                      >
+                        <span className="material-symbols-outlined text-xs">open_in_new</span>
+                        {s.platform}
+                      </a>
+                    ))}
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2 pt-1">
+                    <a href={`mailto:${member.email}`}
+                      className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-white/20 text-white/90 hover:bg-white/10 text-xs font-bold transition-all bg-white/5">
+                      <span className="material-symbols-outlined text-secondary text-sm">mail</span>
+                      Email
+                    </a>
+                    <a href={`tel:${member.phone}`}
+                      className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-white/20 text-white/90 hover:bg-white/10 text-xs font-bold transition-all bg-white/5">
+                      <span className="material-symbols-outlined text-secondary text-sm">call</span>
+                      Call
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -186,29 +211,35 @@ export default async function LeadershipProfilePage({ params }: { params: Promis
               </div>
 
               {/* Contact Card */}
-              <div className="bg-primary rounded-2xl p-6 text-white">
-                <h3 className="font-display font-bold text-base mb-5">Connect with {member.name.split(' ')[0]}</h3>
+              <div className="bg-primary rounded-2xl p-6 text-white border border-white/10 shadow-xl space-y-4">
+                <h3 className="font-display font-bold text-base text-secondary uppercase tracking-wider">Connect with {member.name.split(' ')[0]}</h3>
                 <div className="space-y-3">
-                  <a href={`tel:${member.phone}`} className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors">
+                  <a href={`tel:${member.phone}`} className="flex items-center gap-3 text-white/80 hover:text-secondary transition-colors text-sm font-semibold">
                     <span className="material-symbols-outlined text-secondary text-base">call</span>
-                    <span className="text-sm">{member.phone}</span>
+                    <span>{member.phone}</span>
                   </a>
-                  <a href={`mailto:${member.email}`} className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors">
+                  <a href={`mailto:${member.email}`} className="flex items-center gap-3 text-white/80 hover:text-secondary transition-colors text-sm font-semibold">
                     <span className="material-symbols-outlined text-secondary text-base">mail</span>
-                    <span className="text-sm break-all">{member.email}</span>
+                    <span className="break-all">{member.email}</span>
                   </a>
-                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-white/70 hover:text-secondary transition-colors">
-                    <span className="material-symbols-outlined text-secondary text-base">open_in_new</span>
-                    <span className="text-sm">LinkedIn Profile</span>
-                  </a>
+                  {member.whatsapp && (
+                    <a href={member.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-green-400 hover:text-green-300 transition-colors text-sm font-semibold">
+                      <span className="material-symbols-outlined text-green-400 text-base">chat</span>
+                      <span>WhatsApp Chat</span>
+                    </a>
+                  )}
                 </div>
-                <Link
-                  href="/contact"
-                  className="mt-5 w-full flex items-center justify-center gap-2 bg-secondary text-primary py-3 rounded-xl text-sm font-bold hover:brightness-110 transition-all"
-                >
-                  Book a Meeting
-                  <span className="material-symbols-outlined text-base">calendar_month</span>
-                </Link>
+                {member.whatsapp && (
+                  <a
+                    href={member.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl text-xs font-extrabold uppercase tracking-wider shadow-lg transition-all"
+                  >
+                    <span className="material-symbols-outlined text-base">chat</span>
+                    WhatsApp Connect
+                  </a>
+                )}
               </div>
             </div>
           </div>

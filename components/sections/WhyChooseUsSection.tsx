@@ -14,7 +14,7 @@ export const WhyChooseUsSection: React.FC = () => {
 
       <SectionHeader
         badge="Unmatched Expertise"
-        title="The Fivex Edge"
+        title="The FiveX Edge"
         subtitle="Setting the benchmark in real estate consultancy through expert strategy and unwavering integrity."
         centered={true}
         lightTheme={true}

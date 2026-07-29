@@ -242,7 +242,7 @@ export const Header: React.FC = () => {
           className="flex-shrink-0 flex items-center gap-1 sm:gap-1.5 font-display font-bold tracking-tight leading-none whitespace-nowrap"
         >
           <span className={`text-base sm:text-lg xl:text-xl ${logoColor} transition-colors`}>FIVEX</span>
-          <span className="text-secondary text-base sm:text-lg xl:text-xl">GROWTH</span>
+          <span className="text-secondary text-base sm:text-lg xl:text-xl font-extrabold">GROWTH</span>
           <span className={`text-base sm:text-lg xl:text-xl ${logoColor} transition-colors`}>REALTY</span>
         </Link>
 
@@ -372,6 +372,13 @@ export const Header: React.FC = () => {
                     <span className="material-symbols-outlined text-base text-secondary">handshake</span>
                     Developer Partners
                   </Link>
+                  <Link
+                    href="/testimonials"
+                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
+                  >
+                    <span className="material-symbols-outlined text-base text-secondary">format_quote</span>
+                    Testimonials
+                  </Link>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -426,6 +433,7 @@ export const Header: React.FC = () => {
                     { label: 'Blog', href: '/blog' },
                     { label: 'Awards', href: '/about#awards' },
                     { label: 'Partners', href: '/partners' },
+                    { label: 'Testimonials', href: '/testimonials' },
                     { label: 'Our Team', href: '/team' },
                   ].map((item) => (
                     <Link

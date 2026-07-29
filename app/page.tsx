@@ -7,12 +7,13 @@ import PartnersStrip from "@/components/home/PartnersStrip";
 import TestimonialsSlider from "@/components/home/TestimonialsSlider";
 import FaqSection from "@/components/sections/FaqSection";
 import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
+import CorporateDirectorySection from "@/components/home/CorporateDirectorySection";
 import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/sections/Footer";
 
 export const metadata = {
-  title: 'FIVEX Growth Realty | Premium Real Estate Advisory India',
-  description: 'FIVEX Growth Realty — India\'s trusted premium real estate brokerage. Expert advisory for residential, commercial, and investment properties in Delhi NCR, Noida, Gurgaon, Mumbai. 500+ projects, 1200+ happy clients.',
+  title: 'FiveX Growth Realty | Premium Real Estate Advisory India',
+  description: 'FiveX Growth Realty — India\'s trusted premium real estate brokerage. Expert advisory for residential, commercial, and investment properties in Delhi NCR, Noida, Gurgaon, Mumbai.',
 };
 
 export default function Home() {
@@ -25,8 +26,9 @@ export default function Home() {
         <AboutSection />
         <FeaturedPropertiesSection />
         <PartnersStrip />
-        <TestimonialsSlider />
         <WhyChooseUsSection />
+        <CorporateDirectorySection />
+        <TestimonialsSlider />
         <FaqSection />
         <ContactSection />
       </main>

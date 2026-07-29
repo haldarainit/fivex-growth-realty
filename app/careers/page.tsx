@@ -25,7 +25,7 @@ export default function CareersPage() {
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}>
               <span className="text-secondary text-xs font-extrabold uppercase tracking-widest">Join the Team</span>
               <h1 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mt-4 tracking-tight leading-tight max-w-3xl">
-                Build Your Career at<br /><span className="text-secondary">FIVEX Growth Realty</span>
+                Build Your Career at<br /><span className="text-secondary">FiveX Growth Realty</span>
               </h1>
               <p className="text-white/70 text-sm sm:text-base mt-5 max-w-xl leading-relaxed">
                 Join India&apos;s most respected premium real estate team. We&apos;re looking for driven, ethical, and talented professionals to grow with us.

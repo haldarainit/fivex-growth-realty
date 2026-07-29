@@ -1,6 +1,6 @@
 export const companyInfo = {
   name: 'FIVEX GROWTH REALTY PRIVATE LIMITED',
-  shortName: 'FIVEX GROWTH REALTY',
+  shortName: 'FiveX Growth Realty',
   tagline: 'Your Trusted Partner in Real Estate Excellence',
   subTagline: 'Building Wealth Through Real Estate',
   foundedYear: 2025,
@@ -14,12 +14,65 @@ export const companyInfo = {
   },
 };
 
+export const companyOverview = `FiveX Growth Realty is a dynamic real estate advisory firm focused on affordable, mid-range and luxury properties. We partner with leading developers like DLF Limited, Godrej Properties, ATS Infrastructure Ltd., Gaurs Group, M3M India, ACE Group, Eldeco Group, Purvanchal Group, ABA Corp, T&T Group, Prateek Group, Nirala Group, County Group, Exotica Group, Omaxe Ltd., Gulshan Group, Nimbus Group, CRC Group, IThum Group, Fairfox Infra, Trehan Iris, Eros Group, RG Group, Galaxy Group, SKA Group, Paras Buildtech, GyGy Group, Ajnara Group, Golden I (Ocean Group), Wave Infratech, Mahagun Group, Supertech Ltd, Paramount Group, Spectrum Metro, Assotech Realty, NX One Group (DAH Greentech), Urbtech India Developers, Panchsheel Group, Rungta Group (Spectrum Metro), JM Group, Saya Infra Developers, Migsun Group, Logix Group, Krasa Group.`;
+
+export const gurgaonDeveloperOverview = `Emaar India, Elan Group, MGF Developments, Ansal Housings, AIPL (Advance India Projects Ltd.), Ansal API, TARC, BPTP Ltd., Spaze Group, Vatika Group, Raheja Developers, Suncity Projects to bring clients genuine opportunities.`;
+
+export const coreValues = [
+  'Integrity',
+  'Transparency',
+  'Excellence Innovation',
+  'Customer Satisfaction',
+  'Long-Term Relationships',
+];
+
+export const taglineOptions = [
+  'Building Wealth Through Real Estate',
+  'Your Trusted Real Estate Partner',
+  'Investing in Your Future',
+  'Excellence in Every Transaction',
+  'Turning Property Dreams Into Reality',
+];
+
+export const ourServicesList = [
+  'Residential Real Estate',
+  'Premium Apartments',
+  'Luxury Villas',
+  'Ready-to-Move Homes',
+  'Investment Properties',
+  'Pre-Launch Opportunities',
+];
+
+export const investmentAdvisoryList = [
+  'Real Estate Portfolio Planning',
+  'Wealth Creation Strategies',
+  'ROI-Focused Investments',
+  'Rental Income Opportunities',
+];
+
+export const developerSolutionsList = [
+  'Project Marketing',
+  'Sales Management',
+  'Channel Partner Services',
+  'Strategic Market Positioning',
+];
+
+export const whyChooseUsList = [
+  'Experienced Leadership Team',
+  'Transparent Business Practices',
+  'Customer-First Approach',
+  'Extensive Market Knowledge',
+  'Strategic Investment Solutions',
+  'Strong Developer Relationships',
+  'End-to-End Support',
+];
+
 export const officeAddresses = [
   {
     id: 'hq',
     label: 'Registered & Corporate Office',
-    address: 'A-2/2, ATS Bouquet, Jaypee Kosmos Road, Sector 132, Noida, Gautam Buddha Nagar, Uttar Pradesh – 201305, India',
-    phone: '+91 8279319964',
+    address: 'ATS Bouquet, Sector 132, Noida, Uttar Pradesh – 201305',
+    phone: '+91 82793 19964',
     email: 'infofivexgrowthrealty@gmail.com',
     secondaryEmail: 'info@fivexgrowthrealty.co.in',
     mapEmbed:
@@ -29,8 +82,8 @@ export const officeAddresses = [
 ];
 
 export const contactDetails = {
-  primaryPhone: '+91 8279319964',
-  formattedPhone: '+91- 827 931 9964',
+  primaryPhone: '+91 82793 19964',
+  formattedPhone: '+91 82793 19964',
   whatsapp: 'https://wa.me/message/US6IITAWHUQGD1',
   email: 'infofivexgrowthrealty@gmail.com',
   secondaryEmail: 'info@fivexgrowthrealty.co.in',
@@ -40,8 +93,19 @@ export const contactDetails = {
     weekdays: 'Monday – Saturday: 9:30 AM – 7:00 PM',
     sunday: 'Sunday: Open for Property Site Visits & Consultations',
   },
-  emergencyContact: '+91 8279319964',
+  emergencyContact: '+91 82793 19964',
 };
+
+export const founderSocialLinks = [
+  { platform: 'WhatsApp', url: 'https://wa.me/message/US6IITAWHUQGD1', iconImg: '/social/whatsapp.png' },
+  { platform: 'Facebook', url: 'https://www.facebook.com/share/1EM6RmN44z/', iconImg: '/social/facebok.png' },
+  { platform: 'LinkedIn', url: 'https://in.linkedin.com/in/syed-zeeshan-ahmad', iconImg: '/social/linkedin.png' },
+  { platform: 'Instagram', url: 'https://www.instagram.com/syed_zeeshan_ahmad?igsh=MXg5d3hibXdpM2E4cA==', iconImg: '/social/instagram.png' },
+  { platform: 'YouTube', url: 'https://www.youtube.com/@syedzeeshanahmad5001', iconImg: '/social/youtube.png' },
+  { platform: 'Twitter/X', url: 'https://x.com/syedzeshanahmad', iconImg: '/social/twitter.png' },
+  { platform: 'Tumblr', url: 'https://www.tumblr.com/syedzeeshanahmad?redirect_to=%2Fexplore%2Ftrending&source=blog_follow', iconImg: '/social/tumblr.png' },
+  { platform: 'Pinterest', url: 'https://pin.it/5CFarQsN8', iconImg: '/social/pinterest.png' },
+];
 
 export const socialLinks = [
   { platform: 'LinkedIn', url: 'https://linkedin.com/company/fivex-growth-realty', iconImg: '/social/linkedin.png' },
@@ -103,4 +167,24 @@ export const footerData = {
     { label: 'Contact Us', href: '/contact' },
   ],
 };
+
+export const companySearchLinks = [
+  {
+    name: 'FalconEBiz Corporate Profile',
+    url: 'https://www.falconebiz.com/company/FIVEX-GROWTH-REALTY-PRIVATE-LIMITED-U68100UP2025PTC226865',
+  },
+  {
+    name: 'The Company Check Insights',
+    url: 'https://www.thecompanycheck.com/company/fivex-growth-realty-private-limited/U68100UP2025PTC226865',
+  },
+  {
+    name: 'Tracxn Legal Entity Profile',
+    url: 'https://tracxn.com/d/legal-entities/india/fivex-growth-realty-private-limited/__HVYBzdFDKYa2gzHGJJL1iMnFwvNnnx2nVkiKxt1uUDM',
+  },
+  {
+    name: 'Tofler Company Dossier',
+    url: 'https://www.tofler.in/fivex-growth-realty-private-limited/company/U68100UP2025PTC226865?utm_source=chatgpt.com',
+  },
+];
+
 

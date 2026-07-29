@@ -33,7 +33,7 @@ export const jobListings: JobListing[] = [
     isHot: true,
     shortDescription: 'Drive luxury property sales and build long-term client relationships in the premium Noida/Greater Noida market.',
     fullDescription: [
-      'We are looking for a high-performing Senior Property Advisor to join our Noida team. As a Senior Advisor, you will be the face of FIVEX for our premium clients — guiding them through their property investment journey with expertise, empathy, and integrity.',
+      'We are looking for a high-performing Senior Property Advisor to join our Noida team. As a Senior Advisor, you will be the face of FiveX Growth Realty for our premium clients — guiding them through their property investment journey with expertise, empathy, and integrity.',
       'You will manage a portfolio of HNI clients, conduct site visits, lead negotiations, and close deals that align with our brand of excellence. This role offers an exceptional earning potential through our industry-leading incentive structure.',
     ],
     responsibilities: [
@@ -74,9 +74,9 @@ export const jobListings: JobListing[] = [
     salary: '₹7–12 LPA',
     posted: '2026-07-20',
     isHot: true,
-    shortDescription: 'Lead our digital marketing strategy to generate quality leads and build FIVEX\'s premium brand presence across digital channels.',
+    shortDescription: 'Lead our digital marketing strategy to generate quality leads and build FiveX\'s premium brand presence across digital channels.',
     fullDescription: [
-      'FIVEX is looking for a creative and data-driven Digital Marketing Manager to take ownership of our entire digital presence. You will craft compelling campaigns that resonate with luxury real estate buyers and investors.',
+      'FiveX Growth Realty is looking for a creative and data-driven Digital Marketing Manager to take ownership of our entire digital presence. You will craft compelling campaigns that resonate with luxury real estate buyers and investors.',
       'This is a high-impact role where you\'ll work directly with leadership to shape the brand\'s digital voice and drive measurable business outcomes through innovative marketing strategies.',
     ],
     responsibilities: [
@@ -114,9 +114,9 @@ export const jobListings: JobListing[] = [
     experience: '3–6 years',
     salary: '₹6–10 LPA',
     posted: '2026-07-22',
-    shortDescription: 'Ensure all transactions are legally sound, RERA-compliant, and protect both clients and FIVEX from legal risks.',
+    shortDescription: 'Ensure all transactions are legally sound, RERA-compliant, and protect both clients and FiveX Growth Realty from legal risks.',
     fullDescription: [
-      'We are seeking a meticulous Legal & Compliance Executive to join our growing team. This role is critical to ensuring every property transaction handled by FIVEX meets the highest standards of legal scrutiny and regulatory compliance.',
+      'We are seeking a meticulous Legal & Compliance Executive to join our growing team. This role is critical to ensuring every property transaction handled by FiveX Growth Realty meets the highest standards of legal scrutiny and regulatory compliance.',
     ],
     responsibilities: [
       'Review property title documents, sale deeds, and lease agreements',
@@ -152,7 +152,7 @@ export const jobListings: JobListing[] = [
     posted: '2026-07-18',
     shortDescription: 'Dedicated NRI desk role to help Indian diaspora invest confidently in premium Indian real estate from abroad.',
     fullDescription: [
-      'As an NRI Relationship Manager at FIVEX, you will be the primary point of contact for Non-Resident Indians looking to invest in Indian real estate. Your role is to make the process seamless, transparent, and profitable for clients who are physically abroad.',
+      'As an NRI Relationship Manager at FiveX Growth Realty, you will be the primary point of contact for Non-Resident Indians looking to invest in Indian real estate. Your role is to make the process seamless, transparent, and profitable for clients who are physically abroad.',
     ],
     responsibilities: [
       'Build and manage a portfolio of NRI clients across key diaspora markets',

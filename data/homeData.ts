@@ -115,7 +115,7 @@ export const featuredProperties: PropertyItem[] = [
 export const testimonials: TestimonialItem[] = [
   {
     id: 'test-1',
-    quote: '"As an NRI living in London, navigating the Indian property market felt daunting. FIVEX provided an end-to-end concierge service that was beyond impressive. Their market intelligence on upcoming infrastructure in Noida Phase II helped me secure a high-yield investment before the prices surged. The level of transparency in their legal vetting is unmatched."',
+    quote: '"As an NRI living in London, navigating the Indian property market felt daunting. FiveX Growth Realty provided an end-to-end concierge service that was beyond impressive. Their market intelligence on upcoming infrastructure in Noida Phase II helped me secure a high-yield investment before the prices surged. The level of transparency in their legal vetting is unmatched."',
     author: 'Aditya Malhotra',
     role: 'Tech Entrepreneur, London',
     initials: 'AM',
@@ -123,7 +123,7 @@ export const testimonials: TestimonialItem[] = [
   },
   {
     id: 'test-2',
-    quote: '"Expanding our corporate footprint to Delhi NCR required a partner who understood commercial zoning and ROI forecasting. The team at FIVEX identified a Grade-A office space in Dubai-equivalent luxury standards. Their negotiation skills and deep connections with developers saved us significant capital. Truly elite consultants."',
+    quote: '"Expanding our corporate footprint to Delhi NCR required a partner who understood commercial zoning and ROI forecasting. The team at FiveX Growth Realty identified a Grade-A office space in Dubai-equivalent luxury standards. Their negotiation skills and deep connections with developers saved us significant capital. Truly elite consultants."',
     author: 'Zaid Sheikh',
     role: 'Managing Director, Dubai Logistics',
     initials: 'ZS',
@@ -131,7 +131,7 @@ export const testimonials: TestimonialItem[] = [
   },
   {
     id: 'test-3',
-    quote: '"Buying my home wasn\'t just about square footage; it was about lifestyle. FIVEX curated a shortlist of the most exclusive penthouses in Noida that weren\'t even on the public market. Their personalized approach and attention to my aesthetic preferences made the process seamless. They don\'t just sell houses; they understand luxury."',
+    quote: '"Buying my home wasn\'t just about square footage; it was about lifestyle. FiveX Growth Realty curated a shortlist of the most exclusive penthouses in Noida that weren\'t even on the public market. Their personalized approach and attention to my aesthetic preferences made the process seamless. They don\'t just sell houses; they understand luxury."',
     author: 'Ritu Khanna',
     role: 'Renowned Interior Architect',
     initials: 'RK',
@@ -142,13 +142,13 @@ export const testimonials: TestimonialItem[] = [
 export const faqs: FaqItem[] = [
   {
     id: 'faq-1',
-    question: 'How does FIVEX ensure investment security for its clients?',
+    question: 'How does FiveX Growth Realty ensure investment security for its clients?',
     answer: 'We employ a rigorous 5-step verification process that includes RERA compliance checks, title deed clearance, developer track record analysis, and current construction progress audits. We only list properties from developers with a proven history of timely delivery and structural integrity.',
   },
   {
     id: 'faq-2',
     question: 'What is the process for NRIs looking to invest in Noida real estate?',
-    answer: 'FIVEX provides a dedicated NRI concierge. The process involves identifying a project, verifying documents through our legal team, managing the NRE/NRO account transactions, and handling the Power of Attorney (PoA) if you are unable to travel for registration. We handle all local paperwork on your behalf.',
+    answer: 'FiveX Growth Realty provides a dedicated NRI concierge. The process involves identifying a project, verifying documents through our legal team, managing the NRE/NRO account transactions, and handling the Power of Attorney (PoA) if you are unable to travel for registration. We handle all local paperwork on your behalf.',
   },
   {
     id: 'faq-3',
@@ -157,13 +157,13 @@ export const faqs: FaqItem[] = [
   },
   {
     id: 'faq-4',
-    question: 'Does FIVEX assist with home loans and financial planning?',
+    question: 'Does FiveX Growth Realty assist with home loans and financial planning?',
     answer: 'Yes, we have strategic partnerships with top-tier banks including HDFC, ICICI, and SBI. We assist in loan eligibility checks, document compilation, and ensuring you get the most competitive interest rates and fastest processing times.',
   },
   {
     id: 'faq-5',
     question: 'What property verification standards do you follow?',
-    answer: 'Our standards exceed mandatory RERA requirements. We conduct independent soil tests (for plots), environmental impact reviews, and check for any historical litigation on the land. Our "FIVEX Verified" badge is only awarded to projects that pass our internal 42-point checklist.',
+    answer: 'Our standards exceed mandatory RERA requirements. We conduct independent title checks, environmental impact reviews, and verify all developer credentials. Our "FiveX Verified" badge is only awarded to projects that pass our internal 42-point checklist.',
   },
   {
     id: 'faq-6',
@@ -175,39 +175,45 @@ export const faqs: FaqItem[] = [
 export const fivexFeatures: FeatureItem[] = [
   {
     id: 'feat-1',
-    icon: 'verified',
-    title: 'Verified Properties',
-    description: 'We conduct rigorous 5-step verification on all projects to ensure your investment is safe and legally sound.',
+    icon: 'groups',
+    title: 'Experienced Leadership Team',
+    description: 'Over 13+ years of collective leadership in North India real estate market advisory.',
   },
   {
     id: 'feat-2',
-    icon: 'person_pin',
-    title: 'Expert Consultation',
-    description: 'Personalized advisors who understand your financial goals and property requirements precisely.',
+    icon: 'handshake',
+    title: 'Transparent Business Practices',
+    description: '100% legal title clearance, RERA-compliant advisory, and clear documentation.',
   },
   {
     id: 'feat-3',
-    icon: 'currency_exchange',
-    title: 'Best Price Guarantee',
-    description: 'Leveraging our developer partnerships to get you exclusive deals and pre-launch prices.',
+    icon: 'person_pin',
+    title: 'Customer-First Approach',
+    description: 'Personalized property portfolio planning tailored to your budget and ROI goals.',
   },
   {
     id: 'feat-4',
-    icon: 'account_balance',
-    title: 'Loan Assistance',
-    description: 'Seamless home loan facilitation through our network of premium banking partners.',
+    icon: 'insights',
+    title: 'Extensive Market Knowledge',
+    description: 'Deep market insights in Noida, Yamuna Expressway, Jewar Aerocity, and NCR.',
   },
   {
     id: 'feat-5',
-    icon: 'gavel',
-    title: 'Legal Advisory',
-    description: 'Expert legal support for registration, paperwork, and property title clearance.',
+    icon: 'trending_up',
+    title: 'Strategic Investment Solutions',
+    description: 'High appreciation yield residential, commercial, authority plots & pre-launch opportunities.',
   },
   {
     id: 'feat-6',
-    icon: 'history_edu',
-    title: 'Resale Support',
-    description: 'Long-term commitment helping you exit or upgrade your real estate assets profitably.',
+    icon: 'domain',
+    title: 'Strong Developer Relationships',
+    description: 'Direct tie-ups with 50+ tier-1 developers across Noida, NCR, and Gurgaon.',
+  },
+  {
+    id: 'feat-7',
+    icon: 'support_agent',
+    title: 'End-to-End Support',
+    description: 'From site visits & legal vetting to bank loans, registration, and post-purchase support.',
   },
 ];
 

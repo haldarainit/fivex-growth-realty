@@ -13,7 +13,7 @@ import { successStories } from '@/data/testimonialsData';
 import { partners, ncrDevelopersList, gurgaonDevelopersList } from '@/data/partnerData';
 import { faqs } from '@/data/homeData';
 import { aboutStatsMetrics } from '@/data/aboutData';
-import { companyInfo, contactDetails, officeAddresses } from '@/data/companyData';
+import { companyInfo, contactDetails, officeAddresses, companySearchLinks } from '@/data/companyData';
 
 // ─── Full-Width Section Wrapper ────────────────────────────────────────────────
 const Section: React.FC<{
@@ -234,16 +234,15 @@ export default function AboutPage() {
 
   const sectionIds = [
     'who-we-are',
-    'founder',
     'leadership',
     'mission-vision',
     'certificates',
     'journey',
     'awards',
-    'developer-partners',
     'our-team',
-    'testimonials',
+    'our-services',
     'why-choose-us',
+    'core-values',
     'faqs',
   ];
 
@@ -309,14 +308,14 @@ export default function AboutPage() {
             >
               <span className="inline-flex items-center gap-2 text-secondary text-xs font-extrabold uppercase tracking-widest mb-4">
                 <span className="w-8 h-px bg-secondary" />
-                FIVEX GROWTH REALTY PRIVATE LIMITED
+                FiveX Growth Realty Private Limited
               </span>
               <h1 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.08] max-w-4xl">
                 Building Wealth Through <br />
                 <span className="text-secondary">Real Estate Excellence</span>
               </h1>
               <p className="mt-4 text-white/88 text-sm sm:text-base lg:text-lg max-w-3xl leading-relaxed font-medium">
-                Established on 26 June 2025, FIVEX GROWTH REALTY PRIVATE LIMITED is a leading real estate consultancy and property advisory firm headquartered in Sector 132 Noida, backed by over 13 years of collective industry expertise.
+                Established on 26 June 2025, FiveX Growth Realty Private Limited is a leading real estate consultancy and property advisory firm headquartered in Sector 132 Noida, backed by over 13 years of collective industry expertise.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
@@ -380,22 +379,22 @@ export default function AboutPage() {
               <Section
                 id="who-we-are"
                 badge="About Us"
-                title="FIVEX GROWTH REALTY PRIVATE LIMITED"
+                title="FiveX Growth Realty Private Limited"
                 subtitle="Building Wealth Through Real Estate with integrity, transparency, and market expertise."
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
                   <div className="space-y-4 text-gray-700 text-sm sm:text-base leading-relaxed font-medium">
                     <p>
-                      <strong>FIVEX GROWTH REALTY PRIVATE LIMITED</strong> is a leading real estate consultancy and property advisory firm, dedicated to delivering exceptional residential and commercial real estate solutions. With a strong commitment to integrity, transparency, and customer satisfaction, we have established ourselves as a trusted partner for homebuyers, investors, and corporate clients.
+                      <strong>FiveX Growth Realty Private Limited</strong> is a leading real estate consultancy and property advisory firm, dedicated to delivering exceptional residential and commercial real estate solutions. With a strong commitment to integrity, transparency, and customer satisfaction, we have established ourselves as a trusted partner for homebuyers, investors, and corporate clients.
                     </p>
                     <p>
                       Strategically headquartered in Noida, one of India&apos;s fastest-growing real estate destinations, we specialize in helping clients identify high-potential investment opportunities and premium properties that align perfectly with their financial goals and lifestyle aspirations.
                     </p>
                     <p>
-                      Established on <strong>26 June 2025</strong>, FIVEX GROWTH REALTY PRIVATE LIMITED was founded with a vision to redefine the real estate experience through professionalism, trust, and market expertise. Backed by an experienced leadership team with over 13 years of collective industry expertise, the company has quickly emerged as a reliable name in the real estate sector.
+                      Established on <strong>26 June 2025</strong>, FiveX Growth Realty Private Limited was founded with a vision to redefine the real estate experience through professionalism, trust, and market expertise. Backed by an experienced leadership team with over 13 years of collective industry expertise, the company has quickly emerged as a reliable name in the real estate sector.
                     </p>
                     <p>
-                      Whether you are purchasing your dream home, expanding your business, or building a long-term investment portfolio, FIVEX GROWTH REALTY ensures a seamless and rewarding journey.
+                      Whether you are purchasing your dream home, expanding your business, or building a long-term investment portfolio, FiveX Growth Realty ensures a seamless and rewarding journey.
                     </p>
                   </div>
 
@@ -425,136 +424,185 @@ export default function AboutPage() {
                         <span className="text-gray-500 font-medium">PAN:</span>
                         <span className="font-mono font-bold text-primary">{companyInfo.pan}</span>
                       </div>
-                      <div className="py-2 space-y-1">
+                      <div className="py-2 space-y-1 border-b border-gray-200">
                         <span className="text-gray-500 font-medium block">Registered Office:</span>
                         <span className="font-semibold text-primary block leading-relaxed">{officeAddresses[0].address}</span>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </Section>
 
-              {/* 2. Founder Section */}
-              <Section
-                id="founder"
-                badge="Meet the Founder"
-                title="SYED ZEESHAN AHMAD"
-                subtitle="Founder & Managing Director | Real Estate Expert | Investment Consultant | Yamuna Expressway & Noida Specialist"
-              >
-                <div className="bg-gradient-to-br from-primary via-primary to-primary/95 text-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-secondary/30 relative overflow-hidden">
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                    
-                    {/* Left: Founder Card / Contact Details */}
-                    <div className="lg:col-span-4 space-y-6">
-                      <div className="relative rounded-2xl overflow-hidden border-2 border-secondary/40 shadow-2xl bg-gray-900 aspect-square">
-                        <img
-                          src={founder.image}
-                          alt={founder.name}
-                          className="w-full h-full object-cover object-top"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                        <div className="absolute bottom-4 left-4 right-4">
-                          <p className="font-display font-extrabold text-lg text-white">{founder.name}</p>
-                          <p className="text-secondary text-xs font-bold">{founder.designation}</p>
-                        </div>
-                      </div>
-
-                      {/* Direct Connect Buttons */}
-                      <div className="space-y-2.5">
-                        <a
-                          href={founder.whatsapp}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-full bg-green-500 hover:bg-green-600 text-white font-extrabold py-3 px-4 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
-                        >
-                          <span className="material-symbols-outlined text-base">chat</span>
-                          WhatsApp: Let&apos;s Connect
-                        </a>
-                        <a
-                          href={`tel:${founder.phone}`}
-                          className="w-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 transition-all"
-                        >
-                          <span className="material-symbols-outlined text-secondary text-base">call</span>
-                          {founder.phone}
-                        </a>
-                        <a
-                          href={`mailto:${founder.email}`}
-                          className="w-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 transition-all"
-                        >
-                          <span className="material-symbols-outlined text-secondary text-base">mail</span>
-                          {founder.email}
-                        </a>
-                      </div>
-                    </div>
-
-                    {/* Right: Detailed Bio & Headline */}
-                    <div className="lg:col-span-8 space-y-6">
-                      <div>
-                        <span className="text-xs font-extrabold uppercase tracking-widest text-secondary bg-secondary/15 px-3 py-1 rounded-full border border-secondary/30">
-                          FOUNDER &amp; MANAGING DIRECTOR
-                        </span>
-                        <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-white mt-3 leading-tight">
-                          {founder.name}
-                        </h3>
-                        <p className="text-secondary/90 text-xs sm:text-sm font-semibold mt-2 leading-relaxed">
-                          {founder.headline}
-                        </p>
-                      </div>
-
-                      <div className="space-y-4 text-white/85 text-xs sm:text-sm leading-relaxed font-medium border-t border-white/10 pt-5">
-                        {founder.fullBio.map((paragraph, idx) => (
-                          <p key={idx}>{paragraph}</p>
-                        ))}
-                      </div>
-
-                      {/* Achievements Grid */}
-                      <div className="pt-4 border-t border-white/10">
-                        <h4 className="font-display font-bold text-sm text-secondary uppercase tracking-wider mb-3">
-                          🏆 Achievements &amp; Highlights
-                        </h4>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                          {founder.achievements.map((item, idx) => (
-                            <div key={idx} className="flex items-start gap-2 bg-white/5 p-2.5 rounded-xl border border-white/10">
-                              <span className="material-symbols-outlined text-secondary text-sm flex-shrink-0 mt-0.5" style={{ fontVariationSettings: '"FILL" 1' }}>
-                                check_circle
-                              </span>
-                              <span className="text-white/90 text-xs font-semibold">{item}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Areas Served */}
+                      {/* Corporate Directory / Search Links */}
                       <div className="pt-2">
-                        <h4 className="font-display font-bold text-sm text-secondary uppercase tracking-wider mb-2.5">
-                          🌍 Key Areas Served
-                        </h4>
-                        <div className="flex flex-wrap gap-2">
-                          {founder.areasServed?.map((area) => (
-                            <span key={area} className="text-[11px] font-bold bg-white/10 text-white px-3 py-1 rounded-lg border border-white/15">
-                              {area}
-                            </span>
+                        <span className="text-gray-500 font-bold block mb-2 text-xs uppercase tracking-wider">Official Corporate Directory Profiles:</span>
+                        <div className="space-y-1.5">
+                          {companySearchLinks.map((link) => (
+                            <a
+                              key={link.name}
+                              href={link.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-2 text-xs text-primary font-semibold hover:text-secondary transition-colors group"
+                            >
+                              <span className="material-symbols-outlined text-secondary text-sm group-hover:translate-x-0.5 transition-transform">open_in_new</span>
+                              <span className="underline decoration-secondary/40 underline-offset-2">{link.name}</span>
+                            </a>
                           ))}
                         </div>
                       </div>
-
                     </div>
-
                   </div>
                 </div>
               </Section>
 
-              {/* 3. Leadership Team */}
+              {/* 2. Unified Leadership & Founder Section */}
               <Section
                 id="leadership"
-                badge="Leadership Team"
-                title="Our Directors"
-                subtitle="Combining deep market insight, strategic vision, and an unwavering commitment to client success."
+                badge="Leadership & Management"
+                title="Leadership & Founder"
+                subtitle="Combining visionary leadership, deep market insight, and an unwavering commitment to client success."
               >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {leadershipMembers.map((member, i) => (
-                    <LeaderCard key={member.id} member={member} index={i} />
-                  ))}
+                <div id="founder" className="scroll-mt-32 sm:scroll-mt-36 space-y-10">
+                  {/* Founder Profile */}
+                  <div className="bg-gradient-to-br from-primary via-primary to-primary/95 text-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-secondary/30 relative overflow-hidden">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                      
+                      {/* Left: Founder Card / Contact Details */}
+                      <div className="lg:col-span-4 space-y-6">
+                        <div className="relative rounded-2xl overflow-hidden border-2 border-secondary/40 shadow-2xl bg-gray-900 aspect-square">
+                          <img
+                            src={founder.image}
+                            alt={founder.name}
+                            className="w-full h-full object-cover object-top"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                          <div className="absolute bottom-4 left-4 right-4">
+                            <p className="font-display font-extrabold text-lg text-white">{founder.name}</p>
+                            <p className="text-secondary text-xs font-bold">{founder.designation}</p>
+                          </div>
+                        </div>
+
+                        {/* Direct Connect & View Profile Buttons */}
+                        <div className="space-y-2.5">
+                          <a
+                            href={founder.whatsapp}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full bg-green-500 hover:bg-green-600 text-white font-extrabold py-3 px-4 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
+                          >
+                            <span className="material-symbols-outlined text-base">chat</span>
+                            WhatsApp: Let&apos;s Connect
+                          </a>
+                          <Link
+                            href={`/leadership/${founder.id}`}
+                            className="w-full bg-secondary hover:brightness-110 text-primary font-extrabold py-3 px-4 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
+                          >
+                            View Full Profile
+                            <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                          </Link>
+                          <a
+                            href={`tel:${founder.phone}`}
+                            className="w-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 transition-all"
+                          >
+                            <span className="material-symbols-outlined text-secondary text-base">call</span>
+                            {founder.phone}
+                          </a>
+                          <a
+                            href={`mailto:${founder.email}`}
+                            className="w-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 transition-all"
+                          >
+                            <span className="material-symbols-outlined text-secondary text-base">mail</span>
+                            {founder.email}
+                          </a>
+                        </div>
+
+                        {/* Founder Social & Professional Profiles */}
+                        <div className="pt-2">
+                          <p className="text-[11px] font-extrabold uppercase tracking-widest text-secondary mb-2">
+                            Connect with Founder:
+                          </p>
+                          <div className="flex flex-wrap gap-2">
+                            {founder.social.map((s) => (
+                              <a
+                                key={s.platform}
+                                href={s.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-white/10 hover:bg-secondary hover:text-primary border border-white/20 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg transition-all flex items-center gap-1 cursor-pointer"
+                              >
+                                <span className="material-symbols-outlined text-xs">open_in_new</span>
+                                {s.platform}
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Right: Detailed Bio & Headline */}
+                      <div className="lg:col-span-8 space-y-6">
+                        <div>
+                          <span className="text-xs font-extrabold uppercase tracking-widest text-secondary bg-secondary/15 px-3 py-1 rounded-full border border-secondary/30">
+                            FOUNDER &amp; MANAGING DIRECTOR
+                          </span>
+                          <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-white mt-3 leading-tight">
+                            {founder.name}
+                          </h3>
+                          <p className="text-secondary/90 text-xs sm:text-sm font-semibold mt-2 leading-relaxed">
+                            {founder.headline}
+                          </p>
+                        </div>
+
+                        <div className="space-y-4 text-white/85 text-xs sm:text-sm leading-relaxed font-medium border-t border-white/10 pt-5">
+                          {founder.fullBio.map((paragraph, idx) => (
+                            <p key={idx}>{paragraph}</p>
+                          ))}
+                        </div>
+
+                        {/* Achievements Grid */}
+                        <div className="pt-4 border-t border-white/10">
+                          <h4 className="font-display font-bold text-sm text-secondary uppercase tracking-wider mb-3">
+                            🏆 Achievements &amp; Highlights
+                          </h4>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            {founder.achievements.map((item, idx) => (
+                              <div key={idx} className="flex items-start gap-2 bg-white/5 p-2.5 rounded-xl border border-white/10">
+                                <span className="material-symbols-outlined text-secondary text-sm flex-shrink-0 mt-0.5" style={{ fontVariationSettings: '"FILL" 1' }}>
+                                  check_circle
+                                </span>
+                                <span className="text-white/90 text-xs font-semibold">{item}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Areas Served */}
+                        <div className="pt-2">
+                          <h4 className="font-display font-bold text-sm text-secondary uppercase tracking-wider mb-2.5">
+                            🌍 Key Areas Served
+                          </h4>
+                          <div className="flex flex-wrap gap-2">
+                            {founder.areasServed?.map((area) => (
+                              <span key={area} className="text-[11px] font-bold bg-white/10 text-white px-3 py-1 rounded-lg border border-white/15">
+                                {area}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                      </div>
+
+                    </div>
+                  </div>
+
+                  {/* Directors & Executive Leadership Cards (Excluding Founder duplicate) */}
+                  <div className="pt-6 border-t border-gray-100">
+                    <h4 className="font-display font-extrabold text-xl text-primary mb-6 flex items-center gap-2">
+                      <span className="material-symbols-outlined text-secondary">groups</span>
+                      Directors &amp; Executive Leadership
+                    </h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      {leadershipMembers.filter((m) => m.id !== 'syed-zeeshan-ahmad').map((member, i) => (
+                        <LeaderCard key={member.id} member={member} index={i} />
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </Section>
 
@@ -711,53 +759,7 @@ export default function AboutPage() {
                 </div>
               </Section>
 
-              {/* 8. Developer Partners */}
-              <Section
-                id="developer-partners"
-                badge="Trusted Network"
-                title="Developer Partners"
-                subtitle="We partner with India's leading developers to bring clients genuine, high-yield real estate opportunities."
-              >
-                <div className="space-y-8">
-                  {/* Noida / NCR Developers */}
-                  <div>
-                    <h4 className="font-display font-extrabold text-base text-primary mb-3 flex items-center gap-2">
-                      <span className="material-symbols-outlined text-secondary">apartment</span>
-                      Noida, Greater Noida &amp; NCR Developers
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {ncrDevelopersList.map((dev) => (
-                        <span
-                          key={dev}
-                          className="bg-surface-container-low hover:bg-secondary/10 hover:border-secondary/40 text-primary border border-gray-200 text-xs font-bold px-3 py-2 rounded-xl transition-all shadow-2xs"
-                        >
-                          {dev}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Gurgaon Developers */}
-                  <div>
-                    <h4 className="font-display font-extrabold text-base text-primary mb-3 flex items-center gap-2">
-                      <span className="material-symbols-outlined text-secondary">location_city</span>
-                      Gurgaon (Gurugram) Developers
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {gurgaonDevelopersList.map((dev) => (
-                        <span
-                          key={dev}
-                          className="bg-primary/5 hover:bg-secondary/10 hover:border-secondary/40 text-primary border border-gray-200 text-xs font-bold px-3 py-2 rounded-xl transition-all shadow-2xs"
-                        >
-                          {dev}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </Section>
-
-              {/* 9. Our Team */}
+              {/* 8. Our Team */}
               <Section
                 id="our-team"
                 badge="The Team"
@@ -787,59 +789,116 @@ export default function AboutPage() {
                 </div>
               </Section>
 
-              {/* 10. Testimonials */}
-              <Section id="testimonials" badge="Client Trust" title="What Clients Say" dark>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {successStories.slice(0, 4).map((story, i) => (
-                    <div
-                      key={story.id}
-                      className="bg-white/10 rounded-2xl p-6 border border-white/15"
-                    >
-                      <div className="flex gap-1 mb-4">
-                        {Array.from({ length: story.stars }).map((_, j) => (
-                          <span
-                            key={j}
-                            className="material-symbols-outlined text-secondary text-base"
-                            style={{ fontVariationSettings: '"FILL" 1' }}
-                          >
-                            star
-                          </span>
-                        ))}
-                      </div>
-                      <p className="text-white/90 text-sm sm:text-base leading-relaxed italic font-medium">
-                        {story.quoteHeadline}
-                      </p>
-                      <div className="flex items-center gap-3 mt-6 pt-5 border-t border-white/15">
-                        <div className="w-11 h-11 rounded-full bg-secondary/30 flex items-center justify-center text-secondary font-bold text-sm">
-                          {story.initials}
-                        </div>
-                        <div>
-                          <p className="text-white font-extrabold text-sm">{story.author}</p>
-                          <p className="text-white/60 text-xs">{story.role}</p>
-                        </div>
-                      </div>
+              {/* 11. Our Services */}
+              <Section id="our-services" badge="Comprehensive Solutions" title="Our Services">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {/* Residential Real Estate */}
+                  <div className="bg-white rounded-3xl p-6 border border-gray-100 shadow-md space-y-4">
+                    <div className="w-12 h-12 rounded-2xl bg-primary text-secondary flex items-center justify-center">
+                      <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: '"FILL" 1' }}>home</span>
                     </div>
-                  ))}
+                    <h3 className="font-display font-bold text-lg text-primary">Residential Real Estate</h3>
+                    <ul className="space-y-2.5">
+                      {[
+                        'Premium Apartments',
+                        'Luxury Villas',
+                        'Ready-to-Move Homes',
+                        'Investment Properties',
+                        'Pre-Launch Opportunities',
+                      ].map((item) => (
+                        <li key={item} className="flex items-center gap-2 text-xs font-semibold text-gray-700">
+                          <span className="w-5 h-5 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-[10px] font-bold">✓</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Investment Advisory */}
+                  <div className="bg-white rounded-3xl p-6 border border-gray-100 shadow-md space-y-4">
+                    <div className="w-12 h-12 rounded-2xl bg-secondary text-primary flex items-center justify-center">
+                      <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: '"FILL" 1' }}>trending_up</span>
+                    </div>
+                    <h3 className="font-display font-bold text-lg text-primary">Investment Advisory</h3>
+                    <ul className="space-y-2.5">
+                      {[
+                        'Real Estate Portfolio Planning',
+                        'Wealth Creation Strategies',
+                        'ROI-Focused Investments',
+                        'Rental Income Opportunities',
+                      ].map((item) => (
+                        <li key={item} className="flex items-center gap-2 text-xs font-semibold text-gray-700">
+                          <span className="w-5 h-5 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-[10px] font-bold">✓</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Developer Solutions */}
+                  <div className="bg-white rounded-3xl p-6 border border-gray-100 shadow-md space-y-4">
+                    <div className="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center">
+                      <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: '"FILL" 1' }}>apartment</span>
+                    </div>
+                    <h3 className="font-display font-bold text-lg text-primary">Developer Solutions</h3>
+                    <ul className="space-y-2.5">
+                      {[
+                        'Project Marketing',
+                        'Sales Management',
+                        'Channel Partner Services',
+                        'Strategic Market Positioning',
+                      ].map((item) => (
+                        <li key={item} className="flex items-center gap-2 text-xs font-semibold text-gray-700">
+                          <span className="w-5 h-5 rounded-full bg-green-100 text-green-700 flex items-center justify-center text-[10px] font-bold">✓</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </Section>
 
-              {/* 11. Why Choose Us */}
+              {/* 12. Why Choose Us */}
               <Section id="why-choose-us" badge="Why Choose Us" title="Why Choose FIVEX GROWTH REALTY">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                   {[
-                    { icon: 'military_tech', title: 'Over 13 Years Industry Expertise', desc: 'Backed by deep market knowledge and experienced leadership.' },
-                    { icon: 'handshake', title: 'Trusted by Homebuyers & Investors', desc: 'Proven track record of high satisfaction and long-term relationships.' },
-                    { icon: 'gavel', title: 'Transparent & Ethical Business Practices', desc: 'Complete honesty, zero hidden fees, and verified documentation.' },
-                    { icon: 'domain', title: 'Strong Developer Relationships', desc: 'Direct access to 50+ tier-1 developer groups in NCR & Gurgaon.' },
-                    { icon: 'insights', title: 'Personalized Investment Solutions', desc: 'Custom property portfolios designed for maximum capital ROI.' },
-                    { icon: 'support_agent', title: 'End-to-End Transaction Support', desc: 'From site visits to home loans, legal title check, and registry.' },
+                    { icon: 'military_tech', title: 'Experienced Leadership Team', desc: 'Over 13 years of collective industry expertise delivering strategic property advice.' },
+                    { icon: 'gavel', title: 'Transparent Business Practices', desc: 'Complete honesty, zero hidden fees, and verified legal title documentation.' },
+                    { icon: 'person_heart', title: 'Customer-First Approach', desc: 'Customized solutions aligned strictly with your budget and lifestyle aspirations.' },
+                    { icon: 'analytics', title: 'Extensive Market Knowledge', desc: 'Deep insights into Noida, Greater Noida, Yamuna Expressway, and Gurgaon corridors.' },
+                    { icon: 'savings', title: 'Strategic Investment Solutions', desc: 'Data-driven real estate portfolio planning for maximum ROI and rental yield.' },
+                    { icon: 'handshake', title: 'Strong Developer Relationships', desc: 'Direct tier-1 developer access across 50+ leading developer groups.' },
+                    { icon: 'support_agent', title: 'End-to-End Support', desc: 'From initial site visits to loan processing, legal verification, and final registry.' },
                   ].map((item) => (
                     <div key={item.title} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm space-y-3">
                       <div className="w-12 h-12 rounded-xl bg-secondary/15 text-secondary flex items-center justify-center">
                         <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: '"FILL" 1' }}>{item.icon}</span>
                       </div>
-                      <h4 className="font-display font-bold text-primary text-base">{item.title}</h4>
+                      <h4 className="font-display font-bold text-primary text-base flex items-center gap-1.5">
+                        <span className="text-green-600 font-bold text-sm">✓</span>
+                        {item.title}
+                      </h4>
                       <p className="text-gray-600 text-xs leading-relaxed font-medium">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </Section>
+
+              {/* 13. Our Core Values */}
+              <Section id="core-values" badge="Our Philosophy" title="Our Core Values">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                  {[
+                    { title: 'Integrity', icon: 'verified' },
+                    { title: 'Transparency', icon: 'visibility' },
+                    { title: 'Excellence & Innovation', icon: 'lightbulb' },
+                    { title: 'Customer Satisfaction', icon: 'sentiment_very_satisfied' },
+                    { title: 'Long-Term Relationships', icon: 'groups' },
+                  ].map((val) => (
+                    <div key={val.title} className="bg-primary text-white p-5 rounded-2xl text-center border border-secondary/30 shadow-md">
+                      <span className="material-symbols-outlined text-secondary text-3xl mb-2 block" style={{ fontVariationSettings: '"FILL" 1' }}>{val.icon}</span>
+                      <p className="text-xs font-extrabold flex items-center justify-center gap-1">
+                        <span className="text-secondary font-bold">✓</span> {val.title}
+                      </p>
                     </div>
                   ))}
                 </div>

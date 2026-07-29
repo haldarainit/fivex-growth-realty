@@ -4,16 +4,15 @@ import { motion } from 'framer-motion';
 
 const navItems = [
   { id: 'who-we-are', label: 'Who We Are', icon: 'info' },
-  { id: 'founder', label: 'Founder & MD', icon: 'person' },
-  { id: 'leadership', label: 'Leadership', icon: 'groups' },
+  { id: 'leadership', label: 'Leadership & Founder', icon: 'groups' },
   { id: 'mission-vision', label: 'Mission & Vision', icon: 'visibility' },
   { id: 'certificates', label: 'Corporate Certificates', icon: 'workspace_premium' },
   { id: 'journey', label: 'Our Journey', icon: 'route' },
   { id: 'awards', label: 'Awards & Recognition', icon: 'emoji_events' },
-  { id: 'developer-partners', label: 'Developer Partners', icon: 'handshake' },
   { id: 'our-team', label: 'Our Team', icon: 'people' },
-  { id: 'testimonials', label: 'Testimonials', icon: 'format_quote' },
+  { id: 'our-services', label: 'Our Services', icon: 'home_work' },
   { id: 'why-choose-us', label: 'Why Choose Us', icon: 'verified' },
+  { id: 'core-values', label: 'Core Values', icon: 'star' },
   { id: 'faqs', label: 'FAQs', icon: 'help' },
 ];
 
