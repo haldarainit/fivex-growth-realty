@@ -209,7 +209,7 @@ export const Header: React.FC = () => {
   const hamburgerColor = onSurface ? 'text-primary' : 'text-white';
 
   const getNavLinkClass = (isActive: boolean) => {
-    const base = 'relative py-1.5 text-sm tracking-wide transition-colors whitespace-nowrap group font-semibold';
+    const base = 'relative py-1 text-xs xl:text-[13px] tracking-wide transition-colors whitespace-nowrap group font-semibold';
     if (onSurface) {
       return `${base} ${isActive ? 'text-secondary font-bold' : 'text-primary/85 hover:text-secondary'}`;
     }
@@ -234,20 +234,20 @@ export const Header: React.FC = () => {
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${headerBg}`}>
-      <div className="flex items-center justify-between px-4 sm:px-6 xl:px-14 max-w-[1440px] mx-auto">
+      <div className="flex items-center justify-between px-4 sm:px-6 xl:px-12 max-w-[1440px] mx-auto">
 
         {/* Logo */}
         <Link
           href="/"
           className="flex-shrink items-center gap-1 sm:gap-1.5 font-display font-bold tracking-tight leading-none whitespace-nowrap min-w-0 flex"
         >
-          <span className={`text-xs sm:text-lg xl:text-xl ${logoColor} transition-colors font-extrabold`}>FIVEX</span>
-          <span className="text-secondary text-xs sm:text-lg xl:text-xl font-black">GROWTH</span>
-          <span className={`text-xs sm:text-lg xl:text-xl ${logoColor} transition-colors font-extrabold`}>REALTY</span>
+          <span className={`text-xs sm:text-base xl:text-lg ${logoColor} transition-colors font-extrabold`}>FIVEX</span>
+          <span className="text-secondary text-xs sm:text-base xl:text-lg font-black">GROWTH</span>
+          <span className={`text-xs sm:text-base xl:text-lg ${logoColor} transition-colors font-extrabold`}>REALTY</span>
         </Link>
 
         {/* Desktop Nav Items */}
-        <nav className="hidden xl:flex items-center gap-6 2xl:gap-8 flex-1 justify-center">
+        <nav className="hidden xl:flex items-center gap-4 2xl:gap-6 flex-1 justify-center">
           {/* Home */}
           <Link href="/" className={getNavLinkClass(pathname === '/')}>
             Home
@@ -273,7 +273,7 @@ export const Header: React.FC = () => {
               aria-haspopup="true"
             >
               Projects
-              <span className={`material-symbols-outlined text-base transition-transform duration-200 ${megaMenuOpen ? 'rotate-180' : ''}`}>
+              <span className={`material-symbols-outlined text-sm transition-transform duration-200 ${megaMenuOpen ? 'rotate-180' : ''}`}>
                 keyboard_arrow_down
               </span>
               <span className={`absolute bottom-0 left-0 h-0.5 bg-secondary rounded-full transition-all duration-300 ${pathname.startsWith('/projects') ? 'w-full' : 'w-0 group-hover:w-full'}`} />
@@ -316,7 +316,7 @@ export const Header: React.FC = () => {
               onClick={() => setMoreDropdownOpen((prev) => !prev)}
             >
               More
-              <span className={`material-symbols-outlined text-base transition-transform duration-200 ${moreDropdownOpen ? 'rotate-180' : ''}`}>
+              <span className={`material-symbols-outlined text-sm transition-transform duration-200 ${moreDropdownOpen ? 'rotate-180' : ''}`}>
                 keyboard_arrow_down
               </span>
             </button>
@@ -328,55 +328,55 @@ export const Header: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 8 }}
                   transition={{ duration: 0.15 }}
-                  className="absolute top-full left-0 mt-2 w-60 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50 p-2 text-left"
+                  className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50 p-1.5 text-left"
                 >
                   <Link
                     href="/about#certificates"
-                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
                   >
-                    <span className="material-symbols-outlined text-base text-secondary">workspace_premium</span>
+                    <span className="material-symbols-outlined text-sm text-secondary">workspace_premium</span>
                     Certificates &amp; Compliance
                   </Link>
                   <Link
                     href="/about#mission-vision"
-                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
                   >
-                    <span className="material-symbols-outlined text-base text-secondary">visibility</span>
+                    <span className="material-symbols-outlined text-sm text-secondary">visibility</span>
                     Mission &amp; Vision
                   </Link>
                   <Link
                     href="/about#awards"
-                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
                   >
-                    <span className="material-symbols-outlined text-base text-secondary">emoji_events</span>
+                    <span className="material-symbols-outlined text-sm text-secondary">emoji_events</span>
                     Awards &amp; Recognition
                   </Link>
                   <Link
                     href="/csr#events"
-                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
                   >
-                    <span className="material-symbols-outlined text-base text-secondary">event</span>
+                    <span className="material-symbols-outlined text-sm text-secondary">event</span>
                     Events &amp; CSR Drives
                   </Link>
                   <Link
                     href="/team"
-                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
                   >
-                    <span className="material-symbols-outlined text-base text-secondary">groups</span>
+                    <span className="material-symbols-outlined text-sm text-secondary">groups</span>
                     Our Team
                   </Link>
                   <Link
                     href="/partners"
-                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
                   >
-                    <span className="material-symbols-outlined text-base text-secondary">handshake</span>
+                    <span className="material-symbols-outlined text-sm text-secondary">handshake</span>
                     Developer Partners
                   </Link>
                   <Link
                     href="/testimonials"
-                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
                   >
-                    <span className="material-symbols-outlined text-base text-secondary">format_quote</span>
+                    <span className="material-symbols-outlined text-sm text-secondary">format_quote</span>
                     Testimonials
                   </Link>
                 </motion.div>
@@ -389,7 +389,7 @@ export const Header: React.FC = () => {
         <div className="flex items-center gap-1.5 sm:gap-3 flex-shrink-0">
           <Link
             href="/contact"
-            className="bg-secondary text-primary px-3 py-1.5 sm:px-5 sm:py-2.5 rounded-lg font-bold text-[11px] sm:text-xs uppercase tracking-wider hover:brightness-110 transition-all active:scale-95 shadow-md whitespace-nowrap"
+            className="bg-secondary text-primary px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-bold text-[11px] uppercase tracking-wider hover:brightness-110 transition-all active:scale-95 shadow-md whitespace-nowrap"
           >
             Contact Us
           </Link>
@@ -418,42 +418,71 @@ export const Header: React.FC = () => {
             transition={{ duration: 0.25, ease: 'easeInOut' }}
             className="xl:hidden overflow-hidden"
           >
-            <div className="bg-primary/96 backdrop-blur-2xl border-t border-white/10 shadow-2xl">
-              <div className="px-4 sm:px-6 py-5 max-w-[1440px] mx-auto max-h-[calc(100svh-4rem)] overflow-y-auto">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
+            <div className="bg-primary/98 backdrop-blur-2xl border-t border-white/10 shadow-2xl">
+              <div className="px-3 py-4 max-w-[1440px] mx-auto max-h-[calc(100svh-4rem)] overflow-y-auto scrollbar-thin">
+
+                {/* Clean 2-Column Grid for Mobile Menu Items */}
+                <div className="grid grid-cols-2 gap-2 mb-3">
                   {[
                     { label: 'Home', href: '/' },
                     { label: 'About Us', href: '/about' },
+                    { label: 'Projects', href: '/projects' },
+                    { label: 'Services', href: '/services' },
                     { label: 'Certificates', href: '/about#certificates' },
                     { label: 'Mission & Vision', href: '/about#mission-vision' },
-                    { label: 'Projects', href: '/projects' },
-                    { label: 'CSR', href: '/csr' },
+                    { label: 'CSR Drives', href: '/csr' },
                     { label: 'Careers', href: '/careers' },
                     { label: 'Gallery', href: '/gallery' },
                     { label: 'Blog', href: '/blog' },
                     { label: 'Awards', href: '/about#awards' },
                     { label: 'Partners', href: '/partners' },
-                    { label: 'Testimonials', href: '/testimonials' },
                     { label: 'Our Team', href: '/team' },
-                  ].map((item) => (
+                    { label: 'Testimonials', href: '/testimonials' },
+                  ].map((item) => {
+                    const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+                    return (
+                      <Link
+                        key={item.label}
+                        href={item.href}
+                        onClick={() => setMenuOpen(false)}
+                        className={`py-2.5 px-3 rounded-xl text-xs text-center font-semibold transition-all border ${
+                          isActive
+                            ? 'bg-secondary text-primary border-secondary font-bold shadow-sm'
+                            : 'bg-white/5 text-white/90 border-white/10 hover:bg-white/15 hover:text-white'
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    );
+                  })}
+                </div>
+
+                {/* Quick City Links in Clean 2 Columns */}
+                <div className="grid grid-cols-2 gap-1.5 mb-3">
+                  {megaMenuCities.slice(0, 6).map((city) => (
                     <Link
-                      key={item.label}
-                      href={item.href}
+                      key={city.id}
+                      href={`/projects?city=${city.id}`}
                       onClick={() => setMenuOpen(false)}
-                      className="py-3 px-4 rounded-xl text-sm font-medium text-white/90 hover:text-secondary hover:bg-white/10 transition-all text-center"
+                      className="flex items-center justify-between px-2.5 py-2 rounded-lg bg-black/20 hover:bg-white/10 border border-white/5 text-[11px] text-white/80 transition-all"
                     >
-                      {item.label}
+                      <span className="truncate font-medium">{city.name}</span>
+                      <span className="text-[9px] px-1.5 py-0.2 rounded bg-white/10 text-secondary font-bold">
+                        {city.count}
+                      </span>
                     </Link>
                   ))}
                 </div>
 
+                {/* Contact CTA */}
                 <Link
                   href="/contact"
                   onClick={() => setMenuOpen(false)}
-                  className="block w-full bg-secondary text-primary py-3.5 rounded-2xl font-extrabold text-sm uppercase tracking-wider text-center hover:brightness-110 transition-all shadow-lg"
+                  className="block w-full bg-secondary text-primary py-3 rounded-xl font-extrabold text-xs uppercase tracking-wider text-center hover:brightness-110 active:scale-[0.99] transition-all shadow-lg"
                 >
                   Contact Us →
                 </Link>
+
               </div>
             </div>
           </motion.div>

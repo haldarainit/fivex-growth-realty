@@ -158,7 +158,7 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Main Hero Header */}
-      <div className="relative z-20 flex-1 flex flex-col justify-center px-4 sm:px-8 lg:px-16 xl:pl-24 max-w-[1280px] mx-auto w-full pt-20 sm:pt-24 lg:pt-16 pb-2">
+      <div className="relative z-20 flex-1 flex flex-col justify-center px-4 sm:px-8 lg:px-16 xl:pl-24 max-w-[1280px] mx-auto w-full pt-24 sm:pt-28 lg:pt-24 xl:pt-28 pb-2">
         <div className="max-w-3xl flex flex-col gap-3 sm:gap-4 mx-auto md:mx-0 items-center md:items-start text-center md:text-left">
 
           <div className="hero-fade-up inline-flex items-center justify-center gap-2 bg-[#f4e8c1] text-[#4a3b10] border border-[#c5a059] px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-widest shadow-lg">
@@ -289,14 +289,14 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Desktop Search Filter Bar with UPWARD Auto-Suggestions */}
-      <div className="hidden md:block relative z-30 w-full px-4 sm:px-8 lg:px-16 xl:pl-24 max-w-[1280px] mx-auto pb-4 lg:pb-6 pt-1">
+      <div className="hidden md:block relative z-30 w-full px-4 sm:px-8 lg:px-16 xl:pl-24 max-w-[1160px] mx-auto pb-3 lg:pb-5 pt-1">
         <form
           onSubmit={handleSearch}
-          className="glass-card bg-primary/85 backdrop-blur-2xl p-4 lg:p-5 rounded-2xl shadow-2xl flex flex-col gap-3 border border-white/20 relative"
+          className="glass-card bg-primary/85 backdrop-blur-2xl p-3.5 lg:p-4 rounded-2xl shadow-2xl flex flex-col gap-2.5 border border-white/20 relative"
         >
           {/* Search Keyword Input Container */}
           <div className="relative z-40" ref={desktopSearchRef}>
-            <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-secondary text-xl">
+            <span className="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-secondary text-lg">
               search
             </span>
             <input
@@ -305,28 +305,28 @@ export const HeroSection: React.FC = () => {
               value={searchQuery}
               onFocus={() => setIsFocused(true)}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-xl text-white text-xs font-bold py-3 pl-12 pr-4 outline-none placeholder:text-gray-300 focus:border-secondary transition-all"
+              className="w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-xl text-white text-xs font-bold py-2.5 pl-10 pr-4 outline-none placeholder:text-gray-300 focus:border-secondary transition-all"
             />
 
             {/* Desktop Auto-Suggest Dropdown */}
             {isFocused && suggestions.length > 0 && (
-              <div className="absolute bottom-full left-0 right-0 mb-2.5 bg-white text-primary rounded-2xl shadow-2xl border border-gray-200 overflow-hidden z-[80] p-2 text-left">
-                <div className="p-2 text-[11px] font-extrabold uppercase text-gray-400 tracking-wider bg-slate-50 border-b border-gray-100 flex items-center justify-between">
+              <div className="absolute bottom-full left-0 right-0 mb-2 bg-white text-primary rounded-2xl shadow-2xl border border-gray-200 overflow-hidden z-[80] p-2 text-left">
+                <div className="p-2 text-[10px] font-extrabold uppercase text-gray-400 tracking-wider bg-slate-50 border-b border-gray-100 flex items-center justify-between">
                   <span>Top Project Matches ({suggestions.length})</span>
                   <button onClick={() => setIsFocused(false)} className="text-gray-400 hover:text-primary font-bold">×</button>
                 </div>
-                <div className="divide-y divide-gray-100 max-h-64 overflow-y-auto">
+                <div className="divide-y divide-gray-100 max-h-56 overflow-y-auto">
                   {suggestions.map((p) => (
                     <Link
                       key={p.id}
                       href={`/projects/${p.slug}`}
                       onClick={() => setIsFocused(false)}
-                      className="flex items-center gap-3 p-3 hover:bg-slate-50 transition-colors"
+                      className="flex items-center gap-3 p-2.5 hover:bg-slate-50 transition-colors"
                     >
-                      <img src={p.image} alt={p.title} className="w-12 h-10 rounded-lg object-cover flex-shrink-0" />
+                      <img src={p.image} alt={p.title} className="w-10 h-10 rounded-lg object-cover flex-shrink-0" />
                       <div className="flex-1 min-w-0">
                         <p className="text-xs font-extrabold text-primary truncate">{p.title}</p>
-                        <p className="text-[11px] text-gray-500 truncate">{p.location} • {p.type}</p>
+                        <p className="text-[10px] text-gray-500 truncate">{p.location} • {p.type}</p>
                       </div>
                       <span className="text-xs font-extrabold text-secondary flex-shrink-0">{p.startingPrice}</span>
                     </Link>
@@ -334,12 +334,12 @@ export const HeroSection: React.FC = () => {
                 </div>
 
                 {/* Explore All Projects CTA Button inside suggestions window */}
-                <div className="p-2.5 bg-slate-50 border-t border-gray-100 mt-1 rounded-b-xl flex items-center justify-between">
-                  <span className="text-[11px] font-bold text-gray-500">Looking for all listings?</span>
+                <div className="p-2 bg-slate-50 border-t border-gray-100 mt-1 rounded-b-xl flex items-center justify-between">
+                  <span className="text-[10px] font-bold text-gray-500">Looking for all listings?</span>
                   <Link
                     href={`/projects${searchQuery.trim() ? `?q=${encodeURIComponent(searchQuery.trim())}` : ''}`}
                     onClick={() => setIsFocused(false)}
-                    className="bg-secondary text-primary px-4 py-1.5 rounded-lg font-extrabold text-xs uppercase tracking-wider flex items-center gap-1.5 hover:brightness-110 transition-all shadow-sm"
+                    className="bg-secondary text-primary px-3 py-1.5 rounded-lg font-extrabold text-[11px] uppercase tracking-wider flex items-center gap-1 hover:brightness-110 transition-all shadow-sm"
                   >
                     <span>Explore All Projects</span>
                     <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -350,8 +350,8 @@ export const HeroSection: React.FC = () => {
           </div>
 
           {/* Custom Floating Dropdowns Grid */}
-          <div className="flex flex-col lg:flex-row items-stretch gap-3">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 flex-1">
+          <div className="flex flex-col lg:flex-row items-stretch gap-2.5">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 flex-1">
 
               {/* 1. Custom Location Dropdown */}
               <CustomDropdown
@@ -381,28 +381,28 @@ export const HeroSection: React.FC = () => {
               />
 
               {/* 4. Purpose Radio */}
-              <div className="flex flex-col gap-1 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 px-3.5 py-2 transition-all hover:bg-white/15">
+              <div className="flex flex-col gap-0.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 px-3 py-1.5 transition-all hover:bg-white/15">
                 <span className="text-[9px] text-secondary font-extrabold uppercase tracking-widest">
                   PURPOSE
                 </span>
-                <div className="flex items-center gap-4 pt-0.5">
-                  <label className="inline-flex items-center text-white text-xs font-bold cursor-pointer gap-1.5">
+                <div className="flex items-center gap-3 pt-0.5">
+                  <label className="inline-flex items-center text-white text-[11px] font-bold cursor-pointer gap-1">
                     <input
                       type="radio"
                       name="hero-transaction-desktop"
                       checked={transactionType === 'buy'}
                       onChange={() => setTransactionType('buy')}
-                      className="accent-secondary w-3.5 h-3.5 cursor-pointer"
+                      className="accent-secondary w-3 h-3 cursor-pointer"
                     />
                     <span>Buy</span>
                   </label>
-                  <label className="inline-flex items-center text-white text-xs font-bold cursor-pointer gap-1.5">
+                  <label className="inline-flex items-center text-white text-[11px] font-bold cursor-pointer gap-1">
                     <input
                       type="radio"
                       name="hero-transaction-desktop"
                       checked={transactionType === 'rent'}
                       onChange={() => setTransactionType('rent')}
-                      className="accent-secondary w-3.5 h-3.5 cursor-pointer"
+                      className="accent-secondary w-3 h-3 cursor-pointer"
                     />
                     <span>Invest</span>
                   </label>
@@ -413,9 +413,9 @@ export const HeroSection: React.FC = () => {
 
             <button
               type="submit"
-              className="bg-secondary text-primary px-7 py-3 rounded-xl font-extrabold flex items-center justify-center gap-2 hover:brightness-110 transition-all cursor-pointer shadow-xl active:scale-95 text-xs tracking-wider uppercase whitespace-nowrap self-stretch lg:self-end"
+              className="bg-secondary text-primary px-6 py-2.5 rounded-xl font-extrabold flex items-center justify-center gap-1.5 hover:brightness-110 transition-all cursor-pointer shadow-xl active:scale-95 text-xs tracking-wider uppercase whitespace-nowrap self-stretch lg:self-end"
             >
-              <span className="material-symbols-outlined text-base">search</span>
+              <span className="material-symbols-outlined text-sm">search</span>
               <span>Search Projects</span>
             </button>
           </div>
