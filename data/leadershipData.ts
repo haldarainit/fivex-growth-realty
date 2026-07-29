@@ -45,7 +45,6 @@ export const leadershipMembers: LeadershipMember[] = [
     website: 'www.fivexgrowthrealty.com',
     linkedin: 'https://in.linkedin.com/in/syed-zeeshan-ahmad',
     social: [
-      { platform: 'WhatsApp', url: 'https://wa.me/message/US6IITAWHUQGD1' },
       { platform: 'LinkedIn', url: 'https://in.linkedin.com/in/syed-zeeshan-ahmad' },
       { platform: 'Facebook', url: 'https://www.facebook.com/share/1EM6RmN44z/' },
       { platform: 'Instagram', url: 'https://www.instagram.com/syed_zeeshan_ahmad?igsh=MXg5d3hibXdpM2E4cA==' },
@@ -118,7 +117,6 @@ export const leadershipMembers: LeadershipMember[] = [
     website: 'www.fivexgrowthrealty.com',
     linkedin: 'https://linkedin.com/company/fivex-growth-realty',
     social: [
-      { platform: 'WhatsApp', url: 'https://wa.me/message/US6IITAWHUQGD1' },
       { platform: 'LinkedIn', url: 'https://linkedin.com/company/fivex-growth-realty' },
     ],
     fullBio: [

@@ -222,12 +222,6 @@ export default async function LeadershipProfilePage({ params }: { params: Promis
                     <span className="material-symbols-outlined text-secondary text-base">mail</span>
                     <span className="break-all">{member.email}</span>
                   </a>
-                  {member.whatsapp && (
-                    <a href={member.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-green-400 hover:text-green-300 transition-colors text-sm font-semibold">
-                      <span className="material-symbols-outlined text-green-400 text-base">chat</span>
-                      <span>WhatsApp Chat</span>
-                    </a>
-                  )}
                 </div>
                 {member.whatsapp && (
                   <a
