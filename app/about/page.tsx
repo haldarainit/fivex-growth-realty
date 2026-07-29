@@ -6,6 +6,7 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
 import AboutSidebar from '@/components/about/AboutSidebar';
+import CertificatesSection from '@/components/about/CertificatesSection';
 import { leadershipMembers } from '@/data/leadershipData';
 import { teamMembers, TeamMemberProfile } from '@/data/teamData';
 import { successStories } from '@/data/testimonialsData';
@@ -238,6 +239,7 @@ export default function AboutPage() {
     'who-we-are',
     'leadership',
     'mission-vision',
+    'certificates',
     'journey',
     'awards',
     'developer-partners',
@@ -326,10 +328,10 @@ export default function AboutPage() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href="#mission-vision"
+                  href="#certificates"
                   className="inline-flex items-center justify-center rounded-xl bg-secondary px-5 py-3 text-xs font-extrabold uppercase tracking-wider text-primary shadow-lg transition-all hover:brightness-110"
                 >
-                  Our Mission &amp; Vision
+                  View Corporate Certificates
                 </a>
                 <a
                   href="#who-we-are"
@@ -363,7 +365,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Desktop Layout Container with Sticky Sidebar (NO INNER SCROLL WRAPPER - STANDARD WINDOW SCROLL) */}
+        {/* Desktop Layout Container with Sticky Sidebar */}
         <div className="relative max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 pt-12 sm:pt-14 pb-20">
           <div className="lg:flex lg:gap-12 items-start">
             
@@ -442,7 +444,7 @@ export default function AboutPage() {
                 </div>
               </Section>
 
-              {/* 3. Combined Mission & Vision Section (Client requested focus) */}
+              {/* 3. Combined Mission & Vision Section */}
               <Section
                 id="mission-vision"
                 badge="Our Core Purpose"
@@ -512,7 +514,17 @@ export default function AboutPage() {
                 </div>
               </Section>
 
-              {/* 4. Our Journey */}
+              {/* 4. Corporate Certificates & Legal Accreditations Section */}
+              <Section
+                id="certificates"
+                badge="Corporate Accreditations"
+                title="Certificates & Compliance Documents"
+                subtitle="View and download official government registration certificates, DPIIT recognition, GSTIN, and corporate compliance documents for FIVEX Growth Realty Private Limited."
+              >
+                <CertificatesSection />
+              </Section>
+
+              {/* 5. Our Journey */}
               <Section
                 id="journey"
                 badge="Our Story"
@@ -553,7 +565,7 @@ export default function AboutPage() {
                 </div>
               </Section>
 
-              {/* 5. Awards & Recognition */}
+              {/* 6. Awards & Recognition */}
               <Section
                 id="awards"
                 badge="Recognition & Certificates"
@@ -603,7 +615,7 @@ export default function AboutPage() {
                 </div>
               </Section>
 
-              {/* 6. Developer Partners */}
+              {/* 7. Developer Partners */}
               <Section
                 id="developer-partners"
                 badge="Partnerships"
@@ -636,7 +648,7 @@ export default function AboutPage() {
                 </div>
               </Section>
 
-              {/* 7. Our Team */}
+              {/* 8. Our Team */}
               <Section
                 id="our-team"
                 badge="The Team"
@@ -675,7 +687,7 @@ export default function AboutPage() {
                 </div>
               </Section>
 
-              {/* 8. Testimonials */}
+              {/* 9. Testimonials */}
               <Section id="testimonials" badge="Client Stories" title="What Clients Say" dark>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {successStories.slice(0, 4).map((story, i) => (
@@ -723,7 +735,7 @@ export default function AboutPage() {
                 </div>
               </Section>
 
-              {/* 9. FAQs */}
+              {/* 10. FAQs */}
               <Section id="faqs" badge="Common Questions" title="Frequently Asked Questions">
                 <div className="space-y-4 max-w-4xl">
                   {faqs.map((faq, i) => (

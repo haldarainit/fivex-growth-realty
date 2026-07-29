@@ -6,6 +6,7 @@ const navItems = [
   { id: 'who-we-are', label: 'Who We Are', icon: 'info' },
   { id: 'leadership', label: 'Leadership', icon: 'groups' },
   { id: 'mission-vision', label: 'Mission & Vision', icon: 'visibility' },
+  { id: 'certificates', label: 'Corporate Certificates', icon: 'workspace_premium' },
   { id: 'journey', label: 'Our Journey', icon: 'route' },
   { id: 'awards', label: 'Awards & Recognition', icon: 'emoji_events' },
   { id: 'developer-partners', label: 'Developer Partners', icon: 'handshake' },

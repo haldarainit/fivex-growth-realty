@@ -331,6 +331,13 @@ export const Header: React.FC = () => {
                   className="absolute top-full left-0 mt-2 w-60 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50 p-2 text-left"
                 >
                   <Link
+                    href="/about#certificates"
+                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
+                  >
+                    <span className="material-symbols-outlined text-base text-secondary">workspace_premium</span>
+                    Certificates &amp; Compliance
+                  </Link>
+                  <Link
                     href="/about#mission-vision"
                     className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-xs font-semibold text-primary/80 hover:text-secondary hover:bg-secondary/5 transition-all"
                   >
@@ -410,6 +417,7 @@ export const Header: React.FC = () => {
                   {[
                     { label: 'Home', href: '/' },
                     { label: 'About Us', href: '/about' },
+                    { label: 'Certificates', href: '/about#certificates' },
                     { label: 'Mission & Vision', href: '/about#mission-vision' },
                     { label: 'Projects', href: '/projects' },
                     { label: 'CSR', href: '/csr' },
