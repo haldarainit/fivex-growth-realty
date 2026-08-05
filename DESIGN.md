@@ -104,7 +104,7 @@ The target audience consists of high-net-worth investors and luxury homebuyers w
 ## Colors
 The palette is rooted in a deep, authoritative navy blue, representing stability and growth. 
 
-- **Primary (#0A192F):** Used for headers, footers, and primary call-to-action foundations.
+- **Primary (#052E1F):** Deep Emerald Green used for headers, footers, and primary call-to-action foundations.
 - **Secondary Gold (#C5A059):** Reserved for high-value accents, active states, and "Premium" badges. It should be used sparingly to maintain its impact.
 - **Champagne Highlight (#F1E5AC):** Used for subtle hover states or delicate background gradients behind secondary sections.
 - **Surface Strategy:** Backgrounds utilize the light gray (#F8F9FA) to provide a canvas that feels warmer and more "editorial" than pure white, though white remains the core surface color for cards and interactive components.

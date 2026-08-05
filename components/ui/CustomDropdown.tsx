@@ -92,7 +92,7 @@ export const CustomDropdown: React.FC<CustomDropdownProps> = ({
                 }`
           } rounded-2xl shadow-2xl border overflow-hidden p-1.5 max-h-56 overflow-y-auto scrollbar-thin transition-all animate-fade-in ${
             isGlass
-              ? 'bg-[#0a192f] border-white/20 text-white shadow-secondary/10'
+              ? 'bg-[#052E1F] border-white/20 text-white shadow-secondary/10'
               : 'bg-white border-gray-200 text-primary'
           }`}
         >

@@ -30,14 +30,14 @@ export async function POST(request: NextRequest) {
       <html>
         <head><style>
           body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-          .header { background: #0a192f; color: white; padding: 20px 30px; }
+          .header { background: #052E1F; color: white; padding: 20px 30px; }
           .header h1 { margin: 0; font-size: 20px; }
           .header p { margin: 5px 0 0; color: #C5A059; font-size: 14px; }
           .body { padding: 30px; }
-          .label { font-weight: bold; color: #0a192f; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+          .label { font-weight: bold; color: #052E1F; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
           .value { color: #555; margin-top: 2px; margin-bottom: 15px; }
           .message-box { background: #f8f9fa; border-left: 3px solid #C5A059; padding: 15px; border-radius: 4px; }
-          .badge { display: inline-block; background: #C5A059; color: #0a192f; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+          .badge { display: inline-block; background: #C5A059; color: #052E1F; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; }
         </style></head>
         <body>
           <div class="header">
@@ -82,7 +82,7 @@ export async function POST(request: NextRequest) {
       subject: 'We received your inquiry — FIVEX Growth Realty',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <div style="background: #0a192f; padding: 20px 30px; color: white;">
+          <div style="background: #052E1F; padding: 20px 30px; color: white;">
             <h1 style="margin: 0; font-size: 20px;">FIVEX Growth Realty</h1>
           </div>
           <div style="padding: 30px;">

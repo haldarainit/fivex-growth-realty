@@ -425,7 +425,7 @@ export const HeroSection: React.FC = () => {
       {/* Mobile Quick Filter Drawer using Custom Dropdowns with isInline=true */}
       {isMobileFilterOpen && (
         <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-end justify-center md:hidden p-0">
-          <div className="bg-[#0a192f] text-white w-full rounded-t-3xl p-6 border-t border-secondary/30 shadow-2xl flex flex-col gap-5 max-h-[85vh] overflow-y-auto">
+          <div className="bg-[#052E1F] text-white w-full rounded-t-3xl p-6 border-t border-secondary/30 shadow-2xl flex flex-col gap-5 max-h-[85vh] overflow-y-auto">
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-secondary">tune</span>

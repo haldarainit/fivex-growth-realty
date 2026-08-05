@@ -51,15 +51,15 @@ export async function POST(request: NextRequest) {
       <html>
         <head><style>
           body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-          .header { background: #0a192f; color: white; padding: 20px 30px; }
+          .header { background: #052E1F; color: white; padding: 20px 30px; }
           .header h1 { margin: 0; font-size: 20px; }
           .header p { margin: 5px 0 0; color: #C5A059; font-size: 14px; }
           .body { padding: 30px; }
           .section { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
-          .label { font-weight: bold; color: #0a192f; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+          .label { font-weight: bold; color: #052E1F; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
           .value { color: #555; margin-top: 2px; }
           .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-          .badge { display: inline-block; background: #C5A059; color: #0a192f; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+          .badge { display: inline-block; background: #C5A059; color: #052E1F; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; }
           .cover { background: #f8f9fa; border-left: 3px solid #C5A059; padding: 15px; border-radius: 4px; font-style: italic; }
         </style></head>
         <body>
@@ -69,7 +69,7 @@ export async function POST(request: NextRequest) {
           </div>
           <div class="body">
             <div class="section">
-              <h2 style="color:#0a192f;margin-bottom:15px;">Applicant Details</h2>
+              <h2 style="color:#052E1F;margin-bottom:15px;">Applicant Details</h2>
               <div class="grid">
                 <div><div class="label">Full Name</div><div class="value">${fullName}</div></div>
                 <div><div class="label">Email</div><div class="value"><a href="mailto:${email}">${email}</a></div></div>
