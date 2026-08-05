@@ -335,7 +335,7 @@ export const unifiedProjects: UnifiedProject[] = [
     ],
     badges: [
       { label: 'Ultra Luxury', style: 'bg-purple-700 text-white' },
-      { label: 'Gurugram Prime', style: 'bg-secondary text-primary font-bold' },
+      { label: 'Gurugram Prime', style: 'bg-secondary text-white font-bold' },
     ],
     bedrooms: 4,
     bathrooms: 5,

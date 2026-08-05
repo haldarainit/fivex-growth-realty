@@ -36,7 +36,7 @@ export default function CareersPage() {
                 Join India&apos;s most respected premium real estate team. We&apos;re looking for driven, ethical, and talented professionals to grow with us.
               </p>
               <div className="flex gap-4 mt-8">
-                <a href="#openings" className="bg-secondary text-primary px-6 py-3 rounded-xl font-bold text-sm hover:brightness-110 transition-all">
+                <a href="#openings" className="bg-secondary text-white px-6 py-3 rounded-xl font-bold text-sm hover:brightness-110 transition-all">
                   View Open Positions
                 </a>
                 <Link href="/contact" className="border border-white/20 text-white px-6 py-3 rounded-xl font-bold text-sm hover:border-secondary/50 hover:text-secondary transition-all">
@@ -163,7 +163,7 @@ export default function CareersPage() {
                     </div>
                     <Link
                       href={`/careers/${job.slug}`}
-                      className="flex-shrink-0 flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-secondary hover:text-primary transition-all"
+                      className="flex-shrink-0 flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-secondary hover:text-white transition-all"
                     >
                       Apply Now <span className="material-symbols-outlined text-base">arrow_forward</span>
                     </Link>

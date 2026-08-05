@@ -111,7 +111,7 @@ export default async function JobDetailPage({ params }: { params: Promise<{ slug
                 <h3 className="font-display font-extrabold text-primary text-xl mb-4">Skills Required</h3>
                 <div className="flex flex-wrap gap-2.5">
                   {job.skills.map((skill) => (
-                    <span key={skill} className="text-xs px-4 py-2 bg-secondary/15 text-primary rounded-xl font-bold border border-secondary/30">{skill}</span>
+                    <span key={skill} className="text-xs px-4 py-2 bg-secondary text-white rounded-xl font-bold border border-secondary/30">{skill}</span>
                   ))}
                 </div>
               </div>

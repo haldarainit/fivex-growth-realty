@@ -109,7 +109,7 @@ export default function TestimonialsSlider() {
             </div>
             <Link
               href="/testimonials"
-              className="inline-flex items-center gap-2 bg-primary text-white hover:bg-secondary hover:text-primary px-5 py-3 rounded-xl text-xs font-extrabold tracking-wider uppercase transition-all shadow-md"
+              className="inline-flex items-center gap-2 bg-primary text-white hover:bg-secondary hover:text-white px-5 py-3 rounded-xl text-xs font-extrabold tracking-wider uppercase transition-all shadow-md"
             >
               View All Testimonials
               <span className="material-symbols-outlined text-base">arrow_forward</span>

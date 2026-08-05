@@ -102,10 +102,11 @@ The design system is engineered for a high-end real estate brokerage where trust
 The target audience consists of high-net-worth investors and luxury homebuyers who value precision and professionalism. The UI should feel like a premium concierge service: expansive, serene, and impeccably organized. We prioritize high-quality imagery, generous whitespace, and subtle motion to guide the user toward lead-generation touchpoints without being intrusive.
 
 ## Colors
-The palette is rooted in a deep, authoritative navy blue, representing stability and growth. 
+The palette is directly harmonized with the **FiveX Growth Realty Logo** (`fivex-logo.png`).
 
-- **Primary (#052E1F):** Deep Emerald Green used for headers, footers, and primary call-to-action foundations.
-- **Secondary Gold (#C5A059):** Reserved for high-value accents, active states, and "Premium" badges. It should be used sparingly to maintain its impact.
+- **Primary Emerald Green (#0B3C26):** Deep rich emerald green used for navigation headers, footer backgrounds, and primary CTA cards.
+- **Secondary Luxury Gold (#D4AF37 / #C5A059):** High-value gold used for call-to-action buttons, active states, and premium badge borders.
+- **Growth Green Highlight (#84C225):** Bright energetic green extracted from the logo's growth arrow, used for stats metrics and active section accents.
 - **Champagne Highlight (#F1E5AC):** Used for subtle hover states or delicate background gradients behind secondary sections.
 - **Surface Strategy:** Backgrounds utilize the light gray (#F8F9FA) to provide a canvas that feels warmer and more "editorial" than pure white, though white remains the core surface color for cards and interactive components.
 

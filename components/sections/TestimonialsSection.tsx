@@ -25,7 +25,7 @@ export const TestimonialsSection: React.FC = () => {
       <div className="text-center mt-12">
         <Link
           href="/testimonials"
-          className="inline-flex items-center gap-2 border-2 border-secondary text-secondary px-8 py-3.5 rounded-xl font-bold text-sm uppercase tracking-wider hover:bg-secondary hover:text-primary transition-all shadow-sm"
+          className="inline-flex items-center gap-2 border-2 border-secondary text-secondary px-8 py-3.5 rounded-xl font-bold text-sm uppercase tracking-wider hover:bg-secondary hover:text-white transition-all shadow-sm"
         >
           View More Success Stories
           <span className="material-symbols-outlined text-base">arrow_forward</span>

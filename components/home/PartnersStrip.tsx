@@ -52,7 +52,7 @@ export default function PartnersStrip() {
           </div>
           <Link
             href="/partners"
-            className="inline-flex items-center gap-2 border border-secondary text-secondary px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-secondary hover:text-primary transition-all"
+            className="inline-flex items-center gap-2 border border-secondary text-secondary px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-secondary hover:text-white transition-all"
           >
             View All Partners
             <span className="material-symbols-outlined text-base">arrow_forward</span>

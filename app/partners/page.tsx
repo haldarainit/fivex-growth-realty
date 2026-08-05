@@ -106,7 +106,7 @@ export default function PartnersPage() {
             <p className="text-white/60 max-w-xl mx-auto text-sm leading-relaxed mb-6">
               Are you a developer, bank, or service provider in the real estate ecosystem? Partner with FIVEX to reach India&apos;s most discerning property buyers.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-secondary text-primary px-8 py-3 rounded-xl font-bold text-sm hover:brightness-110 transition-all">
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-secondary text-white px-8 py-3 rounded-xl font-bold text-sm hover:brightness-110 transition-all">
               Partner with Us <span className="material-symbols-outlined text-base">handshake</span>
             </Link>
           </section>

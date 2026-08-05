@@ -17,7 +17,7 @@ export const TestimonialsCTA: React.FC = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
           <Link
             href="/#contact"
-            className="bg-primary text-white px-10 py-4 rounded-lg font-bold hover:bg-secondary transition-all cursor-pointer text-xs uppercase tracking-wider shadow-md text-center"
+            className="bg-primary text-white px-10 py-4 rounded-lg font-bold hover:bg-secondary hover:text-white transition-all cursor-pointer text-xs uppercase tracking-wider shadow-md text-center"
           >
             Schedule a Consultation
           </Link>

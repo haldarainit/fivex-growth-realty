@@ -27,7 +27,7 @@ export const FaqSection: React.FC = () => {
       <div className="text-center mt-12">
         <Link
           href="/faq"
-          className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3.5 rounded-xl font-bold text-sm uppercase tracking-wider hover:bg-secondary hover:text-primary transition-all shadow-md"
+          className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3.5 rounded-xl font-bold text-sm uppercase tracking-wider hover:bg-secondary hover:text-white transition-all shadow-md"
         >
           View Full Knowledge Base
           <span className="material-symbols-outlined text-base">arrow_forward</span>

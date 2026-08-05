@@ -339,7 +339,7 @@ export default function AboutPage() {
                 </a>
                 <a
                   href="#founder"
-                  className="inline-flex items-center justify-center rounded-xl bg-secondary px-5 py-3 text-xs font-extrabold uppercase tracking-wider text-primary shadow-lg transition-all hover:brightness-110"
+                  className="inline-flex items-center justify-center rounded-xl bg-secondary px-5 py-3 text-xs font-extrabold uppercase tracking-wider text-white shadow-lg transition-all hover:brightness-110"
                 >
                   Meet Our Founder
                 </a>
@@ -502,7 +502,7 @@ export default function AboutPage() {
                           </a>
                           <Link
                             href={`/leadership/${founder.id}`}
-                            className="w-full bg-secondary hover:brightness-110 text-primary font-extrabold py-3 px-4 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
+                            className="w-full bg-secondary hover:brightness-110 text-white font-extrabold py-3 px-4 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
                           >
                             View Full Profile
                             <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -535,7 +535,7 @@ export default function AboutPage() {
                                 href={s.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-white/10 hover:bg-secondary hover:text-primary border border-white/20 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg transition-all flex items-center gap-1 cursor-pointer"
+                                className="bg-white/10 hover:bg-secondary hover:text-white border border-white/20 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg transition-all flex items-center gap-1 cursor-pointer"
                               >
                                 <span className="material-symbols-outlined text-xs">open_in_new</span>
                                 {s.platform}
@@ -715,7 +715,7 @@ export default function AboutPage() {
                         transition={{ delay: i * 0.1 }}
                         className="relative flex gap-5 sm:gap-6"
                       >
-                        <div className="flex-shrink-0 w-11 h-11 rounded-full bg-secondary text-primary font-extrabold text-xs flex items-center justify-center shadow-lg z-10 border-2 border-white">
+                        <div className="flex-shrink-0 w-11 h-11 rounded-full bg-secondary text-white font-extrabold text-xs flex items-center justify-center shadow-lg z-10 border-2 border-white">
                           ★
                         </div>
                         <div className="flex-1 bg-white rounded-2xl p-5 sm:p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all">
@@ -826,7 +826,7 @@ export default function AboutPage() {
 
                   {/* Investment Advisory */}
                   <div className="bg-white rounded-3xl p-6 border border-gray-100 shadow-md space-y-4">
-                    <div className="w-12 h-12 rounded-2xl bg-secondary text-primary flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-2xl bg-secondary text-white flex items-center justify-center">
                       <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: '"FILL" 1' }}>trending_up</span>
                     </div>
                     <h3 className="font-display font-bold text-lg text-primary">Investment Advisory</h3>

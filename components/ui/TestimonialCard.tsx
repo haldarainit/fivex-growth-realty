@@ -55,7 +55,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial })
       >
         <div
           className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 shadow ${
-            isDark ? 'bg-secondary text-primary' : 'bg-primary text-secondary'
+            isDark ? 'bg-secondary text-white' : 'bg-primary text-secondary'
           }`}
         >
           {testimonial.initials}

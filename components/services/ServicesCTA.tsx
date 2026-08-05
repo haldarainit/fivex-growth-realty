@@ -106,7 +106,7 @@ export const ServicesCTA: React.FC = () => {
 
                   <button
                     type="submit"
-                    className="w-full bg-primary text-white font-bold py-4 rounded-lg hover:bg-secondary transition-all cursor-pointer text-xs uppercase tracking-wider shadow-md"
+                    className="w-full bg-primary text-white font-bold py-4 rounded-lg hover:bg-secondary hover:text-white transition-all cursor-pointer text-xs uppercase tracking-wider shadow-md"
                   >
                     Submit Request
                   </button>

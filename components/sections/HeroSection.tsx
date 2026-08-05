@@ -183,7 +183,7 @@ export const HeroSection: React.FC = () => {
           <div className="flex flex-row items-center gap-2.5 w-full xs:w-auto pt-0.5">
             <Link
               href="/projects"
-              className="bg-secondary text-primary px-4 py-2.5 sm:px-6 sm:py-3 rounded-xl font-extrabold text-[11px] sm:text-xs uppercase tracking-wider hover:bg-gold transition-all shadow-xl shadow-secondary/20 flex items-center justify-center gap-1.5 group cursor-pointer flex-1 xs:flex-initial whitespace-nowrap"
+              className="bg-secondary text-white px-4 py-2.5 sm:px-6 sm:py-3 rounded-xl font-extrabold text-[11px] sm:text-xs uppercase tracking-wider hover:bg-gold transition-all shadow-xl shadow-secondary/20 flex items-center justify-center gap-1.5 group cursor-pointer flex-1 xs:flex-initial whitespace-nowrap"
             >
               <span>Explore Projects</span>
               <span className="material-symbols-outlined text-sm sm:text-base transition-transform group-hover:translate-x-1">
@@ -218,7 +218,7 @@ export const HeroSection: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setIsMobileFilterOpen(true)}
-                  className="bg-secondary text-primary p-2.5 rounded-xl hover:brightness-110 transition-all flex items-center justify-center flex-shrink-0 cursor-pointer shadow-md"
+                  className="bg-secondary text-white p-2.5 rounded-xl hover:brightness-110 transition-all flex items-center justify-center flex-shrink-0 cursor-pointer shadow-md"
                   aria-label="Filter Projects"
                 >
                   <span className="material-symbols-outlined text-lg">tune</span>
@@ -256,7 +256,7 @@ export const HeroSection: React.FC = () => {
                   <Link
                     href={`/projects${searchQuery.trim() ? `?q=${encodeURIComponent(searchQuery.trim())}` : ''}`}
                     onClick={() => setIsFocused(false)}
-                    className="w-full bg-secondary text-primary py-2 px-3 rounded-xl font-extrabold text-[11px] uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-sm hover:brightness-110 transition-all block text-center"
+                    className="w-full bg-secondary text-white py-2 px-3 rounded-xl font-extrabold text-[11px] uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-sm hover:brightness-110 transition-all block text-center"
                   >
                     <span>Explore All Projects</span>
                     <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -339,7 +339,7 @@ export const HeroSection: React.FC = () => {
                   <Link
                     href={`/projects${searchQuery.trim() ? `?q=${encodeURIComponent(searchQuery.trim())}` : ''}`}
                     onClick={() => setIsFocused(false)}
-                    className="bg-secondary text-primary px-3 py-1.5 rounded-lg font-extrabold text-[11px] uppercase tracking-wider flex items-center gap-1 hover:brightness-110 transition-all shadow-sm"
+                    className="bg-secondary text-white px-3 py-1.5 rounded-lg font-extrabold text-[11px] uppercase tracking-wider flex items-center gap-1 hover:brightness-110 transition-all shadow-sm"
                   >
                     <span>Explore All Projects</span>
                     <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -413,7 +413,7 @@ export const HeroSection: React.FC = () => {
 
             <button
               type="submit"
-              className="bg-secondary text-primary px-6 py-2.5 rounded-xl font-extrabold flex items-center justify-center gap-1.5 hover:brightness-110 transition-all cursor-pointer shadow-xl active:scale-95 text-xs tracking-wider uppercase whitespace-nowrap self-stretch lg:self-end"
+              className="bg-secondary text-white px-6 py-2.5 rounded-xl font-extrabold flex items-center justify-center gap-1.5 hover:brightness-110 transition-all cursor-pointer shadow-xl active:scale-95 text-xs tracking-wider uppercase whitespace-nowrap self-stretch lg:self-end"
             >
               <span className="material-symbols-outlined text-sm">search</span>
               <span>Search Projects</span>
@@ -475,7 +475,7 @@ export const HeroSection: React.FC = () => {
                   setIsMobileFilterOpen(false);
                   handleSearch();
                 }}
-                className="w-full bg-secondary text-primary py-3.5 rounded-xl font-extrabold text-xs uppercase tracking-wider shadow-lg hover:brightness-110 cursor-pointer mt-2"
+                className="w-full bg-secondary text-white py-3.5 rounded-xl font-extrabold text-xs uppercase tracking-wider shadow-lg hover:brightness-110 cursor-pointer mt-2"
               >
                 Apply &amp; Search Projects →
               </button>

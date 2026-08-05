@@ -26,7 +26,7 @@ export const BlogFeaturedPost: React.FC = () => {
           />
           {featured.featuredBadge && (
             <div className="absolute top-4 left-4">
-              <span className="bg-secondary text-primary px-3.5 py-1.5 rounded-full text-[10px] sm:text-xs font-extrabold tracking-widest uppercase shadow-md">
+              <span className="bg-secondary text-white px-3.5 py-1.5 rounded-full text-[10px] sm:text-xs font-extrabold tracking-widest uppercase shadow-md">
                 {featured.featuredBadge}
               </span>
             </div>

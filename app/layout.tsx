@@ -20,6 +20,14 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "FIVEX GROWTH REALTY | Premium Real Estate Solutions",
   description: "FIVEX GROWTH REALTY PVT LTD helps you discover premium residential, commercial, and investment properties with trust, transparency, and expert guidance.",
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/icon.png',
+  },
 };
 
 export default function RootLayout({
@@ -33,6 +41,9 @@ export default function RootLayout({
       className={`${montserrat.variable} ${inter.variable} scroll-smooth`}
     >
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/icon.png" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"

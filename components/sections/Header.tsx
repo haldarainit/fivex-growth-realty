@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -55,7 +56,7 @@ const MegaMenu: React.FC<{ visible: boolean; onClose: () => void }> = ({ visible
                       onClick={() => setSelectedCity(city)}
                       className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                         isSelected
-                          ? 'bg-secondary text-primary shadow-md font-bold'
+                          ? 'bg-secondary text-white shadow-md font-bold'
                           : 'text-gray-700 hover:bg-gray-100'
                       }`}
                     >
@@ -239,11 +240,23 @@ export const Header: React.FC = () => {
         {/* Logo */}
         <Link
           href="/"
-          className="flex-shrink items-center gap-1 sm:gap-1.5 font-display font-bold tracking-tight leading-none whitespace-nowrap min-w-0 flex"
+          className="flex-shrink items-center gap-2 font-display font-bold tracking-tight leading-none whitespace-nowrap min-w-0 flex group"
         >
-          <span className={`text-xs sm:text-base xl:text-lg ${logoColor} transition-colors font-extrabold`}>FIVEX</span>
-          <span className="text-secondary text-xs sm:text-base xl:text-lg font-black">GROWTH</span>
-          <span className={`text-xs sm:text-base xl:text-lg ${logoColor} transition-colors font-extrabold`}>REALTY</span>
+          <div className="relative h-8 sm:h-10 w-auto flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
+            <Image
+              src="/fivex-logo.png"
+              alt="FiveX Growth Realty Logo"
+              width={44}
+              height={44}
+              className="h-full w-auto object-contain drop-shadow-sm"
+              priority
+            />
+          </div>
+          <div className="flex items-center gap-1 sm:gap-1.5">
+            <span className={`text-xs sm:text-base xl:text-lg ${logoColor} transition-colors font-extrabold`}>FIVEX</span>
+            <span className="text-secondary text-xs sm:text-base xl:text-lg font-black">GROWTH</span>
+            <span className={`text-xs sm:text-base xl:text-lg ${logoColor} transition-colors font-extrabold`}>REALTY</span>
+          </div>
         </Link>
 
         {/* Desktop Nav Items */}
@@ -389,7 +402,7 @@ export const Header: React.FC = () => {
         <div className="flex items-center gap-1.5 sm:gap-3 flex-shrink-0">
           <Link
             href="/contact"
-            className="bg-secondary text-primary px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-bold text-[11px] uppercase tracking-wider hover:brightness-110 transition-all active:scale-95 shadow-md whitespace-nowrap"
+            className="bg-secondary text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-bold text-[11px] uppercase tracking-wider hover:brightness-110 transition-all active:scale-95 shadow-md whitespace-nowrap"
           >
             Contact Us
           </Link>
@@ -447,7 +460,7 @@ export const Header: React.FC = () => {
                         onClick={() => setMenuOpen(false)}
                         className={`py-2.5 px-3 rounded-xl text-xs text-center font-semibold transition-all border ${
                           isActive
-                            ? 'bg-secondary text-primary border-secondary font-bold shadow-sm'
+                            ? 'bg-secondary text-white border-secondary font-bold shadow-sm'
                             : 'bg-white/5 text-white/90 border-white/10 hover:bg-white/15 hover:text-white'
                         }`}
                       >
@@ -478,7 +491,7 @@ export const Header: React.FC = () => {
                 <Link
                   href="/contact"
                   onClick={() => setMenuOpen(false)}
-                  className="block w-full bg-secondary text-primary py-3 rounded-xl font-extrabold text-xs uppercase tracking-wider text-center hover:brightness-110 active:scale-[0.99] transition-all shadow-lg"
+                  className="block w-full bg-secondary text-white py-3 rounded-xl font-extrabold text-xs uppercase tracking-wider text-center hover:brightness-110 active:scale-[0.99] transition-all shadow-lg"
                 >
                   Contact Us →
                 </Link>

@@ -64,7 +64,7 @@ export const FeaturedPropertiesSection: React.FC = () => {
 
         <Link
           href="/projects"
-          className="hidden sm:inline-flex items-center gap-2 bg-secondary text-primary px-6 py-3 rounded-xl font-extrabold text-xs uppercase tracking-wider hover:brightness-110 transition-all shadow-md cursor-pointer whitespace-nowrap"
+          className="hidden sm:inline-flex items-center gap-2 bg-secondary text-white px-6 py-3 rounded-xl font-extrabold text-xs uppercase tracking-wider hover:brightness-110 transition-all shadow-md cursor-pointer whitespace-nowrap"
         >
           View All Projects
           <span className="material-symbols-outlined text-base">arrow_forward</span>
@@ -104,7 +104,7 @@ export const FeaturedPropertiesSection: React.FC = () => {
                 onClick={() => setActivePill(pill)}
                 className={`px-4 py-2 rounded-full font-bold text-xs whitespace-nowrap transition-all flex-shrink-0 cursor-pointer ${
                   isActive
-                    ? 'bg-secondary text-primary shadow-sm font-extrabold'
+                    ? 'bg-secondary text-white shadow-sm font-extrabold'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
@@ -168,7 +168,7 @@ export const FeaturedPropertiesSection: React.FC = () => {
               <div className="p-5 pt-0">
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="w-full bg-slate-100 group-hover:bg-secondary text-primary py-3 rounded-2xl font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all"
+                  className="w-full bg-slate-100 group-hover:bg-secondary group-hover:text-white text-primary py-3 rounded-2xl font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all"
                 >
                   View Details
                   <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -197,7 +197,7 @@ export const FeaturedPropertiesSection: React.FC = () => {
       <div className="mt-10 flex justify-center">
         <Link
           href="/projects"
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-secondary text-primary px-8 py-4 rounded-2xl font-extrabold text-xs uppercase tracking-wider hover:brightness-110 transition-all shadow-xl active:scale-95 cursor-pointer"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-secondary text-white px-8 py-4 rounded-2xl font-extrabold text-xs uppercase tracking-wider hover:brightness-110 transition-all shadow-xl active:scale-95 cursor-pointer"
         >
           View All Projects Directory →
         </Link>
@@ -244,7 +244,7 @@ export const FeaturedPropertiesSection: React.FC = () => {
 
             <button
               onClick={() => setIsFilterModalOpen(false)}
-              className="w-full py-3 bg-secondary text-primary font-extrabold text-xs uppercase tracking-wider rounded-xl hover:brightness-110 transition-all text-center cursor-pointer shadow-md"
+              className="w-full py-3 bg-secondary text-white font-extrabold text-xs uppercase tracking-wider rounded-xl hover:brightness-110 transition-all text-center cursor-pointer shadow-md"
             >
               Done
             </button>

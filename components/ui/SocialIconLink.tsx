@@ -48,7 +48,7 @@ export const SocialIconLink: React.FC<SocialIconLinkProps> = ({
         />
       ) : (
         <span
-          className="material-symbols-outlined text-base text-secondary bg-white/10 p-1.5 rounded-lg border border-white/20 hover:bg-secondary hover:text-primary transition-colors"
+          className="material-symbols-outlined text-base text-secondary bg-white/10 p-1.5 rounded-lg border border-white/20 hover:bg-secondary hover:text-white transition-colors"
           style={{ fontVariationSettings: '"FILL" 1' }}
         >
           {getPlatformIcon(platform)}

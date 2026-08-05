@@ -197,7 +197,7 @@ export default function ApplicationForm({ jobTitle, jobSlug }: Props) {
       <button
         type="submit"
         disabled={status === 'submitting'}
-        className="w-full min-w-full bg-primary text-white py-4 rounded-2xl font-extrabold text-sm uppercase tracking-wider hover:bg-secondary hover:text-primary transition-all disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer shadow-lg active:scale-95"
+        className="w-full min-w-full bg-primary text-white py-4 rounded-2xl font-extrabold text-sm uppercase tracking-wider hover:bg-secondary hover:text-white transition-all disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer shadow-lg active:scale-95"
       >
         {status === 'submitting' ? (
           <>

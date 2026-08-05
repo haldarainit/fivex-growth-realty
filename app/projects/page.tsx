@@ -240,7 +240,7 @@ function ECommerceProjectsContent() {
                         <span className="truncate pr-2">{opt.label}</span>
                         <span
                           className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${
-                            isSelected ? 'bg-secondary text-primary' : 'bg-gray-100 text-gray-500'
+                            isSelected ? 'bg-secondary text-white' : 'bg-gray-100 text-gray-500'
                           }`}
                         >
                           {count}
@@ -268,7 +268,7 @@ function ECommerceProjectsContent() {
                         }}
                         className={`w-full text-left px-3 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                           isSelected
-                            ? 'bg-secondary text-primary font-extrabold shadow-sm'
+                            ? 'bg-secondary text-white font-extrabold shadow-sm'
                             : 'text-gray-700 hover:bg-slate-100'
                         }`}
                       >
@@ -291,7 +291,7 @@ function ECommerceProjectsContent() {
                       <label
                         key={opt.id}
                         className={`flex items-center gap-2.5 p-2 rounded-xl text-xs font-semibold cursor-pointer transition-colors ${
-                          isChecked ? 'bg-secondary/15 text-primary font-bold' : 'text-gray-700 hover:bg-slate-50'
+                          isChecked ? 'bg-secondary text-white font-bold' : 'text-gray-700 hover:bg-slate-50'
                         }`}
                       >
                         <input
@@ -519,7 +519,7 @@ function ECommerceProjectsContent() {
                 )}
 
                 {type !== 'All Types' && type !== 'all' && (
-                  <span className="bg-secondary text-primary px-3 py-1 rounded-full flex items-center gap-1.5 text-[11px]">
+                  <span className="bg-secondary text-white px-3 py-1 rounded-full flex items-center gap-1.5 text-[11px]">
                     Type: {type}
                     <button onClick={() => { setType('All Types'); updateUrlFilters({ type: 'All Types' }); }} className="hover:text-red-600 font-extrabold">×</button>
                   </span>
@@ -652,7 +652,7 @@ function ECommerceProjectsContent() {
                         <div className="p-5 pt-0">
                           <Link
                             href={`/projects/${project.slug}`}
-                            className="w-full bg-slate-100 group-hover:bg-secondary text-primary py-3 rounded-2xl font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm"
+                            className="w-full bg-slate-100 group-hover:bg-secondary group-hover:text-white text-primary py-3 rounded-2xl font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm"
                           >
                             View Details
                             <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -723,7 +723,7 @@ function ECommerceProjectsContent() {
 
                           <Link
                             href={`/projects/${project.slug}`}
-                            className="bg-secondary text-primary px-6 py-2.5 rounded-xl font-extrabold text-xs uppercase tracking-wider hover:brightness-110 transition-all flex items-center gap-1.5"
+                            className="bg-secondary text-white px-6 py-2.5 rounded-xl font-extrabold text-xs uppercase tracking-wider hover:brightness-110 transition-all flex items-center gap-1.5"
                           >
                             Explore Project →
                           </Link>
@@ -743,7 +743,7 @@ function ECommerceProjectsContent() {
                 </p>
                 <button
                   onClick={handleResetFilters}
-                  className="bg-secondary text-primary px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider shadow-md hover:brightness-110 cursor-pointer"
+                  className="bg-secondary text-white px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider shadow-md hover:brightness-110 cursor-pointer"
                 >
                   Clear All Filters
                 </button>
@@ -852,7 +852,7 @@ function ECommerceProjectsContent() {
               </button>
               <button
                 onClick={() => setIsMobileDrawerOpen(false)}
-                className="flex-1 py-3 bg-secondary text-primary font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-md"
+                className="flex-1 py-3 bg-secondary text-white font-extrabold text-xs uppercase tracking-wider rounded-xl shadow-md"
               >
                 Apply Filters
               </button>

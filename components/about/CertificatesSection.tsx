@@ -39,7 +39,7 @@ export const CertificatesSection: React.FC = () => {
 
                 {/* Hover Preview Overlay */}
                 <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 backdrop-blur-xs transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
-                  <span className="bg-secondary text-primary px-4 py-2 rounded-xl text-xs font-extrabold uppercase tracking-wider shadow-lg flex items-center gap-1.5">
+                  <span className="bg-secondary text-white px-4 py-2 rounded-xl text-xs font-extrabold uppercase tracking-wider shadow-lg flex items-center gap-1.5">
                     <span className="material-symbols-outlined text-base">visibility</span>
                     View Full {cert.fileType === 'pdf' ? 'PDF' : 'Document'}
                   </span>
@@ -129,7 +129,7 @@ export const CertificatesSection: React.FC = () => {
                     download={selectedCert.downloadName}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-secondary text-primary px-4 py-2 rounded-xl text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 hover:brightness-110 shadow-md whitespace-nowrap"
+                    className="bg-secondary text-white px-4 py-2 rounded-xl text-xs font-extrabold uppercase tracking-wider flex items-center gap-1.5 hover:brightness-110 shadow-md whitespace-nowrap"
                   >
                     <span className="material-symbols-outlined text-base">download</span>
                     Download

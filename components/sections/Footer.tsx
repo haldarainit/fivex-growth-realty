@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { footerData, companyInfo, contactDetails, socialLinks, officeAddresses } from '@/data/companyData';
 import SocialIconLink from '@/components/ui/SocialIconLink';
 
@@ -77,16 +78,27 @@ export const Footer: React.FC = () => {
     <footer className="bg-primary text-white pt-16 border-t border-white/10 relative">
       {/* Main Footer Container */}
       <div className="px-4 sm:px-6 lg:px-14 max-w-[1440px] mx-auto pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8">
 
-          {/* Col 1: Brand & Contact Info */}
-          <div className="space-y-6">
-            <Link href="/" className="inline-flex items-center gap-1 font-display font-extrabold tracking-tight text-2xl leading-none">
-              <span className="text-white">FIVEX</span>
-              <span className="text-secondary ml-1">GROWTH</span>
-              <span className="text-white ml-1">REALTY</span>
+          {/* Col 1: Brand & Contact Info (4 cols) */}
+          <div className="lg:col-span-4 space-y-6">
+            <Link href="/" className="inline-flex items-center gap-3 group max-w-full">
+              <div className="relative h-12 w-auto flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
+                <Image
+                  src="/fivex-logo.png"
+                  alt="FiveX Growth Realty Logo"
+                  width={52}
+                  height={52}
+                  className="h-full w-auto object-contain drop-shadow-md"
+                />
+              </div>
+              <div className="font-display font-extrabold tracking-tight text-lg sm:text-xl xl:text-2xl leading-tight flex flex-wrap items-center">
+                <span className="text-white">FIVEX</span>
+                <span className="text-secondary ml-1.5">GROWTH</span>
+                <span className="text-white ml-1.5">REALTY</span>
+              </div>
             </Link>
-            <p className="text-white/70 text-sm leading-relaxed">
+            <p className="text-white/70 text-sm leading-relaxed max-w-sm">
               {companyInfo.tagline}
             </p>
 
@@ -111,20 +123,23 @@ export const Footer: React.FC = () => {
 
           </div>
 
-          {/* Col 2: Navigation & Company Links */}
-          <div className="grid grid-cols-2 gap-6">
+          {/* Col 2: Company Links (2 cols) */}
+          <div className="lg:col-span-2">
             <FooterSection title="Company" links={footerData.company} />
+          </div>
+
+          {/* Col 3: Quick Links (2 cols) */}
+          <div className="lg:col-span-2">
             <FooterSection title="Quick Links" links={footerData.quickLinks} />
           </div>
 
-          {/* Col 3: Projects & Property Types */}
-          <div className="grid grid-cols-2 gap-6">
+          {/* Col 4: Projects Links (2 cols) */}
+          <div className="lg:col-span-2">
             <FooterSection title="Projects" links={footerData.projects} />
-            <FooterSection title="Properties" links={footerData.propertyTypes} />
           </div>
 
-          {/* Col 4: Newsletter + Socials + Dynamic Box Counter Widget */}
-          <div className="space-y-6">
+          {/* Col 5: Newsletter & Counter (2 cols) */}
+          <div className="lg:col-span-2 space-y-6">
             <div className="space-y-3">
               <h4 className="text-white font-extrabold text-xs uppercase tracking-widest">Market Insights</h4>
               <p className="text-white/70 text-xs leading-relaxed">
@@ -147,7 +162,7 @@ export const Footer: React.FC = () => {
                   />
                   <button
                     type="submit"
-                    className="bg-secondary text-primary px-4 rounded-xl font-extrabold flex items-center justify-center hover:bg-gold transition-colors cursor-pointer text-xs uppercase"
+                    className="bg-secondary text-white px-4 rounded-xl font-extrabold flex items-center justify-center hover:bg-gold transition-colors cursor-pointer text-xs uppercase"
                   >
                     Join
                   </button>

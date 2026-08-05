@@ -131,7 +131,7 @@ export const AboutSection: React.FC = () => {
             <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3.5 rounded-2xl text-xs font-extrabold uppercase tracking-wider hover:bg-secondary hover:text-primary transition-all shadow-lg cursor-pointer"
+                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3.5 rounded-2xl text-xs font-extrabold uppercase tracking-wider hover:bg-secondary hover:text-white transition-all shadow-lg cursor-pointer"
               >
                 Learn More About Our Journey
                 <span className="material-symbols-outlined text-base">arrow_forward</span>

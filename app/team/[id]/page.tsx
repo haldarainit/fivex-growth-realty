@@ -89,7 +89,7 @@ export default async function TeamProfilePage({ params }: { params: Promise<{ id
                   </a>
                 )}
               </div>
-              <Link href="/contact" className="w-full flex items-center justify-center gap-2 bg-secondary text-primary py-3 rounded-xl text-sm font-bold hover:brightness-110 transition-all">
+              <Link href="/contact" className="w-full flex items-center justify-center gap-2 bg-secondary text-white py-3 rounded-xl text-sm font-bold hover:brightness-110 transition-all">
                 Send Message <span className="material-symbols-outlined text-base">send</span>
               </Link>
             </div>

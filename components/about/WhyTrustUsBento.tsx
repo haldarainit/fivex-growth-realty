@@ -27,7 +27,7 @@ export const WhyTrustUsBento: React.FC = () => {
             </div>
             <div className="mt-8 pt-8 border-t border-outline-variant/10 flex items-center gap-4">
               <div className="flex -space-x-3">
-                <div className="w-10 h-10 rounded-full border-2 border-white bg-secondary-fixed-dim flex items-center justify-center font-bold text-xs text-primary">
+                <div className="w-10 h-10 rounded-full border-2 border-white bg-secondary flex items-center justify-center font-bold text-xs text-white">
                   AS
                 </div>
                 <div className="w-10 h-10 rounded-full border-2 border-white bg-primary-container flex items-center justify-center font-bold text-xs text-white">

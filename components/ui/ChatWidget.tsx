@@ -177,7 +177,7 @@ export default function ChatWidget() {
                 <button
                   key={r}
                   onClick={() => sendMessage(r)}
-                  className="flex-shrink-0 text-xs px-3 py-1.5 rounded-full border border-secondary/30 text-secondary hover:bg-secondary hover:text-primary transition-all font-medium"
+                  className="flex-shrink-0 text-xs px-3 py-1.5 rounded-full border border-secondary/30 text-secondary hover:bg-secondary hover:text-white transition-all font-medium"
                 >
                   {r}
                 </button>
@@ -196,7 +196,7 @@ export default function ChatWidget() {
               <button
                 type="submit"
                 disabled={!input.trim()}
-                className="w-9 h-9 rounded-xl bg-secondary flex items-center justify-center text-primary hover:brightness-110 transition-all disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed"
+                className="w-9 h-9 rounded-xl bg-secondary flex items-center justify-center text-white hover:brightness-110 transition-all disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed"
                 aria-label="Send message"
               >
                 <span className="material-symbols-outlined text-sm">send</span>
@@ -229,7 +229,7 @@ export default function ChatWidget() {
 
         {/* Unread badge */}
         {hasUnread && !isOpen && (
-          <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-secondary text-primary text-[10px] font-bold flex items-center justify-center">
+          <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-secondary text-white text-[10px] font-bold flex items-center justify-center">
             1
           </span>
         )}

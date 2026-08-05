@@ -74,7 +74,7 @@ export default async function PartnerDetailPage({ params }: { params: Promise<{ 
             <div className="bg-primary rounded-2xl p-6 text-white h-fit">
               <h3 className="font-display font-bold text-base mb-4">Interested in this partner?</h3>
               <p className="text-white/60 text-sm mb-5">Our advisors can connect you with the right team at {partner.name}.</p>
-              <Link href="/contact" className="w-full flex items-center justify-center gap-2 bg-secondary text-primary py-3 rounded-xl text-sm font-bold hover:brightness-110 transition-all">
+              <Link href="/contact" className="w-full flex items-center justify-center gap-2 bg-secondary text-white py-3 rounded-xl text-sm font-bold hover:brightness-110 transition-all">
                 Get Connected <span className="material-symbols-outlined text-base">arrow_forward</span>
               </Link>
               <a href={partner.website} target="_blank" rel="noopener noreferrer"

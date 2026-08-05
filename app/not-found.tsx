@@ -45,7 +45,7 @@ export default function NotFound() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-12">
             <Link
               href="/"
-              className="bg-primary text-white px-8 py-4 rounded-2xl font-bold text-xs uppercase tracking-wider hover:bg-secondary hover:text-primary transition-all shadow-md flex items-center justify-center gap-2"
+              className="bg-primary text-white px-8 py-4 rounded-2xl font-bold text-xs uppercase tracking-wider hover:bg-secondary hover:text-white transition-all shadow-md flex items-center justify-center gap-2"
             >
               <span className="material-symbols-outlined text-base">home</span>
               Return Home

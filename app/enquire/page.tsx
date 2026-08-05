@@ -110,7 +110,7 @@ export default function EnquirePage() {
                   key={i}
                   className={`w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border-2 transition-all ${
                     i + 1 < step
-                      ? 'bg-secondary border-secondary text-primary'
+                      ? 'bg-secondary border-secondary text-white'
                       : i + 1 === step
                       ? 'border-secondary text-secondary bg-white'
                       : 'border-gray-200 text-gray-400 bg-white'
@@ -176,7 +176,7 @@ export default function EnquirePage() {
 
                 <button
                   type="submit"
-                  className="w-full bg-primary text-white py-4 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-secondary hover:text-primary transition-all cursor-pointer shadow-sm mt-2 flex items-center justify-center gap-2"
+                  className="w-full bg-primary text-white py-4 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-secondary hover:text-white transition-all cursor-pointer shadow-sm mt-2 flex items-center justify-center gap-2"
                 >
                   Continue
                   <span className="material-symbols-outlined text-base">arrow_forward</span>
@@ -259,7 +259,7 @@ export default function EnquirePage() {
                   </button>
                   <button
                     type="submit"
-                    className="flex-2 bg-primary text-white py-4 px-6 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-secondary hover:text-primary transition-all cursor-pointer shadow-sm flex items-center justify-center gap-2 flex-1"
+                    className="flex-2 bg-primary text-white py-4 px-6 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-secondary hover:text-white transition-all cursor-pointer shadow-sm flex items-center justify-center gap-2 flex-1"
                   >
                     Review Enquiry
                     <span className="material-symbols-outlined text-base">arrow_forward</span>
@@ -338,7 +338,7 @@ export default function EnquirePage() {
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 bg-primary text-white py-4 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-secondary hover:text-primary transition-all cursor-pointer shadow-sm flex items-center justify-center gap-2"
+                    className="flex-1 bg-primary text-white py-4 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-secondary hover:text-white transition-all cursor-pointer shadow-sm flex items-center justify-center gap-2"
                   >
                     Submit Enquiry
                     <span className="material-symbols-outlined text-base">send</span>
@@ -382,7 +382,7 @@ export default function EnquirePage() {
                 <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
                   <Link
                     href="/properties"
-                    className="bg-primary text-white px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-secondary hover:text-primary transition-all cursor-pointer shadow-sm text-center"
+                    className="bg-primary text-white px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-secondary hover:text-white transition-all cursor-pointer shadow-sm text-center"
                   >
                     Browse Properties
                   </Link>

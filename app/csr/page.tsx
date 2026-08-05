@@ -108,7 +108,7 @@ export default function CSRPage() {
             <p className="text-white/60 text-base max-w-xl mx-auto mb-8 leading-relaxed">
               We collaborate with NGOs, corporates, and individuals who share our vision of building a better society alongside better buildings.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-secondary text-primary px-8 py-4 rounded-xl font-bold hover:brightness-110 transition-all">
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-secondary text-white px-8 py-4 rounded-xl font-bold hover:brightness-110 transition-all">
               Get Involved <span className="material-symbols-outlined">arrow_forward</span>
             </Link>
           </div>

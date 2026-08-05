@@ -51,7 +51,7 @@ export default function BlogDetailPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 lg:p-16 max-w-4xl mx-auto">
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="bg-secondary text-primary px-3.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest">
+              <span className="bg-secondary text-white px-3.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest">
                 {post.category}
               </span>
               <span className="text-white/60 text-xs">{post.readTime}</span>
@@ -156,7 +156,7 @@ export default function BlogDetailPage() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/enquire"
-                className="bg-secondary text-primary px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-opacity"
+                className="bg-secondary text-white px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-opacity"
               >
                 Book Consultation
               </Link>

@@ -137,7 +137,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={status === 'submitting'}
-                    className="w-full bg-primary text-white py-4 rounded-xl font-bold text-sm hover:bg-secondary hover:text-primary transition-all disabled:opacity-60 flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full bg-primary text-white py-4 rounded-xl font-bold text-sm hover:bg-secondary hover:text-white transition-all disabled:opacity-60 flex items-center justify-center gap-2 cursor-pointer"
                   >
                     {status === 'submitting' ? (
                       <><span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />Sending...</>

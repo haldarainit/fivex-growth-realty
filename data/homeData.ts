@@ -107,7 +107,7 @@ export const featuredProperties: PropertyItem[] = [
     location: 'Sector 43, Noida (Adjacent to Golf Course)',
     price: '₹2.10 Cr*',
     reraId: 'UPRERAPRJ99900',
-    badgeStyle: 'bg-gold text-primary',
+    badgeStyle: 'bg-gold text-white',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD4M6unZvoZbS4M_HujZi216_RQyRekQ0qN634z0oIWwm9X90YhCePr8jITtaFvBZjq8I00b9ZY9QCfvpVShxbxSJxIAvFz8a5sfR0zo1F-VgNf0O53QTl0XJNnWPfDq16c_kvszdJW1qDXIMS6Noa6F9w7uvJ1_mJw3Ru-Z8vBrYMlGJ78o0GUrUFIAh3ELLzofqpaNB5EtiryNfwF7Ag8gK6YmcPzf5MRCmuZwz2tNJP1I22LDDNBOeCo45HNkk0U7z9ENIn0vJJe',
     tags: ['Private Pool', 'VRV AC System'],
     specs: [

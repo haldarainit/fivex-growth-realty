@@ -203,7 +203,7 @@ export default function ProjectDetailPage() {
                           <span className="material-symbols-outlined text-secondary">trending_up</span>
                           {project.investmentInsight.title}
                         </h4>
-                        <span className="text-[11px] font-bold uppercase bg-secondary text-primary px-2.5 py-0.5 rounded-full">
+                        <span className="text-[11px] font-bold uppercase bg-secondary text-white px-2.5 py-0.5 rounded-full">
                           {project.investmentInsight.trendLabel}
                         </span>
                       </div>
@@ -324,7 +324,7 @@ export default function ProjectDetailPage() {
                       </div>
                       <button
                         type="submit"
-                        className="w-full bg-secondary text-primary py-3.5 rounded-xl font-extrabold text-xs uppercase tracking-wider hover:brightness-110 active:scale-95 transition-all shadow-md cursor-pointer"
+                        className="w-full bg-secondary text-white py-3.5 rounded-xl font-extrabold text-xs uppercase tracking-wider hover:brightness-110 active:scale-95 transition-all shadow-md cursor-pointer"
                       >
                         Request Express Callback →
                       </button>

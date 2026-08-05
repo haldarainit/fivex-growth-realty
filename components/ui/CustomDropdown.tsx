@@ -109,7 +109,7 @@ export const CustomDropdown: React.FC<CustomDropdownProps> = ({
                 className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer text-left ${
                   isGlass
                     ? isSelected
-                      ? 'bg-secondary text-primary font-extrabold shadow-md'
+                      ? 'bg-secondary text-white font-extrabold shadow-md'
                       : 'text-gray-200 hover:bg-white/15 hover:text-white'
                     : isSelected
                     ? 'bg-primary text-white font-extrabold shadow-md'
