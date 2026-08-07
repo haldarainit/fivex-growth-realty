@@ -36,7 +36,7 @@ export const leadershipMembers: LeadershipMember[] = [
     designation: 'Founder & Managing Director',
     headline: 'FiveX Growth Realty Pvt. Ltd | Real Estate Expert | Investment Consultant | Residential & Commercial Specialist | Investment Strategist | Yamuna Expressway & Noida Property Expert | RERA-Registered Consultant',
     department: 'founder',
-    shortBio: 'Founder & CEO of FiveX Growth Realty Pvt. Ltd, specializing in residential, commercial, plotted developments and industrial leasing with 10+ years of expert advisory across Noida, Greater Noida and Yamuna Expressway.',
+    shortBio: 'Founder & CEO of FiveX Growth Realty Pvt. Ltd, specializing in residential, commercial, plotted developments and industrial leasing with 15+ years of expert advisory across Noida, Greater Noida and Yamuna Expressway.',
     image: '/members/SyedZeeshanAhmad.jpg',
     imageAlt: 'Syed Zeeshan Ahmad, Founder & Managing Director',
     phone: '+91- 827 931 9964',
@@ -56,10 +56,10 @@ export const leadershipMembers: LeadershipMember[] = [
     fullBio: [
       'I am the Founder & CEO of FiveX Growth Realty Pvt. Ltd, a leading name in North India’s real estate sector, specializing in residential, commercial, plotted developments and industrial leasing. I bring market knowledge, investor mindset and ethical practices to every deal. We specialize in Noida, Greater Noida, Yamuna Expressway and Delhi NCR, especially projects linked to Jewar Airport, Film City and industrial corridors.',
       'We offer end-to-end property solutions—from investment consulting to resale, leasing and documentation.',
-      'With over 10+ years of experience, my focus is on client satisfaction, transparent deals and helping investors find the right opportunities with high ROI potential. We work with Gated Society Apartments, Authority Plots, Builder Floors, Farmhouses and Commercial Assets across NCR, especially in Noida, Greater Noida, Yamuna Expressway and Delhi NCR.',
+      'With over 15+ years of experience, my focus is on client satisfaction, transparent deals and helping investors find the right opportunities with high ROI potential. We work with Gated Society Apartments, Authority Plots, Builder Floors, Farmhouses and Commercial Assets across NCR, especially in Noida, Greater Noida, Yamuna Expressway and Delhi NCR.',
       'Our team ensures clients get verified properties, clear titles, RERA-registered options and investment guidance that leads to high ROI.',
     ],
-    experience: 10,
+    experience: 15,
     education: [
       { degree: 'Bachelor of Commerce & Real Estate Management', institution: 'Delhi University', year: '2014' },
       { degree: 'RERA Certified Real Estate Consultant', institution: 'UP RERA Authority', year: '2018' },
