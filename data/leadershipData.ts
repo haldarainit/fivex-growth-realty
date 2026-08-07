@@ -34,7 +34,7 @@ export const leadershipMembers: LeadershipMember[] = [
     id: 'syed-zeeshan-ahmad',
     name: 'SYED ZEESHAN AHMAD',
     designation: 'Founder & Managing Director',
-    headline: 'Founder | FiveX Growth Realty Pvt. Ltd | Real Estate Expert | Investment Consultant | Residential & Commercial Specialist | Investment Strategist | Yamuna Expressway & Noida Property Expert | RERA-Registered Consultant',
+    headline: 'FiveX Growth Realty Pvt. Ltd | Real Estate Expert | Investment Consultant | Residential & Commercial Specialist | Investment Strategist | Yamuna Expressway & Noida Property Expert | RERA-Registered Consultant',
     department: 'founder',
     shortBio: 'Founder & CEO of FiveX Growth Realty Pvt. Ltd, specializing in residential, commercial, plotted developments, and industrial leasing with 10+ years of expert advisory across Noida, Greater Noida, and Yamuna Expressway.',
     image: '/members/SyedZeeshanAhmad.jpg',

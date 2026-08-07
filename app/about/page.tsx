@@ -576,13 +576,15 @@ export default function AboutPage() {
                       {/* Right: Detailed Bio & Headline */}
                       <div className="lg:col-span-8 space-y-6">
                         <div>
-                          <span className="text-xs font-extrabold uppercase tracking-widest text-secondary bg-secondary/15 px-3 py-1 rounded-full border border-secondary/30">
-                            FOUNDER &amp; MANAGING DIRECTOR
-                          </span>
-                          <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-white mt-3 leading-tight">
+                          <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-white leading-tight">
                             {founder.name}
                           </h3>
-                          <p className="text-secondary/90 text-xs sm:text-sm font-semibold mt-2 leading-relaxed text-justify">
+                          <div className="mt-2.5">
+                            <span className="inline-block text-xs font-extrabold uppercase tracking-widest text-secondary bg-secondary/15 px-3 py-1 rounded-full border border-secondary/30">
+                              FOUNDER &amp; MANAGING DIRECTOR
+                            </span>
+                          </div>
+                          <p className="text-secondary/90 text-xs sm:text-sm font-semibold mt-3 leading-relaxed text-justify">
                             {founder.headline}
                           </p>
                         </div>
