@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useMemo } from 'react';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
 import Header from '@/components/sections/Header';
@@ -11,7 +11,8 @@ import { leadershipMembers } from '@/data/leadershipData';
 import { teamMembers } from '@/data/teamData';
 import { successStories } from '@/data/testimonialsData';
 import { partners, ncrDevelopersList, gurgaonDevelopersList } from '@/data/partnerData';
-import { faqs } from '@/data/homeData';
+import { faqItems, faqCategories } from '@/data/faqData';
+import { FaqItem as FaqItemType } from '@/types';
 import { aboutStatsMetrics } from '@/data/aboutData';
 import { companyInfo, contactDetails, officeAddresses, companySearchLinks } from '@/data/companyData';
 
@@ -153,14 +154,14 @@ const LeaderCard: React.FC<{ member: typeof leadershipMembers[0]; index: number 
 };
 
 // ─── FAQ Item ──────────────────────────────────────────────────────────────────
-const FaqItem: React.FC<{ faq: typeof faqs[0]; index: number }> = ({ faq, index }) => {
+const FaqItem: React.FC<{ faq: FaqItemType; index: number }> = ({ faq, index }) => {
   const [open, setOpen] = useState(false);
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.06 }}
+      transition={{ delay: Math.min(index * 0.02, 0.2) }}
       className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm"
     >
       <button
@@ -182,7 +183,7 @@ const FaqItem: React.FC<{ faq: typeof faqs[0]; index: number }> = ({ faq, index 
         transition={{ duration: 0.3 }}
         className="overflow-hidden"
       >
-        <div className="px-6 pb-5 text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+        <div className="px-6 pb-5 text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-4 whitespace-pre-line">
           {faq.answer}
         </div>
       </motion.div>
@@ -231,6 +232,20 @@ interface AwardDetail {
 // ─── Main About Page ────────────────────────────────────────────────────────
 export default function AboutPage() {
   const [activeSection, setActiveSection] = useState('who-we-are');
+  const [faqSearch, setFaqSearch] = useState('');
+  const [faqCategory, setFaqCategory] = useState('all');
+
+  const filteredFaqs = useMemo(() => {
+    return faqItems.filter((item) => {
+      const matchesCategory =
+        faqCategory === 'all' || item.category === faqCategory;
+      const matchesSearch =
+        faqSearch === '' ||
+        item.question.toLowerCase().includes(faqSearch.toLowerCase()) ||
+        item.answer.toLowerCase().includes(faqSearch.toLowerCase());
+      return matchesCategory && matchesSearch;
+    });
+  }, [faqSearch, faqCategory]);
 
   const sectionIds = [
     'who-we-are',
@@ -915,11 +930,110 @@ export default function AboutPage() {
               </Section>
 
               {/* 12. FAQs */}
-              <Section id="faqs" badge="Common Questions" title="Frequently Asked Questions">
-                <div className="space-y-4 max-w-4xl">
-                  {faqs.map((faq, i) => (
-                    <FaqItem key={faq.question} faq={faq} index={i} />
-                  ))}
+              <Section
+                id="faqs"
+                badge="Common Questions"
+                title="Frequently Asked Questions"
+                subtitle={`Browse our complete repository of ${faqItems.length} frequently asked questions covering real estate buying, investment insights, legal documentation, and NCR locations.`}
+              >
+                <div className="space-y-6 max-w-4xl">
+                  {/* FAQ Search Bar */}
+                  <div className="relative">
+                    <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl">
+                      search
+                    </span>
+                    <input
+                      type="text"
+                      value={faqSearch}
+                      onChange={(e) => setFaqSearch(e.target.value)}
+                      placeholder="Search across all 110 FAQs (e.g., RERA, loan, Noida, investment)..."
+                      className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl text-sm font-medium text-primary placeholder-gray-400 focus:outline-none focus:border-secondary focus:bg-white transition-all shadow-inner"
+                    />
+                    {faqSearch && (
+                      <button
+                        onClick={() => setFaqSearch('')}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-sm font-bold"
+                      >
+                        Clear
+                      </button>
+                    )}
+                  </div>
+
+                  {/* Category Pills */}
+                  <div className="flex flex-wrap gap-2">
+                    {faqCategories.map((cat) => {
+                      const isActive = faqCategory === cat.id;
+                      const count =
+                        cat.id === 'all'
+                          ? faqItems.length
+                          : faqItems.filter((i) => i.category === cat.id).length;
+                      return (
+                        <button
+                          key={cat.id}
+                          onClick={() => setFaqCategory(cat.id)}
+                          className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                            isActive
+                              ? 'bg-primary text-secondary shadow-md'
+                              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                          }`}
+                        >
+                          <span
+                            className="material-symbols-outlined text-sm"
+                            style={{ fontVariationSettings: '"FILL" 1' }}
+                          >
+                            {cat.icon}
+                          </span>
+                          {cat.label}
+                          <span
+                            className={`ml-1 text-[10px] px-1.5 py-0.5 rounded-md ${
+                              isActive ? 'bg-secondary/20 text-secondary' : 'bg-gray-200 text-gray-600'
+                            }`}
+                          >
+                            {count}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* FAQ Counter / Status */}
+                  <div className="flex items-center justify-between text-xs text-gray-500 font-semibold px-1">
+                    <span>
+                      Showing {filteredFaqs.length} of {faqItems.length} questions
+                    </span>
+                    {(faqSearch || faqCategory !== 'all') && (
+                      <button
+                        onClick={() => {
+                          setFaqSearch('');
+                          setFaqCategory('all');
+                        }}
+                        className="text-secondary hover:underline font-bold"
+                      >
+                        Reset filters
+                      </button>
+                    )}
+                  </div>
+
+                  {/* FAQ List */}
+                  {filteredFaqs.length === 0 ? (
+                    <div className="bg-gray-50 rounded-2xl p-8 text-center border border-dashed border-gray-300 space-y-2">
+                      <span className="material-symbols-outlined text-4xl text-gray-400">
+                        search_off
+                      </span>
+                      <p className="font-bold text-primary text-sm">
+                        No matching FAQs found for &quot;{faqSearch}&quot;
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        Try searching with different terms or select &quot;All Questions&quot;.
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="space-y-3">
+                      {filteredFaqs.map((faq, i) => (
+                        <FaqItem key={faq.id || faq.question} faq={faq} index={i} />
+                      ))}
+                    </div>
+                  )}
                 </div>
               </Section>
 

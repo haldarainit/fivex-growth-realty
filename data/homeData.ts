@@ -146,38 +146,9 @@ export const testimonials: TestimonialItem[] = [
   },
 ];
 
-export const faqs: FaqItem[] = [
-  {
-    id: 'faq-1',
-    question: 'How does FiveX Growth Realty ensure investment security for its clients?',
-    answer: 'We employ a rigorous 5-step verification process that includes RERA compliance checks, title deed clearance, developer track record analysis, and current construction progress audits. We only list properties from developers with a proven history of timely delivery and structural integrity.',
-  },
-  {
-    id: 'faq-2',
-    question: 'What is the process for NRIs looking to invest in Noida real estate?',
-    answer: 'FiveX Growth Realty provides a dedicated NRI concierge. The process involves identifying a project, verifying documents through our legal team, managing the NRE/NRO account transactions, and handling the Power of Attorney (PoA) if you are unable to travel for registration. We handle all local paperwork on your behalf.',
-  },
-  {
-    id: 'faq-3',
-    question: 'What are the expected ROI and rental yields in Delhi NCR currently?',
-    answer: 'Current market data indicates residential capital appreciation of 8-12% annually in high-growth corridors like Sector 150 and Yamuna Expressway. Commercial properties in prime hubs like Sector 140 are yielding 6-9% in annual rentals, significantly higher than the national average.',
-  },
-  {
-    id: 'faq-4',
-    question: 'Does FiveX Growth Realty assist with home loans and financial planning?',
-    answer: 'Yes, we have strategic partnerships with top-tier banks including HDFC, ICICI, and SBI. We assist in loan eligibility checks, document compilation, and ensuring you get the most competitive interest rates and fastest processing times.',
-  },
-  {
-    id: 'faq-5',
-    question: 'What property verification standards do you follow?',
-    answer: 'Our standards exceed mandatory RERA requirements. We conduct independent title checks, environmental impact reviews, and verify all developer credentials. Our "FiveX Verified" badge is only awarded to projects that pass our internal 42-point checklist.',
-  },
-  {
-    id: 'faq-6',
-    question: 'What is the timeline for property registration after purchase?',
-    answer: 'For ready-to-move properties, registration typically takes 15-30 days once the full payment and documentation are in place. For under-construction projects, the sub-lease deed execution happens upon completion, following the developer\'s handover schedule.',
-  },
-];
+import { faqItems } from '@/data/faqData';
+
+export const faqs: FaqItem[] = faqItems;
 
 export const fivexFeatures: FeatureItem[] = [
   {

@@ -14,7 +14,7 @@ export const FaqAccordionItem: React.FC<FaqAccordionItemProps> = ({ faq }) => {
           expand_more
         </span>
       </summary>
-      <div className="px-5 sm:px-7 md:px-8 pb-6 md:pb-8 text-primary/70 leading-relaxed text-sm md:text-base">
+      <div className="px-5 sm:px-7 md:px-8 pb-6 md:pb-8 text-primary/70 leading-relaxed text-sm md:text-base whitespace-pre-line">
         {faq.answer}
       </div>
     </details>

@@ -29,10 +29,10 @@ const AccordionItem: React.FC<{ item: FaqItem }> = ({ item }) => {
       </button>
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          open ? 'max-h-96 pb-6' : 'max-h-0'
+          open ? 'max-h-[1000px] pb-6' : 'max-h-0'
         }`}
       >
-        <p className="text-on-surface-variant text-sm leading-relaxed font-body pr-8">
+        <p className="text-on-surface-variant text-sm leading-relaxed font-body pr-8 whitespace-pre-line">
           {item.answer}
         </p>
       </div>
