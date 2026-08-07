@@ -288,14 +288,14 @@ export default async function LeadershipProfilePage({ params }: { params: Promis
 
               {/* Achievements */}
               <div>
-                <h2 className="font-display font-bold text-xl text-primary mb-6">Key Achievements</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <h2 className="font-display font-bold text-xl text-primary mb-3.5">Key Achievements</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
                   {member.achievements.map((a, i) => (
-                    <div key={i} className="bg-surface-container-low rounded-xl p-4 border border-gray-100 flex items-start gap-3">
-                      <span className="material-symbols-outlined text-secondary text-xl flex-shrink-0 mt-0.5" style={{ fontVariationSettings: '"FILL" 1' }}>
+                    <div key={i} className="bg-surface-container-low rounded-xl p-3 sm:p-3.5 border border-gray-100 flex items-start gap-2.5">
+                      <span className="material-symbols-outlined text-secondary text-lg flex-shrink-0 mt-0.5" style={{ fontVariationSettings: '"FILL" 1' }}>
                         stars
                       </span>
-                      <p className="text-gray-700 text-sm leading-relaxed font-medium">{a}</p>
+                      <p className="text-gray-700 text-xs sm:text-sm leading-snug font-medium">{a}</p>
                     </div>
                   ))}
                 </div>
