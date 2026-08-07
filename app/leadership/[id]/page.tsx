@@ -262,9 +262,9 @@ export default async function LeadershipProfilePage({ params }: { params: Promis
                 </div>
               </div>
 
-              {/* Education */}
+              {/* Professional Qualification */}
               <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <h3 className="font-display font-bold text-primary text-base mb-5">Education</h3>
+                <h3 className="font-display font-bold text-primary text-base mb-5">Professional Qualification</h3>
                 <div className="space-y-4">
                   {member.education.map((edu) => (
                     <div key={edu.degree} className="flex gap-3">
@@ -273,13 +273,36 @@ export default async function LeadershipProfilePage({ params }: { params: Promis
                       </div>
                       <div>
                         <p className="font-semibold text-primary text-sm">{edu.degree}</p>
-                        <p className="text-gray-400 text-xs">{edu.institution}</p>
-                        <p className="text-gray-400 text-xs">{edu.year}</p>
+                        {edu.institution && <p className="text-gray-500 text-xs">{edu.institution}</p>}
+                        {edu.year && <p className="text-gray-400 text-xs">{edu.year}</p>}
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
+
+              {/* Licenses & Certifications */}
+              {member.certifications && member.certifications.length > 0 && (
+                <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                  <h3 className="font-display font-bold text-primary text-base mb-5">Licenses &amp; Certifications</h3>
+                  <div className="space-y-4">
+                    {member.certifications.map((cert, idx) => (
+                      <div key={idx} className="flex gap-3 items-start border-b border-gray-50 pb-3 last:border-b-0 last:pb-0">
+                        <div className="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <span className="material-symbols-outlined text-secondary text-sm" style={{ fontVariationSettings: '"FILL" 1' }}>workspace_premium</span>
+                        </div>
+                        <div>
+                          <p className="font-bold text-primary text-xs sm:text-sm leading-snug">{cert.title}</p>
+                          <p className="text-gray-500 text-xs mt-0.5">{cert.issuer}</p>
+                          {cert.credentialId && (
+                            <p className="text-gray-400 text-[11px] mt-0.5">Credential ID: <span className="font-mono text-gray-500">{cert.credentialId}</span></p>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Contact Card */}
               <div className="bg-primary rounded-2xl p-6 text-white border border-white/10 shadow-xl space-y-4">

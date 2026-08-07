@@ -20,7 +20,8 @@ export interface LeadershipMember {
   social: SocialLink[];
   fullBio: string[];
   experience: number; // years
-  education: { degree: string; institution: string; year: string }[];
+  education: { degree: string; institution?: string; year?: string }[];
+  certifications?: { title: string; issuer: string; credentialId?: string }[];
   skills: string[];
   awards: { title: string; year: string; issuer: string }[];
   responsibilities: string[];
@@ -56,13 +57,26 @@ export const leadershipMembers: LeadershipMember[] = [
     fullBio: [
       'I am the Founder & CEO of FiveX Growth Realty Pvt. Ltd, a leading name in North India’s real estate sector, specializing in residential, commercial, plotted developments and industrial leasing. I bring market knowledge, investor mindset and ethical practices to every deal. We specialize in Noida, Greater Noida, Yamuna Expressway and Delhi NCR, especially projects linked to Jewar Airport, Film City and industrial corridors.',
       'We offer end-to-end property solutions—from investment consulting to resale, leasing and documentation.',
-      'With over 15+ years of experience, my focus is on client satisfaction, transparent deals and helping investors find the right opportunities with high ROI potential. We work with Gated Society Apartments, Authority Plots, Builder Floors, Farmhouses and Commercial Assets across NCR, especially in Noida, Greater Noida, Yamuna Expressway and Delhi NCR.',
+      'With over 10+ years of experience, my focus is on client satisfaction, transparent deals and helping investors find the right opportunities with high ROI potential. We work with Gated Society Apartments, Authority Plots, Builder Floors, Farmhouses and Commercial Assets across NCR, especially in Noida, Greater Noida, Yamuna Expressway and Delhi NCR.',
       'Our team ensures clients get verified properties, clear titles, RERA-registered options and investment guidance that leads to high ROI.',
     ],
     experience: 15,
     education: [
-      { degree: 'Bachelor of Commerce & Real Estate Management', institution: 'Delhi University', year: '2014' },
+      { degree: 'MBA in Data Analytics and Artificial Intelligence' },
+      { degree: 'B.Tech in Mechanical Engineering' },
       { degree: 'RERA Certified Real Estate Consultant', institution: 'UP RERA Authority', year: '2018' },
+    ],
+    certifications: [
+      { title: 'Artificial Intelligence on Microsoft Azure', issuer: 'Microsoft', credentialId: 'V7LIG09BUH5Y' },
+      { title: 'Foundations of Digital Marketing and E-Commerce', issuer: 'Google', credentialId: 'ER60L8WUOK3W' },
+      { title: 'Introduction to Software Engineering', issuer: 'IBM', credentialId: 'I6YE766PP8D6' },
+      { title: 'Machine Learning Foundations: A Case Study Approach', issuer: 'University of Washington', credentialId: '1O7C03LTF5RQ' },
+      { title: 'Advanced Search Engine Optimization', issuer: 'Zaptriq AI' },
+      { title: 'Research Methodologies', issuer: 'Queen Mary University of London', credentialId: '2YH9X1OMZ5KJ' },
+      { title: 'Tools for Data Science', issuer: 'IBM', credentialId: 'J7FLZRUQ88DE' },
+      { title: 'Tools for Data Science V2', issuer: 'IBM' },
+      { title: 'AI Tools Workshop', issuer: 'Be10x', credentialId: '0270772f-3809-4400-b29b-1e1c61cd0997859235' },
+      { title: 'Power BI Workshop', issuer: 'Office Master', credentialId: '42' },
     ],
     skills: [
       'Real Estate Investment Strategy',
