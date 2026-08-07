@@ -497,11 +497,6 @@ export default function AboutPage() {
                             alt={founder.name}
                             className="w-full h-full object-cover object-top"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                          <div className="absolute bottom-4 left-4 right-4 text-center">
-                            <p className="font-display font-extrabold text-lg sm:text-xl text-white tracking-tight">{founder.name}</p>
-                            <p className="text-secondary text-xs font-bold mt-0.5">{founder.designation}</p>
-                          </div>
                         </div>
 
                         {/* Direct Connect & View Profile Buttons */}
