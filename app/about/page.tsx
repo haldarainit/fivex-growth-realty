@@ -608,17 +608,17 @@ export default function AboutPage() {
                           <p className="text-[11px] font-extrabold uppercase tracking-widest text-secondary mb-2">
                             Connect with Founder:
                           </p>
-                          <div className="flex flex-wrap gap-2">
+                          <div className="grid grid-cols-3 gap-2">
                             {founder.social.map((s) => (
                               <a
                                 key={s.platform}
                                 href={s.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-white/10 hover:bg-secondary hover:text-white border border-white/20 text-white text-[11px] font-bold px-2.5 py-1.5 rounded-lg transition-all flex items-center gap-1.5 cursor-pointer group"
+                                className="w-full bg-white/10 hover:bg-secondary hover:text-white border border-white/20 text-white text-[11px] sm:text-xs font-bold py-2 px-2 rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer group shadow-sm text-center"
                               >
                                 {renderSocialPlatformIcon(s.platform)}
-                                {s.platform}
+                                <span className="truncate">{s.platform}</span>
                               </a>
                             ))}
                           </div>
