@@ -83,9 +83,9 @@ export default async function LeadershipProfilePage({ params }: { params: Promis
       <Header />
       <main className="flex-grow pt-16 sm:pt-20">
         {/* Hero */}
-        <div className="bg-primary py-12 sm:py-16">
+        <div className="bg-primary pt-8 pb-5 sm:pt-10 sm:pb-6">
           <div className="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-16">
-            <Link href="/about#leadership" className="inline-flex items-center gap-2 text-white/50 hover:text-secondary text-sm mb-8 transition-colors">
+            <Link href="/about#leadership" className="inline-flex items-center gap-2 text-white/50 hover:text-secondary text-sm mb-6 transition-colors">
               <span className="material-symbols-outlined text-base">arrow_back</span>
               Back to Leadership
             </Link>
@@ -184,7 +184,7 @@ export default async function LeadershipProfilePage({ params }: { params: Promis
         </div>
 
         {/* Body content */}
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-16 py-16">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-16 pt-8 pb-16 sm:pt-10 sm:pb-20">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             {/* Left: Bio + Responsibilities */}
             <div className="lg:col-span-2 space-y-10">
