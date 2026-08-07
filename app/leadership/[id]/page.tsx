@@ -73,6 +73,79 @@ const renderSocialPlatformIcon = (platform: string) => {
   return <span className="material-symbols-outlined text-xs text-secondary group-hover:text-white">open_in_new</span>;
 };
 
+// ─── Company Logo Renderer ───────────────────────────────────────────────────
+const renderCompanyLogo = (issuer: string) => {
+  const name = issuer.toLowerCase();
+
+  if (name.includes('microsoft')) {
+    return (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 23 23">
+        <path fill="#f35325" d="M1 1h10v10H1z"/>
+        <path fill="#81bc06" d="M12 1h10v10H12z"/>
+        <path fill="#05a6f0" d="M1 12h10v10H1z"/>
+        <path fill="#ffba08" d="M12 12h10v10H12z"/>
+      </svg>
+    );
+  }
+  if (name.includes('google')) {
+    return (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24">
+        <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+        <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.29v3.15C3.26 21.3 7.31 24 12 24z"/>
+        <path fill="#FBBC05" d="M5.28 14.24c-.25-.72-.38-1.49-.38-2.24s.13-1.52.38-2.24V6.61H1.29c-.8 1.6-1.26 3.41-1.26 5.39s.46 3.79 1.26 5.39l3.99-3.15z"/>
+        <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.94 1.19 15.23 0 12 0 7.31 0 3.26 2.7 1.29 6.61l3.99 3.15c.95-2.85 3.6-4.96 6.72-4.96z"/>
+      </svg>
+    );
+  }
+  if (name.includes('ibm')) {
+    return (
+      <svg className="w-5 h-3 flex-shrink-0" viewBox="0 0 32 16">
+        <path fill="#0F62FE" d="M0 0h6v2H0V0zm0 3.5h6v2H0v-2zM0 7h6v2H0V7zm0 3.5h6v2H0v-2zM0 14h6v2H0v-2zM8 0h6v2H8V0zm0 3.5h6v2H8v-2zM8 7h6v2H8V7zm0 3.5h6v2H8v-2zM8 14h6v2H8v-2zM16 0h16v2H16V0zm0 3.5h16v2H16v-2zM16 7h16v2H16V7zm0 3.5h16v2H16v-2zM16 14h16v2H16v-2z"/>
+      </svg>
+    );
+  }
+  if (name.includes('washington')) {
+    return (
+      <svg className="w-4 h-4 flex-shrink-0 text-[#4B2E83]" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M2.5 3h4.5l2.5 11 3-11h3.5l3 11 2.5-11H24.5l-4.5 18h-4.5l-3.5-12.5L8.5 21H4L2.5 3z"/>
+      </svg>
+    );
+  }
+  if (name.includes('queen mary')) {
+    return (
+      <svg className="w-4 h-4 flex-shrink-0 text-[#1B365D]" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+      </svg>
+    );
+  }
+  if (name.includes('be10x')) {
+    return (
+      <div className="w-5 h-5 rounded bg-purple-600 flex items-center justify-center text-[9px] font-black text-white flex-shrink-0">
+        10X
+      </div>
+    );
+  }
+  if (name.includes('office master') || name.includes('power bi')) {
+    return (
+      <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24">
+        <path fill="#F2C811" d="M7 19h3V9H7v10zm5 0h3V5h-3v14zm5 0h3v-7h-3v7z"/>
+      </svg>
+    );
+  }
+  if (name.includes('zaptriq')) {
+    return (
+      <div className="w-5 h-5 rounded bg-emerald-600 flex items-center justify-center text-[9px] font-black text-white flex-shrink-0">
+        AI
+      </div>
+    );
+  }
+  return (
+    <span className="material-symbols-outlined text-secondary text-sm flex-shrink-0" style={{ fontVariationSettings: '"FILL" 1' }}>
+      workspace_premium
+    </span>
+  );
+};
+
 export default async function LeadershipProfilePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const member = leadershipMembers.find((m) => m.id === id);
@@ -230,7 +303,7 @@ export default async function LeadershipProfilePage({ params }: { params: Promis
 
               {/* Awards */}
               <div>
-                <h2 className="font-display font-bold text-xl text-primary mb-6">Awards & Recognition</h2>
+                <h2 className="font-display font-bold text-xl text-primary mb-6">Awards &amp; Recognition</h2>
                 <div className="space-y-3">
                   {member.awards.map((award) => (
                     <div key={award.title} className="flex items-center gap-4 p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
@@ -248,12 +321,12 @@ export default async function LeadershipProfilePage({ params }: { params: Promis
               </div>
             </div>
 
-            {/* Right: Skills, Education, Contact */}
-            <div className="space-y-8">
+            {/* Right: Skills, Education, Certifications */}
+            <div className="space-y-6">
               {/* Skills */}
               <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <h3 className="font-display font-bold text-primary text-base mb-5">Core Skills</h3>
-                <div className="flex flex-wrap gap-2">
+                <h3 className="font-display font-bold text-primary text-base mb-4 text-center">Core Skills</h3>
+                <div className="flex flex-wrap justify-center gap-2">
                   {member.skills.map((skill) => (
                     <span key={skill} className="text-xs px-3 py-1.5 bg-secondary/10 text-secondary font-semibold rounded-full">
                       {skill}
@@ -264,7 +337,7 @@ export default async function LeadershipProfilePage({ params }: { params: Promis
 
               {/* Professional Qualification */}
               <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <h3 className="font-display font-bold text-primary text-base mb-5">Professional Qualification</h3>
+                <h3 className="font-display font-bold text-primary text-base mb-5 text-center">Professional Qualification</h3>
                 <div className="space-y-4">
                   {member.education.map((edu) => (
                     <div key={edu.degree} className="flex gap-3">
@@ -284,18 +357,18 @@ export default async function LeadershipProfilePage({ params }: { params: Promis
               {/* Licenses & Certifications */}
               {member.certifications && member.certifications.length > 0 && (
                 <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                  <h3 className="font-display font-bold text-primary text-base mb-5">Licenses &amp; Certifications</h3>
-                  <div className="space-y-4">
+                  <h3 className="font-display font-bold text-primary text-base mb-4 text-center">Licenses &amp; Certifications</h3>
+                  <div className="space-y-2.5">
                     {member.certifications.map((cert, idx) => (
-                      <div key={idx} className="flex gap-3 items-start border-b border-gray-50 pb-3 last:border-b-0 last:pb-0">
-                        <div className="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <span className="material-symbols-outlined text-secondary text-sm" style={{ fontVariationSettings: '"FILL" 1' }}>workspace_premium</span>
+                      <div key={idx} className="flex gap-3 items-start border-b border-gray-100 pb-2.5 last:border-b-0 last:pb-0">
+                        <div className="w-7 h-7 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-xs">
+                          {renderCompanyLogo(cert.issuer)}
                         </div>
                         <div>
-                          <p className="font-bold text-primary text-xs sm:text-sm leading-snug">{cert.title}</p>
-                          <p className="text-gray-500 text-xs mt-0.5">{cert.issuer}</p>
+                          <p className="font-bold text-primary text-xs leading-snug">{cert.title}</p>
+                          <p className="text-gray-500 text-[11px] mt-0.5">{cert.issuer}</p>
                           {cert.credentialId && (
-                            <p className="text-gray-400 text-[11px] mt-0.5">Credential ID: <span className="font-mono text-gray-500">{cert.credentialId}</span></p>
+                            <p className="text-gray-400 text-[10px] mt-0.5">Credential ID: <span className="font-mono text-gray-500">{cert.credentialId}</span></p>
                           )}
                         </div>
                       </div>
@@ -303,34 +376,6 @@ export default async function LeadershipProfilePage({ params }: { params: Promis
                   </div>
                 </div>
               )}
-
-              {/* Contact Card */}
-              <div className="bg-primary rounded-2xl p-6 text-white border border-white/10 shadow-xl space-y-4">
-                <h3 className="font-display font-bold text-base text-secondary uppercase tracking-wider">Connect with Us</h3>
-                <div className="space-y-3">
-                  <a href={`tel:${member.phone}`} className="flex items-center gap-3 text-white/80 hover:text-secondary transition-colors text-sm font-semibold">
-                    <span className="material-symbols-outlined text-secondary text-base">call</span>
-                    <span>{member.phone}</span>
-                  </a>
-                  <a href={`mailto:${member.email}`} className="flex items-center gap-3 text-white/80 hover:text-secondary transition-colors text-sm font-semibold">
-                    <span className="material-symbols-outlined text-secondary text-base">mail</span>
-                    <span className="break-all">{member.email}</span>
-                  </a>
-                </div>
-                {member.whatsapp && (
-                  <a
-                    href={member.whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl text-xs font-extrabold uppercase tracking-wider shadow-lg transition-all"
-                  >
-                    <svg className="w-4 h-4 fill-current text-white" viewBox="0 0 24 24">
-                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.461h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.05 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                    </svg>
-                    WhatsApp Connect
-                  </a>
-                )}
-              </div>
             </div>
           </div>
         </div>
