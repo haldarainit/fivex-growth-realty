@@ -161,7 +161,7 @@ export default async function LeadershipProfilePage({ params }: { params: Promis
               <div>
                 <h1 className="font-display font-bold text-3xl sm:text-4xl text-white">{member.name}</h1>
                 <p className="text-secondary font-semibold text-lg mt-1">{member.designation}</p>
-                <p className="text-white/60 text-sm mt-4 leading-relaxed max-w-2xl">{member.shortBio}</p>
+                <p className="text-white/90 text-base sm:text-lg mt-4 leading-relaxed max-w-2xl text-justify font-medium">{member.shortBio}</p>
 
                 {/* Quick stats */}
                 <div className="flex flex-wrap gap-4 mt-6">
