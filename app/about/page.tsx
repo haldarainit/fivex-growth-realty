@@ -582,12 +582,12 @@ export default function AboutPage() {
                           <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-white mt-3 leading-tight">
                             {founder.name}
                           </h3>
-                          <p className="text-secondary/90 text-xs sm:text-sm font-semibold mt-2 leading-relaxed">
+                          <p className="text-secondary/90 text-xs sm:text-sm font-semibold mt-2 leading-relaxed text-justify">
                             {founder.headline}
                           </p>
                         </div>
 
-                        <div className="space-y-4 text-white/85 text-xs sm:text-sm leading-relaxed font-medium border-t border-white/10 pt-5">
+                        <div className="space-y-4 text-white/85 text-xs sm:text-sm leading-relaxed font-medium text-justify border-t border-white/10 pt-5">
                           {founder.fullBio.map((paragraph, idx) => (
                             <p key={idx}>{paragraph}</p>
                           ))}

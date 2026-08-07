@@ -122,7 +122,7 @@ export default async function LeadershipProfilePage({ params }: { params: Promis
               {/* Full Bio */}
               <div>
                 <h2 className="font-display font-bold text-xl text-primary mb-6">Biography</h2>
-                <div className="space-y-4">
+                <div className="space-y-4 text-justify">
                   {member.fullBio.map((para, i) => (
                     <p key={i} className="text-gray-600 text-sm leading-relaxed">{para}</p>
                   ))}
