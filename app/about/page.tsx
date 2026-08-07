@@ -505,37 +505,50 @@ export default function AboutPage() {
                         </div>
 
                         {/* Direct Connect & View Profile Buttons */}
-                        <div className="space-y-2.5">
-                          <a
-                            href={founder.whatsapp}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-full bg-green-500 hover:bg-green-600 text-white font-extrabold py-3 px-4 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
-                          >
-                            <span className="material-symbols-outlined text-base">chat</span>
-                            WhatsApp: Let&apos;s Connect
-                          </a>
+                        <div className="space-y-3">
+                          {/* 1. View Full Profile (FIRST) */}
                           <Link
                             href={`/leadership/${founder.id}`}
-                            className="w-full bg-secondary hover:brightness-110 text-white font-extrabold py-3 px-4 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all"
+                            className="w-full bg-secondary hover:brightness-110 text-white font-extrabold py-3.5 px-4 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl transition-all cursor-pointer"
                           >
                             View Full Profile
-                            <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                            <span className="material-symbols-outlined text-base">arrow_forward</span>
                           </Link>
-                          <a
-                            href={`tel:${founder.phone}`}
-                            className="w-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 transition-all"
-                          >
-                            <span className="material-symbols-outlined text-secondary text-base">call</span>
-                            {founder.phone}
-                          </a>
-                          <a
-                            href={`mailto:${founder.email}`}
-                            className="w-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 transition-all"
-                          >
-                            <span className="material-symbols-outlined text-secondary text-base">mail</span>
-                            {founder.email}
-                          </a>
+
+                          {/* 2. Direct Contact Action Icons (WhatsApp, Phone Call, Email) */}
+                          <div className="grid grid-cols-3 gap-2.5 pt-1">
+                            {/* WhatsApp Icon */}
+                            <a
+                              href={founder.whatsapp}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="bg-green-500 hover:bg-green-600 text-white py-3 px-2 rounded-xl flex flex-col items-center justify-center gap-1 shadow-md transition-all cursor-pointer group"
+                              title="Connect on WhatsApp"
+                            >
+                              <span className="material-symbols-outlined text-xl">chat</span>
+                              <span className="text-[10px] font-extrabold uppercase tracking-wider">WhatsApp</span>
+                            </a>
+
+                            {/* Direct Phone Call Icon */}
+                            <a
+                              href={`tel:${founder.phone}`}
+                              className="bg-white/10 hover:bg-white/20 border border-white/20 text-white py-3 px-2 rounded-xl flex flex-col items-center justify-center gap-1 transition-all cursor-pointer group"
+                              title={`Call Direct: ${founder.phone}`}
+                            >
+                              <span className="material-symbols-outlined text-secondary text-xl">call</span>
+                              <span className="text-[10px] font-extrabold uppercase tracking-wider text-white/90">Call</span>
+                            </a>
+
+                            {/* Direct Email Icon */}
+                            <a
+                              href={`mailto:${founder.email}`}
+                              className="bg-white/10 hover:bg-white/20 border border-white/20 text-white py-3 px-2 rounded-xl flex flex-col items-center justify-center gap-1 transition-all cursor-pointer group"
+                              title={`Send Email: ${founder.email}`}
+                            >
+                              <span className="material-symbols-outlined text-secondary text-xl">mail</span>
+                              <span className="text-[10px] font-extrabold uppercase tracking-wider text-white/90">Email</span>
+                            </a>
+                          </div>
                         </div>
 
                         {/* Founder Social & Professional Profiles */}
